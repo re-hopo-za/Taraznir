@@ -121,7 +121,6 @@ class ProductResource extends Resource
                         Card::make()->schema([ //third section
                             SpatieMediaLibraryFileUpload::make('images')
                                 ->collection('images')
-                                ->disk('resource')
                                 ->multiple()
                                 ->enableReordering()
                                 ->placeholder('بارگذاری تصویر')

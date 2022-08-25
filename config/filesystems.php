@@ -36,14 +36,6 @@ return [
             'throw' => false,
         ],
 
-        'resource' => [
-            'driver' => 'local',
-            'root' => public_path('resources') ,
-            'url'  => env('APP_URL').'/resources',
-            'visibility' => 'public',
-            'throw' => false,
-        ],
-
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
@@ -79,7 +71,6 @@ return [
 
     'links' => [
         public_path('storage') => storage_path('app/public'),
-        '/home2/taraznir/public_html/public' => '/home2/taraznir/laravel/storage/app/public',
     ],
 
 ];
