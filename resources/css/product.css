@@ -1,0 +1,143 @@
+@media (min-width: 1200px) {
+    .container {
+        width: 1400px;
+        max-width: 100%;
+    }
+}
+
+
+.header-style-2 #main-nav > ul > li.product-menu > a:after, .header-style-2 #main-nav > ul > li > a:hover:after {
+    opacity: 1;
+    visibility: visible;
+    width: 100%;
+}
+
+.img-thumbnail {
+    border-radius: 4px;
+    position: relative;
+}
+
+.img-thumbnail img {
+    border-radius: 4px;
+}
+
+/*! CSS Used from: http://porto.test/css/theme-blog.css */
+ul.comments {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul.comments li {
+    padding: 10px 0 0 70px !important;
+}
+
+ul.comments li img.avatar {
+    height: 48px;
+    width: 48px;
+}
+
+ul.comments li .img-thumbnail {
+    margin-left: -70px;
+    position: absolute;
+}
+
+ul.comments li .comment {
+    margin-bottom: 10px;
+}
+
+ul.comments .comment-arrow {
+    border-bottom: 12px solid transparent;
+    border-right: 12px solid #f7f7f7;
+    border-top: 12px solid transparent;
+    height: 0;
+    left: -12px;
+    position: absolute;
+    top: 12px;
+    width: 0;
+}
+
+ul.comments .comment-block {
+    background: #f7f7f7;
+    border-radius: 5px;
+    padding: 20px 20px 30px;
+    position: relative;
+}
+
+ul.comments .comment-block p {
+    font-size: 0.9em;
+    line-height: 21px;
+    margin: 0;
+    padding: 0;
+}
+
+ul.comments .comment-block .comment-by {
+    display: block;
+    font-size: 1em;
+    line-height: 21px;
+    margin: 0;
+    padding: 0 0 5px 0;
+}
+
+@media (max-width: 575px) {
+    ul.comments li {
+        border-left: 8px solid rgba(0, 0, 0, 0.06);
+        clear: both;
+        padding: 0 0 0 10px;
+    }
+
+    ul.comments li .img-thumbnail {
+        display: none;
+    }
+
+    ul.comments .comment-arrow {
+        display: none;
+    }
+}
+
+/*! CSS Used from: http://porto.test/css/theme-shop.css */
+.shop .review-num {
+    margin-left: 7px;
+    float: left;
+    font-size: 0.85em;
+}
+
+.shop ul.comments .comment-arrow {
+    border-right-color: #F5F7F7;
+}
+
+.shop ul.comments .comment-block {
+    background: #F5F7F7;
+}
+
+.shop ul.comments .comment-by .review-num {
+    min-width: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly
+}
+
+
+.item-content table,
+.item-content table th,
+.item-content table td {
+    border: none;
+    font-size: 15px;
+}
+
+.item-content table td,
+.item-content table th {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);;
+}
+
+.item-content table tr:last-child td,
+.item-content table tr:last-child th {
+    border-bottom: none;
+}
+
+
+.project-item img{
+    width:100%;
+}
+
+

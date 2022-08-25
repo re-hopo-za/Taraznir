@@ -1,0 +1,222 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+    font-family: AzarMehr;
+    font-style: normal;
+    font-weight: 900;
+    src: url('/fonts/azarmehrAzarMehr-Black.ttf') format('truetype');
+}
+@font-face {
+    font-family: AzarMehr;
+    font-style: normal;
+    font-weight: 800;
+    src: url('/fonts/azarmehr/AzarMehr-ExtraBold.ttf') format('truetype');
+}
+@font-face {
+    font-family: AzarMehr;
+    font-style: normal;
+    font-weight: bold;
+    src: url('/fonts/azarmehr/AzarMehr-Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: AzarMehr;
+    font-style: normal;
+    font-weight: 600;
+    src: url('/fonts/azarmehr/AzarMehr-SemiBold.ttf') format('truetype');
+}
+@font-face {
+    font-family: AzarMehr;
+    font-style: normal;
+    font-weight: 500;
+    src: url('/fonts/azarmehr/AzarMehr-Medium.ttf') format('truetype');
+}
+@font-face {
+    font-family: AzarMehr;
+    font-style: normal;
+    font-weight: 400;
+    src: url('/fonts/azarmehr/AzarMehr-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: AzarMehr;
+    font-style: normal;
+    font-weight: 300;
+    src: url('/fonts/azarmehr/AzarMehr-Light.ttf') format('truetype');
+}
+@font-face {
+    font-family: AzarMehr;
+    font-style: normal;
+    font-weight: 200;
+    src: url('/fonts/azarmehr/AzarMehr-ExtraLight.ttf') format('truetype');
+}
+@font-face {
+    font-family: AzarMehr;
+    font-style: normal;
+    font-weight: 100;
+    src: url('/fonts/azarmehr/AzarMehr-Thin.ttf') format('truetype');
+}
+@font-face {
+    font-family: AzarMehrMono;
+    font-style: normal;
+    font-weight: bold;
+    src: url('/fonts/azarmehr/AzarMehr-Mono-Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: AzarMehrMono;
+    font-style: normal;
+    font-weight: normal;
+    src: url('/fonts/azarmehr/AzarMehr-Mono-Regular.ttf') format('truetype');
+}
+
+
+.header-address-con{
+    display: flex;
+    justify-content: center;
+}
+
+.top-header-main-con{
+    display:flex!important;
+    background:#888;
+    justify-content:space-between;
+    align-items:center;
+    padding:5px
+}
+
+.top-header-main-con *{
+    user-select: none;
+}
+.profile-con{
+    width:150px;
+}
+
+.profile-con .profile-details{
+    min-width:180px;
+    display:flex;
+    flex-direction:row-reverse;
+    align-items:center;
+    cursor:pointer;
+    background-color:#444;
+    padding:5px;
+    color:#fff;
+}
+.profile-con .profile-details .profile-name{
+    width:150px;
+    display:flex;
+    flex-direction:row-reverse;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 5px;
+}
+.profile-con .profile-drop{
+    position:absolute;
+    background:#444;
+    width:180px;
+    display:flex;
+    flex-direction:column;
+    text-align:center;
+    justify-content:space-between;
+}
+
+.profile-con .profile-details:hover{
+    background-color:#555;
+}
+.profile-con .profile-details img{
+    width:30px;
+}
+.profile-con .profile-details p{
+    padding-right:5px;
+    color:#ffc30c
+}
+.profile-con .profile-details i{
+    font-size:18px;
+}
+.profile-con .profile-drop a{
+    font-size:13px;
+    padding:10px;
+    border-top:1px solid #ddd;
+    color:#fff!important
+}
+.profile-con .profile-drop a:hover{
+    background-color:#555;
+}
+#top-bar{
+    padding-right:30px;
+}
+
+
+
+.isotope-project{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin:0 auto;
+}
+
+.isotope-project>div{
+    margin: 0 21px;
+    width: 30%;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+}
+.isotope-project>div img{
+    width:100%;
+    height:290px;
+    object-fit:cover;
+}
+.isotope-project>div h5{
+    padding:10px 9px;
+    font-size:15px;
+    font-weight:bold;
+    color:#555;
+}
+.isotope-project>div span a{
+    padding:6px 20px;
+    font-size:13px;
+}
+
+
+.items-list li{
+    padding-right:30px;
+    line-height:2.2
+}
+.items-list li:before{
+    content: "\e906";
+    font-family: "autoraicon";
+    font-size: 20px;
+    position: absolute;
+    right: 0;
+    margin-top:-6px
+}
+
+
+
+@media screen and (max-width:700px){
+    .top-bar-socials .text{
+        display:none!important;
+    }
+    .top-header-main-con{
+        display:flex;
+        width:100%
+    }
+    #top-bar .top-bar-socials{
+        width:auto;
+        padding-right:20px;
+    }
+    #top-bar .top-bar-socials a::before{
+        content:none!important
+    }
+    .isotope-project{
+        flex-wrap:wrap;
+    }
+    .isotope-project>div{
+        width:100%;
+    }
+}
+
+
+
+
+
+
+

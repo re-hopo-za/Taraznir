@@ -1,0 +1,18 @@
+
+.header-style-2 #main-nav > ul > li.blog-menu > a:after, .header-style-2 #main-nav > ul > li > a:hover:after {
+    opacity: 1;
+    visibility: visible;
+    width: 100%;
+}
+
+.blog-page{
+    padding-bottom:80px;
+}
+
+.post-content {
+    direction:rtl;
+    text-align: right;
+}
+.post-content *{
+    font-family:'AzarMehr'!important;
+}

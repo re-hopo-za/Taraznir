@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+
+.profile-page-con{
+    font-size:18px;
+    direction:rtl;
+    padding-top:50px;
+}
+.profile-page-con h3 {
+    font-size:19px;
+}
+.profile-page-con p  {
+    font-size:14px;
+    padding-top:15px;
+    line-height:1.6;
+}
+.profile-page-con div{
+    font-size:14px;
+    line-height:1.6;
+}
+.profile-page-con label {
+    font-size:13px;
+    padding-top:15px;
+    line-height:1.6;
+    font-weight:bold;
+}
+.profile-page-con input {
+    font-size:13px;
+    padding-top:15px;
+    line-height:1.6;
+}
+.profile-page-con button {
+    font-family:'AzarMehr'!important;
+    font-size:13px;
+    padding-top:15px;
+    line-height:1.6;
+}
+

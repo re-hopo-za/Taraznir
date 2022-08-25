@@ -1,0 +1,5 @@
+.header-style-2 #main-nav > ul > li.catalog-menu > a:after, .header-style-2 #main-nav > ul > li > a:hover:after {
+    opacity: 1;
+    visibility: visible;
+    width: 100%;
+}
