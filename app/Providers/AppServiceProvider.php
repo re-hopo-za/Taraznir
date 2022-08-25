@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Filament\Facades\Filament;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -32,5 +33,9 @@ class AppServiceProvider extends ServiceProvider
                 'تنظیمات' ,
             ]);
         });
+
+        if($this->app->environment('production')) {
+            URL::forceScheme('https');
+        }
     }
 }
