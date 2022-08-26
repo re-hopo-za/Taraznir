@@ -25,7 +25,7 @@
         <a id="scroll-top"></a>
         @livewireScripts
         <script src="{{ asset('/js/app.js') }}"></script>
-        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        <script defer src="https://unpkg.com/alpinejs@3.10.3/dist/cdn.min.js"></script>
         @yield('scripts')
     </body>
 
