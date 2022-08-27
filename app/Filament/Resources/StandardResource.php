@@ -37,7 +37,6 @@ class StandardResource extends Resource
     public static function form(Form $form): Form
     {
         return $form
-
             ->schema([
                 Grid::make()->columns(12) ->schema([
                     Grid::make()->schema([
@@ -54,31 +53,28 @@ class StandardResource extends Resource
                             Forms\Components\Textarea::make('summary')
                                 ->label('خلاصه')
                         ]),
+
+                        Card::make()->schema([
+                            TableRepeater::make('meta')
+                                ->label('متا')
+                                ->relationship('meta')
+                                ->schema([
+                                    Forms\Components\Select::make('key')
+                                        ->label('کلید')
+                                        ->required()
+                                        ->options([
+                                            'author' => 'نویسنده',
+                                            'keywords' => 'کلمات کلیدی',
+                                            'description' => 'توضیحات',
+                                        ]),
+                                    Forms\Components\TextInput::make('value')
+                                        ->label('مقدار')
+                                        ->required(),
+                                ])
+                                ->collapsible()
+                                ->defaultItems(0),
+                        ]),
                     ])->columnSpan(9 ),
-
-                    Card::make()->schema([
-                        TableRepeater::make('meta')
-                            ->label('متا')
-                            ->relationship('meta')
-                            ->schema([
-                                Forms\Components\Select::make('key')
-                                    ->label('کلید')
-                                    ->required()
-                                    ->options([
-                                        'author' => 'نویسنده',
-                                        'keywords' => 'کلمات کلیدی',
-                                        'description' => 'توضیحات',
-                                    ]),
-                                Forms\Components\TextInput::make('value')
-                                    ->label('مقدار')
-                                    ->required(),
-                            ])
-                            ->collapsible()
-                            ->defaultItems(0),
-                    ]),
-
-
-
                     Grid::make()->schema([
                         Card::make()->schema([
                             Forms\Components\Select::make('status')
@@ -98,7 +94,7 @@ class StandardResource extends Resource
                         Card::make()->schema([
                             Forms\Components\MultiSelect::make('categories')
                                 ->relationship( 'categories' ,'slug' ,
-                                    fn () => Category::where('model' ,'=' ,'standard' )
+                                    fn () => Category::where('model' ,'=' ,'catalog' )
                                 )
                                 ->label('دسته بندی') ,
                         ]),
@@ -112,6 +108,7 @@ class StandardResource extends Resource
                                 ->imagePreviewHeight(100)  ,
                         ]),
 
+
                         Card::make()->schema([ //third section
                             SpatieMediaLibraryFileUpload::make('attachment')
                                 ->collection('attachments')
@@ -121,8 +118,13 @@ class StandardResource extends Resource
                                 ->imagePreviewHeight(200)
                         ]),
                     ])->columnSpan(3 ),
-                ]),
-            ]);
+
+            ]),
+        ]);
+
+
+
+
     }
 
     /**
