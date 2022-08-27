@@ -52,16 +52,17 @@ class BlogResource extends Resource
                         ]),
 
                         Card::make()->schema([
+                            TinyEditor::make('content')
+                                ->showMenuBar()
+                                ->height(400 )
+                                ->label('محتوا') ,
                             SpatieMediaLibraryFileUpload::make('cover')
                                 ->collection('cover')
                                 ->enableReordering()
                                 ->placeholder('بارگذاری تصویر اصلی')
                                 ->label(' تصویر اصلی ')
                                 ->imagePreviewHeight(100)  ,
-                            TinyEditor::make('content')
-                                ->showMenuBar()
-                                ->height(400 )
-                                ->label('محتوا') ,
+
                             Forms\Components\Textarea::make('summary')
                                 ->label('خلاصه')
                         ]),
