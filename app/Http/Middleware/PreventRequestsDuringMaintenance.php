@@ -12,7 +12,9 @@ class PreventRequestsDuringMaintenance extends Middleware
      * @var array<int, string>
      */
     protected $except = [
+        'https://taraznir.com/admin' ,
         'https://taraznir.com/admin/*' ,
         'https://taraznir.com/livewire/*' ,
+        'https://taraznir.com/filament/*' ,
     ];
 }
