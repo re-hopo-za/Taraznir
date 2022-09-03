@@ -13,9 +13,7 @@
 
     <!-- Font Awesome Icon -->
     <link type="text/css" rel="stylesheet" href="/css/font-awesome.min.css" />
-
-
-    <link type="text/css" rel="stylesheet" href="/css/error-pages.css" />
+    <link type="text/css" rel="stylesheet" href="/css/error-pages-n.css" />
 
 </head>
 
