@@ -56,7 +56,6 @@ class Blog extends Model implements HasMedia
         return $this->morphMany('App\Models\Comment', 'commentable');
     }
 
-
     public function categories(): MorphToMany
     {
         return $this->morphToMany('App\Models\Category', 'categorizable' );

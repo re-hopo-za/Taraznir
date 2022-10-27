@@ -4,7 +4,7 @@
             <div class="col-md-12">
                 <div class="themesflat-spacer clearfix" data-desktop="60" data-mobile="60" data-smobile="60"></div>
                 <div class="themesflat-headings style-1 text-center clearfix">
-                    <h2 class="heading">استاندارد‌های روز </h2>
+                    <h2 class="heading">طراحی استاندارد:</h2>
                     <div class="sep has-icon width-125 clearfix">
                         <div class="sep-icon">
                             <span class="sep-icon-before sep-center sep-solid"></span>
@@ -12,7 +12,7 @@
                             <span class="sep-icon-after sep-center sep-solid"></span>
                         </div>
                     </div>
-                    <p class="sub-heading">خدمات ساختمانی طیف کاملی از خدمات ساخت و ساز را از طراحی اولیه تا اتمام پروژه ارائه می دهد.</p>
+                    <p class="sub-heading">تیم طراحی تارازنیر همواره پایبند به استانداردهای بین المللی بوده وبا حضور در کمیته های ملی و برگزاری سمینارهای علمی در جهت به روز کردن دستورالعملهای ملی کوشیده است.</p>
                 </div>
                 <div class="themesflat-spacer clearfix" data-desktop="39" data-mobile="35" data-smobile="35"></div>
                 <div class="themesflat-carousel-box data-effect clearfix" data-gap="30" data-column="3" data-column2="2" data-column3="1" data-auto="false">

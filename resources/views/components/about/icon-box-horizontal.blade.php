@@ -4,7 +4,7 @@
             <div class="col-md-12">
                 <div class="themesflat-spacer clearfix" data-desktop="60" data-mobile="60" data-smobile="60"></div>
                 <div class="themesflat-headings style-1 text-center clearfix">
-                    <h2 class="heading">بهترین انتخاب شما </h2>
+                    <h2 class="heading">انچه ما انجام میدهیم </h2>
                     <div class="sep has-icon width-125 clearfix">
                         <div class="sep-icon">
                             <span class="sep-icon-before sep-center sep-solid"></span>
@@ -12,7 +12,7 @@
                             <span class="sep-icon-after sep-center sep-solid"></span>
                         </div>
                     </div>
-                    <p class="sub-heading">بیش از 500 پروژه تکمیل شده در اتورا - با بیش از 25 سال تجربه ترکیبی، دانش لازم برای خدمت به شما را داریم.</p>
+                    <p class="sub-heading">علوم مهندسی و دانش روز را در سه زمینه: مشاوره و طراحی، اجرا، تولید به کار میبریم.</p>
                 </div>
                 <div class="themesflat-spacer clearfix" data-desktop="42" data-mobile="35" data-smobile="35"></div>
             </div>
@@ -26,7 +26,7 @@
                             <i class="autora-icon-quality"></i>
                         </div>
                         <div class="text-wrap">
-                            <h5 class="heading"><a href="#">بهترین کیفیت</a></h5>
+                            <h5 class="heading"><a href="#">تیم حرفه ای </a></h5>
                             <div class="sep clearfix"></div>
                             <p class="sub-heading">خدمات ساختمانی اتورا متعهد به رعایت بالاترین استانداردهای کیفیت بدون به خطر انداختن فرهنگ ایمنی ما است.</p>
                         </div>
@@ -41,7 +41,7 @@
                             <i class="autora-icon-time"></i>
                         </div>
                         <div class="text-wrap">
-                            <h5 class="heading"><a href="#">سر موعد</a></h5>
+                            <h5 class="heading"><a href="#">منابع علمی روز</a></h5>
                             <div class="sep clearfix"></div>
                             <p class="sub-heading">در شرکت ما به زمان و برنامه مشتری احترام می گذاریم و همیشه پروژه ها را به موقع تکمیل می کنیم.</p>
                         </div>
@@ -56,7 +56,7 @@
                             <i class="autora-icon-author"></i>
                         </div>
                         <div class="text-wrap">
-                            <h5 class="heading"><a href="#">با تجربه</a></h5>
+                            <h5 class="heading"><a href="#">ابزار مدرن</a></h5>
                             <div class="sep clearfix"></div>
                             <p class="sub-heading">همانطور که گفته می شود تمرین کامل می شود. با سال ها تجربه ما می توانید روی ما شرط بندی کنید تا کار را دقیقاً مطابق با مشخصات شما انجام دهیم.</p>
                         </div>

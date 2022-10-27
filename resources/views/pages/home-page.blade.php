@@ -23,7 +23,6 @@
                     <livewire:components.product.product-section :products="$products"/>
                     <livewire:components.contact.f-a-qs/>
                     <livewire:components.about.partner :brands="$brands" />
-
                 </div>
             </div>
         </div>
