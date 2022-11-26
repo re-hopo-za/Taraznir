@@ -12,7 +12,11 @@
                             <li>
                                 <div class="inner">
                                     <span class="fa fa-map-marker"></span>
-                                    <span class="text"> مابین لبافی نژاد و جمهوری پلاک طبقه سوم-واحد 9 <span class="sl">خیابان فلسطین جنوبی , تهران</span></span>
+                                    <span class="text">
+                                        تهران خیابان فلسطین جنوبی, مابین لبافی نژاد و جمهوری پلاک 106 طبقه سوم-واحد 9
+                                    </span>
+
+
                                 </div>
                             </li>
                             <li>

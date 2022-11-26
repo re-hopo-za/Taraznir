@@ -40,10 +40,10 @@ Route::get('/' , HomePage::class )
     ->name('/');
 
 Route::get('/contact' , ContactPage::class )
-    ->name('contact');
+    ->name('Contact');
 
 Route::get('/about' , AboutPage::class )
-    ->name('about');
+    ->name('About');
 
 
 Route::group(['prefix' => '/service'] , function(){

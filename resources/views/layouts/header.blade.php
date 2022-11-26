@@ -26,14 +26,11 @@
             </div>
 
         @else
-            <div class="registration">
+            <div class="registration" style="min-width: 100px;padding: 0 4px;font-size: 13px;">
                 <a href="/register">ورود / ثبت ‌نام</a>
             </div>
 
         @endif
-
-
-
         <div class="top-bar-content">
             <div class="header-address-con" >
                 <span class="address content">تهران خیابان فلسطین جنوبی</span>
@@ -100,6 +97,7 @@
 
                                                     </li>
                                                 @endforeach
+
                                             </ul>
                                         @endif
 

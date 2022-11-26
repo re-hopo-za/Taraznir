@@ -39,9 +39,7 @@
             </div>
             <div class="col-md-8">
                 <div class="themesflat-spacer clearfix" data-desktop="0" data-mobile="0" data-smobile="35"></div>
-                <div class="themesflat-map style-2"></div>
-            </div>
-        </div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1620.1199112291151!2d51.40134959326518!3d35.695715575952015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e010853e06c4d%3A0xde5b53a6a003bdf4!2sSolaris%20Clothing!5e0!3m2!1sen!2s!4v1669453300593!5m2!1sen!2s" width="1100" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>        </div>
         <div class="row">
             <div class="col-md-12">
                 <div class="themesflat-spacer clearfix" data-desktop="81" data-mobile="60" data-smobile="60"></div>

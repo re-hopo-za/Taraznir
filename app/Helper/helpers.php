@@ -24,7 +24,7 @@ function returnValueIsTrue( $data ,$index ,$value ,$default = '' )
 
 function checkCurrentPage( $page ): string
 {
-    if ( ( request()->route()->getName() == $page ) || ( $page != '/' && str_contains( request()->url ,$page ) ) ){
+    if ( $page == '/'.lcfirst(request()->route()->getName()) || $page == request()->route()->getName() ){
         return 'current-menu-item';
     }
     return '';
