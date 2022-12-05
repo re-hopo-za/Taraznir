@@ -1,0 +1,24 @@
+.header-style-2 #main-nav > ul > li.project-menu > a:after, .header-style-2 #main-nav > ul > li > a:hover:after {
+    opacity: 1;
+    visibility: visible;
+    width: 100%;
+}
+
+
+
+.themesflat-filter{
+    display:flex;
+    justify-content:center;
+    direction:rtl
+}
+.themesflat-filter li{
+    padding:0 5px;
+}
+.project-list .themesflat-project{
+    margin-bottom: 100px;
+    min-height: 600px;
+}
+.project-list .themesflat-project .project-item  img{
+    height: 244px!important;
+    object-fit: cover;
+}

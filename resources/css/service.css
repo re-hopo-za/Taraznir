@@ -1,0 +1,57 @@
+.header-style-2 #main-nav > ul > li.service-menu > a:after, .header-style-2 #main-nav > ul > li > a:hover:after {
+    opacity: 1;
+    visibility: visible;
+    width: 100%;
+}
+.service-items{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    width:80%;
+    margin:0 auto;
+
+}
+.service-items .item{
+    width:30%;
+    margin-top:50px;
+    cursor:pointer;
+    background-color:#f7f7f7;
+    padding:20px;
+    transition:all 0.3s ease-in;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.service-items .item img{
+    width:100%;
+}
+.service-items .item:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    border-radius:5px
+}
+.service-items .item h5{
+    color:#222;
+    font-size:16px;
+    padding-top:15px;
+}
+.service-items .item p{
+    color:#777;
+}
+.service-items .item .elm-readmore a{
+    color:#ffc30c;
+    font-size:14px;
+}
+.service-items .item .elm-readmore a:hover{
+    margin-left:5px
+}
+
+
+@media (max-width: 992px) {
+    .service-items .item{
+        width:45%;
+    }
+}
+
+@media (max-width: 768px) {
+    .service-items .item{
+        width:100%;
+    }
+}
