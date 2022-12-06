@@ -16,7 +16,7 @@
         <div id="site-content" class="site-content clearfix">
             <div id="inner-content" class="inner-content-wrap">
                 <div class="page-content">
-                    <div class="row">
+                    <div class="row" style="margin-top: 60px;gap:15px;">
                         @if( !empty( $images ) && $images->count() > 0 )
                             @foreach( $images as $image )
                                 @php $meta = $image->meta()->pluck('value' ,'key')->toArray(); @endphp
