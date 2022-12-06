@@ -15,7 +15,7 @@
                     <p class="sub-heading" dir="rtl">تیم طراحی تارازنیر همواره پایبند به استانداردهای بین المللی بوده وبا حضور در کمیته های ملی و برگزاری سمینارهای علمی در جهت به روز کردن دستورالعملهای ملی کوشیده است.</p>
                 </div>
                 <div class="themesflat-spacer clearfix" data-desktop="39" data-mobile="35" data-smobile="35"></div>
-                <div class="themesflat-carousel-box data-effect clearfix" data-gap="30" data-column="3" data-column2="2" data-column3="1" data-auto="false">
+                <div class="themesflat-carousel-box data-effect clearfix" data-gap="30" data-column="4" data-column2="2" data-column3="1" data-auto="false">
                     <div class="owl-carousel owl-theme">
                         @if( !empty( $standards ) && $standards->count() > 0 )
                             @foreach( $standards as $standard )
@@ -27,8 +27,8 @@
                                                 <div class="overlay-effect bg-color-accent"></div>
                                             </div>
                                             <div class="text-wrap">
-                                                <h5 class="heading"><a href="standard/{{$standard->slug}}" style="display: block;width: 284px!important;min-width: 284px;padding: 12px;line-height: 1.8;text-align: right;">{{$standard->title}}</a></h5>
-                                                <span class="icon-wrap">
+                                                <h5 class="heading"><a href="standard/{{$standard->slug}}" style="display: block;padding: 12px;line-height: 1.8;">{{$standard->title}}</a></h5>
+                                                <span class="icon-wrap" style="display: flex;justify-content: center;align-items: center;font-size: 30px;" >
                                                     <i class="fa fa-angle-left"></i>
                                                 </span>
                                             </div>

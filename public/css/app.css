@@ -9555,7 +9555,7 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
 
 /* Style 1 */
 .themesflat-image-box.style-1 .text-wrap {  background-color: #f5f5f7; }
-.themesflat-image-box.style-1 .heading { font-size: 16px; font-weight: 500; margin: 0px; line-height: 65px;  transform: translateX(21px);  }
+.themesflat-image-box.style-1 .heading { font-size: 16px; font-weight: 500; margin: 0px; line-height: 65px;  }
 
 /* Style 2 */
 .themesflat-image-box.style-2 .text-wrap { padding: 28px 8px 28px 19px }
