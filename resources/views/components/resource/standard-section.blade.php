@@ -27,7 +27,7 @@
                                                 <div class="overlay-effect bg-color-accent"></div>
                                             </div>
                                             <div class="text-wrap">
-                                                <h5 class="heading"><a href="service/{{$standard->slug}}" style="display: block;width: 284px!important;min-width: 284px;padding: 12px;line-height: 1.8;text-align: right;">{{$standard->title}}</a></h5>
+                                                <h5 class="heading"><a href="standard/{{$standard->slug}}" style="display: block;width: 284px!important;min-width: 284px;padding: 12px;line-height: 1.8;text-align: right;">{{$standard->title}}</a></h5>
                                                 <span class="icon-wrap">
                                                     <i class="fa fa-angle-left"></i>
                                                 </span>
