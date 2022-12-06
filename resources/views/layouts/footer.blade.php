@@ -1,8 +1,8 @@
-<footer id="footer" class="clearfix" style="background: url('/images/page/bg-footer-1.jpg');">
+<footer id="footer" class="clearfix" style="background: url('/images/page/bg-footer.jpg');">
     <div id="footer-widgets" class="container">
         <div class="themesflat-row gutter-30">
             <div class="col span_1_of_3" dir="rtl">
-                <div class="widget widget_text" style="background: url('/images/page/bg-contact-1.png') no-repeat bottom right; ">
+                <div class="widget widget_text" style="background: url('/images/page/bg-contact.png') no-repeat bottom right; ">
                     <div class="textwidget">
                         <p style="display: flex;background: #1d1d1d;justify-content: center;padding-top: 2px;align-items: center;min-height: 40px;border-left: 2px solid #ffc30c;">
                             <img src="/images/logo-white@2x.png" alt="Image" width="190" height="36">
