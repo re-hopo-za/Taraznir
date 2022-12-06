@@ -5,7 +5,7 @@
             <div title="Rated 3 out of 5" class="float-left">
                 <div class="list-star">
                     @for( $i = 0; $i < 5; $i++)
-                        @if( $i < $meta['rating'] )
+                        @if( $i < indexChecker( $meta ,'rating' ,0 ) )
                             <i class="ion-star"></i>
                         @else
                             <i class="ion-ios-star-outline"></i>
