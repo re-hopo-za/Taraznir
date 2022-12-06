@@ -22,7 +22,7 @@
                                     <div class="project-item">
                                         <div class="inner">
                                             <div class="thumb data-effect-item has-effect-icon w40 offset-v-43 offset-h-46">
-                                                <img src="{{$project->images('thumbnail')}}" alt="{{$project->title}}">
+                                                <img src="{{$project->images('thumbnail')}}" alt="{{$project->title}}" style="min-width: 400px;max-width: 400px;height: 300px;object-fit: cover;">
                                                 <div class="text-wrap text-center">
                                                     <h5 class="heading"><a href="/project/{{$project->slug}}">{{$project->title}}</a></h5>
                                                     <div class="elm-meta">
