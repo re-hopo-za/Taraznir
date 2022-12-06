@@ -53,7 +53,7 @@
                 </div>
                 <div class="themesflat-spacer clearfix" data-desktop="75" data-mobile="60" data-smobile="60"></div>
             </div>
-            <div class="col-md-6 style-1" style="background-image:url({{$welcome}})"> </div>
+            <div class="col-md-6 style-1" style="background-image:url({{$welcome}});background-size: cover;"> </div>
         </div>
     </div>
 </div>
