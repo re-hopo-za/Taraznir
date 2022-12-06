@@ -26,9 +26,9 @@
                                                 <img src="{{$standard->images('thumbnail')}}" alt="Image">
                                                 <div class="overlay-effect bg-color-accent"></div>
                                             </div>
-                                            <div class="text-wrap">
-                                                <h5 class="heading"><a href="standard/{{$standard->slug}}" style="display: block;padding: 12px;line-height: 1.8;">{{$standard->title}}</a></h5>
-                                                <span class="icon-wrap" style="display: flex;justify-content: center;align-items: center;font-size: 30px;" >
+                                            <div class="text-wrap" style="display: flex">
+                                                <h5 class="heading" style="width:80%;"><a href="standard/{{$standard->slug}}" style="display: block;padding: 12px;line-height: 1.8;">{{$standard->title}}</a></h5>
+                                                <span class="icon-wrap" style="width:20%;display: flex;justify-content: center;align-items: center;font-size: 30px;" >
                                                     <i class="fa fa-angle-left"></i>
                                                 </span>
                                             </div>
