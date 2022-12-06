@@ -35,7 +35,7 @@ class BlogSingle extends Component
         $this->related = Cache::tags(['blog'])->rememberForever( 'blog_related_'.$slug ,function () use($categories){
             return Blog::whereHas('categories', function ($q) use ($categories) {
                 $q->whereIn('categories.id', $categories );
-            })->where('id', '<>', $this->blog->id )->take(7)->get();
+            })->where('id', '<>', $this->blog->id )->take(3)->get();
         });
 
         if ( !$this->related->count() ) {

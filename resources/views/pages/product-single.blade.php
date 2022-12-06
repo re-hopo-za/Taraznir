@@ -35,7 +35,7 @@
             <div class="themesflat-spacer clearfix" data-desktop="80" data-mobile="0" data-smobile="0" style="height:80px"></div>
             <div id="inner-sidebar" class="inner-content-wrap">
                 <livewire:components.attachment :post="$product" />
-                <livewire:components.categories :categories="$categories" :route="'CategoryProduct'" />
+                <livewire:components.categories :categories="$categories" :allRoute="'product'" :route="'CategoryProduct'" :specificCat="''" />
                 <livewire:components.recent-posts :posts="$recent" :title="'محصولات اخیر'"/>
             </div>
             <div class="themesflat-spacer clearfix" data-desktop="0" data-mobile="60" data-smobile="60" style="height:0px"></div>

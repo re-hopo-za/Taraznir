@@ -15,7 +15,7 @@ class StandardSingle extends Component
 
     public function mount( $slug )
     {
-        $this->standard = Cache::tags(['standard'])->rememberForever( 'standard_'.$slug ,function ($slug){
+        $this->standard = Cache::tags(['standard'])->rememberForever( 'standard_'.$slug ,function () use($slug){
             return Standard::where( 'slug' ,'=' ,$slug )->with(['meta'])->first();
         });
         if( !isset( $this->standard->id ) ) {
@@ -34,7 +34,7 @@ class StandardSingle extends Component
         });
 
         if ( !$this->related->count() ) {
-            $this->related = Cache::tags(['standard'])->rememberForever( 'standard_not_related_'.$slug ,function ($slug){
+            $this->related = Cache::tags(['standard'])->rememberForever( 'standard_not_related_'.$slug ,function(){
                 return Standard::where('id', '<>', $this->standard->id )->take(3)->get();
             });
         }

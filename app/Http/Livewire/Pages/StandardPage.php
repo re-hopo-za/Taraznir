@@ -30,7 +30,7 @@ class StandardPage extends Component
             });
         }else {
             $this->standards = Cache::tags(['standard'])->rememberForever( 'standards' ,function (){
-                return Standard::with(['categories'])->all();
+                return Standard::with(['categories'])->get();
             });
         }
     }

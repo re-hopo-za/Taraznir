@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
@@ -15,7 +16,7 @@ use Spatie\MediaLibrary\HasMedia;
 
 class Standard extends Model implements HasMedia
 {
-    use HasFactory ,SoftDeletes ,InteractsWithMedia ;
+    use HasFactory ,SoftDeletes ,InteractsWithMedia;
 
     protected $fillable = [
         'title',
@@ -27,6 +28,14 @@ class Standard extends Model implements HasMedia
         'status',
         'chosen',
     ];
+
+    protected function slug():Attribute
+    {
+        return Attribute::make(
+            get: fn( $value ) =>  $value ,
+            set: fn( $value ) => slugRectifier( $value )
+        );
+    }
 
 
     public function meta(): MorphMany
@@ -70,11 +79,13 @@ class Standard extends Model implements HasMedia
 
 
 
-    public function images( $conversion = 'cover' ): string
+    public function images( $conversion = 'cover' ):mixed
     {
-        $images = $this->getMedia( );
-        if ( isset( $images[0] ) && !empty( $images[0]->getUrl( $conversion ) ) ){
-            return $images[0]->getUrl( $conversion );
+        $images = $this->getMedia();
+        if ( $conversion == 'thumbnail'){
+            if ( isset( $images[0] ) && !empty( $images[0]->getUrl( $conversion ) ) ){
+                return $images[0]->getUrl( $conversion );
+            }
         }
         return asset( 'images/placeholders.png' );
     }

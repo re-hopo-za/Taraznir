@@ -14,8 +14,8 @@
 @section('sidebar','sidebar-right')
 
 
-<div id="main-content" class="site-main clearfix pt-5">
-    <div id="content-wrap" class="container">
+<div id="main-content" class="site-main clearfix pt-5"style="padding-bottom: 100px">
+    <div id="content-wrap" class="container" >
         <div id="site-content" class="site-content clearfix">
             <div class="detail-gallery">
                 <div class="themesflat-spacer clearfix" data-desktop="21" data-mobile="21" data-smobile="21"></div>
@@ -31,7 +31,6 @@
                         {{$standard->summary}}
                     </div>
                 </div>
-
                 <div class="themesflat-spacer clearfix" data-desktop="60" data-mobile="60" data-smobile="60"></div>
                 <livewire:components.related-posts :posts="$related" :title="'استاندارد‌های مرتبط'"/>
             </div>

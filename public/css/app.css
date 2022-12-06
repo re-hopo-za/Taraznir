@@ -10657,7 +10657,7 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
 #inner-sidebar { position: relative; z-index: 1;display:flex;flex-direction:column; }
 
 /* Sidebar Right */
-.sidebar-right #site-content { float: left; width: 74.9%; }
+.sidebar-right #site-content { float: left; width: 60%; }
 .sidebar-right.width-73 #site-content {width: 73.1%; }
 .sidebar-right.width-71 #site-content {width: 71.8%; }
 .sidebar-right #sidebar { float: right; width: 20.1%; }
@@ -10925,7 +10925,8 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
 
 /* Blog Post
 -------------------------------------------------------------- */
-.hentry { margin-top: 31px; padding-top: 40px; border-top: 1px solid #ebecf2;  }
+.hentry {  border-top: 1px solid #ebecf2;  }
+.blog-container{ width:80%;margin: 0 auto;}
 .hentry:first-child { margin: 0px; border: none; padding: 0px; }
 .hentry .post-content-wrap { padding: 35px 0px 0px 0px; }
 
@@ -11409,11 +11410,10 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
     .sidebar-left #site-content,
     .sidebar-right.width-71 #site-content,
     .sidebar-right.width-73 #site-content { float: none; width: 100%; }
-
+    .grid-item-main{ display: flex;  flex-direction: column-reverse; }
     .site-header-absolute #site-header-wrap { position: relative; }
     .header-style-3 #site-header { background-color: #3e3e3e; }
     .topbar-style-3 #top-bar { background-color:#262626; }
-
     .themesflat-row .span_1_of_3 { width: 50%; }
     .themesflat-row.gutter-30 > [class*="col"]:nth-child(3) { clear: both; }
 
@@ -11495,8 +11495,43 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
 
     .comment-list.style-2 article .gravatar { margin: 0px; }
 
+    .blog-container{width:100%}
 }
 
+
+
+
+
+.grid-items{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between
+}
+.grid-items .grid-item{
+    min-width:250px;
+    margin:20px 0;
+    box-shadow:0 0 5px #999;
+}
+.grid-items .grid-item img{
+    width:100%;
+    max-width:330px;
+    min-width:330px;
+    object-fit:cover;
+    min-height:230px;;
+    max-height:230px;;
+}
+.grid-items .grid-item h5{
+    padding:15px;
+}
+
+.active-category {
+    background-color: #ffc30c!important;
+    color: #fff!important;
+}
+.active-category:before{
+    background-color: #ffc30c!important;
+    border-color: #ffc30c!important;
+}
 
 /*!
  * animsition v4.0.1

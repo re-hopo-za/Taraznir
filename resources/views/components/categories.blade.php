@@ -4,8 +4,9 @@
     </div>
     <div class="tags-list">
         @if( !empty( $categories ) )
+            <a class="{{empty( $specificCat ) ? 'active-category' : '' }}" href="/{{ $allRoute }}"> همه دسته‌ بندی‌ها </a>
             @foreach( $categories as $category )
-                <a href="{{ route( $route ,$category->slug ) }}">{{ $category->title }}</a>
+                <a class="@if($category->slug==$specificCat) active-category @endif()" href="{{ route( $route ,$category->slug ) }}">{{ $category->title }}</a>
             @endforeach
         @endif
     </div>

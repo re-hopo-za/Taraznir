@@ -16,12 +16,12 @@ class CatalogSingle extends Component
 
     public function mount( $slug )
     {
-        $this->catalog = Cache::tags(['catalog'])->rememberForever( 'catalog_'.$slug ,function ($slug){
-            return Catalog::where( 'slug' ,'=' ,$slug )
+        $this->catalog = Cache::tags(['catalog'])->rememberForever( 'catalog_'.$slug ,function() use($slug){
+            return Catalog::where( 'slug' ,$slug )
                 ->with(['meta','categories' ])
                 ->first();
         });
-        if( !isset( $this->blog->id ) ) {
+        if( !isset( $this->catalog->id ) ) {
             return abort(404);
         }
         $this->categories  = Cache::tags(['cats'])->rememberForever( 'catalog_categories' ,function (){
@@ -39,7 +39,7 @@ class CatalogSingle extends Component
         });
 
         if ( !$this->related->count() ) {
-            $this->related = Cache::tags(['catalog'])->rememberForever( 'blog_not_related_'.$slug ,function ($slug){
+            $this->related = Cache::tags(['catalog'])->rememberForever( 'blog_not_related_'.$slug ,function (){
                 return Catalog::where('id', '<>', $this->catalog->id )
                     ->take(3)
                     ->get();

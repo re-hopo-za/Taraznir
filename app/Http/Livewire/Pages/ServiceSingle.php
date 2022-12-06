@@ -16,7 +16,7 @@ class ServiceSingle extends Component
 
     public function mount( $slug )
     {
-        $this->service = Cache::tags(['service'])->rememberForever( 'service_'.$slug ,function () use ($slug){
+        $this->service = Cache::tags(['service'])->rememberForever( 'service_'.$slug ,function () use($slug){
             return Service::where( 'slug' ,$slug )->with(['meta'])->first();
         });
         if( !isset( $this->service->id ) ) {

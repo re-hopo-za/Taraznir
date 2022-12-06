@@ -5,7 +5,7 @@
             <div class="inner">
                 <span class="socials">
                     <a href="#"><i class="fa fa-facebook"></i></a>
-                    <span class="text">43217 likes</span>
+                    <span class="text">43217 <br> likes</span>
                 </span>
             </div>
         </div>
@@ -13,7 +13,7 @@
             <div class="inner">
                 <span class="socials">
                     <a href="#"><i class="fa fa-twitter"></i></a>
-                    <span class="text">3752 flowers</span>
+                    <span class="text">3752  <br> flowers</span>
                 </span>
             </div>
         </div>
@@ -21,7 +21,7 @@
             <div class="inner">
                 <span class="socials">
                     <a href="#"><i class="fa fa-google"></i></a>
-                    <span class="text">432 contacter</span>
+                    <span class="text">432  <br> contacter</span>
                 </span>
             </div>
         </div>

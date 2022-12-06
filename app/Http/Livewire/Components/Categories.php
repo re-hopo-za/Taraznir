@@ -8,18 +8,24 @@ class Categories extends Component
 {
 
     public ?object $categories;
+    public string $allRoute;
     public string $route;
-    public function mount( $categories ,$route )
+    public string $specificCat;
+    public function mount( $categories ,$allRoute ,$route ,$specificCat )
     {
-        $this->categories = $categories;
-        $this->route      = $route;
+        $this->categories  = $categories;
+        $this->allRoute    = $allRoute;
+        $this->route       = $route;
+        $this->specificCat = $specificCat;
     }
 
     public function render()
     {
         return view('components.categories' ,[
-            'categories' => $this->categories ,
-            'route'      => $this->route
+            'categories'  => $this->categories ,
+            'allRoute'    => $this->allRoute ,
+            'route'       => $this->route ,
+            'specificCat' => $this->specificCat ,
         ]);
     }
 }

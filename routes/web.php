@@ -97,8 +97,6 @@ Route::group(['prefix' => '/standard'] , function(){
         ->name('Standard');
     Route::get('/{slug}' ,StandardSingle::class )
         ->name('SingleStandard');
-    Route::get('/category/{category}' ,StandardPage::class )
-        ->name('CategoryStandard');
 });
 
 
@@ -107,16 +105,12 @@ Route::group(['prefix' => '/catalog'] , function(){
         ->name('Catalog');
     Route::get('/{slug}' ,CatalogSingle::class )
         ->name('SingleCatalog');
-    Route::get('/category/{category}' , CatalogPage::class )
-        ->name('CategoryCatalog');
 });
 
 
 
 Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
+    'auth:sanctum',config('jetstream.auth_session'), 'verified'
 ])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');

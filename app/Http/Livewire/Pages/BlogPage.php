@@ -35,7 +35,7 @@ class BlogPage extends Component
                 return Blog::with(['categories' ,'comments' ,'meta'])
                     ->whereHas('categories' ,function ($query) {
                         $query->where('slug' ,$this->category );
-                    })->get();
+                    })->paginate( 8 );
             });
 
         }else {

@@ -16,7 +16,7 @@ use Spatie\MediaLibrary\HasMedia;
 
 class Blog extends Model implements HasMedia
 {
-    use HasFactory ,SoftDeletes ,InteractsWithMedia ,Search;
+    use HasFactory ,SoftDeletes ,InteractsWithMedia;
 
 
     protected $fillable = [

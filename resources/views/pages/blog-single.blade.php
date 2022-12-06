@@ -23,7 +23,7 @@
                 <livewire:components.search-box :term="''" :model="'Blog'" />
                 <livewire:components.contact.social-widget />
                 <livewire:components.recent-posts :posts="$related" :title="'مقالات مرتبط'" />
-                <livewire:components.categories :categories="$categories" :route="'CategoryBlog'" />
+                <livewire:components.categories :categories="$categories" :allRoute="'blog'" :route="'CategoryBlog'" :specificCat="''" />
             </div>
         </div>
     </div>

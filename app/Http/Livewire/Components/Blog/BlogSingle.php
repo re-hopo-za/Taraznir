@@ -20,8 +20,8 @@ class BlogSingle extends Component
             return Blog::where( 'id' ,'<' ,$this->blog?->id )->orderBy('id', 'desc')->first();
         });
 
-        $this->next = Cache::rememberForever('blog_next_'. $blog?->id  ,function (){
-            return Blog::tags(['blog'])->where( 'id' ,'>' ,$this->blog?->id )->orderBy('id', 'asc')->first();
+        $this->next = Cache::tags(['blog'])->rememberForever('blog_next_'. $blog?->id  ,function (){
+            return Blog::where( 'id' ,'>' ,$this->blog?->id )->orderBy('id', 'asc')->first();
         });
     }
 

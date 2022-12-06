@@ -51,6 +51,10 @@ function getPageTranslatedTitle( $page ): string{
     switch ( strtolower( trim( $page ) ) ){
         case 'home':
             return 'خانه';
+        case 'exhibition':
+            return 'نمایشگاه';
+        case 'search':
+            return 'جستجو';
         case 'product':
             return 'محصولات';
         case 'project':

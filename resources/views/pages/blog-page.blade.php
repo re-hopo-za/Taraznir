@@ -13,18 +13,18 @@
 
 @section('sidebar','sidebar-right')
 
-<div id="main-content" class="site-main clearfix">
+<div id="main-content" class="site-main clearfix blog-container" >
     <div id="content-wrap" class="container blog-page">
+        <div class="themesflat-spacer clearfix" data-desktop="60" data-mobile="20" data-smobile="20" style="height:0"></div>
         <div id="site-content" class="site-content clearfix">
             <div id="inner-content" class="inner-content-wrap blog-page">
-                <div class="themesflat-spacer clearfix" data-desktop="0" data-mobile="60" data-smobile="60"></div>
                 @if( !empty( $blogs ) )
                     @foreach( $blogs as $blog )
                         @php(  $meta = $blog->meta()->pluck('value','key')->toArray() )
                         <article class="hentry data-effect">
                             <div class="post-media has-effect-icon offset-v-25 offset-h-24 data-effect-item clerafix">
                                 <a href="/blog/{{ $blog->slug }}">
-                                    <img src="{{ $blog->images( 'thumbnail') }}" width="100%" alt="{{ $blog->title }}">
+                                    <img src="{{ $blog->images( 'thumbnail') }}" width="100%" alt="{{ $blog->title }}" style="max-height: 399px">
                                 </a>
                                 <div class="post-calendar">
                                     <span class="inner">
@@ -85,12 +85,11 @@
             </div>
         </div>
         <div id="sidebar">
-            <div class="themesflat-spacer clearfix" data-desktop="0" data-mobile="60" data-smobile="60"></div>
             <div id="inner-sidebar" class="inner-content-wrap">
                 <livewire:components.search-box :term="''" :model="'Blog'" />
                 <livewire:components.contact.social-widget />
                 <livewire:components.recent-posts :posts="$recent" :title="'مقاله‌های اخیر'"/>
-                <livewire:components.categories :categories="$categories" :route="'CategoryBlog'" />
+                <livewire:components.categories :categories="$categories" :allRoute="'blog'" :route="'CategoryBlog'" :specificCat="''" />
             </div>
         </div>
     </div>

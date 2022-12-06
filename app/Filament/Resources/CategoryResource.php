@@ -69,6 +69,8 @@ class CategoryResource extends Resource
                 Tables\Columns\TextColumn::make('title')
                     ->label('عنون')
                     ->sortable(),
+                Tables\Columns\TextColumn::make('slug')
+                    ->label('نامک') ,
 
                 Tables\Columns\TextColumn::make('model')
                     ->enum([
