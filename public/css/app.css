@@ -9504,8 +9504,7 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
 -------------------------------------------------------------- */
 .half-background { background-size: cover; background-repeat: no-repeat; background-position: center center; overflow: hidden; }
 
-/* Style */
-.half-background.style-1 { background-image: url('/images/gallery/gallery-1-960x560.jpg'); }
+
 
 
 @media only screen and (max-width: 991px) {
