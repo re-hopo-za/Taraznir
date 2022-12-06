@@ -16,8 +16,9 @@ return new class extends Migration
         Schema::create('options', function (Blueprint $table) {
             $table->id();
             $table->text('key');
-            $table->longText('value');
-            $table->string('file_name')->nullable();
+            $table->text('title');
+            $table->longText('value')->nullable();
+            $table->boolean('type')->default(1);
         });
     }
 

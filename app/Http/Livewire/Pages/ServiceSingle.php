@@ -16,14 +16,14 @@ class ServiceSingle extends Component
 
     public function mount( $slug )
     {
-        $this->service = Cache::rememberForever( 'service_'.$slug ,function () use ($slug){
-            return Service::where( 'slug'  ,$slug )->with(['meta'])->first();
+        $this->service = Cache::tags(['service'])->rememberForever( 'service_'.$slug ,function () use ($slug){
+            return Service::where( 'slug' ,$slug )->with(['meta'])->first();
         });
         if( !isset( $this->service->id ) ) {
             return abort(404);
         }
 
-        $this->categories  = Cache::rememberForever( 'service_categories' ,function (){
+        $this->categories = Cache::tags(['cats'])->rememberForever( 'service_categories' ,function (){
             return Category::where( 'model' ,'service' )->get();
         });
     }

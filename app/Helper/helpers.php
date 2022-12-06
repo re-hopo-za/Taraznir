@@ -131,10 +131,23 @@ function randomColor() :string
 
 function sliderPosition( $position ) :string
 {
-    return  match ( $position ) {
-        'right'  => "['right','right','right','center']",
-        'center' => "['center','center','center','center']",
-        'left'   => "['left','left','left','center']",
-    };
+    if ( !empty( $position ) ){
+        return match ( $position ) {
+            'right'  => "['right','right','right','center']",
+            'center' => "['center','center','center','center']",
+            'left'   => "['left','left','left','center']",
+        };
+    }
+    return '';
 }
+
+
+function clearingHtml( $content ,$type ) :string
+{
+    if ( $type == 0 ){
+        return html_entity_decode( strip_tags( $content ) );
+    }
+    return $content;
+}
+
 

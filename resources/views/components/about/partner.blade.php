@@ -7,11 +7,12 @@
                     <div class="owl-carousel owl-theme">
                         @if( !empty( $brands ) && $brands->count() > 0 )
                             @foreach( $brands as $brand )
+                                @php $meta = $brand->meta()->pluck('value' ,'key')->toArray(); @endphp
                                 <div class="themesflat-partner style-1 align-center clearfix">
                                     <div class="partner-item">
                                         <div class="inner">
                                             <div class="thumb">
-                                                <img src="/storage/{{$brand->image}}" alt="{{$brand->title}}" class="partner-default">
+                                                <img src="{{$brand->attachment('attachments')}}" alt="{{indexChecker($meta,'title')}}" class="partner-default">
                                             </div>
                                         </div>
                                     </div>

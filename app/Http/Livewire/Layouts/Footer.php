@@ -11,14 +11,14 @@ class Footer extends Component
 {
     public function render()
     {
-        $gallery = Cache::rememberForever( 'footer_gallery' ,function (){
+        $gallery = Cache::tags(['gallery'])->rememberForever( 'footer_gallery' ,function (){
             return Category::with(['blogs'])->where('slug' ,'footer_gallery' )
                 ->take(3)->get();
         });
-        $categories = Cache::rememberForever( 'footer_service' ,function (){
+        $categories = Cache::tags(['cats'])->rememberForever( 'footer_service' ,function (){
             return Category::where('model' ,'service')->take(8)->get();
         });
-        $recentPosts = Cache::rememberForever( 'footer_recent_blog' ,function (){
+        $recentPosts = Cache::tags(['blog'])->rememberForever( 'footer_recent_blog' ,function (){
             return  Blog::take(2)->orderBy('chosen' ,'asc')->get();
         });
 

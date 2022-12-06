@@ -7,22 +7,19 @@ use App\Http\Livewire\Pages\BlogSingle;
 use App\Http\Livewire\Pages\CatalogPage;
 use App\Http\Livewire\Pages\CatalogSingle;
 use App\Http\Livewire\Pages\ContactPage;
+use App\Http\Livewire\Pages\ExhibitionPage;
 use App\Http\Livewire\Pages\HomePage;
-use App\Http\Livewire\Pages\ProductCategory;
 use App\Http\Livewire\Pages\ProductPage;
 use App\Http\Livewire\Pages\ProductSingle;
 use App\Http\Livewire\Pages\ProjectPage;
 use App\Http\Livewire\Pages\ProjectSingle;
-use App\Http\Livewire\Pages\ResourceCategory;
 use App\Http\Livewire\Pages\ResourcePage;
-use App\Http\Livewire\Pages\ResourceSingle;
+use App\Http\Livewire\Pages\SearchPage;
 use App\Http\Livewire\Pages\ServicePage;
 use App\Http\Livewire\Pages\ServiceSingle;
 use App\Http\Livewire\Pages\StandardPage;
 use App\Http\Livewire\Pages\StandardSingle;
-use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\URL;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,6 +42,11 @@ Route::get('/contact' , ContactPage::class )
 Route::get('/about' , AboutPage::class )
     ->name('About');
 
+Route::get('/search' , SearchPage::class )
+    ->name('search');
+
+Route::get('/exhibition' , ExhibitionPage::class )
+    ->name('exhibition');
 
 Route::group(['prefix' => '/service'] , function(){
     Route::get('/' , ServicePage::class )

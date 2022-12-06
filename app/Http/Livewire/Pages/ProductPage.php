@@ -19,19 +19,19 @@ class ProductPage extends Component
 
     public function mount( $category = '' )
     {
-        $this->categories  = Cache::rememberForever( 'products_categories' ,function (){
+        $this->categories  = Cache::tags(['cats'])->rememberForever( 'products_categories' ,function (){
             return Category::where( 'model' ,'product' )->get();
         });
         $this->category   = $category;
 
         if( !empty( $category ) ){
-            $this->products = Cache::rememberForever( 'products_specific_category' ,function (){
+            $this->products = Cache::tags(['product'])->rememberForever( 'products_specific_category' ,function (){
                 return Product::with(['categories'])->whereHas('categories' ,function ($query){
                     $query->where('slug' ,$this->category);
                 })->get();
             });
         }else {
-            $this->products = Cache::rememberForever( 'products' ,function (){
+            $this->products = Cache::tags(['product'])->rememberForever( 'products' ,function (){
                 return Product::with(['categories','meta'])->get();
             });
         }

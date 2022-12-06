@@ -20,26 +20,26 @@ class BlogSingle extends Component
 
     public function mount( $slug )
     {
-        $this->blog = Cache::rememberForever( 'blog_'.$slug ,function() use($slug){
+        $this->blog = Cache::tags(['blog'])->rememberForever( 'blog_'.$slug ,function() use($slug){
             return Blog::where( 'slug' ,'=' ,$slug )->with(['meta','categories' ])->first();
         });
         if( !isset( $this->blog->id ) ) {
             return abort(404);
         }
 
-        $this->categories  = Cache::rememberForever( 'blog_categories' ,function (){
+        $this->categories  = Cache::tags(['cats'])->rememberForever( 'blog_categories' ,function (){
             return Category::where( 'model' ,'blog' )->get();
         });
 
         $categories  = $this->blog->categories->modelKeys();
-        $this->related = Cache::rememberForever( 'blog_related_'.$slug ,function () use($categories){
+        $this->related = Cache::tags(['blog'])->rememberForever( 'blog_related_'.$slug ,function () use($categories){
             return Blog::whereHas('categories', function ($q) use ($categories) {
                 $q->whereIn('categories.id', $categories );
             })->where('id', '<>', $this->blog->id )->take(7)->get();
         });
 
         if ( !$this->related->count() ) {
-            $this->related = Cache::rememberForever( 'blog_not_related_'.$slug ,function (){
+            $this->related = Cache::tags(['blog'])->rememberForever( 'blog_not_related_'.$slug ,function (){
                 return Blog::where('id', '<>', $this->blog->id )->take(3)->get();
             });
         }

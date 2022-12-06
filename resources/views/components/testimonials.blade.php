@@ -8,6 +8,7 @@
 
                         @if( !empty( $testimonials ) && $testimonials->isNotEmpty() )
                             @foreach( $testimonials as $testimonial )
+                                @php $meta = $testimonial->meta()->pluck('value' ,'key')->toArray(); @endphp
                                 <div class="themesflat-testimonials style-1 max-width-70 align-center has-width w100 circle border-solid clearfix">
                                     <div class="testimonial-item">
                                         <div class="inner">
@@ -16,10 +17,10 @@
                                             </div>
                                             <blockquote class="text">
                                                 <p>“
-                                                    {{$testimonial->description}}
+                                                    {{$testimonial->value}}
                                                     ”</p>
                                                 <div class="sep has-width w80 accent-bg clearfix"></div>
-                                                <h6 class="name">{{$testimonial->name}}</h6>
+                                                <h6 class="name">{{indexChecker($meta,'name')}}</h6>
                                             </blockquote>
                                         </div>
                                     </div>

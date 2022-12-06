@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
@@ -65,14 +66,23 @@ class User extends Authenticatable  implements FilamentUser, HasAvatar
     ];
 
 
-
     public function canAccessFilament(): bool
     {
-        return $this->email == 're.hopo.za@gmail.com';
+        return $this->hasAnyRole(Role::all()) || $this->meta()->where('key' ,'is_admin' )->count();
+    }
+
+    public function isAdmin(): bool
+    {
+        return $this->meta()->where('key' ,'is_admin' )->count();
     }
 
     public function getFilamentAvatarUrl(): ?string
     {
         return $this->profile_photo_path;
+    }
+
+    public function meta(): MorphMany
+    {
+        return $this->morphMany('App\Models\Meta' , 'metaable');
     }
 }

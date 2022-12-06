@@ -21,7 +21,7 @@ class BlogPage extends Component
     public function mount( $category = '' )
     {
 
-        $this->categories  = Cache::rememberForever( 'blogs_categories' ,function (){
+        $this->categories  = Cache::tags(['blog'])->rememberForever( 'blogs_categories' ,function (){
             return Category::where( 'model' ,'blog' )->get();
         });
         $this->category   = $category;
@@ -31,7 +31,7 @@ class BlogPage extends Component
     public function render()
     {
         if( !empty( $this->category  ) ){
-            $blogs  = Cache::rememberForever( 'blogs_specific_category' ,function (){
+            $blogs  = Cache::tags(['blog'])->rememberForever( 'blogs_specific_category' ,function (){
                 return Blog::with(['categories' ,'comments' ,'meta'])
                     ->whereHas('categories' ,function ($query) {
                         $query->where('slug' ,$this->category );
@@ -39,7 +39,7 @@ class BlogPage extends Component
             });
 
         }else {
-            $blogs  = Cache::rememberForever( 'blogs' ,function (){
+            $blogs  = Cache::tags(['blog'])->rememberForever( 'blogs' ,function (){
                 return Blog::with(['comments' ,'meta'])->paginate( 8 );
             });
         }
