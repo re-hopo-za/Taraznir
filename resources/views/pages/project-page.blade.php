@@ -27,8 +27,8 @@
                                         <img  src="{{ $project->images( 'thumbnail') }}" alt="{{ $project->slug}}">
                                     </div>
                                     <div class="text-wrap">
-                                        <h5 class="heading text-right " style="min-height: 24px;display: block;border-top: 1px solid #eee;" >
-                                            <a style="padding-top: 10px;cursor:pointer;" href="/project/{{$project->slug}}">{{ $project->title}}</a>
+                                        <h5 class="heading text-right " style="min-height: 24px;display: block;border-top: 1px solid #eee;padding-top: 10px;" >
+                                            {{ $project->title}}
                                         </h5>
                                     </div>
                                 </a>

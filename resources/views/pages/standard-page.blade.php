@@ -35,8 +35,8 @@
                                         <img  src="{{ $standard->images( 'thumbnail') }}" alt="{{ $standard->slug}}">
                                     </div>
                                     <div class="text-wrap">
-                                        <h5 class="heading text-right " style="min-height: 24px;display: block;border-top: 1px solid #eee;" >
-                                            <a style="padding-top: 10px;cursor:pointer;" href="/standard/{{$standard->slug}}">{{ $standard->title}}</a>
+                                        <h5 class="heading text-right " style="min-height: 24px;display: block;border-top: 1px solid #eee;padding-top: 10px;" >
+                                            {{ $standard->title}}
                                         </h5>
                                     </div>
                                 </a>

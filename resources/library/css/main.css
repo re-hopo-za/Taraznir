@@ -1277,7 +1277,7 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
 }
 .grid-items .grid-item{
     min-width:250px;
-    margin:20px 0;
+    margin:40px 0;
     box-shadow: rgb(17 12 46 / 10%) 0px 48px 100px 0px;
     border-radius: 7px;
     overflow: hidden;

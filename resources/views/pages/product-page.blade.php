@@ -27,8 +27,8 @@
                                         <img  src="{{ $product->images( 'thumbnail') }}" alt="{{ $product->slug}}">
                                     </div>
                                     <div class="text-wrap">
-                                        <h5 class="heading text-right " style="min-height: 24px;display: block;border-top: 1px solid #eee;" >
-                                            <a style="border-top: 1px solid #eee;;margin-top: 25px;cursor:pointer;font-size: 18px;padding: 15px;" href="/product/{{$product->slug}}">{{ $product->title}}</a>
+                                        <h5 class="heading text-right " style="min-height: 24px;display: block;border-top: 1px solid #eee;padding-top: 10px;" >
+                                            {{ $product->title}}
                                         </h5>
                                     </div>
                                 </a>
