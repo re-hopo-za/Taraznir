@@ -22,13 +22,13 @@
                     @if( !empty( $services ) )
                         @foreach( $services as $service )
                             <div  class="grid-item ">
-                                <a class="inner" href="service/{{$service->slug}}">
+                                <a class="inner" href="/service/{{$service->slug}}">
                                     <div class="thumb data-effect-item has-effect-icon w40 offset-v-19 offset-h-49">
                                         <img  src="{{ $service->images( 'thumbnail') }}" alt="{{ $service->slug}}">
                                     </div>
                                     <div class="text-wrap">
                                         <h5 class="heading text-right " style="min-height: 24px;display: block" >
-                                            <a style="padding-top: 10px;cursor:pointer;" href="service/{{$service->slug}}">{{ $service->title}}</a>
+                                            <a style="padding-top: 10px;cursor:pointer;" href="/service/{{$service->slug}}">{{ $service->title}}</a>
                                         </h5>
                                     </div>
                                 </a>

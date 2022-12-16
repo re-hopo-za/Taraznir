@@ -30,13 +30,13 @@
                     @if( !empty( $standards ) )
                         @foreach( $standards as $standard )
                             <div  class="grid-item ">
-                                <a class="inner" href="standard/{{$standard->slug}}">
+                                <a class="inner" href="/standard/{{$standard->slug}}">
                                     <div class="thumb data-effect-item has-effect-icon w40 offset-v-19 offset-h-49">
                                         <img  src="{{ $standard->images( 'thumbnail') }}" alt="{{ $standard->slug}}">
                                     </div>
                                     <div class="text-wrap">
                                         <h5 class="heading text-right " style="min-height: 24px;display: block" >
-                                            <a style="padding-top: 10px;cursor:pointer;" href="standard/{{$standard->slug}}">{{ $standard->title}}</a>
+                                            <a style="padding-top: 10px;cursor:pointer;" href="/standard/{{$standard->slug}}">{{ $standard->title}}</a>
                                         </h5>
                                     </div>
                                 </a>

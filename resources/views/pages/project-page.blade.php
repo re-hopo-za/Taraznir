@@ -22,13 +22,13 @@
                     @if( !empty( $projects ) )
                         @foreach( $projects as $project )
                             <div  class="grid-item ">
-                                <a class="inner" href="project/{{$project->slug}}">
+                                <a class="inner" href="/project/{{$project->slug}}">
                                     <div class="thumb data-effect-item has-effect-icon w40 offset-v-19 offset-h-49">
                                         <img  src="{{ $project->images( 'thumbnail') }}" alt="{{ $project->slug}}">
                                     </div>
                                     <div class="text-wrap">
                                         <h5 class="heading text-right " style="min-height: 24px;display: block" >
-                                            <a style="padding-top: 10px;cursor:pointer;" href="project/{{$project->slug}}">{{ $project->title}}</a>
+                                            <a style="padding-top: 10px;cursor:pointer;" href="/project/{{$project->slug}}">{{ $project->title}}</a>
                                         </h5>
                                     </div>
                                 </a>

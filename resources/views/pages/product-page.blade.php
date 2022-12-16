@@ -22,13 +22,13 @@
                     @if( !empty( $products ) )
                         @foreach( $products as $product )
                             <div  class="grid-item ">
-                                <a class="inner" href="product/{{$product->slug}}">
+                                <a class="inner" href="/product/{{$product->slug}}">
                                     <div class="thumb data-effect-item has-effect-icon w40 offset-v-19 offset-h-49">
                                         <img  src="{{ $product->images( 'thumbnail') }}" alt="{{ $product->slug}}">
                                     </div>
                                     <div class="text-wrap">
                                         <h5 class="heading text-right " style="min-height: 24px;display: block" >
-                                            <a style="padding-top: 10px;cursor:pointer;" href="product/{{$product->slug}}">{{ $product->title}}</a>
+                                            <a style="border-top: 1px solid #eee;;margin-top: 25px;cursor:pointer;font-size: 18px;padding: 15px;" href="/product/{{$product->slug}}">{{ $product->title}}</a>
                                         </h5>
                                     </div>
                                 </a>

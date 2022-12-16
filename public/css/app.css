@@ -11510,7 +11510,9 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
 .grid-items .grid-item{
     min-width:250px;
     margin:20px 0;
-    box-shadow:0 0 5px #999;
+    box-shadow: rgb(17 12 46 / 15%) 0px 48px 100px 0px;
+    border-radius: 7px;
+    overflow: hidden;
 }
 .grid-items .grid-item img{
     width:100%;
