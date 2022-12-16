@@ -1289,7 +1289,7 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
     width:100%;
     max-width:330px;
     min-width:330px;
-    object-fit:cover;
+    object-fit:contain;
     min-height:230px;;
     max-height:230px;;
 }
