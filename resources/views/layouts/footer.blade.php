@@ -1,4 +1,4 @@
-<footer id="footer" class="clearfix" style="background: url('/images/page/bg-footer.jpg');">
+<footer id="footer" class="clearfix" style="background: url('/storage/bg-footer.jpg')">
     <div id="footer-widgets" class="container">
         <div class="themesflat-row gutter-30">
             <div class="col span_1_of_3" dir="rtl">
