@@ -24,6 +24,7 @@ class BlogPage extends Component
         $this->categories  = Cache::rememberForever( 'blogs_categories' ,function (){
             return Category::where( 'model' ,'blog' )->get();
         });
+        $this->category = $category;
     }
 
 
