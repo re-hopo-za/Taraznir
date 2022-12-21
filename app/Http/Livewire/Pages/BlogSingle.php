@@ -25,7 +25,7 @@ class BlogSingle extends Component
             return abort(404);
         }
 
-        $this->categories  = Cache::tags(['cats'])->rememberForever( 'blog_categories' ,function (){
+        $this->categories  = Cache::rememberForever( 'blog_categories' ,function (){
             return Category::where( 'model' ,'blog' )->get();
         });
 
