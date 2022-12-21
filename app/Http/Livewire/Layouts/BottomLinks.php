@@ -10,7 +10,10 @@ class BottomLinks extends Component
 {
     public function render()
     {
-        $menu = Cache::tags(['menu'])->rememberForever('footer_menu' ,function (){
+//        $menu = Cache::tags(['menu'])->rememberForever('footer_menu' ,function (){
+//            return FilamentNavigation::get('bottom-menu');
+//        });
+        $menu = Cache::rememberForever('footer_menu' ,function (){
             return FilamentNavigation::get('bottom-menu');
         });
         return view('layouts.bottom-links' ,[
