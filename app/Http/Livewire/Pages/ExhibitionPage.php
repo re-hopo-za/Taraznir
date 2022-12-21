@@ -10,7 +10,7 @@ class ExhibitionPage extends Component
 {
     public function render()
     {
-        $exhibition = Cache::tags(['exhibition'])->rememberForever( 'exhibition' ,function (){
+        $exhibition = Cache::rememberForever( 'exhibition' ,function (){
             return Option::where('key' ,'exhibition_item')->get();
         });
         return view('pages.exhibition-page',[

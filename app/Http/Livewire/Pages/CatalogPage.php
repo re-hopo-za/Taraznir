@@ -17,23 +17,22 @@ class CatalogPage extends Component
 
 
 
-    public function mount( $category = '' ,$tag ='' )
+    public function mount( $category = '' )
     {
-        $this->categories  = Cache::tags(['cats'])->rememberForever( 'catalogs_categories' ,function (){
+        $this->categories  = Cache::rememberForever( 'catalogs_categories' ,function (){
             return Category::where( 'model' ,'catalog' )->get();
         });
         $this->category   = $category;
 
         if( !empty( $category ) ){
-            $this->catalogs  = Cache::tags(['catalog'])->rememberForever( 'catalogs_specific_category' ,function (){
+            $this->catalogs  = Cache::rememberForever( 'catalogs_specific_category' ,function (){
                 return Catalog::with(['categories'])
                     ->whereHas('categories' ,function ($query) {
                         $query->where('slug' ,$this->category );
-                    })
-                    ->get();
+                    })->get();
             });
         }else {
-            $this->catalogs  = Cache::tags(['catalog'])->rememberForever( 'catalogs' ,function (){
+            $this->catalogs  = Cache::rememberForever( 'catalogs' ,function (){
                 return Catalog::all();
             });
         }

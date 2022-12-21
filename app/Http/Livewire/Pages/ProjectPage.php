@@ -17,20 +17,19 @@ class ProjectPage extends Component
 
     public function mount( $category = '' )
     {
-        $this->categories  = Cache::tags(['cats'])->rememberForever( 'projects_categories' ,function (){
+        $this->categories  = Cache::rememberForever( 'projects_categories' ,function (){
             return Category::where( 'model' ,'project' )->get();
         });
         $this->category = $category;
 
         if( !empty( $category ) ){
-            $this->projects = Cache::tags(['project'])->rememberForever( 'projects_specific_category' ,function (){
+            $this->projects = Cache::rememberForever( 'projects_specific_category' ,function (){
                 return Project::with(['categories'])->whereHas('categories' ,function ($query){
                     $query->where('slug' ,$this->category);
-                })
-                    ->get();
+                })->get();
             });
         }else {
-            $this->projects  = Cache::tags(['project'])->rememberForever( 'projects' ,function (){
+            $this->projects  = Cache::rememberForever( 'projects' ,function (){
                 return Project::all();
             });
         }

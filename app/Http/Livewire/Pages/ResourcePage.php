@@ -13,10 +13,10 @@ class ResourcePage extends Component
 
     public function render()
     {
-        $catalogs = Cache::tags(['catalog'])->rememberForever( 'catalogs' ,function (){
+        $catalogs = Cache::rememberForever( 'catalogs' ,function (){
             return Catalog::all();
         });
-        $standards = Cache::tags(['standard'])->rememberForever( 'standards' ,function (){
+        $standards = Cache::rememberForever( 'standards' ,function (){
              return Standard::all();
         });
 

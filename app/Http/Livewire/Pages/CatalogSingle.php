@@ -16,35 +16,31 @@ class CatalogSingle extends Component
 
     public function mount( $slug )
     {
-        $this->catalog = Cache::tags(['catalog'])->rememberForever( 'catalog_'.$slug ,function() use($slug){
-            return Catalog::where( 'slug' ,$slug )
-                ->with(['meta','categories' ])
-                ->first();
-        });
+
+        $this->catalog = Catalog::where( 'slug' ,$slug )->with(['meta','categories' ])->first();
         if( !isset( $this->catalog->id ) ) {
             return abort(404);
         }
-        $this->categories  = Cache::tags(['cats'])->rememberForever( 'catalog_categories' ,function (){
+        $this->categories  = Cache::rememberForever( 'catalog_categories' ,function (){
             return Category::where( 'model' ,'catalog' )->get();
         });
+
         $categories  = $this->catalog->categories->modelKeys();
 
-        $this->related = Cache::tags(['catalog'])->rememberForever( 'catalog_related_'.$slug ,function () use($categories){
+        $this->related = Cache::rememberForever( 'catalog_related_'.$slug ,function () use($categories){
             return Catalog::whereHas('categories', function ($q) use ($categories) {
                 $q->whereIn('categories.id', $categories );
-            })
-                ->where('id', '<>', $this->catalog->id )
-                ->take(7)
-                ->get();
+            })->where('id', '<>', $this->catalog->id )->take(7)->get();
         });
 
         if ( !$this->related->count() ) {
-            $this->related = Cache::tags(['catalog'])->rememberForever( 'blog_not_related_'.$slug ,function (){
+            $this->related = Cache::rememberForever( 'blog_not_related_'.$slug ,function (){
                 return Catalog::where('id', '<>', $this->catalog->id )
                     ->take(3)
                     ->get();
             });
         }
+
     }
 
 

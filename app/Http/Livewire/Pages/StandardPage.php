@@ -17,19 +17,19 @@ class StandardPage extends Component
 
     public function mount( $category = '' )
     {
-        $this->categories = Cache::tags(['cats'])->rememberForever( 'standards_categories' ,function (){
+        $this->categories = Cache::rememberForever( 'standards_categories' ,function (){
             return Category::where( 'model' ,'standard' )->get();
         });
         $this->category = $category;
 
         if( !empty( $category ) ){
-            $this->standards = Cache::tags(['standard'])->rememberForever( 'standards_specific_category' ,function (){
+            $this->standards = Cache::rememberForever( 'standards_specific_category' ,function (){
                 return Standard::with(['categories'])->whereHas('categories' ,function ($query){
                     $query->where('slug' ,$this->category);
                 })->get();
             });
         }else {
-            $this->standards = Cache::tags(['standard'])->rememberForever( 'standards' ,function (){
+            $this->standards = Cache::rememberForever( 'standards' ,function (){
                 return Standard::with(['categories'])->get();
             });
         }

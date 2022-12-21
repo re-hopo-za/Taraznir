@@ -20,20 +20,20 @@ class ServicePage extends Component
 
     public function mount( $category = '' )
     {
-        $this->categories = Cache::tags(['cats'])->rememberForever( 'services_categories' ,function (){
+        $this->categories = Cache::rememberForever( 'services_categories' ,function (){
             return Category::where( 'model' ,'service' )->get();
         });
         $this->category = $category;
 
         if( !empty( $category ) ){
-            $this->services = Cache::tags(['service'])->rememberForever( 'services_specific_category' ,function (){
+            $this->services = Cache::rememberForever( 'services_specific_category' ,function (){
                 return Service::with(['categories'])->whereHas('categories' ,function ($query){
                     $query->where('slug' ,$this->category);
                 })
                     ->get();
             });
         }else {
-            $this->services = Cache::tags(['service'])->rememberForever( 'services' ,function (){
+            $this->services = Cache::rememberForever( 'services' ,function (){
                 return Service::all();
             });
         }

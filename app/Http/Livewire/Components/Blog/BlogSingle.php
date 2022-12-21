@@ -16,11 +16,11 @@ class BlogSingle extends Component
     {
         $this->blog = $blog;
 
-        $this->previous = Cache::tags(['blog'])->rememberForever('blog_previous_'. $blog?->id  ,function (){
+        $this->previous = Cache::rememberForever('blog_previous_'. $blog?->id  ,function (){
             return Blog::where( 'id' ,'<' ,$this->blog?->id )->orderBy('id', 'desc')->first();
         });
 
-        $this->next = Cache::tags(['blog'])->rememberForever('blog_next_'. $blog?->id  ,function (){
+        $this->next = Cache::rememberForever('blog_next_'. $blog?->id  ,function (){
             return Blog::where( 'id' ,'>' ,$this->blog?->id )->orderBy('id', 'asc')->first();
         });
     }
