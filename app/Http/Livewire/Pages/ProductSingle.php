@@ -32,7 +32,7 @@ class ProductSingle extends Component
         }
 
         $this->categories = redisHandler( 'products_categories' ,function (){
-            return Category::where( 'model' ,'catalog' )->get();
+            return Category::where( 'model' ,'product' )->get();
         });
 
         $this->previous  = redisHandler( 'product_previous_'.$en_slug  ,function (){
