@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\Product;
 use App\Models\Tag;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Str;
 use Livewire\Component;
 
 class ProductSingle extends Component
@@ -22,27 +23,27 @@ class ProductSingle extends Component
 
     public function mount( $slug )
     {
-
-
-
-        $this->product = Product::where( 'slug' ,$slug )->with(['meta','categories' ])->first();
+        $en_slug = Str::slug( $slug );
+        $this->product = redisHandler('product_'.$en_slug ,function () use($slug) {
+            return Product::where( 'slug' ,'=' ,$slug )->with(['meta','categories' ])->first();
+        });
         if( !isset( $this->product->id ) ) {
             return abort(404);
         }
 
-        $this->categories  = Cache::rememberForever( 'products_categories' ,function (){
-            return Category::where( 'model' ,'product' )->get();
+        $this->categories = redisHandler( 'products_categories' ,function (){
+            return Category::where( 'model' ,'catalog' )->get();
         });
 
-        $this->previous  = Cache::rememberForever( 'product_previous_'.$this->product->id  ,function (){
+        $this->previous  = redisHandler( 'product_previous_'.$en_slug  ,function (){
             return Product::where('id' ,'<' ,$this->product->id )->orderBy('id', 'desc')->first();
         });
 
-        $this->next  = Cache::rememberForever( 'product_next_'.$this->product->id ,function (){
+        $this->next  = redisHandler( 'product_next_'.$en_slug ,function (){
             return Product::where('id' ,'>' ,$this->product->id )->orderBy('id', 'desc')->first();
         });
 
-        $this->recent  = Cache::rememberForever( 'product_recent' ,function (){
+        $this->recent  = redisHandler( 'product_recent' ,function (){
             return Product::orderBy('id','desc')->take(3)->get();
         });
 

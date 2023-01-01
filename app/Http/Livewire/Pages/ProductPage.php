@@ -2,12 +2,8 @@
 
 namespace App\Http\Livewire\Pages;
 
-use App\Models\Catalog;
 use App\Models\Category;
 use App\Models\Product;
-use App\Models\Project;
-use App\Models\Tag;
-use Illuminate\Support\Facades\Cache;
 use Livewire\Component;
 
 class ProductPage extends Component
@@ -19,22 +15,25 @@ class ProductPage extends Component
 
     public function mount( $category = '' )
     {
-        $this->categories  = Cache::rememberForever( 'products_categories' ,function (){
+        $this->categories  = redisHandler( 'products_categories' ,function (){
             return Category::where( 'model' ,'product' )->get();
         });
         $this->category = $category;
 
+        $all_products = redisHandler( 'products' ,function (){
+            return Product::with(['categories' ,'meta'])->get();
+        });
+
         if( !empty( $category ) ){
-            $this->products = Cache::rememberForever( 'products_specific_category' ,function (){
-                return Product::with(['categories'])->whereHas('categories' ,function ($query){
+            $this->products = redisHandler( 'products_specific_category_'.$category ,function(){
+                return Product::whereHas('categories' ,function ($query){
                     $query->where('slug' ,$this->category);
                 })->get();
             });
         }else {
-            $this->products = Cache::rememberForever( 'products' ,function (){
-                return Product::with(['categories','meta'])->get();
-            });
+            $this->products = $all_products;
         }
+
     }
 
     public function render()

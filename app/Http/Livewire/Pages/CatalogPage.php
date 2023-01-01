@@ -4,8 +4,6 @@ namespace App\Http\Livewire\Pages;
 
 use App\Models\Catalog;
 use App\Models\Category;
-use App\Models\Tag;
-use Illuminate\Support\Facades\Cache;
 use Livewire\Component;
 
 class CatalogPage extends Component
@@ -19,22 +17,23 @@ class CatalogPage extends Component
 
     public function mount( $category = '' )
     {
-        $this->categories  = Cache::rememberForever( 'catalogs_categories' ,function (){
+        $this->categories  = redisHandler( 'catalogs_categories' ,function (){
             return Category::where( 'model' ,'catalog' )->get();
         });
         $this->category   = $category;
 
+        $all_catalogs = redisHandler( 'catalogs' ,function (){
+            return Catalog::with(['meta','categories']);
+        });
+
         if( !empty( $category ) ){
-            $this->catalogs  = Cache::rememberForever( 'catalogs_specific_category' ,function (){
-                return Catalog::with(['categories'])
-                    ->whereHas('categories' ,function ($query) {
+            $this->catalogs = redisHandler('catalogs_specific_category_'.$category ,function(){
+                return Catalog::whereHas('categories' ,function ($query) {
                         $query->where('slug' ,$this->category );
                     })->get();
             });
         }else {
-            $this->catalogs  = Cache::rememberForever( 'catalogs' ,function (){
-                return Catalog::all();
-            });
+            $this->catalogs  = $all_catalogs;
         }
     }
 

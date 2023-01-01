@@ -34,7 +34,7 @@
         <div class="top-bar-content">
             <div class="header-address-con" >
                 <span class="address content">تهران خیابان فلسطین جنوبی</span>
-                <span class="phone content">021-66467148</span>
+                <span class="phone content">021-66467148 | 021-66467362 </span>
                 <span class="time content">شنبه تا پنجشنبه 8 الی 17</span>
             </div>
         </div>

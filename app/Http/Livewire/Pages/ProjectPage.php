@@ -4,8 +4,6 @@ namespace App\Http\Livewire\Pages;
 
 use App\Models\Category;
 use App\Models\Project;
-use App\Models\Tag;
-use Illuminate\Support\Facades\Cache;
 use Livewire\Component;
 
 class ProjectPage extends Component
@@ -17,21 +15,22 @@ class ProjectPage extends Component
 
     public function mount( $category = '' )
     {
-        $this->categories  = Cache::rememberForever( 'projects_categories' ,function (){
+        $this->categories = redisHandler( 'projects_categories' ,function (){
             return Category::where( 'model' ,'project' )->get();
         });
         $this->category = $category;
 
+        $all_projects = redisHandler( 'projects' ,function (){
+            return Project::with(['categories'])->get();
+        });
         if( !empty( $category ) ){
-            $this->projects = Cache::rememberForever( 'projects_specific_category' ,function (){
-                return Project::with(['categories'])->whereHas('categories' ,function ($query){
+            $this->projects = redisHandler( 'projects_specific_category_'.$category ,function (){
+                return Project::whereHas('categories' ,function ($query){
                     $query->where('slug' ,$this->category);
                 })->get();
             });
         }else {
-            $this->projects  = Cache::rememberForever( 'projects' ,function (){
-                return Project::all();
-            });
+            $this->projects = $all_projects;
         }
     }
 
@@ -44,3 +43,7 @@ class ProjectPage extends Component
         ]);
     }
 }
+
+
+
+

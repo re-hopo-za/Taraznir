@@ -6,7 +6,7 @@
                 <div class="themesflat-carousel-box has-arrows arrow-center arrow-circle offset-v-24 clearfix" data-gap="30" data-column="1" data-column2="1" data-column3="1" data-auto="true">
                     <div class="owl-carousel owl-theme">
 
-                        @if( !empty( $testimonials ) && $testimonials->isNotEmpty() )
+                        @if( !empty( $testimonials ) )
                             @foreach( $testimonials as $testimonial )
                                 @php $meta = $testimonial->meta()->pluck('value' ,'key')->toArray(); @endphp
                                 <div class="themesflat-testimonials style-1 max-width-70 align-center has-width w100 circle border-solid clearfix">

@@ -11202,7 +11202,7 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
 #footer-widgets .widget.widget_text li:first-child { margin-top: 0px; }
 #footer-widgets .widget.widget_text li .inner { position: relative; }
 #footer-widgets .widget.widget_text span.fa { display: inline-block; text-align: center; background-color: #1d1d1d; color: #ffc30c; font-size: 17px; width: 25px; height: 25px; line-height: 25px; float: left; margin: 0px 14px 0px 0px; }
-#footer-widgets .widget.widget_text span.text { font-family: 'AzarMehr', sans-serif; font-size: 12px; color: rgba(255,255,255,0.8); line-height: 14px; overflow: hidden; }
+#footer-widgets .widget.widget_text span.text {font-family: 'AzarMehr', sans-serif;font-size: 12px;color: rgba(255,255,255,0.8);line-height: 14px;direction: rtl;overflow: hidden;text-align: left;}
 #footer-widgets .widget.widget_text span.sl { text-transform: uppercase; }
 
 /* Bottom

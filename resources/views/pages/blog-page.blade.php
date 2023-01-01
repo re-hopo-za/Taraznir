@@ -89,7 +89,7 @@
                 <livewire:components.search-box :term="''" :model="'Blog'" />
                 <livewire:components.contact.social-widget />
                 <livewire:components.recent-posts :posts="$recent" :title="'مقاله‌های اخیر'"/>
-                <livewire:components.categories :categories="$categories" :allRoute="'blog'" :route="'CategoryBlog'" :specificCat="''" />
+                <livewire:components.categories :categories="$categories" :allRoute="'blog'" :route="'CategoryBlog'" :specificCat="$category" />
             </div>
         </div>
     </div>

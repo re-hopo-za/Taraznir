@@ -2,9 +2,10 @@
 
 namespace App\Http\Livewire\Pages;
 
+
 use App\Models\Category;
 use App\Models\Standard;
-use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Str;
 use Livewire\Component;
 
 class StandardSingle extends Component
@@ -15,31 +16,34 @@ class StandardSingle extends Component
 
     public function mount( $slug )
     {
+        $en_slug = Str::slug( $slug );
 
-
-
-        $this->standard = Standard::where( 'slug' ,'=' ,$slug )->with(['meta'])->first();
+        $this->standard = redisHandler('standard_'.$en_slug ,function () use($slug) {
+            return Standard::where( 'slug' ,'=' ,$slug )->with(['meta','categories' ])->first();
+        });
         if( !isset( $this->standard->id ) ) {
             return abort(404);
         }
 
-        $this->categories = Cache::rememberForever( 'standard_categories' ,function (){
+        $this->categories = redisHandler( 'standards_categories' ,function (){
             return Category::where( 'model' ,'standard' )->get();
+        });
+        $standards = redisHandler( 'standards' ,function (){
+            return Standard::with(['meta','categories'])->get();
         });
 
         $categories  = $this->standard->categories->modelKeys();
-        $this->related = Cache::rememberForever( 'standard_related_'.$slug ,function () use($categories){
-            return Standard::whereHas('categories', function ($q) use ($categories) {
-                $q->whereIn('categories.id', $categories );
-            })->where('id', '<>', $this->standard->id )->take(7)->get();
+        $this->related = redisHandler( 'standards_related_'.$en_slug ,function () use($standards ,$categories){
+            return $standards
+                ->filter( fn( $item ) => $item->whereIn('categories.id' ,$categories) )
+                ->where('id', '<>', $this->standard->id )->take(3);
         });
 
-        if ( !$this->related->count() ) {
-            $this->related = Cache::rememberForever( 'standard_not_related_'.$slug ,function(){
-                return Standard::where('id', '<>', $this->standard->id )->take(3)->get();
+        if ( !$this->related->count() ){
+            $this->related = redisHandler( 'standards_not_related_'.$en_slug ,function () use($standards){
+                return $standards->where('id', '<>', $this->standard->id )->take(3);
             });
         }
-
     }
 
 

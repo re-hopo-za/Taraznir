@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Product;
 use App\Models\Project;
 use App\Models\Service;
+use App\Models\Standard;
 use App\Models\Tag;
 use Illuminate\Support\Facades\Cache;
 use Livewire\Component;
@@ -20,23 +21,15 @@ class ServicePage extends Component
 
     public function mount( $category = '' )
     {
-        $this->categories = Cache::rememberForever( 'services_categories' ,function (){
+        $this->categories = redisHandler( 'services_categories' ,function (){
             return Category::where( 'model' ,'service' )->get();
         });
+
         $this->category = $category;
 
-        if( !empty( $category ) ){
-            $this->services = Cache::rememberForever( 'services_specific_category' ,function (){
-                return Service::with(['categories'])->whereHas('categories' ,function ($query){
-                    $query->where('slug' ,$this->category);
-                })
-                    ->get();
-            });
-        }else {
-            $this->services = Cache::rememberForever( 'services' ,function (){
-                return Service::all();
-            });
-        }
+        $this->services  = redisHandler( 'services' ,function (){
+            return Service::with(['categories' ,'meta'])->get();
+        });
     }
 
     public function render()
