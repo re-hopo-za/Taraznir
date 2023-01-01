@@ -6,6 +6,7 @@ use App\Models\Catalog;
 use App\Models\Category;
 use App\Models\Tag;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Str;
 use Livewire\Component;
 
 class CatalogSingle extends Component
@@ -16,28 +17,33 @@ class CatalogSingle extends Component
 
     public function mount( $slug )
     {
+        $en_slug = Str::slug( $slug );
 
-        $this->catalog = Catalog::where( 'slug' ,$slug )->with(['meta','categories' ])->first();
+        $this->catalog = redisHandler('catalog_'.$en_slug ,function () use($slug) {
+            return Catalog::where( 'slug' ,'=' ,$slug )->with(['meta','categories' ])->first();
+        });
         if( !isset( $this->catalog->id ) ) {
             return abort(404);
         }
-        $this->categories  = Cache::rememberForever( 'catalog_categories' ,function (){
+        $all_catalogs = redisHandler( 'catalogs' ,function (){
+            return Catalog::with(['meta','categories'])->get();
+        });
+        $this->categories = redisHandler( 'catalogs_categories' ,function (){
             return Category::where( 'model' ,'catalog' )->get();
         });
 
-        $categories  = $this->catalog->categories->modelKeys();
 
-        $this->related = Cache::rememberForever( 'catalog_related_'.$slug ,function () use($categories){
-            return Catalog::whereHas('categories', function ($q) use ($categories) {
-                $q->whereIn('categories.id', $categories );
-            })->where('id', '<>', $this->catalog->id )->take(7)->get();
+        $categories  = $this->catalog->categories->modelKeys();
+        $this->related = redisHandler( 'catalogs_related_'.$en_slug ,function () use($all_catalogs ,$categories){
+            return $all_catalogs
+                ->filter( fn( $item ) => $item->whereIn('categories.id' ,$categories) )
+                ->where('id', '<>', $this->catalog->id )->take(3);
         });
 
+
         if ( !$this->related->count() ) {
-            $this->related = Cache::rememberForever( 'blog_not_related_'.$slug ,function (){
-                return Catalog::where('id', '<>', $this->catalog->id )
-                    ->take(3)
-                    ->get();
+            $this->related = redisHandler( 'catalogs_not_related_'.$en_slug ,function () use($all_catalogs) {
+                return $all_catalogs::where('id', '<>', $this->catalog->id )->take(3)->get();
             });
         }
 

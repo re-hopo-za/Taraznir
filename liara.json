@@ -1,7 +1,0 @@
-{
-    "platform": "laravel",
-    "app": "taraznir",
-    "laravel": {
-        "phpVersion": "8.1"
-    }
-}

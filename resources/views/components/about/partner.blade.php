@@ -12,7 +12,7 @@
                                     <div class="partner-item">
                                         <div class="inner">
                                             <div class="thumb">
-                                                <img src="{{$brand->attachment('attachments')}}" alt="{{indexChecker($meta,'title')}}" class="partner-default">
+                                                <img style="width: 100%; height: 156px;" src="{{$brand->attachment('attachments')}}" alt="{{indexChecker($meta,'title')}}" class="partner-default">
                                             </div>
                                         </div>
                                     </div>

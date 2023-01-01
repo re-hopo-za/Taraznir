@@ -1,4 +1,4 @@
-<footer id="footer" class="clearfix" style="background: url('/storage/bg-footer.jpg')">
+<footer id="footer" class="clearfix" style="background-color:#0c0000">
     <div id="footer-widgets" class="container">
         <div class="themesflat-row gutter-30">
             <div class="col span_1_of_3" dir="rtl">
@@ -20,7 +20,11 @@
                             <li>
                                 <div class="inner">
                                     <span class="fa fa-phone"></span>
-                                    <span class="text">شماره تماس : 09120190256</span>
+                                    <div class="text" style="display: flex;flex-direction: column;align-items: flex-end">
+                                        <p style="display: flex;justify-content: space-between;width: 100%;"> <span>شماره تماس :</span> <span>09120190256</span> </p>
+                                        <p> 021-66467148 </p>
+                                        <p> 021-66467362</p>
+                                    </div>
                                 </div>
                             </li>
                             <li class="margin-top-7">

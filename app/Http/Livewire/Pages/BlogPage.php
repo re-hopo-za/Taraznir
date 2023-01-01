@@ -14,32 +14,29 @@ class BlogPage extends Component
 
 
     public string  $category;
-    protected  $blog;
     public ?object $categories;
     public ?object $recent;
 
+
     public function mount( $category = '' )
     {
-
-        $this->categories  = Cache::rememberForever( 'blogs_categories' ,function (){
+        $this->category   = $category;
+        $this->categories = redisHandler( 'blogs_categories' ,function (){
             return Category::where( 'model' ,'blog' )->get();
         });
-        $this->category = $category;
     }
 
 
     public function render()
     {
-        if( !empty( $this->category  ) ){
-            $blogs  = Cache::rememberForever( 'blogs_specific_category' ,function (){
-                return Blog::with(['categories' ,'comments' ,'meta'])
-                    ->whereHas('categories' ,function ($query) {
-                        $query->where('slug' ,$this->category );
+        if( !empty( $this->category ) ){
+            $blogs = redisHandler( 'blogs_specific_category_'.$this->category ,function(){
+                return Blog::whereHas('categories' ,function ($query) {
+                    $query->where('slug' ,$this->category );
                 })->paginate( 8 );
             });
-
-        }else {
-            $blogs  = Cache::rememberForever( 'blogs' ,function (){
+        }else{
+            $blogs = redisHandler( 'blogs' ,function (){
                 return Blog::with(['comments' ,'meta'])->paginate( 8 );
             });
         }

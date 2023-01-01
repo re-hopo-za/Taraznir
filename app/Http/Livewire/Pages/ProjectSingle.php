@@ -3,10 +3,8 @@
 namespace App\Http\Livewire\Pages;
 
 use App\Models\Category;
-use App\Models\Product;
 use App\Models\Project;
-use App\Models\Tag;
-use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Str;
 use Livewire\Component;
 
 class ProjectSingle extends Component
@@ -17,28 +15,35 @@ class ProjectSingle extends Component
 
     public function mount( $slug )
     {
-        $this->project = Project::where( 'slug'  ,$slug )->with(['meta' ])->first();
+        $en_slug = Str::slug( $slug );
+
+        $this->project = redisHandler('project_'.$en_slug ,function () use($slug) {
+            return Project::where( 'slug' ,'=' ,$slug )->with(['meta','categories' ])->first();
+        });
         if( !isset( $this->project->id ) ) {
             return abort(404);
         }
-
-        $this->categories  = Cache::rememberForever( 'projects_categories' ,function (){
+        $all_projects = redisHandler( 'projects' ,function (){
+            return Project::with(['categories' ,'meta']);
+        });
+        $this->categories = redisHandler( 'projects_categories' ,function (){
             return Category::where( 'model' ,'project' )->get();
         });
 
+
         $categories = $this->project->categories->modelKeys();
-        $this->related = Cache::rememberForever( 'blog_related_'.$slug ,function () use($categories){
-            return Project::whereHas('categories', function ($q) use ($categories) {
-                $q->whereIn('categories.id', $categories );
-            })->where('id', '<>', $this->project->id )->take(7)->get();
+        $this->related = redisHandler( 'projects_related_'.$en_slug ,function () use($all_projects ,$categories){
+            return $all_projects
+                ->filter( fn( $item ) => $item->whereIn('categories.id' ,$categories) )
+                ->where('id', '<>', $this->project->id )->take(3);
         });
 
+
         if ( !$this->related->count() ) {
-            $this->related = Cache::rememberForever( 'blog_not_related_'.$slug ,function ($slug){
-                return Project::where('id', '<>', $this->project->id )->take(3)->get();
+            $this->related = redisHandler( 'projects_not_related_'.$en_slug ,function () use($all_projects){
+                return $all_projects::where('id', '<>', $this->project->id )->take(3)->get();
             });
         }
-
     }
 
 

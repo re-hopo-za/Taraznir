@@ -1,6 +1,10 @@
 <?php
 
 
+use App\Models\Option;
+use Illuminate\Support\Facades\Redis;
+use Laravel\SerializableClosure\SerializableClosure;
+
 function indexChecker($data , $index , $default ='' )
 {
     if (!empty( $data ) ) {
@@ -155,3 +159,46 @@ function clearingHtml( $content ,$type ) :string
 }
 
 
+function redisHandler( string $key ,Closure|null $value ){
+    $data = unserialize( Redis::get( $key) );
+    if ( empty( $data ) ){
+        Redis::set( $key ,serialize( $value() ) );
+        return $value();
+    }
+    return $data;
+}
+
+
+
+
+function translate($text=0)
+{
+
+
+    $arb_en_map=array (
+        '\\xd8\\xa1' => '\'', '\\xd8\\xa2' => '|', '\\xd8\\xa3' => '>',
+        '\\xd8\\xa4' => '&', '\\xd8\\xa5' => '<', '\\xd8\\xa6' => '}',
+        '\\xd8\\xa7' => 'A', '\\xd8\\xa8' => 'b', '\\xd8\\xa9' => 'p',
+        '\\xd8\\xaa' => 't', '\\xd8\\xab' => 'v', '\\xd8\\xac' => 'j',
+        '\\xd8\\xad' => 'H', '\\xd8\\xae' => 'x', '\\xd8\\xaf' => 'd',
+        '\\xd8\\xb0' => '*', '\\xd8\\xb1' => 'r', '\\xd8\\xb2' => 'z',
+        '\\xd8\\xb3' => 's', '\\xd8\\xb4' => '$', '\\xd8\\xb5' => 'S',
+        '\\xd8\\xb6' => 'D', '\\xd8\\xb7' => 'T', '\\xd8\\xb8' => 'Z',
+        '\\xd8\\xb9' => 'E', '\\xd8\\xba' => 'g', '\\xd9\\x80' => '_',
+        '\\xd9\\x81' => 'f', '\\xd9\\x82' => 'q', '\\xd9\\x83' => 'k',
+        '\\xd9\\x84' => 'l', '\\xd9\\x85' => 'm', '\\xd9\\x86' => 'n',
+        '\\xd9\\x87' => 'h', '\\xd9\\x88' => 'w', '\\xd9\\x89' => 'Y',
+        '\\xd9\\x8a' => 'y', '\\xd9\\x8b' => 'F', '\\xd9\\x8c' => 'N',
+        '\\xd9\\x8d' => 'K', '\\xd9\\x8e' => 'a', '\\xd9\\x8f' => 'u',
+        '\\xd9\\x90' => 'i', '\\xd9\\x91' => '~', '\\xd9\\x92' => 'o',
+        '\\xd9\\xb0' => '`', '\\xd9\\xb1' => '{', '\\xd8\\xbb' => 'g' ,
+        '\\xd9\\x83' => 'k'
+    );
+
+    foreach($arb_en_map as $key=>$value)
+    {
+        $text=preg_replace("/$key/",$value,$text);
+    }
+    return  htmlentities($text);
+
+}
