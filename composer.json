@@ -10,7 +10,6 @@
         "bezhansalleh/filament-shield": "^2.0",
         "filament/filament": "^2.13",
         "filament/spatie-laravel-media-library-plugin": "~2.0",
-        "filament/spatie-laravel-settings-plugin": "2.0",
         "guzzlehttp/guzzle": "^7.2",
         "hekmatinasser/verta": "^8.1",
         "icetalker/filament-table-repeater": "^0.1.1",
