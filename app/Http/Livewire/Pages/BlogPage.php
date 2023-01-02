@@ -4,7 +4,6 @@ namespace App\Http\Livewire\Pages;
 
 use App\Models\Blog;
 use App\Models\Category;
-use Illuminate\Support\Facades\Cache;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -21,7 +20,7 @@ class BlogPage extends Component
     public function mount( $category = '' )
     {
         $this->category   = $category;
-        $this->categories = redisHandler( 'blogs_categories' ,function (){
+        $this->categories = redisHandler( 'blogs:categories' ,function (){
             return Category::where( 'model' ,'blog' )->get();
         });
     }
@@ -30,13 +29,13 @@ class BlogPage extends Component
     public function render()
     {
         if( !empty( $this->category ) ){
-            $blogs = redisHandler( 'blogs_specific_category_'.$this->category ,function(){
+            $blogs = redisHandler( 'blogs:specific_category_'.$this->category ,function(){
                 return Blog::whereHas('categories' ,function ($query) {
                     $query->where('slug' ,$this->category );
                 })->paginate( 8 );
             });
         }else{
-            $blogs = redisHandler( 'blogs' ,function (){
+            $blogs = redisHandler( 'blogs:' ,function (){
                 return Blog::with(['comments' ,'meta'])->paginate( 8 );
             });
         }

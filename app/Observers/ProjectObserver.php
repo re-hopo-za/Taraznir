@@ -3,7 +3,6 @@
 namespace App\Observers;
 
 use App\Models\project;
-use Illuminate\Support\Facades\Cache;
 
 class ProjectObserver
 {
@@ -15,7 +14,7 @@ class ProjectObserver
      */
     public function created(project $project)
     {
-        Cache::tags(['project'])->flush();
+        redisRemover('projects');
     }
 
     /**
@@ -26,7 +25,7 @@ class ProjectObserver
      */
     public function updated(project $project)
     {
-        Cache::tags(['project'])->flush();
+        redisRemover('projects');
     }
 
     /**
@@ -37,7 +36,7 @@ class ProjectObserver
      */
     public function deleted(project $project)
     {
-        Cache::tags(['project'])->flush();
+        redisRemover('projects');
     }
 
     /**
@@ -48,7 +47,7 @@ class ProjectObserver
      */
     public function restored(project $project)
     {
-        Cache::tags(['project'])->flush();
+        redisRemover('projects');
     }
 
     /**
@@ -59,6 +58,6 @@ class ProjectObserver
      */
     public function forceDeleted(project $project)
     {
-        Cache::tags(['project'])->flush();
+        redisRemover('projects');
     }
 }

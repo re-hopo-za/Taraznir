@@ -4,10 +4,11 @@ namespace App\Http\Livewire\Components;
 
 use Livewire\Component;
 
-class TestmonialsSliding extends Component
+class TestimonialsSliding extends Component
 {
     public function render()
     {
-        return view('components.testmonials-sliding');
+        return view('components.testimonials-sliding');
     }
 }
+

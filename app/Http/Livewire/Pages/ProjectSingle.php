@@ -17,22 +17,22 @@ class ProjectSingle extends Component
     {
         $en_slug = Str::slug( $slug );
 
-        $this->project = redisHandler('project_'.$en_slug ,function () use($slug) {
+        $this->project = redisHandler('project:'.$en_slug ,function () use($slug) {
             return Project::where( 'slug' ,'=' ,$slug )->with(['meta','categories' ])->first();
         });
         if( !isset( $this->project->id ) ) {
             return abort(404);
         }
-        $all_projects = redisHandler( 'projects' ,function (){
+        $all_projects = redisHandler( 'projects:' ,function (){
             return Project::with(['categories' ,'meta']);
         });
-        $this->categories = redisHandler( 'projects_categories' ,function (){
+        $this->categories = redisHandler( 'projects:categories' ,function (){
             return Category::where( 'model' ,'project' )->get();
         });
 
 
         $categories = $this->project->categories->modelKeys();
-        $this->related = redisHandler( 'projects_related_'.$en_slug ,function () use($all_projects ,$categories){
+        $this->related = redisHandler( 'projects:related_'.$en_slug ,function () use($all_projects ,$categories){
             return $all_projects
                 ->filter( fn( $item ) => $item->whereIn('categories.id' ,$categories) )
                 ->where('id', '<>', $this->project->id )->take(3);
@@ -40,7 +40,7 @@ class ProjectSingle extends Component
 
 
         if ( !$this->related->count() ) {
-            $this->related = redisHandler( 'projects_not_related_'.$en_slug ,function () use($all_projects){
+            $this->related = redisHandler( 'projects:not_related_'.$en_slug ,function () use($all_projects){
                 return $all_projects::where('id', '<>', $this->project->id )->take(3)->get();
             });
         }

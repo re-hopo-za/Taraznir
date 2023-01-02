@@ -3,9 +3,7 @@
 namespace App\Http\Livewire\Pages;
 
 use App\Models\Catalog;
-use App\Models\Project;
 use App\Models\Standard;
-use Illuminate\Support\Facades\Cache;
 use Livewire\Component;
 
 class ResourcePage extends Component
@@ -14,10 +12,10 @@ class ResourcePage extends Component
 
     public function render()
     {
-        $catalogs = redisHandler( 'catalogs' ,function (){
+        $catalogs = redisHandler( 'catalog:' ,function (){
             return Catalog::with(['categories' ,'meta'])->get();
         });
-        $standards = redisHandler( 'standards' ,function (){
+        $standards = redisHandler( 'standard:' ,function (){
              return Standard::with(['categories' ,'meta'])->get();
         });
 

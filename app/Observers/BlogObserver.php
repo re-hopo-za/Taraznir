@@ -3,7 +3,6 @@
 namespace App\Observers;
 
 use App\Models\blog;
-use Illuminate\Support\Facades\Cache;
 
 class BlogObserver
 {
@@ -15,7 +14,7 @@ class BlogObserver
      */
     public function created(blog $blog)
     {
-        Cache::tags(['blog'])->flush();
+        redisRemover('blogs');
     }
 
     /**
@@ -26,7 +25,7 @@ class BlogObserver
      */
     public function updated(blog $blog)
     {
-        Cache::tags(['blog'])->flush();
+        redisRemover('blogs');
     }
 
     /**
@@ -37,7 +36,7 @@ class BlogObserver
      */
     public function deleted(blog $blog)
     {
-        Cache::tags(['blog'])->flush();
+        redisRemover('blogs');
     }
 
     /**
@@ -48,7 +47,7 @@ class BlogObserver
      */
     public function restored(blog $blog)
     {
-        Cache::tags(['blog'])->flush();
+        redisRemover('blogs');
     }
 
     /**
@@ -59,6 +58,6 @@ class BlogObserver
      */
     public function forceDeleted(blog $blog)
     {
-        Cache::tags(['blog'])->flush();
+        redisRemover('blogs');
     }
 }

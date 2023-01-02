@@ -15,7 +15,7 @@ class ServiceObserver
      */
     public function created(service $service)
     {
-        Cache::tags(['service'])->flush();
+        redisRemover('services');
     }
 
     /**
@@ -26,7 +26,7 @@ class ServiceObserver
      */
     public function updated(service $service)
     {
-        Cache::tags(['service'])->flush();
+        redisRemover('services');
     }
 
     /**
@@ -37,7 +37,7 @@ class ServiceObserver
      */
     public function deleted(service $service)
     {
-        Cache::tags(['service'])->flush();
+        redisRemover('services');
     }
 
     /**
@@ -48,7 +48,7 @@ class ServiceObserver
      */
     public function restored(service $service)
     {
-        Cache::tags(['service'])->flush();
+        redisRemover('services');
     }
 
     /**
@@ -59,6 +59,6 @@ class ServiceObserver
      */
     public function forceDeleted(service $service)
     {
-        Cache::tags(['service'])->flush();
+        redisRemover('services');
     }
 }

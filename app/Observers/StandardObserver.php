@@ -3,7 +3,6 @@
 namespace App\Observers;
 
 use App\Models\standard;
-use Illuminate\Support\Facades\Cache;
 
 class StandardObserver
 {
@@ -15,7 +14,7 @@ class StandardObserver
      */
     public function created(standard $standard)
     {
-        Cache::tags(['standard'])->flush();
+        redisRemover('standards');
     }
 
     /**
@@ -26,7 +25,7 @@ class StandardObserver
      */
     public function updated(standard $standard)
     {
-        Cache::tags(['standard'])->flush();
+        redisRemover('standards');
     }
 
     /**
@@ -37,7 +36,7 @@ class StandardObserver
      */
     public function deleted(standard $standard)
     {
-        Cache::tags(['standard'])->flush();
+        redisRemover('standards');
     }
 
     /**
@@ -48,7 +47,7 @@ class StandardObserver
      */
     public function restored(standard $standard)
     {
-        Cache::tags(['standard'])->flush();
+        redisRemover('standards');
     }
 
 
@@ -60,6 +59,6 @@ class StandardObserver
      */
     public function forceDeleted(standard $standard)
     {
-        Cache::tags(['standard'])->flush();
+        redisRemover('standards');
     }
 }

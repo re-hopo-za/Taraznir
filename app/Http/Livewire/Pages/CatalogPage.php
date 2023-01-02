@@ -17,17 +17,17 @@ class CatalogPage extends Component
 
     public function mount( $category = '' )
     {
-        $this->categories  = redisHandler( 'catalogs_categories' ,function (){
+        $this->categories  = redisHandler( 'catalogs:categories' ,function (){
             return Category::where( 'model' ,'catalog' )->get();
         });
         $this->category   = $category;
 
-        $all_catalogs = redisHandler( 'catalogs' ,function (){
+        $all_catalogs = redisHandler( 'catalogs:' ,function (){
             return Catalog::with(['meta','categories']);
         });
 
         if( !empty( $category ) ){
-            $this->catalogs = redisHandler('catalogs_specific_category_'.$category ,function(){
+            $this->catalogs = redisHandler('catalogs:specific_category_'.$category ,function(){
                 return Catalog::whereHas('categories' ,function ($query) {
                         $query->where('slug' ,$this->category );
                     })->get();

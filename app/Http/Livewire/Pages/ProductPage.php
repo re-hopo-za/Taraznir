@@ -15,17 +15,17 @@ class ProductPage extends Component
 
     public function mount( $category = '' )
     {
-        $this->categories  = redisHandler( 'products_categories' ,function (){
+        $this->categories  = redisHandler( 'products:categories' ,function (){
             return Category::where( 'model' ,'product' )->get();
         });
         $this->category = $category;
 
-        $all_products = redisHandler( 'products' ,function (){
+        $all_products = redisHandler( 'products:' ,function (){
             return Product::with(['categories' ,'meta'])->get();
         });
 
         if( !empty( $category ) ){
-            $this->products = redisHandler( 'products_specific_category_'.$category ,function(){
+            $this->products = redisHandler( 'products:specific_category_'.$category ,function(){
                 return Product::whereHas('categories' ,function ($query){
                     $query->where('slug' ,$this->category);
                 })->get();

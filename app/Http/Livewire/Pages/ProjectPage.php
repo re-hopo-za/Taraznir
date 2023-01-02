@@ -15,16 +15,16 @@ class ProjectPage extends Component
 
     public function mount( $category = '' )
     {
-        $this->categories = redisHandler( 'projects_categories' ,function (){
+        $this->categories = redisHandler( 'projects:categories' ,function (){
             return Category::where( 'model' ,'project' )->get();
         });
         $this->category = $category;
 
-        $all_projects = redisHandler( 'projects' ,function (){
+        $all_projects = redisHandler( 'projects:' ,function (){
             return Project::with(['categories'])->get();
         });
         if( !empty( $category ) ){
-            $this->projects = redisHandler( 'projects_specific_category_'.$category ,function (){
+            $this->projects = redisHandler( 'projects:specific_category_'.$category ,function (){
                 return Project::whereHas('categories' ,function ($query){
                     $query->where('slug' ,$this->category);
                 })->get();

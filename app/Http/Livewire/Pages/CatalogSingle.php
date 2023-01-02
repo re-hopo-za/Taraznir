@@ -19,22 +19,22 @@ class CatalogSingle extends Component
     {
         $en_slug = Str::slug( $slug );
 
-        $this->catalog = redisHandler('catalog_'.$en_slug ,function () use($slug) {
+        $this->catalog = redisHandler('catalogs:'.$en_slug ,function () use($slug) {
             return Catalog::where( 'slug' ,'=' ,$slug )->with(['meta','categories' ])->first();
         });
         if( !isset( $this->catalog->id ) ) {
             return abort(404);
         }
-        $all_catalogs = redisHandler( 'catalogs' ,function (){
+        $all_catalogs = redisHandler( 'catalogs:' ,function (){
             return Catalog::with(['meta','categories'])->get();
         });
-        $this->categories = redisHandler( 'catalogs_categories' ,function (){
+        $this->categories = redisHandler( 'catalogs:categories' ,function (){
             return Category::where( 'model' ,'catalog' )->get();
         });
 
 
         $categories  = $this->catalog->categories->modelKeys();
-        $this->related = redisHandler( 'catalogs_related_'.$en_slug ,function () use($all_catalogs ,$categories){
+        $this->related = redisHandler( 'catalogs:related_'.$en_slug ,function () use($all_catalogs ,$categories){
             return $all_catalogs
                 ->filter( fn( $item ) => $item->whereIn('categories.id' ,$categories) )
                 ->where('id', '<>', $this->catalog->id )->take(3);
@@ -42,7 +42,7 @@ class CatalogSingle extends Component
 
 
         if ( !$this->related->count() ) {
-            $this->related = redisHandler( 'catalogs_not_related_'.$en_slug ,function () use($all_catalogs) {
+            $this->related = redisHandler( 'catalogs:not_related_'.$en_slug ,function () use($all_catalogs) {
                 return $all_catalogs::where('id', '<>', $this->catalog->id )->take(3)->get();
             });
         }

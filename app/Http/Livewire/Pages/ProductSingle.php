@@ -24,22 +24,22 @@ class ProductSingle extends Component
     public function mount( $slug )
     {
         $en_slug = Str::slug( $slug );
-        $this->product = redisHandler('product_'.$en_slug ,function () use($slug) {
+        $this->product = redisHandler('products:'.$en_slug ,function () use($slug) {
             return Product::where( 'slug' ,'=' ,$slug )->with(['meta','categories' ])->first();
         });
         if( !isset( $this->product->id ) ) {
             return abort(404);
         }
 
-        $this->categories = redisHandler( 'products_categories' ,function (){
+        $this->categories = redisHandler( 'products:categories' ,function (){
             return Category::where( 'model' ,'product' )->get();
         });
 
-        $this->previous  = redisHandler( 'product_previous_'.$en_slug  ,function (){
+        $this->previous  = redisHandler( 'products:previous_'.$en_slug  ,function (){
             return Product::where('id' ,'<' ,$this->product->id )->orderBy('id', 'desc')->first();
         });
 
-        $this->next  = redisHandler( 'product_next_'.$en_slug ,function (){
+        $this->next  = redisHandler( 'products:next_'.$en_slug ,function (){
             return Product::where('id' ,'>' ,$this->product->id )->orderBy('id', 'desc')->first();
         });
 

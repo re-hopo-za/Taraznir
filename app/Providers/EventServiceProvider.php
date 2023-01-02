@@ -2,10 +2,23 @@
 
 namespace App\Providers;
 
+use App\Models\Blog;
+use App\Models\Catalog;
+use App\Models\Option;
+use App\Models\Product;
+use App\Models\Project;
+use App\Models\Service;
+use App\Models\Standard;
+use App\Observers\BlogObserver;
+use App\Observers\CatalogObserver;
+use App\Observers\OptionObserver;
+use App\Observers\ProductObserver;
+use App\Observers\ProjectObserver;
+use App\Observers\ServiceObserver;
+use App\Observers\StandardObserver;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
-use Illuminate\Support\Facades\Event;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -27,7 +40,13 @@ class EventServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Project::observe(ProjectObserver::class);
+        Blog::observe(BlogObserver::class);
+        Service::observe(ServiceObserver::class);
+        Catalog::observe(CatalogObserver::class);
+        Standard::observe(StandardObserver::class);
+        Product::observe(ProductObserver::class);
+        Option::observe(OptionObserver::class);
     }
 
     /**

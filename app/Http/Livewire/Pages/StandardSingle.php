@@ -18,22 +18,22 @@ class StandardSingle extends Component
     {
         $en_slug = Str::slug( $slug );
 
-        $this->standard = redisHandler('standard_'.$en_slug ,function () use($slug) {
+        $this->standard = redisHandler('standard:'.$en_slug ,function () use($slug) {
             return Standard::where( 'slug' ,'=' ,$slug )->with(['meta','categories' ])->first();
         });
         if( !isset( $this->standard->id ) ) {
             return abort(404);
         }
 
-        $this->categories = redisHandler( 'standards_categories' ,function (){
+        $this->categories = redisHandler( 'standards:categories' ,function (){
             return Category::where( 'model' ,'standard' )->get();
         });
-        $standards = redisHandler( 'standards' ,function (){
+        $standards = redisHandler( 'standards:' ,function (){
             return Standard::with(['meta','categories'])->get();
         });
 
         $categories  = $this->standard->categories->modelKeys();
-        $this->related = redisHandler( 'standards_related_'.$en_slug ,function () use($standards ,$categories){
+        $this->related = redisHandler( 'standards:related_'.$en_slug ,function () use($standards ,$categories){
             return $standards
                 ->filter( fn( $item ) => $item->whereIn('categories.id' ,$categories) )
                 ->where('id', '<>', $this->standard->id )->take(3);

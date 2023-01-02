@@ -11,10 +11,8 @@ class Header extends Component
 
     public function render()
     {
-//        $menu = Cache::tags(['menu'])->rememberForever('header_menu' ,function (){
-//            return FilamentNavigation::get('main-menu');
-//        });
-        $menu = Cache::rememberForever('header_menu' ,function (){
+
+        $menu = redisHandler('options:header_menu' ,function (){
             return FilamentNavigation::get('main-menu');
         });
         return view('layouts.header' ,[
