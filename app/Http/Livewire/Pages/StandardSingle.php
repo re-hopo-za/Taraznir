@@ -25,7 +25,7 @@ class StandardSingle extends Component
             return abort(404);
         }
 
-        $this->categories = redisHandler( 'standards:categories' ,function (){
+        $this->categories = redisHandler( 'categories:standards' ,function (){
             return Category::where( 'model' ,'standard' )->get();
         });
         $standards = redisHandler( 'standards:' ,function (){

@@ -15,8 +15,8 @@ class Footer extends Component
             return Option::where('key' ,'footer_gallery')->get();
         });
 
-        $categories = redisHandler('options:footer_products_category' ,function (){
-            return Category::where('model' ,'product')->take(8)->get();
+        $categories = redisHandler('categories:footer_blog' ,function (){
+            return Category::where('model' ,'blog')->take(8)->get();
         });
 
         $recentPosts = redisHandler('blogs:footer_recent_standards' ,function (){

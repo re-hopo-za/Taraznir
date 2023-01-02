@@ -16,7 +16,7 @@ class ServicePage extends Component
 
     public function mount( $category = '' )
     {
-        $this->categories = redisHandler( 'services:categories' ,function (){
+        $this->categories = redisHandler( 'categories:services' ,function (){
             return Category::where( 'model' ,'service' )->get();
         });
 

@@ -17,7 +17,7 @@ class CatalogPage extends Component
 
     public function mount( $category = '' )
     {
-        $this->categories  = redisHandler( 'catalogs:categories' ,function (){
+        $this->categories  = redisHandler( 'categories:catalogs' ,function (){
             return Category::where( 'model' ,'catalog' )->get();
         });
         $this->category   = $category;

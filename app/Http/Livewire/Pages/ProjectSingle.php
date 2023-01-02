@@ -26,7 +26,7 @@ class ProjectSingle extends Component
         $all_projects = redisHandler( 'projects:' ,function (){
             return Project::with(['categories' ,'meta']);
         });
-        $this->categories = redisHandler( 'projects:categories' ,function (){
+        $this->categories = redisHandler( 'categories:projects' ,function (){
             return Category::where( 'model' ,'project' )->get();
         });
 

@@ -30,7 +30,7 @@ class BlogSingle extends Component
             return Blog::with(['comments' ,'meta'])->paginate( 8 );
         });
 
-        $this->categories = redisHandler( 'blogs:categories' ,function (){
+        $this->categories = redisHandler( 'categories:blogs' ,function (){
             return Category::where( 'model' ,'blog' )->get();
         });
 

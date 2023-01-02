@@ -15,7 +15,7 @@ class ProductPage extends Component
 
     public function mount( $category = '' )
     {
-        $this->categories  = redisHandler( 'products:categories' ,function (){
+        $this->categories  = redisHandler( 'categories:products' ,function (){
             return Category::where( 'model' ,'product' )->get();
         });
         $this->category = $category;

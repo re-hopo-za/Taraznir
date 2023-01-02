@@ -15,7 +15,7 @@ class ProjectPage extends Component
 
     public function mount( $category = '' )
     {
-        $this->categories = redisHandler( 'projects:categories' ,function (){
+        $this->categories = redisHandler( 'categories:projects' ,function (){
             return Category::where( 'model' ,'project' )->get();
         });
         $this->category = $category;

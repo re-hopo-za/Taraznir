@@ -11,6 +11,7 @@ use App\Models\Service;
 use App\Models\Standard;
 use App\Observers\BlogObserver;
 use App\Observers\CatalogObserver;
+use App\Observers\NavigationObserver;
 use App\Observers\OptionObserver;
 use App\Observers\ProductObserver;
 use App\Observers\ProjectObserver;
@@ -19,6 +20,7 @@ use App\Observers\StandardObserver;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
+use RyanChandler\FilamentNavigation\Models\Navigation;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -47,6 +49,7 @@ class EventServiceProvider extends ServiceProvider
         Standard::observe(StandardObserver::class);
         Product::observe(ProductObserver::class);
         Option::observe(OptionObserver::class);
+        Navigation::observe(NavigationObserver::class);
     }
 
     /**

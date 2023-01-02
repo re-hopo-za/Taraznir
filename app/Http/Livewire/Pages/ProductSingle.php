@@ -31,7 +31,7 @@ class ProductSingle extends Component
             return abort(404);
         }
 
-        $this->categories = redisHandler( 'products:categories' ,function (){
+        $this->categories = redisHandler( 'categories:products' ,function (){
             return Category::where( 'model' ,'product' )->get();
         });
 

@@ -20,7 +20,7 @@ class BlogPage extends Component
     public function mount( $category = '' )
     {
         $this->category   = $category;
-        $this->categories = redisHandler( 'blogs:categories' ,function (){
+        $this->categories = redisHandler( 'categories:blogs' ,function (){
             return Category::where( 'model' ,'blog' )->get();
         });
     }

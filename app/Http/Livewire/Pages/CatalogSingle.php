@@ -28,7 +28,7 @@ class CatalogSingle extends Component
         $all_catalogs = redisHandler( 'catalogs:' ,function (){
             return Catalog::with(['meta','categories'])->get();
         });
-        $this->categories = redisHandler( 'catalogs:categories' ,function (){
+        $this->categories = redisHandler( 'categories:catalogs' ,function (){
             return Category::where( 'model' ,'catalog' )->get();
         });
 

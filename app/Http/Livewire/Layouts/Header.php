@@ -11,7 +11,7 @@ class Header extends Component
     public function render()
     {
 
-        $menu = redisHandler('options:header_menu' ,function (){
+        $menu = redisHandler('navigations:' ,function (){
             return FilamentNavigation::get('main-menu');
         });
         return view('layouts.header' ,[

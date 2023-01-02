@@ -16,7 +16,7 @@ class StandardPage extends Component
 
     public function mount( $category = '' )
     {
-        $this->categories = redisHandler( 'standards:categories' ,function (){
+        $this->categories = redisHandler( 'categories:standards' ,function (){
             return Category::where( 'model' ,'standard' )->get();
         });
         $this->category = $category;

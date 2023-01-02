@@ -66,7 +66,7 @@
             <div class="col span_1_of_3" dir="rtl">
                 <div class="themesflat-spacer clearfix" data-desktop="0" data-mobile="35" data-smobile="35"></div>
                 <div class="widget widget_tags">
-                    <h2 class="widget-title margin-bottom-30"><span>دسته بندی خدمات</span></h2>
+                    <h2 class="widget-title margin-bottom-30"><span>دسته بندی مقالات</span></h2>
                     <div class="tags-list text-right">
                         @if( !empty( $categories ) && $categories->isNotEmpty() )
                             @foreach( $categories as $category )
