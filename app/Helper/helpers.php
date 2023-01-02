@@ -173,8 +173,42 @@ function redisRemover( $key ){
             Redis::del( str_replace(env('REDIS_PREFIX'),'',$key )  );
         }
     }
+}
 
 
+function socialsTagGenerator( $type ,$date  ) :string
+{
+    $tags =
+        '<meta name="keywords" content="[keywords]">
+        <meta name="description" content="[description]">
+        <meta property="og:locale" content="fa_IR" />
+        <meta property="og:type" content="[target]">
+        <meta property="og:title" content="[title]">
+        <meta property="og:url" content="[url]">
+        <meta property="og:image" content="[image]">
+        <meta property="og:description" content="[description]">
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:url" content="[url]">
+        <meta property="twitter:title" content="[title]">
+        <meta property="twitter:description" content="[description]">
+        <meta property="twitter:image" content="[image]">
+        <meta name="twitter:creator" content="@TalentGarnet" />
+        <meta name="twitter:site" content="@TalentGarnet" />
+    ';
+
+    if( $type == 'page') {
+        $tags = str_replace('[target]', 'website', $tags);
+    }
+    else {
+        $tags = str_replace('[target]', 'article', $tags);
+    }
+
+    $cover = 'https://taraznir.com/images/taraznir-logo-2x.png';
+    $tags  = str_replace( '[image]'       ,$cover             ,$tags );
+    $tags  = str_replace( '[title]'       ,$date->title       ,$tags );
+    $tags  = str_replace( '[url]'         ,$date->url         ,$tags );
+    $tags  = str_replace( '[keywords]'    ,$date->keywords    ,$tags );
+    return   str_replace( '[description]' ,$date->description ,$tags );
 }
 
 

@@ -1,3 +1,20 @@
+@section('title', ' تارازنیر | شرکت فنی و مهندسی  در طراحی و اجرای ارتینگ , صاعقه‌گیر')
+
+@php
+    $meta = $service->meta->pluck('value','key')->toArray();
+@endphp
+
+@section('seo')
+    @php
+        echo socialsTagGenerator( 'page' ,(object)[
+            'title'       => 'تارازنیر ',
+            'url'         => url()->current() ,
+            'keywords'    => indexChecker( $meta ,'keywords'),
+            'description' => indexChecker( $meta ,'description')
+        ])
+    @endphp
+@endsection
+
 @section('breadcrumbs')
     @include('layouts.breadcrumbs' ,['routes' => ['Service' => '/service' ,'Slug' => '' ] ,'pageName' => 'Slug' ])
 @endsection
