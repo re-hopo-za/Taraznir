@@ -2,7 +2,6 @@
 
 namespace App\Http\Livewire\Layouts;
 
-use Illuminate\Support\Facades\Cache;
 use Livewire\Component;
 use RyanChandler\FilamentNavigation\Facades\FilamentNavigation;
 

@@ -7,7 +7,6 @@ use App\Filament\Resources\OptionResource\RelationManagers;
 use App\Models\Option;
 use Filament\Forms;
 use Filament\Forms\Components\Card;
-use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
@@ -15,9 +14,7 @@ use Filament\Resources\Table;
 use Filament\Tables;
 use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
 use Icetalker\FilamentTableRepeater\Forms\Components\TableRepeater;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Mohamedsabil83\FilamentFormsTinyeditor\Components\TinyEditor;
 
 class OptionResource extends Resource
