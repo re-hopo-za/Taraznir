@@ -14,7 +14,7 @@ class ProjectObserver
      */
     public function created(project $project)
     {
-        redisRemover('projects');
+        redisRemover('projects:*');
     }
 
     /**
@@ -25,7 +25,7 @@ class ProjectObserver
      */
     public function updated(project $project)
     {
-        redisRemover('projects');
+        redisRemover('projects:*');
     }
 
     /**
@@ -36,7 +36,7 @@ class ProjectObserver
      */
     public function deleted(project $project)
     {
-        redisRemover('projects');
+        redisRemover('projects:*');
     }
 
     /**
@@ -47,7 +47,7 @@ class ProjectObserver
      */
     public function restored(project $project)
     {
-        redisRemover('projects');
+        redisRemover('projects:*');
     }
 
     /**
@@ -58,6 +58,6 @@ class ProjectObserver
      */
     public function forceDeleted(project $project)
     {
-        redisRemover('projects');
+        redisRemover('projects:*');
     }
 }

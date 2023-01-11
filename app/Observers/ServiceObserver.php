@@ -15,7 +15,7 @@ class ServiceObserver
      */
     public function created(service $service)
     {
-        redisRemover('services');
+        redisRemover('services:*');
     }
 
     /**
@@ -26,7 +26,7 @@ class ServiceObserver
      */
     public function updated(service $service)
     {
-        redisRemover('services');
+        redisRemover('services:*');
     }
 
     /**
@@ -37,7 +37,7 @@ class ServiceObserver
      */
     public function deleted(service $service)
     {
-        redisRemover('services');
+        redisRemover('services:*');
     }
 
     /**
@@ -48,7 +48,7 @@ class ServiceObserver
      */
     public function restored(service $service)
     {
-        redisRemover('services');
+        redisRemover('services:*');
     }
 
     /**
@@ -59,6 +59,6 @@ class ServiceObserver
      */
     public function forceDeleted(service $service)
     {
-        redisRemover('services');
+        redisRemover('services:*');
     }
 }

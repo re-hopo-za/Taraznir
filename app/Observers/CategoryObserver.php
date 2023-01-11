@@ -14,7 +14,7 @@ class CategoryObserver
      */
     public function created(category $category)
     {
-        redisRemover('categories:');
+        redisRemover('categories:*');
     }
 
     /**
@@ -25,7 +25,7 @@ class CategoryObserver
      */
     public function updated(category $category)
     {
-        redisRemover('categories:');
+        redisRemover('categories:*');
     }
 
     /**
@@ -36,7 +36,7 @@ class CategoryObserver
      */
     public function deleted(category $category)
     {
-        redisRemover('categories:');
+        redisRemover('categories:*');
     }
 
     /**
@@ -47,7 +47,7 @@ class CategoryObserver
      */
     public function restored(category $category)
     {
-        redisRemover('categories:');
+        redisRemover('categories:*');
     }
 
     /**
@@ -58,6 +58,6 @@ class CategoryObserver
      */
     public function forceDeleted(category $category)
     {
-        redisRemover('categories:');
+        redisRemover('categories:*');
     }
 }

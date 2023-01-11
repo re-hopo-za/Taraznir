@@ -167,7 +167,7 @@ function redisHandler( string $key ,Closure|null $value ){
 }
 
 function redisRemover( $key ){
-    $keys = Redis::keys($key.':*');
+    $keys = Redis::keys($key);
     if ( !empty( $keys ) && is_array( $keys )){
         foreach ( $keys as $key ){
             Redis::del( str_replace(env('REDIS_PREFIX'),'',$key )  );

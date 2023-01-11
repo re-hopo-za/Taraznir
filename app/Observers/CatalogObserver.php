@@ -15,7 +15,7 @@ class CatalogObserver
      */
     public function created(catalog $catalog)
     {
-        redisRemover('catalogs');
+        redisRemover('catalogs:*');
     }
 
     /**
@@ -26,7 +26,7 @@ class CatalogObserver
      */
     public function updated(catalog $catalog)
     {
-        redisRemover('catalogs');
+        redisRemover('catalogs:*');
     }
 
     /**
@@ -37,7 +37,7 @@ class CatalogObserver
      */
     public function deleted(catalog $catalog)
     {
-        redisRemover('catalogs');
+        redisRemover('catalogs:*');
     }
 
     /**
@@ -48,7 +48,7 @@ class CatalogObserver
      */
     public function restored(catalog $catalog)
     {
-        redisRemover('catalogs');
+        redisRemover('catalogs:*');
     }
 
     /**
@@ -59,6 +59,6 @@ class CatalogObserver
      */
     public function forceDeleted(catalog $catalog)
     {
-        redisRemover('catalogs');
+        redisRemover('catalogs:*');
     }
 }

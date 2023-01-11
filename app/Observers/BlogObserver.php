@@ -14,7 +14,7 @@ class BlogObserver
      */
     public function created(blog $blog)
     {
-        redisRemover('blogs');
+        redisRemover('blogs:*');
     }
 
     /**
@@ -25,7 +25,7 @@ class BlogObserver
      */
     public function updated(blog $blog)
     {
-        redisRemover('blogs');
+        redisRemover('blogs:*');
     }
 
     /**
@@ -36,7 +36,7 @@ class BlogObserver
      */
     public function deleted(blog $blog)
     {
-        redisRemover('blogs');
+        redisRemover('blogs:*');
     }
 
     /**
@@ -47,7 +47,7 @@ class BlogObserver
      */
     public function restored(blog $blog)
     {
-        redisRemover('blogs');
+        redisRemover('blogs:*');
     }
 
     /**
@@ -58,6 +58,6 @@ class BlogObserver
      */
     public function forceDeleted(blog $blog)
     {
-        redisRemover('blogs');
+        redisRemover('blogs:*');
     }
 }

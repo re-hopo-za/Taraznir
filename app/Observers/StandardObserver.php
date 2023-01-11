@@ -14,7 +14,7 @@ class StandardObserver
      */
     public function created(standard $standard)
     {
-        redisRemover('standards');
+        redisRemover('standards:*');
     }
 
     /**
@@ -25,7 +25,7 @@ class StandardObserver
      */
     public function updated(standard $standard)
     {
-        redisRemover('standards');
+        redisRemover('standards:*');
     }
 
     /**
@@ -36,7 +36,7 @@ class StandardObserver
      */
     public function deleted(standard $standard)
     {
-        redisRemover('standards');
+        redisRemover('standards:*');
     }
 
     /**
@@ -47,7 +47,7 @@ class StandardObserver
      */
     public function restored(standard $standard)
     {
-        redisRemover('standards');
+        redisRemover('standards:*');
     }
 
 
@@ -59,6 +59,6 @@ class StandardObserver
      */
     public function forceDeleted(standard $standard)
     {
-        redisRemover('standards');
+        redisRemover('standards:*');
     }
 }

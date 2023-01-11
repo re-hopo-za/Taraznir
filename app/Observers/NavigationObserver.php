@@ -15,7 +15,7 @@ class NavigationObserver
      */
     public function created(Navigation $navigation)
     {
-        redisRemover('navigations:');
+        redisRemover('navigations:*');
     }
 
     /**
@@ -26,7 +26,7 @@ class NavigationObserver
      */
     public function updated(Navigation $navigation)
     {
-        redisRemover('navigations:');
+        redisRemover('navigations:*');
     }
 
     /**
@@ -37,7 +37,7 @@ class NavigationObserver
      */
     public function deleted(Navigation $navigation)
     {
-        redisRemover('navigations:');
+        redisRemover('navigations:*');
     }
 
     /**
@@ -48,7 +48,7 @@ class NavigationObserver
      */
     public function restored(Navigation $navigation)
     {
-        redisRemover('navigations:');
+        redisRemover('navigations:*');
     }
 
     /**
@@ -59,6 +59,6 @@ class NavigationObserver
      */
     public function forceDeleted(Navigation $navigation)
     {
-        redisRemover('navigations:');
+        redisRemover('navigations:*');
     }
 }

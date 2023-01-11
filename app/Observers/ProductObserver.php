@@ -15,7 +15,7 @@ class ProductObserver
      */
     public function created(product $product)
     {
-        redisRemover('products');
+        redisRemover('products:*');
     }
 
     /**
@@ -26,7 +26,7 @@ class ProductObserver
      */
     public function updated(product $product)
     {
-        redisRemover('products');
+        redisRemover('products:*');
     }
 
     /**
@@ -37,7 +37,7 @@ class ProductObserver
      */
     public function deleted(product $product)
     {
-        redisRemover('products');
+        redisRemover('products:*');
     }
 
     /**
@@ -48,7 +48,7 @@ class ProductObserver
      */
     public function restored(product $product)
     {
-        redisRemover('products');
+        redisRemover('products:*');
     }
 
     /**
@@ -59,6 +59,6 @@ class ProductObserver
      */
     public function forceDeleted(product $product)
     {
-        redisRemover('products');
+        redisRemover('products:*');
     }
 }
