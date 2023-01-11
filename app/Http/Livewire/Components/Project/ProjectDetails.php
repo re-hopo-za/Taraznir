@@ -6,7 +6,7 @@ use Livewire\Component;
 
 class ProjectDetails extends Component
 {
-    public ?array $meta;
+    public mixed $meta;
     public ?object $categories;
     public function mount( $meta ,$categories)
     {

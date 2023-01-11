@@ -8,7 +8,7 @@ class ProductDetails extends Component
 {
     public ?object $product;
     public ?object $comments;
-    public ?object $meta;
+    public mixed $meta;
 
     public function mount( $product ,$comments ,$meta )
     {
