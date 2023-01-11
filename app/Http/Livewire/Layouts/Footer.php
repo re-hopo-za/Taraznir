@@ -11,7 +11,7 @@ class Footer extends Component
 {
     public function render()
     {
-        $gallery = redisHandler('options:footer_gallery' ,function (){
+        $gallery = redisHandler('footer_gallery:*' ,function (){
             return Option::where('key' ,'footer_gallery')->get();
         });
 

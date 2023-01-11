@@ -14,7 +14,7 @@ class HomePage extends Component
     public function render()
     {
 
-        $sliders = redisHandler( 'sliders:' ,function (){
+        $sliders = redisHandler( 'sliding_item:*' ,function (){
             return Option::where('key' ,'sliding_item')->get();
         });
 
@@ -33,11 +33,11 @@ class HomePage extends Component
         });
         $products  = $products->where('status' ,'publish' )->sortByDesc('chosen')->take(6);
 
-        $brands = redisHandler( 'brands:' ,function (){
+        $brands = redisHandler( 'brands_item:*' ,function (){
             return Option::where('key' ,'brands_item')->get();
         });
 
-        $testimonial = redisHandler( 'testimonials:' ,function (){
+        $testimonial = redisHandler( 'testimonials_item:*' ,function (){
             return Option::where('key' ,'testimonials_item')->get();
         });
 

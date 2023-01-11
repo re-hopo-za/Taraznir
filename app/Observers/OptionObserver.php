@@ -14,7 +14,7 @@ class OptionObserver
      */
     public function created(option $option)
     {
-        redisRemover('options');
+        redisRemover($option->key.':'.$option->id );
     }
 
     /**
@@ -25,7 +25,7 @@ class OptionObserver
      */
     public function updated(option $option)
     {
-        redisRemover('options');
+        redisRemover($option->key.':'.$option->id );
     }
 
     /**
@@ -36,7 +36,7 @@ class OptionObserver
      */
     public function deleted(option $option)
     {
-        redisRemover('options');
+        redisRemover($option->key.':'.$option->id );
     }
 
     /**
@@ -47,7 +47,7 @@ class OptionObserver
      */
     public function restored(option $option)
     {
-        redisRemover('options');
+        redisRemover($option->key.':'.$option->id );
     }
 
     /**
@@ -58,6 +58,6 @@ class OptionObserver
      */
     public function forceDeleted(option $option)
     {
-        redisRemover('options');
+        redisRemover($option->key.':'.$option->id );
     }
 }
