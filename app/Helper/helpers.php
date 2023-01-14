@@ -166,8 +166,9 @@ function redisHandler( string $key ,Closure|null $value ){
     return $data;
 }
 
+
 function redisRemover( $key ){
-    $keys = Redis::keys($key);
+    $keys = Redis::keys( $key);
     if ( !empty( $keys ) && is_array( $keys )){
         foreach ( $keys as $key ){
             Redis::del( str_replace(env('REDIS_PREFIX'),'',$key )  );
@@ -179,21 +180,22 @@ function redisRemover( $key ){
 function socialsTagGenerator( $type ,$date  ) :string
 {
     $tags =
-        '<meta name="keywords" content="[keywords]">
-        <meta name="description" content="[description]">
-        <meta property="og:locale" content="fa_IR" />
-        <meta property="og:type" content="[target]">
-        <meta property="og:title" content="[title]">
-        <meta property="og:url" content="[url]">
-        <meta property="og:image" content="[image]">
-        <meta property="og:description" content="[description]">
-        <meta property="twitter:card" content="summary_large_image">
-        <meta property="twitter:url" content="[url]">
-        <meta property="twitter:title" content="[title]">
-        <meta property="twitter:description" content="[description]">
-        <meta property="twitter:image" content="[image]">
-        <meta name="twitter:creator" content="@TalentGarnet" />
-        <meta name="twitter:site" content="@TalentGarnet" />
+    '
+    <meta name="keywords" content="[keywords]">
+    <meta name="description" content="[description]">
+    <meta property="og:locale" content="fa_IR" />
+    <meta property="og:type" content="[target]">
+    <meta property="og:title" content="[title]">
+    <meta property="og:url" content="[url]">
+    <meta property="og:image" content="[image]">
+    <meta property="og:description" content="[description]">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="[url]">
+    <meta property="twitter:title" content="[title]">
+    <meta property="twitter:description" content="[description]">
+    <meta property="twitter:image" content="[image]">
+    <meta name="twitter:creator" content="@TalentGarnet" />
+    <meta name="twitter:site" content="@TalentGarnet" />
     ';
 
     if( $type == 'page') {
@@ -202,13 +204,16 @@ function socialsTagGenerator( $type ,$date  ) :string
     else {
         $tags = str_replace('[target]', 'article', $tags);
     }
+    $main_desc = 'تاراز نیر آداک جهت طراحی سیستم های صاعقه گیر و حفاظت در برابر صاعقه و سیستم های ارتینگ صنعتی و ساختمانی  اقدام می‌نماید طبق آخرین استاندارد های روز دنیا از جمله NFPA و IEEE و IEC و همچنین اقدام به تولیدکالاهای مورد نیاز در صنعت ارتینگ با استاندارد های مربوطه مینماید،تیم طراحی و فنی مهندسی این مجموعه از متخصصان صنعت برق می‌باشد که جهت طراحی های صنعتی و اجرای پروژه های برق صنعتی در یک تیم بصورت حرفه ای با به روز ترین نرم افزار ها و ابزار آلات اقدام می نمایند
+این مجموعه در انجام کارهای پیمانی در صنعت برق از جمله کابل کشی سینی گذاری تاسیسات کامل برقی فعالیت گسترده ای دارد';
+    $main_keywords = "تاراز نیرآداک، تارازنیر،ارت،صاعقه گیر،ارتینگ،اتصال زمین،الکترود،چاه،چاه ارت،ارستر،برقگیر،مواد کاهنده،مقاومت ویژه،ارت تستر،اسپارک گپ،میله ارت،کلمپ ارت،کلمپ،کلمپ برنجی،سیم به صفحه،سیم به میله،سر ضربه خور،نوک فولادی،باسبار،دریچه بازدید،موج،شوک،tncs,tns,tnc,tt,it ، رعدوبرق،صاعقه گیر اکتیو،صاعقه گیر پسیو،فرانکلین،لوله،کاندوئیت،سینی کابل،نفت،گار،پتانسیل،پتانسیل گام،پتانسیل تماس،مقاومت اهمی،ونر،اشلومبرگر،سه نقطه ای،افت پتانسیل،شیب،62 درصد ،نردبان کابل ،ارت یوفر،کلمپ گالوانیزه ،کلمپ همبندی ،قیمت میله فرانکلین،قیمت صاعقه گیرپسیو،قیمت صاعقه گیرالکترونیک خازنی، اتصال زمین کلیدهای هوایی شبکه فشار متوسط، روش اجرای زمین الکتریکی، حلقه هم پتانسیل کننده، اتصال زمین پستهای توزیع هوایی،قیمت بکفیل،قیمت کنتاکتور،EKF،قیمت محصولات EKF";
 
     $cover = 'https://taraznir.com/images/taraznir-logo-2x.png';
-    $tags  = str_replace( '[image]'       ,$cover             ,$tags );
-    $tags  = str_replace( '[title]'       ,$date->title       ,$tags );
-    $tags  = str_replace( '[url]'         ,$date->url         ,$tags );
-    $tags  = str_replace( '[keywords]'    ,$date->keywords    ,$tags );
-    return   str_replace( '[description]' ,$date->description ,$tags );
+    $tags  = str_replace( '[image]'       ,$cover       ,$tags );
+    $tags  = str_replace( '[title]'       ,$date->title ,$tags );
+    $tags  = str_replace( '[url]'         ,$date->url   ,$tags );
+    $tags  = str_replace( '[keywords]'    ,$date->keywords    ??  $main_keywords ,$tags );
+    return   str_replace( '[description]' ,$date->description ?? $main_desc      ,$tags );
 }
 
 

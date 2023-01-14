@@ -12,7 +12,7 @@
                             <span class="sep-icon-after sep-center sep-solid"></span>
                         </div>
                     </div>
-                    <p class="sub-heading">خدمات ساختمانی طیف کاملی از خدمات ساخت و ساز را از طراحی اولیه تا اتمام پروژه ارائه می دهد.</p>
+                    <p class="sub-heading" dir="rtl"> تولید محصولات با کیفیت و منطبق بر استاندارد های جهانی <br>در اولویت کار ماست.</p>
                 </div>
                 <div class="themesflat-carousel-box has-arrows arrow-center offset-v-111 offset-h-21 arrow-circle arrow-style-2 data-effect clearfix" data-gap="30" data-column="3" data-column2="2" data-column3="1" data-auto="true">
                     <div class="owl-carousel owl-theme">

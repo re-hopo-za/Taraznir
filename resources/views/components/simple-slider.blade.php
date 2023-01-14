@@ -1,4 +1,4 @@
-<div class="owl-carousel owl-theme">
+<div class="owl-carousel owl-theme" >
     @if( !empty( $posts ) && $posts->count() > 0 )
         @foreach( $posts as $post )
             <div class="themesflat-team style-1 align-center clearfix">

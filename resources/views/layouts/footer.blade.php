@@ -70,7 +70,7 @@
                     <div class="tags-list text-right">
                         @if( !empty( $categories ) && $categories->isNotEmpty() )
                             @foreach( $categories as $category )
-                                <a href="/service/category/{{$category->slug}}">{{$category->title}}</a>
+                                <a href="/blog/category/{{$category->slug}}">{{$category->title}}</a>
                             @endforeach
                         @endif
                     </div>

@@ -69,8 +69,7 @@ class Catalog extends Model implements HasMedia
         $this->addMediaConversion('thumbnail')
             ->fit(Manipulations::FIT_CONTAIN, 350, 220);
 
-        $this->addMediaConversion('recent')
-            ->fit(Manipulations::FIT_CONTAIN, 100, 100);
+        $this->addMediaConversion('attachment');
 
         $this
             ->addMediaConversion('cover')
@@ -79,13 +78,11 @@ class Catalog extends Model implements HasMedia
             ->withResponsiveImages();
     }
 
-    public function images( $conversion = 'cover' ):mixed
+    public function images():mixed
     {
-        $images = $this->getMedia();
-        if ( $conversion == 'thumbnail'){
-            if ( isset( $images[0] ) && !empty( $images[0]->getUrl( $conversion ) ) ){
-                return $images[0]->getUrl( $conversion );
-            }
+        $images = $this->getMedia('cover');
+        if ( isset( $images[0] ) && !empty( $images[0]->getUrl( 'cover' ) ) ){
+            return $images[0]->getUrl( 'cover' );
         }
         return asset( 'images/placeholders.png' );
     }

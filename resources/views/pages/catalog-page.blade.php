@@ -1,13 +1,11 @@
-@section('title', ' تارازنیر | شرکت فنی و مهندسی  در طراحی و اجرای ارتینگ , صاعقه‌گیر')
+@section('title', ' تارازنیر | کاتالوگ‌ها')
 
 @section('seo')
     @php
         echo socialsTagGenerator( 'page' ,(object)[
-            'title'       => 'تارازنیر ',
-            'url'         => url()->current() ,
-            'keywords'    => 'ارتینگ , صاعقه‌گیر پسیو, صاعقه‌گیر اکتیو , میله ارت , صفحه مسی , جوش کدولد ',
-            'description' => 'طراحی و نصب سیستم های صاعقه گیر و ارتینگ ونصب سیستم های صاعقه گیر و ارتینگ ونصب سیستم های صاعقه گیر و ارتینگ ونصب سیستم های صاعقه گیر و ارتینگ ونصب سیستم های صاعقه  گیر و ارتینگ طراحی ونصب سیستم های صاعقه گیر و ارتینگ',
-        ])
+            'title'       => 'کاتالوگ‌ها ',
+            'url'         => url()->current()
+          ])
     @endphp
 @endsection
 
@@ -43,13 +41,13 @@
                     @if( !empty( $catalogs ) )
                         @foreach( $catalogs as $catalog )
                             <div  class="grid-item ">
-                                <a class="inner" href="catalog/{{$catalog->slug}}">
+                                <a class="inner" href="/catalog/{{$catalog->slug}}">
                                     <div class="thumb data-effect-item has-effect-icon w40 offset-v-19 offset-h-49">
-                                        <img  src="{{ $catalog->images( 'thumbnail') }}" alt="{{ $catalog->slug}}">
+                                        <img  src="{{ $catalog->images() }}" alt="{{ $catalog->slug}}">
                                     </div>
                                     <div class="text-wrap">
                                         <h5 class="heading text-right " style="min-height: 24px;display: block" >
-                                            <a style="padding-top: 10px;cursor:pointer;" href="catalog/{{$catalog->slug}}">{{ $catalog->title}}</a>
+                                            <a style="padding-top: 10px;cursor:pointer;" href="/catalog/{{$catalog->slug}}">{{ $catalog->title}}</a>
                                         </h5>
                                     </div>
                                 </a>

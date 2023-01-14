@@ -16,7 +16,7 @@ class ServiceSingle extends Component
     public function mount( $slug )
     {
         $en_slug = Str::slug( $slug );
-        $this->service = redisHandler('service:'.$en_slug ,function () use($slug) {
+        $this->service = redisHandler('services:'.$en_slug ,function () use($slug) {
             return Service::where( 'slug' ,'=' ,$slug )->with(['meta','categories' ])->first();
         });
         if( !isset( $this->service->id ) ) {

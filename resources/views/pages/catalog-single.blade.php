@@ -1,4 +1,4 @@
-@section('title', ' تارازنیر | شرکت فنی و مهندسی  در طراحی و اجرای ارتینگ , صاعقه‌گیر')
+@section('title', ' تارازنیر | کاتالوگ‌ها')
 
 @php
     $meta = $catalog->meta->pluck('value','key')->toArray();
@@ -7,7 +7,7 @@
 @section('seo')
     @php
         echo socialsTagGenerator( 'page' ,(object)[
-            'title'       => 'تارازنیر ',
+            'title'       => 'کاتالوگ‌ها ',
             'url'         => url()->current() ,
             'keywords'    => indexChecker( $meta ,'keywords'),
             'description' => indexChecker( $meta ,'description')
@@ -37,7 +37,7 @@
             <div class="detail-gallery">
                 <div class="themesflat-spacer clearfix" data-desktop="21" data-mobile="21" data-smobile="21"></div>
                 <div class="flat-content-wrap style-3 clearfix" dir="rtl">
-                    <img src="{{ $catalog->images('thumbnail') }}" alt="{{$catalog->slug}}">
+                    <img src="{{ $catalog->images() }}" alt="{{$catalog->slug}}">
                 </div>
 
                 <div class="themesflat-spacer clearfix" data-desktop="40" data-mobile="40" data-smobile="40"></div>

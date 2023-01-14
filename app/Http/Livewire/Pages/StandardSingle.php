@@ -18,7 +18,7 @@ class StandardSingle extends Component
     {
         $en_slug = Str::slug( $slug );
 
-        $this->standard = redisHandler('standard:'.$en_slug ,function () use($slug) {
+        $this->standard = redisHandler('standards:'.$en_slug ,function () use($slug) {
             return Standard::where( 'slug' ,'=' ,$slug )->with(['meta','categories' ])->first();
         });
         if( !isset( $this->standard->id ) ) {

@@ -101,14 +101,14 @@ class StandardResource extends Resource
 
                         Card::make()->schema([
                             SpatieMediaLibraryFileUpload::make('cover')
-                                ->enableReordering()
+                                ->collection('cover')
                                 ->placeholder('بارگذاری تصویر بند انگشتی')
                                 ->label(' تصویر بند انگشتی ')
                                 ->imagePreviewHeight(100)  ,
                         ]),
 
 
-                        Card::make()->schema([ //third section
+                        Card::make()->schema([
                             SpatieMediaLibraryFileUpload::make('attachment')
                                 ->collection('attachments')
                                 ->multiple()

@@ -17,7 +17,7 @@ class ProjectSingle extends Component
     {
         $en_slug = Str::slug( $slug );
 
-        $this->project = redisHandler('project:'.$en_slug ,function () use($slug) {
+        $this->project = redisHandler('projects:'.$en_slug ,function () use($slug) {
             return Project::where( 'slug' ,'=' ,$slug )->with(['meta','categories' ])->first();
         });
         if( !isset( $this->project->id ) ) {

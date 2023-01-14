@@ -1,12 +1,10 @@
-@section('title', ' تارازنیر | شرکت فنی و مهندسی  در طراحی و اجرای ارتینگ , صاعقه‌گیر')
+@section('title', ' تارازنیر | منابع')
 
 @section('seo')
     @php
         echo socialsTagGenerator( 'page' ,(object)[
-            'title'       => 'تارازنیر ',
-            'url'         => url()->current() ,
-            'keywords'    => 'ارتینگ , صاعقه‌گیر پسیو, صاعقه‌گیر اکتیو , میله ارت , صفحه مسی , جوش کدولد ',
-            'description' => 'طراحی و نصب سیستم های صاعقه گیر و ارتینگ ونصب سیستم های صاعقه گیر و ارتینگ ونصب سیستم های صاعقه گیر و ارتینگ ونصب سیستم های صاعقه گیر و ارتینگ ونصب سیستم های صاعقه  گیر و ارتینگ طراحی ونصب سیستم های صاعقه گیر و ارتینگ',
+            'title'       => 'منابع ',
+            'url'         => url()->current()
         ])
     @endphp
 @endsection
@@ -41,7 +39,7 @@
                     <p class="sub-heading font-weight-400 text-808 max-width-680">با ما با دانستن اینکه پروژه خانه رویایی شما در دستان یک شرکت ساختمانی دارای مجوز کاملاً بیمه شده است، آرامش خاطر خواهید داشت.</p>
                 </div>
                 <div class="themesflat-spacer clearfix" data-desktop="39" data-mobile="35" data-smobile="35"></div>
-                <div class="themesflat-carousel-box data-effect has-bullets bullet-circle bullet24 clearfix" data-gap="30" data-column="3" data-column2="2" data-column3="1" data-auto="true">
+                <div class="themesflat-carousel-box data-effect has-bullets bullet-circle bullet24 clearfix" data-gap="30" data-column="4" data-column2="2" data-column3="1" data-auto="true">
                      <livewire:components.simple-slider :posts="$standards" :route="'standard'"/>
                 </div>
                 <div class="elm-button text-center">
@@ -65,7 +63,7 @@
                     <p class="sub-heading font-weight-400 text-808 max-width-680">با ما با دانستن اینکه پروژه خانه رویایی شما در دستان یک شرکت ساختمانی دارای مجوز کاملاً بیمه شده است، آرامش خاطر خواهید داشت.</p>
                 </div>
                 <div class="themesflat-spacer clearfix" data-desktop="39" data-mobile="35" data-smobile="35"></div>
-                <div class="themesflat-carousel-box data-effect has-bullets bullet-circle bullet24 clearfix" data-gap="30" data-column="3" data-column2="2" data-column3="1" data-auto="true">
+                <div class="themesflat-carousel-box data-effect has-bullets bullet-circle bullet24 clearfix" data-gap="30" data-column="4" data-column2="2" data-column3="1" data-auto="true">
                     <livewire:components.simple-slider :posts="$catalogs" :route="'catalog'" />
                 </div>
                 <div class="elm-button text-center">

@@ -23,7 +23,7 @@ class CatalogPage extends Component
         $this->category   = $category;
 
         $all_catalogs = redisHandler( 'catalogs:' ,function (){
-            return Catalog::with(['meta','categories']);
+            return Catalog::with(['meta','categories'])->get();
         });
 
         if( !empty( $category ) ){

@@ -43,7 +43,7 @@ class ProductSingle extends Component
             return Product::where('id' ,'>' ,$this->product->id )->orderBy('id', 'desc')->first();
         });
 
-        $this->recent  = redisHandler( 'product_recent' ,function (){
+        $this->recent  = redisHandler( 'products:product_recent' ,function (){
             return Product::orderBy('id','desc')->take(3)->get();
         });
 

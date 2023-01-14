@@ -8,9 +8,9 @@
     <div class="themesflat-spacer clearfix" data-desktop="34" data-mobile="35" data-smobile="35"></div>
     @if( !empty( $attachments ))
         @foreach( $attachments as $attachment )
-            @php( $path = str_replace('https://taraznir.com/storage/','', $attachment->getUrl()) )
+            @php( $path = str_replace(['https://taraznir.com/storage/','https://taraznir.dev/storage/'],'', $attachment->getUrl()) )
             <div class="button-wrap has-icon icon-left size-14 pf21">
-                <a href="/pdf-viewer?file={{$path}}" class="themesflat-button font-default bg-light-white w100 d-flex my-3 flex-row-reverse justify-content-between">
+                <a target="_blank" href="/pdf-viewer?file={{$path}}" class="themesflat-button font-default bg-light-white w100 d-flex my-3 flex-row-reverse justify-content-between">
                     <span style=" display:block;width:200px;overflow:hidden;text-overflow: ellipsis;white-space: nowrap;direction: rtl;padding:0" >
                         {{$attachment->name}}
                     </span>

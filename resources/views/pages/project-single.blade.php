@@ -1,4 +1,4 @@
-@section('title', ' تارازنیر | شرکت فنی و مهندسی  در طراحی و اجرای ارتینگ , صاعقه‌گیر')
+@section('title', ' تارازنیر | پروژه‌‌ها')
 
 @php
     $meta = $project->meta->pluck('value','key')->toArray();
@@ -7,7 +7,7 @@
 @section('seo')
     @php
         echo socialsTagGenerator( 'page' ,(object)[
-            'title'       => 'تارازنیر ',
+            'title'       => 'پروژه‌‌ها ',
             'url'         => url()->current() ,
             'keywords'    => indexChecker( $meta ,'keywords'),
             'description' => indexChecker( $meta ,'description')

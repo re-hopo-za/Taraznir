@@ -12,10 +12,10 @@ class ResourcePage extends Component
 
     public function render()
     {
-        $catalogs = redisHandler( 'catalog:' ,function (){
+        $catalogs = redisHandler( 'catalogs:' ,function (){
             return Catalog::with(['categories' ,'meta'])->get();
         });
-        $standards = redisHandler( 'standard:' ,function (){
+        $standards = redisHandler( 'standards:' ,function (){
              return Standard::with(['categories' ,'meta'])->get();
         });
 
