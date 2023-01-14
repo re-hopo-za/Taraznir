@@ -120,8 +120,11 @@ Route::middleware([
 
 Route::get('/dashboard' , function(){
     return redirect()->route('/');
-
 });
+
+Route::get('/pdf-viewer' , [\App\Http\Controllers\Controller::class, 'pdfViewer']);
+
+
 
 
 
