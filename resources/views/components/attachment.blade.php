@@ -9,7 +9,7 @@
     @if( !empty( $attachments ))
         @foreach( $attachments as $attachment )
             <div class="button-wrap has-icon icon-left size-14 pf21">
-                <a href="{{$attachment->getUrl()}}" class="themesflat-button font-default bg-light-white w100 d-flex my-3 flex-row-reverse justify-content-between" download>
+                <a href="/pdf-viewer?file={{$attachment->getUrl()}}" class="themesflat-button font-default bg-light-white w100 d-flex my-3 flex-row-reverse justify-content-between" download>
                     <span style=" display:block;width:200px;overflow:hidden;text-overflow: ellipsis;white-space: nowrap;direction: rtl;padding:0" >
                         {{$attachment->name}}
                     </span>
