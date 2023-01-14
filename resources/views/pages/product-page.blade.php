@@ -55,7 +55,7 @@
                 </div>
             </div>
         </div>
-        <div id="sidebar">
+        <div id="sidebar" style="min-width: 270px">
             <div id="inner-sidebar" class="inner-content-wrap">
                 <livewire:components.search-box :model="'product'" />
                 <livewire:components.categories :categories="$categories" :allRoute="'product'" :route="'CategoryProduct'" :specificCat="$category" />

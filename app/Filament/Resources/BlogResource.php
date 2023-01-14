@@ -57,10 +57,9 @@ class BlogResource extends Resource
                                 ->height(400 )
                                 ->label('محتوا') ,
                             SpatieMediaLibraryFileUpload::make('cover')
-                                ->enableReordering()
                                 ->placeholder('بارگذاری تصویر اصلی')
                                 ->label(' تصویر اصلی ')
-                                ->imagePreviewHeight(100)  ,
+                                ->imagePreviewHeight(500)  ,
 
                             Forms\Components\Textarea::make('summary')
                                 ->label('خلاصه')
@@ -130,7 +129,6 @@ class BlogResource extends Resource
                     ->label('شناسه') ,
 
                 SpatieMediaLibraryImageColumn::make('cover')
-                    ->collection('cover')
                     ->label('تصویر') ,
 
                 Tables\Columns\TextColumn::make('title')

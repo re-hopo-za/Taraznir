@@ -54,9 +54,7 @@ class Option extends Model implements HasMedia
 
         $this
             ->addMediaConversion('attachments')
-            ->nonQueued()
-            ->keepOriginalImageFormat()
-            ->withResponsiveImages();
+            ->nonQueued();
     }
 
 

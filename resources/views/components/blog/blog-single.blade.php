@@ -2,7 +2,7 @@
     @php(  $meta = $blog->meta()->pluck('value','key')->toArray() )
     <article class="hentry data-effect">
         <div class="post-media data-effect-item has-effect-icon offset-v-25 offset-h-24 clerafix">
-            <img width="100%" src="{{$blog->images('cover')}}" alt="Image">
+            <img width="100%" src="{{$blog->images('cover')}}" alt="{{$blog->title}}" style="object-fit: cover;">
             <div class="post-calendar">
                 <span class="inner">
                     <span class="entry-calendar">

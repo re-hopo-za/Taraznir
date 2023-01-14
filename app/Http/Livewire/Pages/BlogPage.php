@@ -14,7 +14,7 @@ class BlogPage extends Component
 
     public string  $category;
     public ?object $categories;
-    public ?object $recent;
+
 
 
     public function mount( $category = '' )
@@ -41,11 +41,15 @@ class BlogPage extends Component
             });
         }
 
+        $recent = redisHandler( 'blogs:recent' ,function (){
+            return Blog::with(['comments' ,'meta'])->take(3)->get();
+        });
+
         return view('pages.blog-page' ,[
             'categories' => $this->categories ,
             'category'   => $this->category ,
             'blogs'      => $blogs ,
-            'recent'     => $blogs->take(3)
+            'recent'     => $recent
         ]);
     }
 }

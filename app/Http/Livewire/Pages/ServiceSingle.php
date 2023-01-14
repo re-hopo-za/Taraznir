@@ -31,7 +31,7 @@ class ServiceSingle extends Component
         return view('pages.service-single' ,[
             'service'     => $this->service ,
             'meta_desc'   => $this->service->meta->pluck('value','key')->toArray(),
-            'meta_doing'  => $this->service->meta->where('key','doing_items')->pluck('value','key')->toArray(),
+            'meta_doing'  => $this->service->meta->where('key','doing_items')->pluck('value','id')->toArray(),
         ]);
     }
 }

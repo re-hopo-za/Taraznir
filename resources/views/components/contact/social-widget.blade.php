@@ -1,27 +1,27 @@
 <div class="widget widget_follow">
     <h2 class="widget-title text-right"><span class="text-right">ما را دنبال کنید</span></h2>
     <div class="follow-wrap clearfix col3 g8">
-        <div class="follow-item facebook">
-            <div class="inner">
+        <div class="follow-item">
+            <div class="inner" style="background-color:#25d366">
                 <span class="socials">
-                    <a href="#"><i class="fa fa-facebook"></i></a>
-                    <span class="text">43217 <br> likes</span>
+                    <a href="https://wa.me/0935638365"><i class="fa fa-whatsapp"></i></a>
+                    <span class="text"> Whatsapp</span>
                 </span>
             </div>
         </div>
-        <div class="follow-item twitter">
-            <div class="inner">
+        <div class="follow-item">
+            <div class="inner" style="background-color:#183153">
                 <span class="socials">
-                    <a href="#"><i class="fa fa-twitter"></i></a>
-                    <span class="text">3752  <br> flowers</span>
+                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                    <span class="text">Linkedin</span>
                 </span>
             </div>
         </div>
-        <div class="follow-item google">
-            <div class="inner">
+        <div class="follow-item">
+            <div class="inner" style="background-color:#C13584">
                 <span class="socials">
-                    <a href="#"><i class="fa fa-google"></i></a>
-                    <span class="text">432  <br> contacter</span>
+                    <a href="https://instagram.com/taraz_nir?igshid=nl8mdxirbjt3"><i class="fa fa-instagram"></i></a>
+                    <span class="text">Instagram</span>
                 </span>
             </div>
         </div>

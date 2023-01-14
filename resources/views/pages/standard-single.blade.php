@@ -52,7 +52,7 @@
                 <livewire:components.related-posts :posts="$related" :title="'استاندارد‌های مرتبط'"/>
             </div>
         </div>
-        <div id="sidebar">
+        <div id="sidebar" style="min-width: 270px">
             <div class="themesflat-spacer clearfix" data-desktop="0" data-mobile="60" data-smobile="60"></div>
             <div id="inner-sidebar" class="inner-content-wrap">
                 <div class="detail-inner-wrap">

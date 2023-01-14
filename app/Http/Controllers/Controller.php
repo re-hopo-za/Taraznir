@@ -17,9 +17,6 @@ class Controller extends BaseController
 
 
     function pdfViewer(Request $request ){
-        return response()->file(public_path('storage/'.$request->file) , [
-            'Content-Type' => 'application/pdf',
-            'Content-Disposition' => 'inline; filename="storage/'.$request->file.'"'
-        ]);
+        return response()->file(public_path('storage/'.$request->file));
     }
 }

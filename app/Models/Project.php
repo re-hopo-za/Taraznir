@@ -83,8 +83,7 @@ class Project extends Model implements HasMedia
         $this
             ->addMediaConversion('cover')
             ->fit(Manipulations::FIT_CONTAIN, 1365, 853 )
-            ->nonQueued()
-            ->withResponsiveImages();
+            ->nonQueued();
     }
 
 

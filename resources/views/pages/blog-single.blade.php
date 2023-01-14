@@ -34,7 +34,7 @@
         <div id="site-content" class="site-content clearfix">
             <livewire:components.blog.blog-single :blog="$blog" />
         </div>
-        <div id="sidebar">
+        <div id="sidebar" style="min-width: 270px">
             <div class="themesflat-spacer clearfix" data-desktop="0" data-mobile="60" data-smobile="60"></div>
             <div id="inner-sidebar" class="inner-content-wrap">
                 <livewire:components.search-box :term="''" :model="'Blog'" />

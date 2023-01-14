@@ -1,5 +1,5 @@
 <div class="row">
-    @if( !empty( $posts ) && $posts->count() > 0 )
+    @if( !empty( $posts ) )
         <div class="col-md-12" dir="rtl">
             <div class="themesflat-lines style-1 line-full line-solid clearfix"><span class="line"></span></div>
             <div class="themesflat-spacer clearfix" data-desktop="46" data-mobile="35" data-smobile="35"></div>
@@ -15,7 +15,7 @@
                         <div class="project-item">
                             <div class="inner">
                                 <div class="thumb data-effect-item has-effect-icon w40 offset-v-43 offset-h-46">
-                                    <img src="{{ $post->images( 'thumbnail') }}" alt="Image">
+                                    <img src="{{ $post->images( 'thumbnail') }}" alt="{{$post->title}}" style="width: 100px;height: 60px;">
                                     <div class="text-wrap text-center">
                                         <h5 class="heading"><a href="/{{get_class($posts)}}/{{$post->slug}}">{{$post->title}}</a></h5>
                                         <div class="elm-meta">

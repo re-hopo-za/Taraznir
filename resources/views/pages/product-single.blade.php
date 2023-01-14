@@ -48,7 +48,7 @@
             </div>
         </div>
 
-        <div id="sidebar">
+        <div id="sidebar" style="min-width: 270px">
             <div class="themesflat-spacer clearfix" data-desktop="80" data-mobile="0" data-smobile="0" style="height:80px"></div>
             <div id="inner-sidebar" class="inner-content-wrap">
                 <livewire:components.attachment :post="$product" />

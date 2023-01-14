@@ -25,7 +25,7 @@
 @section('sidebar','sidebar-right')
 
 <div id="main-content" class="site-main clearfix blog-container" >
-    <div id="content-wrap" class="container blog-page">
+    <div id="content-wrap" class="container blog-page" >
         <div class="themesflat-spacer clearfix" data-desktop="60" data-mobile="20" data-smobile="20" style="height:0"></div>
         <div id="site-content" class="site-content clearfix">
             <div id="inner-content" class="inner-content-wrap blog-page">
@@ -35,7 +35,7 @@
                         <article class="hentry data-effect">
                             <div class="post-media has-effect-icon offset-v-25 offset-h-24 data-effect-item clerafix">
                                 <a href="/blog/{{ $blog->slug }}">
-                                    <img src="{{ $blog->images( 'thumbnail') }}" width="100%" alt="{{ $blog->title }}" style="max-height: 399px">
+                                    <img src="{{ $blog->images( 'cover') }}" width="100%" alt="{{ $blog->title }}" style="max-height:450px;object-fit: cover;">
                                 </a>
                                 <div class="post-calendar">
                                     <span class="inner">
@@ -95,7 +95,7 @@
                 {{$blogs->links('components.pagination')}}
             </div>
         </div>
-        <div id="sidebar">
+        <div id="sidebar" style="min-width: 270px">
             <div id="inner-sidebar" class="inner-content-wrap">
                 <livewire:components.search-box :term="''" :model="'Blog'" />
                 <livewire:components.contact.social-widget />
