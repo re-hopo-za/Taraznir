@@ -31,6 +31,5 @@ class CacheAll extends Command
         echo Artisan::call('view:cache');
         echo Artisan::call('config:cache');
         echo Artisan::call('route:cache');
-        echo Artisan::call('event:cache');
     }
 }
