@@ -171,7 +171,8 @@ function redisRemover( $key ){
     $keys = Redis::keys( $key);
     if ( !empty( $keys ) && is_array( $keys )){
         foreach ( $keys as $key ){
-            Redis::del( str_replace(env('REDIS_PREFIX'),'',$key )  );
+            Redis::del( $key );
+//            Redis::del( str_replace("taraz_",'',$key )  );
         }
     }
 }
