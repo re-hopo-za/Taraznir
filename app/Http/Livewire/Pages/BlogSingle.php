@@ -20,14 +20,16 @@ class BlogSingle extends Component
     {
         $en_slug = Str::slug( $slug );
         $this->blog = redisHandler('blogs:'.$en_slug ,function () use($slug) {
-            return Blog::where( 'slug' ,'=' ,$slug )->with(['meta','categories' ])->first();
+            return Blog::active()->where( 'slug' ,'=' ,$slug )->with(['meta','categories' ])->first();
         });
         if( !isset( $this->blog->id ) ) {
             return abort(404);
         }
 
+
+
         $blogs = redisHandler( 'blogs:' ,function (){
-            return Blog::with(['comments' ,'meta'])->paginate( 8 );
+            return Blog::active()->with(['comments' ,'meta'])->sort()->paginate( 8 );
         });
 
         $this->categories = redisHandler( 'categories:blogs' ,function (){
@@ -36,14 +38,14 @@ class BlogSingle extends Component
 
 
         $categories = $this->blog->categories->modelKeys();
-        $this->related = redisHandler( 'blogs:related_'.$en_slug,function () use($categories ,$blogs){
+        $this->related = redisHandler( 'blogs:related:'.$en_slug,function () use($categories ,$blogs){
             return $blogs->filter( fn( $item ) => $item->whereIn('categories.id' ,$categories) )
                 ->where('id', '<>', $this->blog->id )->take(3);
         });
 
 
         if ( !$this->related->count() ) {
-            $this->related = redisHandler( 'blogs:not_related_'.$en_slug ,function () use($blogs){
+            $this->related = redisHandler( 'blogs:related'.$en_slug ,function () use($blogs){
                 return $blogs::where('id', '<>', $this->blog->id )->take(3)->get();
             });
         }

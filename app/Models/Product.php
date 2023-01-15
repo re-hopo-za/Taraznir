@@ -54,6 +54,17 @@ class Product extends Model implements HasMedia
         );
     }
 
+    public function scopeActive($query)
+    {
+        return $query->where('status' ,'publish');
+    }
+
+    public function scopeSort($query)
+    {
+        return $query->orderBy('chosen', 'desc');
+    }
+
+
 
     public function meta(): MorphMany
     {

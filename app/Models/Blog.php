@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -45,6 +46,22 @@ class Blog extends Model implements HasMedia
         );
     }
 
+    public function scopeActive($query)
+    {
+        return $query->where('status' ,'publish');
+    }
+
+    public function scopeSort($query)
+    {
+        return $query->orderBy('chosen', 'desc');
+    }
+
+//    protected static function booted()
+//    {
+//        static::addGlobalScope('ancient', function (Builder $builder) {
+//            $builder->where('status' ,'publish');
+//        });
+//    }
 
     public function meta(): MorphMany
     {
@@ -73,10 +90,10 @@ class Blog extends Model implements HasMedia
 
         $this
             ->addMediaConversion('cover')
-            ->fit(Manipulations::FIT_CROP, 750, 500);
+            ->fit(Manipulations::FIT_CROP, 850, 550);
 
         $this->addMediaConversion('recent')
-            ->fit(Manipulations::FIT_CONTAIN, 75, 50);
+            ->fit(Manipulations::FIT_CROP, 75, 50);
     }
 
 

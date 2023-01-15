@@ -28,21 +28,20 @@ class BlogPage extends Component
 
     public function render()
     {
-
         if( !empty( $this->category ) ){
-            $blogs = redisHandler( 'blogs:specific_category_'.$this->category.$this->page ,function(){
-                return Blog::whereHas('categories' ,function ($query) {
+            $blogs = redisHandler( 'blogs:category:'.$this->category.$this->page ,function(){
+                return Blog::active()->whereHas('categories' ,function ($query) {
                     $query->where('slug' ,$this->category );
-                })->paginate( 8 ,page:$this->page);
+                })->sort()->paginate( 8 ,page:$this->page);
             });
         }else{
             $blogs = redisHandler( 'blogs:'.$this->page ,function (){
-                return Blog::with(['comments' ,'meta'])->paginate( 8 ,page:$this->page);
+                return Blog::active()->with(['comments' ,'meta'])->sort()->paginate( 8 ,page:$this->page);
             });
         }
 
         $recent = redisHandler( 'blogs:recent' ,function (){
-            return Blog::with(['comments' ,'meta'])->take(3)->get();
+            return Blog::active()->with(['comments' ,'meta'])->take(3)->sort()->get();
         });
 
         return view('pages.blog-page' ,[

@@ -27,12 +27,12 @@
 <div id="main-content" class="site-main clearfix blog-container" >
     <div id="content-wrap" class="container blog-page" >
         <div class="themesflat-spacer clearfix" data-desktop="60" data-mobile="20" data-smobile="20" style="height:0"></div>
-        <div id="site-content" class="site-content clearfix">
+        <div id="site-content" class="site-content clearfix" style="max-width: 850px;">
             <div id="inner-content" class="inner-content-wrap blog-page">
                 @if( !empty( $blogs ) )
                     @foreach( $blogs as $blog )
                         @php(  $meta = $blog->meta()->pluck('value','key')->toArray() )
-                        <article class="hentry data-effect">
+                        <article class="hentry data-effect" style="margin-top: 15px">
                             <div class="post-media has-effect-icon offset-v-25 offset-h-24 data-effect-item clerafix">
                                 <a href="/blog/{{ $blog->slug }}">
                                     <img src="{{ $blog->images( 'cover') }}" width="100%" alt="{{ $blog->title }}" style="max-height:450px;object-fit: cover;">
