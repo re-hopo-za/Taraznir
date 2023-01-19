@@ -15,23 +15,27 @@ class ProjectPage extends Component
 
     public function mount( $category = '' )
     {
-        $this->categories = redisHandler( 'categories:projects' ,function (){
-            return Category::where( 'model' ,'project' )->get();
-        });
         $this->category = $category;
 
-        $all_projects = redisHandler( 'projects:' ,function (){
-            return Project::with(['categories'])->get();
-        });
         if( !empty( $category ) ){
             $this->projects = redisHandler( 'projects:specific_category_'.$category ,function (){
                 return Project::whereHas('categories' ,function ($query){
                     $query->where('slug' ,$this->category);
                 })->get();
             });
+            if( empty( $this->projects) ) {
+                return abort(404);
+            }
         }else {
+            $all_projects = redisHandler( 'projects:' ,function (){
+                return Project::with(['categories'])->get();
+            });
             $this->projects = $all_projects;
         }
+
+        $this->categories = redisHandler( 'categories:projects' ,function (){
+            return Category::where( 'model' ,'project' )->get();
+        });
     }
 
     public function render()

@@ -15,9 +15,11 @@
                         <div class="project-item">
                             <div class="inner">
                                 <div class="thumb data-effect-item has-effect-icon w40 offset-v-43 offset-h-46">
-                                    <img src="{{ $post->images( 'thumbnail') }}" alt="{{$post->title}}" style="width: 100px;height: 60px;">
+                                    <img src="{{ $post->images( 'thumbnail') }}" alt="{{$post->title}}">
                                     <div class="text-wrap text-center">
-                                        <h5 class="heading"><a href="/{{get_class($posts)}}/{{$post->slug}}">{{$post->title}}</a></h5>
+                                        <h5 class="heading">
+                                            <a href="/{{ $path }}/{{$post->slug}}">{{$post->title}}</a>
+                                        </h5>
                                         <div class="elm-meta">
                                             @if( !empty( $post->categories ) )
                                                 @foreach( $post->categories as $cat )
@@ -26,10 +28,6 @@
                                             @endif
                                         </div>
                                     </div>
-                                    <div class="elm-link">
-                                        <a href="#" class="icon-1"></a>
-                                    </div>
-                                    <div class="overlay-effect bg-color-3"></div>
                                 </div>
                             </div>
                         </div>

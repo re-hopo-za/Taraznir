@@ -3,45 +3,48 @@
 namespace App\Http\Livewire\Pages;
 
 use App\Models\Catalog;
-use App\Models\Category;
+//use App\Models\Category;
 use Livewire\Component;
 
 class CatalogPage extends Component
 {
 
-    public string  $category;
+//    public string  $category;
     public ?object $catalogs;
-    public ?object $categories;
+//    public ?object $categories;
 
 
 
     public function mount( $category = '' )
     {
-        $this->categories  = redisHandler( 'categories:catalogs' ,function (){
-            return Category::where( 'model' ,'catalog' )->get();
-        });
-        $this->category   = $category;
+//        $this->category = $category;
 
-        $all_catalogs = redisHandler( 'catalogs:' ,function (){
-            return Catalog::with(['meta','categories'])->get();
-        });
-
-        if( !empty( $category ) ){
-            $this->catalogs = redisHandler('catalogs:specific_category_'.$category ,function(){
-                return Catalog::whereHas('categories' ,function ($query) {
-                        $query->where('slug' ,$this->category );
-                    })->get();
+//        if( !empty( $category ) ){
+//            $this->catalogs = redisHandler('catalogs:specific_category_'.$category ,function(){
+//                return Catalog::whereHas('categories' ,function ($query) {
+//                    $query->where('slug' ,$this->category );
+//                })->get();
+//            });
+//            if( empty($this->catalogs) ) {
+//                return abort(404);
+//            }
+//        }else {
+            $all_catalogs = redisHandler( 'catalogs:' ,function (){
+                return Catalog::with(['meta','categories'])->get();
             });
-        }else {
             $this->catalogs  = $all_catalogs;
-        }
+//        }
+
+//        $this->categories  = redisHandler( 'categories:catalogs' ,function (){
+//            return Category::where( 'model' ,'catalog' )->get();
+//        });
     }
 
     public function render()
     {
-        return view('pages.catalog-page'  ,[
-            'categories' => $this->categories ,
-            'category'   => $this->category ,
+        return view('pages.catalog-page' ,[
+//            'categories' => $this->categories ,
+//            'category'   => $this->category ,
             'catalogs'   => $this->catalogs ,
         ]);
     }

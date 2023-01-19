@@ -34,6 +34,9 @@ class BlogPage extends Component
                     $query->where('slug' ,$this->category );
                 })->sort()->paginate( 8 ,page:$this->page);
             });
+            if( empty($blogs) ) {
+                return abort(404);
+            }
         }else{
             $blogs = redisHandler( 'blogs:'.$this->page ,function (){
                 return Blog::active()->with(['comments' ,'meta'])->sort()->paginate( 8 ,page:$this->page);

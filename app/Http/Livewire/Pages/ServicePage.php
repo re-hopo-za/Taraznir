@@ -9,18 +9,17 @@ use Livewire\Component;
 class ServicePage extends Component
 {
 
-    public string  $category;
+//    public string  $category;
     public ?object $services;
-    public ?object $categories;
+//    public ?object $categories;
 
 
     public function mount( $category = '' )
     {
-        $this->categories = redisHandler( 'categories:services' ,function (){
-            return Category::where( 'model' ,'service' )->get();
-        });
-
-        $this->category = $category;
+//        $this->categories = redisHandler( 'categories:services' ,function (){
+//            return Category::where( 'model' ,'service' )->get();
+//        });
+//        $this->category = $category;
 
         $this->services  = redisHandler( 'services:' ,function (){
             return Service::with(['categories' ,'meta'])->get();
@@ -30,8 +29,8 @@ class ServicePage extends Component
     public function render()
     {
         return view('pages.service-page' ,[
-            'categories' => $this->categories ,
-            'category'   => $this->category ,
+//            'categories' => $this->categories ,
+//            'category'   => $this->category ,
             'services'   => $this->services ,
         ]);
     }

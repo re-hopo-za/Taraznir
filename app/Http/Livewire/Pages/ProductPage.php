@@ -15,14 +15,7 @@ class ProductPage extends Component
 
     public function mount( $category = '' )
     {
-        $this->categories  = redisHandler( 'categories:products' ,function (){
-            return Category::where( 'model' ,'product' )->get();
-        });
         $this->category = $category;
-
-        $all_products = redisHandler( 'products:' ,function (){
-            return Product::with(['categories' ,'meta'])->get();
-        });
 
         if( !empty( $category ) ){
             $this->products = redisHandler( 'products:specific_category_'.$category ,function(){
@@ -30,10 +23,19 @@ class ProductPage extends Component
                     $query->where('slug' ,$this->category);
                 })->get();
             });
+            if( empty( $this->products) ) {
+                return abort(404);
+            }
         }else {
+            $all_products = redisHandler( 'products:' ,function (){
+                return Product::with(['categories' ,'meta'])->get();
+            });
             $this->products = $all_products;
         }
 
+        $this->categories  = redisHandler( 'categories:products' ,function (){
+            return Category::where( 'model' ,'product' )->get();
+        });
     }
 
     public function render()

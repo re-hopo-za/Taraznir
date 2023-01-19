@@ -7,10 +7,12 @@ use Livewire\Component;
 class RelatedPosts extends Component
 {
     public ?string $title;
+    public ?string $path;
     public ?object $posts;
-    public function mount( $posts ,$title )
+    public function mount( $posts ,$path ,$title )
     {
         $this->posts = $posts;
+        $this->path  = $path;
         $this->title = $title;
     }
 
@@ -18,6 +20,7 @@ class RelatedPosts extends Component
     {
         return view('components.related-posts' ,[
             'posts' => $this->posts ,
+            'path'  => $this->path  ,
             'title' => $this->title ,
         ]);
     }

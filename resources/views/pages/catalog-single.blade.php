@@ -50,7 +50,7 @@
                 </div>
 
                 <div class="themesflat-spacer clearfix" data-desktop="60" data-mobile="60" data-smobile="60"></div>
-                <livewire:components.related-posts :posts="$related" :title="'استاندارد‌های مرتبط'"/>
+                <livewire:components.related-posts :posts="$related" :path="'catalog'" :title="'کاتالوگ‌های مرتبط'"/>
             </div>
         </div>
 
