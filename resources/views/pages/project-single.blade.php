@@ -42,7 +42,7 @@
                 <livewire:components.project.project-description :project="$project"/>
 
                 <div class="themesflat-spacer clearfix" data-desktop="60" data-mobile="60" data-smobile="60"></div>
-                <livewire:components.related-posts :posts="$related" :title="'پروژه‌های مرتبط'"/>
+                <livewire:components.related-posts :posts="$related" :path="'project'" :title="'پروژه‌های مرتبط'"/>
             </div>
         </div>
         <div id="sidebar" style="min-width: 270px">
