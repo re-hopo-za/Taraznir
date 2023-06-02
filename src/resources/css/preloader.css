@@ -1,7 +1,7 @@
 /* Preloader */
 
 .handle-preloader{
-	background-color:#ed1d24;
+	background-color: #4ecb2c;
 }
 
 .handle-preloader {
@@ -71,7 +71,7 @@
   text-transform: uppercase;
   color: transparent;
   -webkit-text-stroke-width: 1px;
-  
+
   -webkit-text-stroke-color: rgba(255, 255, 255, 0.30);
 }
 
@@ -96,7 +96,7 @@
 }
 
 .handle-preloader .animation-preloader .txt-loading .letters-loading{
-  
+
 }
 
 .handle-preloader .animation-preloader .txt-loading .letters-loading:before{
@@ -105,7 +105,7 @@
 
 .handle-preloader .animation-preloader .spinner{
   border: 3px solid #ffffff;
-  border-top-color: rgba(255, 255, 255, 0.5); 
+  border-top-color: rgba(255, 255, 255, 0.5);
 }
 
 /* AnimaciÃƒÆ’Ã‚Â³n del preloader */

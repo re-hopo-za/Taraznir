@@ -13,13 +13,15 @@ import 'swiper/css/navigation';
 import {useState} from "react";
 
 export function MainSlider () {
-    const [swiperInstance, setSwiperInstance] = useState<SwiperInterface>();
+    const [swiperInstance , setSwiperInstance] = useState<SwiperInterface>();
     const [prevPale ,setPrevPale] = useState(true);
     const [nextPale ,setNextPale] = useState(false);
     const onSlideChange = ()=>{
+        // @ts-ignore
         if( swiperInstance.activeIndex + 1  == swiperInstance.slides.length ){
             setNextPale( true );
             setPrevPale(false)
+            // @ts-ignore
         }else if( swiperInstance.activeIndex == 0 ){
             setNextPale( false );
             setPrevPale(true)
@@ -30,20 +32,21 @@ export function MainSlider () {
     }
 
 
+
     return(
         <section className="main-slider-two">
-
             <div className="swiper__arrows" dir="rtl">
                 <div
                     className="swiper-button-prev-- "
+                    // @ts-ignore
                     onClick={()=>swiperInstance.slidePrev(500)}
                     style={{background:prevPale ? 'black' :'#ffc30c'}}
                 >
                     <div className="flaticon-right-arrow"></div>
                 </div>
-
                 <div
                     className="arrow-icon swiper-button-next--"
+                    // @ts-ignore
                     onClick={()=>swiperInstance.slideNext(500)}
                     style={{background:nextPale ? 'black' :'#ffc30c'}}
                 >
