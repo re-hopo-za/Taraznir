@@ -1,40 +1,40 @@
 
 // Masonary
-function enableMasonry() {
-    if($('.masonry-items-container').length){
+{/*function enableMasonry() {*/}
+//     if($('.masonry-items-container').length){
+//
+//         var winDow = $(window);
+//         // Needed variables
+//         var $container=$('.masonry-items-container');
+//
+//         $container.isotope({
+//             itemSelector: '.masonry-item',
+//             masonry: {
+//                 columnWidth : '.masonry-item.col-lg-3'
+//             },
+//             animationOptions:{
+//                 duration:500,
+//                 easing:'linear'
+//             }
+//         });
+//
+//         winDow.on('bind', function() {
+//
+//             $container.isotope({
+//                 itemSelector: '.masonry-item',
+//                 animationOptions: {
+//                     duration: 500,
+//                     easing	: 'linear',
+//                     queue	: false
+//                 }
+//             });
+//         });
+//     }
+// }
 
-        var winDow = $(window);
-        // Needed variables
-        var $container=$('.masonry-items-container');
+// enableMasonry();
 
-        $container.isotope({
-            itemSelector: '.masonry-item',
-            masonry: {
-                columnWidth : '.masonry-item.col-lg-3'
-            },
-            animationOptions:{
-                duration:500,
-                easing:'linear'
-            }
-        });
-
-        winDow.on('bind', function() {
-
-            $container.isotope({
-                itemSelector: '.masonry-item',
-                animationOptions: {
-                    duration: 500,
-                    easing	: 'linear',
-                    queue	: false
-                }
-            });
-        });
-    }
-}
-
-enableMasonry();
-
-export default function NewsSection(){
+export default function NewsPart(){
     return(
         <section className="news-six">
             <div className="auto-container">

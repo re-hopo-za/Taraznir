@@ -1,6 +1,6 @@
 
 
-export default function DescriptionSection(){
+export default function IntroductionPart(){
 
     return(
         <section className="feature-two">
@@ -10,7 +10,6 @@ export default function DescriptionSection(){
             />
             <div className="auto-container">
                 <div className="row clearfix">
-                    {/* Blocks Column */}
                     <div className="feature-two_blocks-column col-lg-6 col-md-12 col-sm-12">
                         <div className="feature-two_blocks-inner">
                             <div
@@ -18,7 +17,6 @@ export default function DescriptionSection(){
                                 style={{ backgroundImage: "url(images/background/pattern-7.png)" }}
                             />
                             <div className="row clearfix">
-                                {/* Feature Block */}
                                 <div className="feature-block_two col-lg-6 col-md-6 col-sm-12">
                                     <div className="feature-block_two-inner">
                                         <div className="feature-block_two-icon">
@@ -36,7 +34,6 @@ export default function DescriptionSection(){
                                         />
                                     </div>
                                 </div>
-                                {/* Feature Block */}
                                 <div className="feature-block_two col-lg-6 col-md-6 col-sm-12">
                                     <div className="feature-block_two-inner">
                                         <div className="feature-block_two-icon">
@@ -54,7 +51,6 @@ export default function DescriptionSection(){
                                         />
                                     </div>
                                 </div>
-                                {/* Feature Block */}
                                 <div className="feature-block_two col-lg-6 col-md-6 col-sm-12">
                                     <div className="feature-block_two-inner">
                                         <div className="feature-block_two-icon">
@@ -72,7 +68,6 @@ export default function DescriptionSection(){
                                         />
                                     </div>
                                 </div>
-                                {/* Feature Block */}
                                 <div className="feature-block_two col-lg-6 col-md-6 col-sm-12">
                                     <div className="feature-block_two-inner">
                                         <div className="feature-block_two-icon">
@@ -93,10 +88,8 @@ export default function DescriptionSection(){
                             </div>
                         </div>
                     </div>
-                    {/* Skill Column */}
                     <div className="feature-two_skill-column col-lg-6 col-md-12 col-sm-12">
                         <div className="feature-two_skill-inner">
-                            {/* Sec Title */}
                             <div className="sec-title-two">
                                 <div className="sec-title-two_title">Our Company Features</div>
                                 <h2 className="sec-title-two_heading">
@@ -124,9 +117,9 @@ export default function DescriptionSection(){
                                         </div>
                                     </div>
                                     <div className="default-count-box count-box counted">
-                <span className="count-text" data-speed={2000} data-stop={90}>
-                  90
-                </span>
+                                    <span className="count-text" data-speed={2000} data-stop={90}>
+                                      90
+                                    </span>
                                         %
                                     </div>
                                     <div className="default-skill-title">

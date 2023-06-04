@@ -7,6 +7,7 @@ const Header = () => {
     const dispatch = useAppDispatch();
 
     const navHandler = () => {
+        // @ts-ignore
         dispatch(setNavStatus());
     }
     return(
@@ -170,7 +171,6 @@ const Header = () => {
                                                     name="search-field"
                                                     defaultValue=""
                                                     placeholder="Search"
-                                                    required=""
                                                 />
                                                 <button type="submit">
                                                     <span className="icon flaticon-search" />
@@ -238,7 +238,6 @@ const Header = () => {
                                     name="search-field"
                                     defaultValue=""
                                     placeholder="SEARCH HERE"
-                                    required=""
                                 />
                                 <button type="submit">
                                     <span className="icon flaticon-search-1" />

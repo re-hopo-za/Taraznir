@@ -1,7 +1,7 @@
 
 
 
-export default function BlogSection(){
+export default function BlogPart(){
 
     return(
         <section className="news-section-three">

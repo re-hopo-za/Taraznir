@@ -376,6 +376,15 @@
   --color-fourtyeight-1-rgb:109,108,102;
 
 
+  /* #EFEAE6 in decimal RGB */
+
+  --color-service-two: 209,236,253;
+  --color-service-three: 255,243,234;
+  --color-service-four: 78,227,157;
+  --color-service-five: 145,78,255;
+  --color-service-six: 245,112,89;
+  --color-service-seven: 209,236,253;
+
 
 
 
@@ -1074,7 +1083,7 @@ img{
 	display:inline-block;
 	color:var(--black-color);
 	text-transform:capitalize;
-	padding-left:var(--padding-left-20);
+	padding-right:var(--padding-left-20);
 	font-family: var(--font-family-Outfit);
 }
 
@@ -1085,10 +1094,10 @@ img{
 .sec-title h4:before{
 	position:absolute;
 	content:'';
-	left:0px;
-	top:0px;
+	right:0;
+	top:0;
 	width:2px;
-	bottom:0px;
+	bottom:0;
 	background-color:var(--main-color);
 }
 

@@ -1,7 +1,7 @@
 
 
 
-export default function BlogSlider(){
+export default function NewsPart(){
     return(
         <section className="news-section-two">
             <div className="auto-container">

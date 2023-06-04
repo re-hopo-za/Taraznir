@@ -112,7 +112,6 @@ const Footer = () => {
                                                         name="search-field"
                                                         defaultValue=""
                                                         placeholder="Enter Mail"
-                                                        required=""
                                                     />
                                                     <button
                                                         type="submit"

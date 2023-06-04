@@ -10,6 +10,7 @@ const Sidebar = () => {
     if( !sliderStatus ) return <></>;
 
     const navHandler = () => {
+        // @ts-ignore
         dispatch(setNavStatus());
     }
 

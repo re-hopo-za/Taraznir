@@ -1,10 +1,10 @@
 'use client'
 
-import MiniSlider from "@/features/MiniSlider";
+import MiniSlider from "@/partials/home/MiniSlider";
 import {useState} from "react";
 
 
-export default function TabItems(){
+export default function ProjectPart(){
 
     const [activeItem ,setActiveItem] = useState(0);
 

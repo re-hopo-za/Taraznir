@@ -1,6 +1,19 @@
 
+'use client';
+
+import {useEffect, useState} from "react";
+
 export default function Loading() {
-    return(
+
+
+
+    const [mounted, setMounted] = useState(false);
+    useEffect(() => {
+        setMounted(true)
+    }, [])
+
+
+    return mounted && (
         <div className="loader-wrap">
             <div className="preloader">
                 <div className="preloader-close">x</div>

@@ -14,7 +14,7 @@ import 'swiper/css/navigation';
 import {useState} from "react";
 
 
-export function Testimonial () {
+export default function TestimonialPart () {
     const [swiperInstance , setSwiperInstance] = useState<SwiperInterface>();
     const [activeSlide ,setActiveSlide ] = useState(0);
 

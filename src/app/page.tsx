@@ -1,17 +1,16 @@
 
 import Header from "@/layouts/Header";
-import {MainSlider} from "@/features/MainSlider";
+import {MainSlider} from "@/partials/home/MainSlider";
 import Sidebar from "@/layouts/Sidebar";
 import Footer from "@/layouts/Footer";
-import {Testimonial} from "@/features/Testimonial";
-import TabItems from "@/features/TabItems";
-import BlogSlider from "@/features/BlogSlider";
+import TestimonialPart from "@/partials/home/TestimonialPart";
+import ProjectPart from "@/partials/home/ProjectPart";
+import NewsPart from "@/partials/home/NewsPart";
 import dynamic from "next/dynamic";
-import BlogSection from "@/features/BlogSection";
-import ResourcesSection from "@/features/ResourcesSection";
-import NewsSection from "@/features/NewsSection";
-import DescriptionSection from "@/features/DescriptionSection";
-import AnotherSliderSection from "@/features/AnotherSliderSection";
+import BlogPart from "@/partials/home/BlogPart";
+import ResourcePart from "@/partials/home/ResourcePart";
+import IntroductionPart from "@/partials/home/IntroductionPart";
+
 
 
 
@@ -20,7 +19,7 @@ export default function Home() {
 
     const ProductMixItUp = dynamic(
         () => {
-            return import("@/features/ProductMixItUp");
+            return import("@/partials/home/ProductPart");
         },
         { ssr: false }
     );
@@ -29,16 +28,16 @@ export default function Home() {
         <div className="page-wrapper">
             <Header />
             <MainSlider />
-            <ResourcesSection />
-            {/*<AnotherSliderSection/>*/}
-            <DescriptionSection />
-            {/*<NewsSection />*/}
-            <TabItems />
-            <BlogSlider />
-            <ProductMixItUp />
-            <BlogSection />
+            <ResourcePart />
 
-            <Testimonial />
+            <IntroductionPart />
+            {/*<NewsSection />*/}
+            <ProjectPart />
+            <NewsPart />
+            <ProductMixItUp />
+            <BlogPart />
+
+            <TestimonialPart />
 
             <Sidebar />
             <Footer />

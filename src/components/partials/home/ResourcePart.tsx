@@ -1,5 +1,5 @@
 
-export default function ResourcesSection(){
+export default function ResourcePart(){
 
     return(
         <section className="products-section-two">
