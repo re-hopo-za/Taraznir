@@ -2,18 +2,9 @@ import Header from "@/layouts/Header";
 
 import Sidebar from "@/layouts/Sidebar";
 import Footer from "@/layouts/Footer";
-import TagsWidget from "@/widgets/TagsWidget";
 import CategoryWidget from "@/widgets/CategoryWidget";
-import NewsWidget from "@/widgets/NewsWidget";
-import AdsWidget from "@/widgets/AdsWidget";
-import PostsWidget from "@/widgets/PostsWidget";
-import FollowUsWidget from "@/widgets/FollowUsWidget";
-import SearchWidget from "@/widgets/SearchWidget";
 import Pagination from "@/layouts/Pagination";
 import BreadCrumb from "@/layouts/BreadCrumb";
-import GalleryWidget from "@/widgets/GalleryWidget";
-import AuthorPart from "@/partials/AuthorPart";
-import ProductMenuWidget from "@/widgets/ProductMenuWidget";
 
 
 export default function Home() {

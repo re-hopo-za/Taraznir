@@ -12,10 +12,9 @@ import SearchWidget from "@/widgets/SearchWidget";
 import Pagination from "@/layouts/Pagination";
 import BreadCrumb from "@/layouts/BreadCrumb";
 import GalleryWidget from "@/widgets/GalleryWidget";
-import AuthorPart from "@/partials/AuthorPart";
 
 
-export default function Home() {
+export default function Blog() {
 
     return (
         <div className="page-wrapper">
@@ -74,7 +73,7 @@ export default function Home() {
                             </div>
 
                             <Pagination />
-                            <AuthorPart />
+
 
 
 

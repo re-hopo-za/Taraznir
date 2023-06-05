@@ -31,63 +31,63 @@ export default function MiniSlider(){
                 <SwiperSlide className="slide-item">
                     <figure className="image-box">
                         <a href="#">
-                            <img src="images/clients/1.png" alt="" />
+                            <img src="/images/clients/1.png" alt="" />
                         </a>
                     </figure>
                 </SwiperSlide>
                 <SwiperSlide className="slide-item">
                     <figure className="image-box">
                         <a href="#">
-                            <img src="images/clients/1.png" alt="" />
+                            <img src="/images/clients/1.png" alt="" />
                         </a>
                     </figure>
                 </SwiperSlide>
                 <SwiperSlide className="slide-item">
                     <figure className="image-box">
                         <a href="#">
-                            <img src="images/clients/1.png" alt="" />
+                            <img src="/images/clients/1.png" alt="" />
                         </a>
                     </figure>
                 </SwiperSlide>
                 <SwiperSlide className="slide-item">
                     <figure className="image-box">
                         <a href="#">
-                            <img src="images/clients/1.png" alt="" />
+                            <img src="/images/clients/1.png" alt="" />
                         </a>
                     </figure>
                 </SwiperSlide>
                 <SwiperSlide className="slide-item">
                     <figure className="image-box">
                         <a href="#">
-                            <img src="images/clients/1.png" alt="" />
+                            <img src="/images/clients/1.png" alt="" />
                         </a>
                     </figure>
                 </SwiperSlide>
                 <SwiperSlide className="slide-item">
                     <figure className="image-box">
                         <a href="#">
-                            <img src="images/clients/1.png" alt="" />
+                            <img src="/images/clients/1.png" alt="" />
                         </a>
                     </figure>
                 </SwiperSlide>
                 <SwiperSlide className="slide-item">
                     <figure className="image-box">
                         <a href="#">
-                            <img src="images/clients/1.png" alt="" />
+                            <img src="/images/clients/1.png" alt="" />
                         </a>
                     </figure>
                 </SwiperSlide>
                 <SwiperSlide className="slide-item">
                     <figure className="image-box">
                         <a href="#">
-                            <img src="images/clients/1.png" alt="" />
+                            <img src="/images/clients/1.png" alt="" />
                         </a>
                     </figure>
                 </SwiperSlide>
                 <SwiperSlide className="slide-item">
                     <figure className="image-box">
                         <a href="#">
-                            <img src="images/clients/1.png" alt="" />
+                            <img src="/images/clients/1.png" alt="" />
                         </a>
                     </figure>
                 </SwiperSlide>

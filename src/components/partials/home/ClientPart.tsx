@@ -28,32 +28,32 @@ export default function ClientPart(){
                                 <div className="row clearfix">
                                     <div className="column col-lg-4 col-md-4 col-sm-6">
                                         <a href="#">
-                                            <img src="images/clients/7.png" alt="" />
+                                            <img src="/images/clients/7.png" alt="" />
                                         </a>
                                     </div>
                                     <div className="column col-lg-4 col-md-4 col-sm-6">
                                         <a href="#">
-                                            <img src="images/clients/8.png" alt="" />
+                                            <img src="/images/clients/8.png" alt="" />
                                         </a>
                                     </div>
                                     <div className="column col-lg-4 col-md-4 col-sm-6">
                                         <a href="#">
-                                            <img src="images/clients/9.png" alt="" />
+                                            <img src="/images/clients/9.png" alt="" />
                                         </a>
                                     </div>
                                     <div className="column col-lg-4 col-md-4 col-sm-6">
                                         <a href="#">
-                                            <img src="images/clients/10.png" alt="" />
+                                            <img src="/images/clients/10.png" alt="" />
                                         </a>
                                     </div>
                                     <div className="column col-lg-4 col-md-4 col-sm-6">
                                         <a href="#">
-                                            <img src="images/clients/11.png" alt="" />
+                                            <img src="/images/clients/11.png" alt="" />
                                         </a>
                                     </div>
                                     <div className="column col-lg-4 col-md-4 col-sm-6">
                                         <a href="#">
-                                            <img src="images/clients/12.png" alt="" />
+                                            <img src="/images/clients/12.png" alt="" />
                                         </a>
                                     </div>
                                 </div>

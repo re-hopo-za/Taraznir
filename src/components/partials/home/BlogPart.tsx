@@ -31,7 +31,7 @@ export default function BlogPart(){
                                 <div className="inner-box">
                                     <div className="image">
                                         <a href="news-detail.html">
-                                            <img src="images/resource/news-4-1.jpg" alt="" />
+                                            <img src="/images/resource/news-4-1.jpg" alt="" />
                                         </a>
                                     </div>
                                     <div className="lower-content">
@@ -56,7 +56,7 @@ export default function BlogPart(){
                                 <div className="inner-box">
                                     <div className="image">
                                         <a href="news-detail.html">
-                                            <img src="images/resource/news-4-1.jpg" alt="" />
+                                            <img src="/images/resource/news-4-1.jpg" alt="" />
                                         </a>
                                     </div>
                                     <div className="lower-content">
@@ -87,7 +87,7 @@ export default function BlogPart(){
                             <div className="inner-box d-flex justify-content-between">
                                 <div className="image">
                                     <a href="news-detail.html">
-                                        <img src="images/resource/news-6-1.jpg" alt="" />
+                                        <img src="/images/resource/news-6-1.jpg" alt="" />
                                     </a>
                                 </div>
                                 <div className="content">
@@ -108,7 +108,7 @@ export default function BlogPart(){
                             <div className="inner-box d-flex justify-content-between">
                                 <div className="image">
                                     <a href="news-detail.html">
-                                        <img src="images/resource/news-6-1.jpg" alt="" />
+                                        <img src="/images/resource/news-6-1.jpg" alt="" />
                                     </a>
                                 </div>
                                 <div className="content">
@@ -129,7 +129,7 @@ export default function BlogPart(){
                             <div className="inner-box d-flex justify-content-between">
                                 <div className="image">
                                     <a href="news-detail.html">
-                                        <img src="images/resource/news-6-1.jpg" alt="" />
+                                        <img src="/images/resource/news-6-1.jpg" alt="" />
                                     </a>
                                 </div>
                                 <div className="content">

@@ -20,7 +20,7 @@ export default function IntroductionPart(){
                                 <div className="feature-block_two col-lg-6 col-md-6 col-sm-12">
                                     <div className="feature-block_two-inner">
                                         <div className="feature-block_two-icon">
-                                            <img src="images/icons/feature-1.png" alt="" />
+                                            <img src="/images/icons/feature-1.png" alt="" />
                                         </div>
                                         <h5 className="feature-block_two-heading">
                                             Market Representation
@@ -37,7 +37,7 @@ export default function IntroductionPart(){
                                 <div className="feature-block_two col-lg-6 col-md-6 col-sm-12">
                                     <div className="feature-block_two-inner">
                                         <div className="feature-block_two-icon">
-                                            <img src="images/icons/feature-2.png" alt="" />
+                                            <img src="/images/icons/feature-2.png" alt="" />
                                         </div>
                                         <h5 className="feature-block_two-heading">
                                             Market Representation
@@ -54,7 +54,7 @@ export default function IntroductionPart(){
                                 <div className="feature-block_two col-lg-6 col-md-6 col-sm-12">
                                     <div className="feature-block_two-inner">
                                         <div className="feature-block_two-icon">
-                                            <img src="images/icons/feature-3.png" alt="" />
+                                            <img src="/images/icons/feature-3.png" alt="" />
                                         </div>
                                         <h5 className="feature-block_two-heading">
                                             Market Representation
@@ -71,7 +71,7 @@ export default function IntroductionPart(){
                                 <div className="feature-block_two col-lg-6 col-md-6 col-sm-12">
                                     <div className="feature-block_two-inner">
                                         <div className="feature-block_two-icon">
-                                            <img src="images/icons/feature-4.png" alt="" />
+                                            <img src="/images/icons/feature-4.png" alt="" />
                                         </div>
                                         <h5 className="feature-block_two-heading">
                                             Market Representation

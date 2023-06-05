@@ -8,17 +8,17 @@ import ClientPart from "@/partials/home/ClientPart";
 import CounterPart from "@/partials/home/CounterPart";
 
 
-export default function Service() {
+export default function Project() {
 
     return (
         <div className="page-wrapper">
             <Header/>
             <PageTitle />
 
-            <section className="portfolio-section-two" style={{marginTop:"300px"}}>
+
+            <section className="portfolio-section-two">
                 <div className="auto-container" style={{maxWidth:"1200px"}}>
                     <div className="row clearfix">
-                        {/* Portfolio Block Two */}
                         <div className="portfolio-block-two col-lg-6 col-md-6 col-sm-12">
                             <div className="inner-box">
                                 <div className="image">
@@ -42,7 +42,6 @@ export default function Service() {
                                 </div>
                             </div>
                         </div>
-                        {/* Portfolio Block Two */}
                         <div className="portfolio-block-two col-lg-6 col-md-6 col-sm-12">
                             <div className="inner-box">
                                 <div className="image">
@@ -66,7 +65,6 @@ export default function Service() {
                                 </div>
                             </div>
                         </div>
-                        {/* Portfolio Block Two */}
                         <div className="portfolio-block-two col-lg-6 col-md-6 col-sm-12">
                             <div className="inner-box">
                                 <div className="image">
@@ -90,7 +88,6 @@ export default function Service() {
                                 </div>
                             </div>
                         </div>
-                        {/* Portfolio Block Two */}
                         <div className="portfolio-block-two col-lg-6 col-md-6 col-sm-12">
                             <div className="inner-box">
                                 <div className="image">
@@ -114,7 +111,6 @@ export default function Service() {
                                 </div>
                             </div>
                         </div>
-                        {/* Portfolio Block Two */}
                         <div className="portfolio-block-two col-lg-6 col-md-6 col-sm-12">
                             <div className="inner-box">
                                 <div className="image">
@@ -167,8 +163,8 @@ export default function Service() {
                 </div>
             </section>
 
-
             <CounterPart />
+
             <Sidebar/>
             <Footer/>
         </div>

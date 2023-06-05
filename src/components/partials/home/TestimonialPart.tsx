@@ -56,7 +56,7 @@ export default function TestimonialPart () {
                                                 style={{ backgroundImage: "url(images/icons/arrow-2.png)" }}
                                             />
                                             <div className="image">
-                                                <img src="images/resource/author-2.jpg" alt="" />
+                                                <img src="/images/resource/author-2.jpg" alt="" />
                                                 <ul className="social-box">
                                                     <li>
                                                         <a
@@ -117,7 +117,7 @@ export default function TestimonialPart () {
                                                 style={{ backgroundImage: "url(images/icons/arrow-2.png)" }}
                                             />
                                             <div className="image">
-                                                <img src="images/resource/author-2.jpg" alt="" />
+                                                <img src="/images/resource/author-2.jpg" alt="" />
                                                 <ul className="social-box">
                                                     <li>
                                                         <a

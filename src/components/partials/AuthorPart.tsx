@@ -5,7 +5,7 @@ export default function AuthorPart(){
     return(
         <div className="ori-blog-details-author d-flex align-items-center">
             <div className="author-img">
-                <img src="images/resource/bda1.jpg" alt="" />
+                <img src="/images/resource/bda1.jpg" alt="" />
             </div>
             <div className="author-text pera-content">
                 <h3>About Michael</h3>

@@ -20,7 +20,7 @@ export default function NewsPart(){
                             <div className="image">
                                 <div className="tag">bedroom</div>
                                 <a href="blog-detail.html">
-                                    <img src="images/resource/news-3.jpg" alt="" />
+                                    <img src="/images/resource/news-3.jpg" alt="" />
                                 </a>
                             </div>
                             <div className="lower-content">
@@ -47,7 +47,7 @@ export default function NewsPart(){
                             <div className="image">
                                 <div className="tag">bedroom</div>
                                 <a href="blog-detail.html">
-                                    <img src="images/resource/news-4.jpg" alt="" />
+                                    <img src="/images/resource/news-4.jpg" alt="" />
                                 </a>
                             </div>
                             <div className="lower-content">
@@ -74,7 +74,7 @@ export default function NewsPart(){
                             <div className="image">
                                 <div className="tag">bedroom</div>
                                 <a href="blog-detail.html">
-                                    <img src="images/resource/news-5.jpg" alt="" />
+                                    <img src="/images/resource/news-5.jpg" alt="" />
                                 </a>
                             </div>
                             <div className="lower-content">

@@ -13,7 +13,7 @@ export default function Service() {
             <PageTitle />
 
 
-            <section className="service-page-section" style={{marginTop:"300px"}}>
+            <section className="service-page-section">
                 <div className="auto-container" style={{maxWidth:"1200px"}}>
                     <div className="row clearfix">
                         <div className="vision-block style-two col-lg-6 col-md-12 col-sm-12">

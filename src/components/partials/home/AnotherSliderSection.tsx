@@ -57,7 +57,7 @@ export default function AnotherSliderSection(){
                                     </h3>
                                 </div>
                                 <div className="blog-img">
-                                    <img src="images/resource/news-5.jpg" alt="" />
+                                    <img src="/images/resource/news-5.jpg" alt="" />
                                 </div>
                                 <div className="blog-meta-text">
                                     <div className="in-meta">
@@ -91,7 +91,7 @@ export default function AnotherSliderSection(){
                                     </h3>
                                 </div>
                                 <div className="blog-img">
-                                    <img src="images/resource/news-5.jpg" alt="" />
+                                    <img src="/images/resource/news-5.jpg" alt="" />
                                 </div>
                                 <div className="blog-meta-text">
                                     <div className="in-meta">
@@ -125,7 +125,7 @@ export default function AnotherSliderSection(){
                                     </h3>
                                 </div>
                                 <div className="blog-img">
-                                    <img src="images/resource/news-5.jpg" alt="" />
+                                    <img src="/images/resource/news-5.jpg" alt="" />
                                 </div>
                                 <div className="blog-meta-text">
                                     <div className="in-meta">

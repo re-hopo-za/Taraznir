@@ -10,7 +10,7 @@ export default function CommentPart(){
             <div className="comment-box">
                 <div className="comment">
                     <div className="author-thumb">
-                        <img src="images/resource/author-6.jpg" alt="" />
+                        <img src="/images/resource/author-6.jpg" alt="" />
                     </div>
                     <div className="comment-info clearfix">
                         <strong>Rohan De Spond</strong>
@@ -29,7 +29,7 @@ export default function CommentPart(){
             <div className="comment-box reply-comment">
                 <div className="comment">
                     <div className="author-thumb">
-                        <img src="images/resource/author-7.jpg" alt="" />
+                        <img src="/images/resource/author-7.jpg" alt="" />
                     </div>
                     <div className="comment-info clearfix">
                         <strong>Johan Ritaxon</strong>
@@ -45,7 +45,7 @@ export default function CommentPart(){
             <div className="comment-box">
                 <div className="comment">
                     <div className="author-thumb">
-                        <img src="images/resource/author-8.jpg" alt="" />
+                        <img src="/images/resource/author-8.jpg" alt="" />
                     </div>
                     <div className="comment-info clearfix">
                         <strong>Alexardy Ditartina</strong>
@@ -64,7 +64,7 @@ export default function CommentPart(){
             <div className="comment-box reply-comment">
                 <div className="comment">
                     <div className="author-thumb">
-                        <img src="images/resource/author-9.jpg" alt="" />
+                        <img src="/images/resource/author-9.jpg" alt="" />
                     </div>
                     <div className="comment-info clearfix">
                         <strong>Alxandar Grahambel</strong>

@@ -31,6 +31,7 @@ export default function Tutorial() {
                             </aside>
                         </div>
 
+
                         <div className="content-side middle-sidebar col-lg-6 col-md-12 col-sm-12">
                             <div className="sec-title" dir="rtl">
                                 <h4>Learn IOS development</h4>
@@ -92,6 +93,7 @@ export default function Tutorial() {
 
                             </aside>
                         </div>
+
                     </div>
 
                 </div>

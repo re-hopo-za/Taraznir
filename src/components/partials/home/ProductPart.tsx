@@ -50,7 +50,7 @@ export default function ProductMixItUp(){
                             <div className="inner-box">
                                 <div className="image">
                                     <a href="shop-detail.html">
-                                        <img src="images/resource/products/17.png" alt="" />
+                                        <img src="/images/resource/products/17.png" alt="" />
                                     </a>
                                     <span className="tag flaticon-heart" />
                                     <div className="cart-box text-center">
@@ -95,7 +95,7 @@ export default function ProductMixItUp(){
                             <div className="inner-box">
                                 <div className="image">
                                     <a href="shop-detail.html">
-                                        <img src="images/resource/products/18.png" alt="" />
+                                        <img src="/images/resource/products/18.png" alt="" />
                                     </a>
                                     <span className="tag flaticon-heart" />
                                     <div className="cart-box text-center">
@@ -150,7 +150,7 @@ export default function ProductMixItUp(){
                             <div className="inner-box">
                                 <div className="image">
                                     <a href="shop-detail.html">
-                                        <img src="images/resource/products/19.png" alt="" />
+                                        <img src="/images/resource/products/19.png" alt="" />
                                     </a>
                                     <span className="tag flaticon-heart" />
                                     <div className="cart-box text-center">
@@ -195,7 +195,7 @@ export default function ProductMixItUp(){
                             <div className="inner-box">
                                 <div className="image">
                                     <a href="shop-detail.html">
-                                        <img src="images/resource/products/20.png" alt="" />
+                                        <img src="/images/resource/products/20.png" alt="" />
                                     </a>
                                     <span className="tag flaticon-heart" />
                                     <div className="cart-box text-center">
@@ -240,7 +240,7 @@ export default function ProductMixItUp(){
                             <div className="inner-box">
                                 <div className="image">
                                     <a href="shop-detail.html">
-                                        <img src="images/resource/products/21.png" alt="" />
+                                        <img src="/images/resource/products/21.png" alt="" />
                                     </a>
                                     <span className="tag flaticon-heart" />
                                     <div className="cart-box text-center">
@@ -285,7 +285,7 @@ export default function ProductMixItUp(){
                             <div className="inner-box">
                                 <div className="image">
                                     <a href="shop-detail.html">
-                                        <img src="images/resource/products/22.png" alt="" />
+                                        <img src="/images/resource/products/22.png" alt="" />
                                     </a>
                                     <span className="tag flaticon-heart" />
                                     <div className="cart-box text-center">
@@ -330,7 +330,7 @@ export default function ProductMixItUp(){
                             <div className="inner-box">
                                 <div className="image">
                                     <a href="shop-detail.html">
-                                        <img src="images/resource/products/23.png" alt="" />
+                                        <img src="/images/resource/products/23.png" alt="" />
                                     </a>
                                     <span className="tag flaticon-heart" />
                                     <div className="cart-box text-center">
@@ -375,7 +375,7 @@ export default function ProductMixItUp(){
                             <div className="inner-box">
                                 <div className="image">
                                     <a href="shop-detail.html">
-                                        <img src="images/resource/products/24.png" alt="" />
+                                        <img src="/images/resource/products/24.png" alt="" />
                                     </a>
                                     <span className="tag flaticon-heart" />
                                     <div className="cart-box text-center">

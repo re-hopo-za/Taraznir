@@ -16,13 +16,13 @@ export default function MasterWidget(){
                                     href="instructor-profile.html"
                                     className="overlay-link"
                                 />
-                                <img src="images/resource/feature-2.jpg" alt="" />
+                                <img src="/images/resource/feature-2.jpg" alt="" />
                                 <div className="overlay-box">
                                     <div className="overlay-inner">
                                         <div className="overlay-content">
                                             <div className="author-image">
                                                 <img
-                                                    src="images/resource/author-60.jpg"
+                                                    src="/images/resource/author-60.jpg"
                                                     alt=""
                                                 />
                                             </div>
@@ -40,13 +40,13 @@ export default function MasterWidget(){
                                     href="instructor-profile.html"
                                     className="overlay-link"
                                 />
-                                <img src="images/resource/feature-2.jpg" alt="" />
+                                <img src="/images/resource/feature-2.jpg" alt="" />
                                 <div className="overlay-box">
                                     <div className="overlay-inner">
                                         <div className="overlay-content">
                                             <div className="author-image">
                                                 <img
-                                                    src="images/resource/author-60.jpg"
+                                                    src="/images/resource/author-60.jpg"
                                                     alt=""
                                                 />
                                             </div>
@@ -64,13 +64,13 @@ export default function MasterWidget(){
                                     href="instructor-profile.html"
                                     className="overlay-link"
                                 />
-                                <img src="images/resource/feature-2.jpg" alt="" />
+                                <img src="/images/resource/feature-2.jpg" alt="" />
                                 <div className="overlay-box">
                                     <div className="overlay-inner">
                                         <div className="overlay-content">
                                             <div className="author-image">
                                                 <img
-                                                    src="images/resource/author-60.jpg"
+                                                    src="/images/resource/author-60.jpg"
                                                     alt=""
                                                 />
                                             </div>

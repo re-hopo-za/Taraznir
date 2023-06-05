@@ -20,7 +20,7 @@ export default function AdsWidget(){
                         Buy Now
                     </a>
                     <div className="icon">
-                        <img src="images/resource/lamp-4.png" alt="" />
+                        <img src="/images/resource/lamp-4.png" alt="" />
                     </div>
                 </div>
             </div>

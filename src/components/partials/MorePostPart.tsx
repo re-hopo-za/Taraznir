@@ -1,6 +1,6 @@
 
 
-export default function SharePart() {
+export default function MorePostPart() {
 
     return (
         <div className="more-posts">
@@ -10,7 +10,7 @@ export default function SharePart() {
                     <div className="post-inner">
                         <span className="image">
                             <a href="#">
-                                <img src="images/resource/post-thumb-5.jpg" alt="" />
+                                <img src="/images/resource/post-thumb-5.jpg" alt="" />
                             </a>
                         </span>
                         <a href="#">
@@ -18,7 +18,7 @@ export default function SharePart() {
                         </a>
                         <div className="post-info">
                             <span className="author">
-                                <img src="images/resource/author-5.jpg" alt="" />
+                                <img src="/images/resource/author-5.jpg" alt="" />
                             </span>
                             nawab <span className="date">Sep 8, 2021</span>
                         </div>
@@ -29,7 +29,7 @@ export default function SharePart() {
                     <div className="post-inner">
                         <span className="image">
                           <a href="#">
-                            <img src="images/resource/post-thumb-6.jpg" alt="" />
+                            <img src="/images/resource/post-thumb-6.jpg" alt="" />
                           </a>
                         </span>
                         <a href="#">
@@ -37,7 +37,7 @@ export default function SharePart() {
                         </a>
                         <div className="post-info">
                             <span className="author">
-                                <img src="images/resource/author-5.jpg" alt="" />
+                                <img src="/images/resource/author-5.jpg" alt="" />
                             </span>
                             nawab <span className="date">Sep 8, 2021</span>
                         </div>

@@ -1,5 +1,6 @@
 'use client'
 
+
 import Header from "@/layouts/Header";
 
 import Sidebar from "@/layouts/Sidebar";
@@ -22,12 +23,23 @@ import {useState} from "react";
 
 SwiperCore.use([Thumbs]);
 
+type Params = {
+    params : {
+        slug:string
+    }
+}
+
+
+
+
+
+
 // export const metadata: Metadata = {
 //     title: '...',
 //     description: '...',
 // };
 
-export default function Gallery() {
+export default function GalleryPage({params :{slug}} : Params) {
 
 
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
@@ -165,3 +177,4 @@ export default function Gallery() {
         </div>
     )
 }
+

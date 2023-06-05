@@ -17,7 +17,7 @@ export default function ResourcePart(){
                                 <div className="inner-box d-flex justify-content-between align-items-center flex-wrap">
                                     <div className="image">
                                         <span className="number">01</span>
-                                        <img src="images/resource/product-1.png" alt="" />
+                                        <img src="/images/resource/product-1.png" alt="" />
                                     </div>
                                     <div className="content">
                                         <h6>
@@ -31,7 +31,7 @@ export default function ResourcePart(){
                                 <div className="inner-box d-flex justify-content-between align-items-center flex-wrap">
                                     <div className="image">
                                         <span className="number">02</span>
-                                        <img src="images/resource/product-2.png" alt="" />
+                                        <img src="/images/resource/product-2.png" alt="" />
                                     </div>
                                     <div className="content">
                                         <h6>
@@ -45,7 +45,7 @@ export default function ResourcePart(){
                                 <div className="inner-box d-flex justify-content-between align-items-center flex-wrap">
                                     <div className="image">
                                         <span className="number">03</span>
-                                        <img src="images/resource/product-3.png" alt="" />
+                                        <img src="/images/resource/product-3.png" alt="" />
                                     </div>
                                     <div className="content">
                                         <h6>
@@ -59,7 +59,7 @@ export default function ResourcePart(){
                                 <div className="inner-box d-flex justify-content-between align-items-center flex-wrap">
                                     <div className="image">
                                         <span className="number">04</span>
-                                        <img src="images/resource/product-4.png" alt="" />
+                                        <img src="/images/resource/product-4.png" alt="" />
                                     </div>
                                     <div className="content">
                                         <h6>
@@ -73,7 +73,7 @@ export default function ResourcePart(){
                                 <div className="inner-box d-flex justify-content-between align-items-center flex-wrap">
                                     <div className="image">
                                         <span className="number">05</span>
-                                        <img src="images/resource/product-5.png" alt="" />
+                                        <img src="/images/resource/product-5.png" alt="" />
                                     </div>
                                     <div className="content">
                                         <h6>
@@ -87,7 +87,7 @@ export default function ResourcePart(){
                                 <div className="inner-box d-flex justify-content-between align-items-center flex-wrap">
                                     <div className="image">
                                         <span className="number">06</span>
-                                        <img src="images/resource/product-6.png" alt="" />
+                                        <img src="/images/resource/product-6.png" alt="" />
                                     </div>
                                     <div className="content">
                                         <h6>
@@ -101,7 +101,7 @@ export default function ResourcePart(){
                                 <div className="inner-box d-flex justify-content-between align-items-center flex-wrap">
                                     <div className="image">
                                         <span className="number">07</span>
-                                        <img src="images/resource/product-7.png" alt="" />
+                                        <img src="/images/resource/product-7.png" alt="" />
                                     </div>
                                     <div className="content">
                                         <h6>
@@ -115,7 +115,7 @@ export default function ResourcePart(){
                                 <div className="inner-box d-flex justify-content-between align-items-center flex-wrap">
                                     <div className="image">
                                         <span className="number">08</span>
-                                        <img src="images/resource/product-8.png" alt="" />
+                                        <img src="/images/resource/product-8.png" alt="" />
                                     </div>
                                     <div className="content">
                                         <h6>
@@ -129,7 +129,7 @@ export default function ResourcePart(){
                                 <div className="inner-box d-flex justify-content-between align-items-center flex-wrap">
                                     <div className="image">
                                         <span className="number">05</span>
-                                        <img src="images/resource/product-5.png" alt="" />
+                                        <img src="/images/resource/product-5.png" alt="" />
                                     </div>
                                     <div className="content">
                                         <h6>
@@ -143,7 +143,7 @@ export default function ResourcePart(){
                                 <div className="inner-box d-flex justify-content-between align-items-center flex-wrap">
                                     <div className="image">
                                         <span className="number">06</span>
-                                        <img src="images/resource/product-6.png" alt="" />
+                                        <img src="/images/resource/product-6.png" alt="" />
                                     </div>
                                     <div className="content">
                                         <h6>
@@ -157,7 +157,7 @@ export default function ResourcePart(){
                                 <div className="inner-box d-flex justify-content-between align-items-center flex-wrap">
                                     <div className="image">
                                         <span className="number">07</span>
-                                        <img src="images/resource/product-7.png" alt="" />
+                                        <img src="/images/resource/product-7.png" alt="" />
                                     </div>
                                     <div className="content">
                                         <h6>
@@ -171,7 +171,7 @@ export default function ResourcePart(){
                                 <div className="inner-box d-flex justify-content-between align-items-center flex-wrap">
                                     <div className="image">
                                         <span className="number">08</span>
-                                        <img src="images/resource/product-8.png" alt="" />
+                                        <img src="/images/resource/product-8.png" alt="" />
                                     </div>
                                     <div className="content">
                                         <h6>

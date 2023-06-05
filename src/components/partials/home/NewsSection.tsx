@@ -58,10 +58,10 @@ export default function NewsPart(){
                     >
                         <div className="news-block_six-inner">
                             <div className="news-block_six-image">
-                                <img src="images/resource/news-16.jpg" alt="" />
+                                <img src="/images/resource/news-16.jpg" alt="" />
                                 <div className="news-block_six-overlay">
                                     <a
-                                        href="images/resource/news-16.jpg"
+                                        href="/images/resource/news-16.jpg"
                                         className="plus-icon lightbox-image fa-solid fa-plus fa-fw"
                                     />
                                 </div>
@@ -85,10 +85,10 @@ export default function NewsPart(){
                     >
                         <div className="news-block_six-inner">
                             <div className="news-block_six-image">
-                                <img src="images/resource/news-17.jpg" alt="" />
+                                <img src="/images/resource/news-17.jpg" alt="" />
                                 <div className="news-block_six-overlay">
                                     <a
-                                        href="images/resource/news-17.jpg"
+                                        href="/images/resource/news-17.jpg"
                                         className="plus-icon lightbox-image fa-solid fa-plus fa-fw"
                                     />
                                 </div>
@@ -112,10 +112,10 @@ export default function NewsPart(){
                     >
                         <div className="news-block_six-inner">
                             <div className="news-block_six-image">
-                                <img src="images/resource/news-18.jpg" alt="" />
+                                <img src="/images/resource/news-18.jpg" alt="" />
                                 <div className="news-block_six-overlay">
                                     <a
-                                        href="images/resource/news-18.jpg"
+                                        href="/images/resource/news-18.jpg"
                                         className="plus-icon lightbox-image fa-solid fa-plus fa-fw"
                                     />
                                 </div>
@@ -139,10 +139,10 @@ export default function NewsPart(){
                     >
                         <div className="news-block_six-inner">
                             <div className="news-block_six-image">
-                                <img src="images/resource/news-20.jpg" alt="" />
+                                <img src="/images/resource/news-20.jpg" alt="" />
                                 <div className="news-block_six-overlay">
                                     <a
-                                        href="images/resource/news-20.jpg"
+                                        href="/images/resource/news-20.jpg"
                                         className="plus-icon lightbox-image fa-solid fa-plus fa-fw"
                                     />
                                 </div>
@@ -166,10 +166,10 @@ export default function NewsPart(){
                     >
                         <div className="news-block_six-inner">
                             <div className="news-block_six-image">
-                                <img src="images/resource/news-19.jpg" alt="" />
+                                <img src="/images/resource/news-19.jpg" alt="" />
                                 <div className="news-block_six-overlay">
                                     <a
-                                        href="images/resource/news-19.jpg"
+                                        href="/images/resource/news-19.jpg"
                                         className="plus-icon lightbox-image fa-solid fa-plus fa-fw"
                                     />
                                 </div>
@@ -193,10 +193,10 @@ export default function NewsPart(){
                     >
                         <div className="news-block_six-inner">
                             <div className="news-block_six-image">
-                                <img src="images/resource/news-21.jpg" alt="" />
+                                <img src="/images/resource/news-21.jpg" alt="" />
                                 <div className="news-block_six-overlay">
                                     <a
-                                        href="images/resource/news-21.jpg"
+                                        href="/images/resource/news-21.jpg"
                                         className="plus-icon lightbox-image fa-solid fa-plus fa-fw"
                                     />
                                 </div>

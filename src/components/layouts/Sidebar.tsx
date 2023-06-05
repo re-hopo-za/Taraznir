@@ -29,7 +29,7 @@ const Sidebar = () => {
                                 <div className="content-inner">
                                     <div className="logo">
                                         <a href="index.html">
-                                            <img src="images/logo.png" alt="" title="" />
+                                            <img src="/images/logo.png" alt="" title="" />
                                         </a>
                                     </div>
                                     <div className="content-box">

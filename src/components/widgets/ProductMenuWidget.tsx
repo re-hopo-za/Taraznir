@@ -16,7 +16,7 @@ export default function ProductMenuWidget(){
                             <li className="active">
                                 <a href="#">
                                     <span className="icon">
-                                      <img src="images/icons/menu-icon-1.png" alt="" />
+                                      <img src="/images/icons/menu-icon-1.png" alt="" />
                                     </span>
                                     court cupboard
                                 </a>
@@ -24,7 +24,7 @@ export default function ProductMenuWidget(){
                             <li className="dropdown">
                                 <a href="#">
                                     <span className="icon">
-                                      <img src="images/icons/menu-icon-2.png" alt="" />
+                                      <img src="/images/icons/menu-icon-2.png" alt="" />
                                     </span>
                                     cockfighting chair
                                 </a>
@@ -57,7 +57,7 @@ export default function ProductMenuWidget(){
                             <li>
                                 <a href="#">
                                     <span className="icon">
-                                      <img src="images/icons/menu-icon-3.png" alt="" />
+                                      <img src="/images/icons/menu-icon-3.png" alt="" />
                                     </span>
                                     platform rocker
                                 </a>
@@ -65,7 +65,7 @@ export default function ProductMenuWidget(){
                             <li className="dropdown">
                                 <a href="#">
                                     <span className="icon">
-                                      <img src="images/icons/menu-icon-4.png" alt="" />
+                                      <img src="/images/icons/menu-icon-4.png" alt="" />
                                     </span>
                                     chest of drawers
                                 </a>
@@ -87,7 +87,7 @@ export default function ProductMenuWidget(){
                             <li>
                                 <a href="#">
                                     <span className="icon">
-                                      <img src="images/icons/menu-icon-5.png" alt="" />
+                                      <img src="/images/icons/menu-icon-5.png" alt="" />
                                     </span>
                                     dressing table
                                 </a>
@@ -95,7 +95,7 @@ export default function ProductMenuWidget(){
                             <li className="dropdown">
                                 <a href="#">
                                     <span className="icon">
-                                      <img src="images/icons/menu-icon-6.png" alt="" />
+                                      <img src="/images/icons/menu-icon-6.png" alt="" />
                                     </span>
                                     grandfather clock
                                 </a>
@@ -117,7 +117,7 @@ export default function ProductMenuWidget(){
                             <li>
                                 <a href="#">
                                     <span className="icon">
-                                      <img src="images/icons/menu-icon-7.png" alt="" />
+                                      <img src="/images/icons/menu-icon-7.png" alt="" />
                                     </span>
                                     Pembroke table
                                 </a>
@@ -125,7 +125,7 @@ export default function ProductMenuWidget(){
                             <li>
                                 <a href="#">
                                     <span className="icon">
-                                      <img src="images/icons/menu-icon-8.png" alt="" />
+                                      <img src="/images/icons/menu-icon-8.png" alt="" />
                                     </span>
                                     Early American furniture
                                 </a>
@@ -133,7 +133,7 @@ export default function ProductMenuWidget(){
                             <li>
                                 <a href="#">
                                     <span className="icon">
-                                      <img src="images/icons/menu-icon-9.png" alt="" />
+                                      <img src="/images/icons/menu-icon-9.png" alt="" />
                                     </span>
                                     Shaker furniture
                                 </a>
