@@ -16,6 +16,7 @@ export default function NewsPart(){
                             className="inner-box wow fadeInLeft"
                             data-wow-delay="0ms"
                             data-wow-duration="1500ms"
+                            dir="rtl"
                         >
                             <div className="image">
                                 <div className="tag">bedroom</div>
@@ -25,7 +26,7 @@ export default function NewsPart(){
                             </div>
                             <div className="lower-content">
                                 <div className="info">
-                                    By: <span>Alextian</span> <i>January 23,2022</i>
+                                    توسط: <span>اسدالهی</span> <i>January 23,2022</i>
                                 </div>
                                 <h5>
                                     <a href="blog-detail.html">

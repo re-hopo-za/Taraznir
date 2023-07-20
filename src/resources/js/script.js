@@ -33,62 +33,62 @@ import $ from "jquery"
 
 
 	//Update Header Style and Scroll to Top
-	function headerStyle() {
-		if($('.main-header').length){
-			var windowpos = $(window).scrollTop();
-			var siteHeader = $('.main-header');
-			var scrollLink = $('.scroll-to-top');
-
-			var HeaderHight = $('.main-header').height();
-			if (windowpos >= HeaderHight) {
-				siteHeader.addClass('fixed-header');
-				scrollLink.fadeIn(300);
-			} else {
-				siteHeader.removeClass('fixed-header');
-				scrollLink.fadeOut(300);
-			}
-
-		}
-	}
-
-	headerStyle();
+	// function headerStyle() {
+	// 	if($('.main-header').length){
+	// 		var windowpos = $(window).scrollTop();
+	// 		var siteHeader = $('.main-header');
+	// 		var scrollLink = $('.scroll-to-top');
+	//
+	// 		var HeaderHight = $('.main-header').height();
+	// 		if (windowpos >= HeaderHight) {
+	// 			siteHeader.addClass('fixed-header');
+	// 			scrollLink.fadeIn(300);
+	// 		} else {
+	// 			siteHeader.removeClass('fixed-header');
+	// 			scrollLink.fadeOut(300);
+	// 		}
+	//
+	// 	}
+	// }
+	//
+	// headerStyle();
 
 
 
 	//Submenu Dropdown Toggle
-	if($('.main-header li.dropdown ul').length){
-		$('.main-header li.dropdown').append('<div class="dropdown-btn"><span class="fa fa-angle-down"></span></div>');
-
-		//Dropdown Button
-		$('.main-header li.dropdown .dropdown-btn').on('click', function() {
-			$(this).prev('ul').slideToggle(500);
-		});
-
-		//Dropdown Menu / Fullscreen Nav
-		$('.fullscreen-menu .navigation li.dropdown > a').on('click', function() {
-			$(this).next('ul').slideToggle(500);
-		});
-
-		//Disable dropdown parent link
-		$('.navigation li.dropdown > a').on('click', function(e) {
-			e.preventDefault();
-		});
-
-		//Disable dropdown parent link
-		$('.main-header .navigation li.dropdown > a,.hidden-bar .side-menu li.dropdown > a').on('click', function(e) {
-			e.preventDefault();
-		});
-
-		$('.cart-box .dropdown-menu').click(function(e) {
-			e.stopPropagation();
-		});
-
-		$('.select-categories').on('click', function(e){
-			//hiddenBar.removeClass('visible-sidebar');
-			$('body').toggleClass('category-open');
-		})
-
-	}
+	// if($('.main-header li.dropdown ul').length){
+	// 	$('.main-header li.dropdown').append('<div class="dropdown-btn"><span class="fa fa-angle-down"></span></div>');
+	//
+	// 	//Dropdown Button
+	// 	$('.main-header li.dropdown .dropdown-btn').on('click', function() {
+	// 		$(this).prev('ul').slideToggle(500);
+	// 	});
+	//
+	// 	//Dropdown Menu / Fullscreen Nav
+	// 	$('.fullscreen-menu .navigation li.dropdown > a').on('click', function() {
+	// 		$(this).next('ul').slideToggle(500);
+	// 	});
+	//
+	// 	//Disable dropdown parent link
+	// 	$('.navigation li.dropdown > a').on('click', function(e) {
+	// 		e.preventDefault();
+	// 	});
+	//
+	// 	//Disable dropdown parent link
+	// 	$('.main-header .navigation li.dropdown > a,.hidden-bar .side-menu li.dropdown > a').on('click', function(e) {
+	// 		e.preventDefault();
+	// 	});
+	//
+	// 	$('.cart-box .dropdown-menu').click(function(e) {
+	// 		e.stopPropagation();
+	// 	});
+	//
+	// 	$('.select-categories').on('click', function(e){
+	// 		//hiddenBar.removeClass('visible-sidebar');
+	// 		$('body').toggleClass('category-open');
+	// 	})
+	//
+	// }
 
 
 	// Add Current Class Auto
@@ -182,17 +182,17 @@ import $ from "jquery"
 		});
 
 		//Menu Toggle Btn
-		$('.mobile-nav-toggler').on('click', function() {
-			$('body').addClass('mobile-menu-visible');
-
-		});
+		// $('.mobile-nav-toggler').on('click', function() {
+		// 	$('body').addClass('mobile-menu-visible');
+		//
+		// });
 
 		//Menu Toggle Btn
-		$('.mobile-menu .menu-backdrop,.mobile-menu .close-btn').on('click', function() {
-			$('body').removeClass('mobile-menu-visible');
-			$('.mobile-menu .navigation > li').removeClass('open');
-			$('.mobile-menu .navigation li ul').slideUp(0);
-		});
+		// $('.mobile-menu .menu-backdrop,.mobile-menu .close-btn').on('click', function() {
+		// 	$('body').removeClass('mobile-menu-visible');
+		// 	$('.mobile-menu .navigation > li').removeClass('open');
+		// 	$('.mobile-menu .navigation li ul').slideUp(0);
+		// });
 
 		$(document).keydown(function(e){
 	        if(e.keyCode == 27) {
@@ -756,16 +756,16 @@ import $ from "jquery"
 
 
 	// Scroll to a Specific Div
-	if($('.scroll-to-target').length){
-		$(".scroll-to-target").on('click', function() {
-			var target = $(this).attr('data-target');
-		   // animate
-		   $('html, body').animate({
-			   scrollTop: $(target).offset().top
-			 }, 1500);
-
-		});
-	}
+	// if($('.scroll-to-target').length){
+	// 	$(".scroll-to-target").on('click', function() {
+	// 		var target = $(this).attr('data-target');
+	// 	   // animate
+	// 	   $('html, body').animate({
+	// 		   scrollTop: $(target).offset().top
+	// 		 }, 1500);
+	//
+	// 	});
+	// }
 
 
 

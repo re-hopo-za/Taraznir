@@ -239,10 +239,6 @@
 	position:relative;
 }
 
-.main-header .sticky-header .main-menu .navigation > li:last-child{
-	margin-right:var(--margin-zero);
-}
-
 .main-header .main-menu .navigation > li:last-child ul{
 	right:0px;
 }
@@ -276,6 +272,7 @@
 	border-radius:0px;
 	background-color:var(--white-color);
 	box-shadow: 0px 0px 10px rgba(0,0,0,0.10);
+	right:0;
 }
 
 .main-header .main-menu .navigation > li > ul.from-right{
@@ -286,7 +283,7 @@
 .main-header .main-menu .navigation > li > ul > li{
 	position:relative;
 	width:100%;
-	text-align:left;
+	text-align:right;
 }
 
 .main-header .main-menu .navigation > li > ul > li:last-child{
@@ -319,9 +316,9 @@
 
 .main-header .main-menu .navigation > li > ul > li.dropdown > a:after{
 	font-family: 'FontAwesome';
-	content: "\f105";
+	content: "\f104";
 	position:absolute;
-	right:15px;
+	left:15px;
 	top:9px;
 	width:10px;
 	height:20px;
@@ -340,8 +337,8 @@
 
 .main-header .main-menu .navigation > li > ul > li > ul{
 	position:absolute;
-	left:100%;
-	top:0px;
+	right:100%;
+	top:0;
 	width:15rem;
 	padding:5px 0px;
 	-webkit-transform: scaleY(0);
@@ -375,6 +372,7 @@
 	width:100%;
 	text-align:left;
 	border-bottom:1px solid rgba(255,255,255,0.10);
+	text-align: right;
 }
 
 .main-header .main-menu .navigation > li > ul > li > ul > li:last-child{
@@ -1196,7 +1194,8 @@
 }
 
 .mobile-menu-visible .mobile-menu .menu-box{
-	left:0px;
+	left:0;
+	overflow: hidden;
 	-webkit-transition-delay: 600ms;
 	-moz-transition-delay: 600ms;
 	-ms-transition-delay: 600ms;
@@ -1264,8 +1263,8 @@
 
 .mobile-menu .navigation li.dropdown .dropdown-btn{
 	position:absolute;
-	right:0px;
-	top:0px;
+	left:0;
+	top:0;
 	width:44px;
 	height:44px;
 	text-align:center;
@@ -1280,7 +1279,7 @@
 .mobile-menu .navigation li.dropdown .dropdown-btn:after{
 	content:'';
 	position:absolute;
-	left:0px;
+	right:0;
 	top:10px;
 	width:1px;
 	height:24px;

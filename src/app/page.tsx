@@ -10,6 +10,7 @@ import dynamic from "next/dynamic";
 import BlogPart from "@/partials/home/BlogPart";
 import ResourcePart from "@/partials/home/ResourcePart";
 import IntroductionPart from "@/partials/home/IntroductionPart";
+import ServicePart from "@/partials/home/ServicePart";
 
 
 
@@ -29,7 +30,7 @@ export default function Home() {
             <Header />
             <MainSlider />
             <ResourcePart />
-
+            {/*<ServicePart />*/}
             <IntroductionPart />
             {/*<NewsSection />*/}
             <ProjectPart />

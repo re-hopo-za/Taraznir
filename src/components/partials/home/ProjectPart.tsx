@@ -23,7 +23,7 @@ export default function ProjectPart(){
                 </div>
                 <div className="services-info-tabs">
                     <div className="services-tabs tabs-box">
-                        <div className="feature-icon">
+                        <div className="feature-icon" style={{zIndex:9}}>
                             <img src="/images/icons/feature-1.png" alt="" />
                         </div>
                         <ul className="tab-btns tab-buttons clearfix">

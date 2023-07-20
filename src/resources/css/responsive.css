@@ -1,7 +1,9 @@
 /* Bloxic Furniture Business HTML-5 Template */
 
 @media only screen and (max-width: 1540px){
-
+	html{
+		font-size: 16px;
+	}
 	.featured-section .vector-layer-two,
 	.products-section-three .side-title,
 	.main-header .info-list{
@@ -23,7 +25,9 @@
 }
 
 @media only screen and (max-width: 1340px){
-
+	html{
+		font-size: 15px;
+	}
 	.page-wrapper{
 		overflow:hidden;
 	}
@@ -47,7 +51,9 @@
 }
 
 @media only screen and (max-width: 1200px){
-
+	html{
+		font-size: 14px;
+	}
 	.main-header .cart-box,
 	.shop-item .price::before,
 	.main-header .search-box-two,
@@ -124,7 +130,9 @@
 }
 
 @media only screen and (max-width: 1140px){
-
+	html{
+		font-size: 13px;
+	}
 	.page-wrapper{
 		overflow:hidden;
 	}
@@ -268,7 +276,9 @@
 }
 
 @media only screen and (min-width: 768px){
-
+	html{
+		font-size: 12px;
+	}
 	.main-menu .navigation > li > ul,
 	.main-menu .navigation > li > ul > li > ul{
 		display:block !important;
@@ -279,7 +289,9 @@
 }
 
 @media only screen and (max-width: 1023px){
-
+	html{
+		font-size: 11px;
+	}
 	.main-header .main-box .logo-box {
 		position:relative;
 		left:0px;
@@ -626,13 +638,17 @@
 }
 
 @media only screen and (max-width: 900px){
-
+	html{
+		font-size: 10px;
+	}
 
 
 }
 
 @media only screen and (max-width: 767px){
-
+	html{
+		font-size: 9px;
+	}
 	.header-upper .logo-outer {
 		position:relative;
 		left:0px;
@@ -919,7 +935,9 @@
 }
 
 @media only screen and (max-width: 599px){
-
+	html{
+		font-size: 8px;
+	}
 	h1 {
 		font-size: var(--font-34);
 	}
@@ -1104,7 +1122,9 @@
 }
 
 @media only screen and (max-width: 479px) {
-
+	html{
+		font-size:7px;
+	}
 	h1 {
 		font-size: var(--font-26);
 		line-height:38px;

@@ -176,7 +176,6 @@ export default function ProductMixItUp(){
                                         <div className="price">
                                             <span>$239.52</span> $362.00
                                         </div>
-                                        {/* Quantity Box */}
                                         <div className="quantity-box">
                                             <div className="item-quantity">
                                                 <input
@@ -266,7 +265,6 @@ export default function ProductMixItUp(){
                                         <div className="price">
                                             <span>$239.52</span> $362.00
                                         </div>
-                                        {/* Quantity Box */}
                                         <div className="quantity-box">
                                             <div className="item-quantity">
                                                 <input
@@ -311,7 +309,6 @@ export default function ProductMixItUp(){
                                         <div className="price">
                                             <span>$239.52</span> $362.00
                                         </div>
-                                        {/* Quantity Box */}
                                         <div className="quantity-box">
                                             <div className="item-quantity">
                                                 <input
@@ -356,7 +353,6 @@ export default function ProductMixItUp(){
                                         <div className="price">
                                             <span>$239.52</span> $362.00
                                         </div>
-                                        {/* Quantity Box */}
                                         <div className="quantity-box">
                                             <div className="item-quantity">
                                                 <input
@@ -401,7 +397,6 @@ export default function ProductMixItUp(){
                                         <div className="price">
                                             <span>$239.52</span> $362.00
                                         </div>
-                                        {/* Quantity Box */}
                                         <div className="quantity-box">
                                             <div className="item-quantity">
                                                 <input

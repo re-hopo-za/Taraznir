@@ -415,7 +415,7 @@ ul {
     top: 0;
     display: flex;
     position: fixed;
-    z-index: 101;
+    z-index: 999999;
     height: 100%;
     opacity: 1;
     width: 100%;

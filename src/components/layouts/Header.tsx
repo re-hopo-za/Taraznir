@@ -1,6 +1,10 @@
 "use client"
+
+import Script from 'next/script'
 import {setNavStatus} from "$/themeSlice";
 import { useAppDispatch } from "$/hooks";
+import Scrollbar from 'react-scrollbars-custom';
+import Image from 'next/image'
 
 
 const Header = () => {
@@ -10,8 +14,13 @@ const Header = () => {
         // @ts-ignore
         dispatch(setNavStatus());
     }
+
+
+
+
     return(
         <header className="main-header header-style-two">
+            <Script src="static/app.js" strategy={"afterInteractive"} />
             <div className="header-lower">
                 <div className="auto-container">
                     <div className="inner-container d-flex justify-content-between align-items-center">
@@ -25,7 +34,12 @@ const Header = () => {
                             </div>
                             <div className="logo">
                                 <a href="index.html">
-                                    <img src="/images/logo.png" alt="" title="" />
+                                    <Image
+                                        src="/images/logos/taraznir-logo-0.5x.png"
+                                        alt="taraznir logo"
+                                        width="160"
+                                        height="60"
+                                    />
                                 </a>
                             </div>
                         </div>
@@ -90,7 +104,7 @@ const Header = () => {
                                         className="navbar-collapse collapse clearfix"
                                         id="navbarSupportedContent"
                                     >
-                                        <ul className="navigation clearfix">
+                                        <ul className="navigation clearfix" dir="rtl">
                                             <li className="dropdown">
                                                 <a href="#">Home</a>
                                                 <ul>
@@ -205,12 +219,17 @@ const Header = () => {
                 <div className="auto-container">
                     <div className="d-flex justify-content-between align-items-center">
                         <div className="logo">
-                            <a href="index.html" title="">
-                                <img src="/images/logo-small.png" alt="" title="" />
+                            <a href="index.html">
+                                <Image
+                                    src="/images/logos/taraznir-logo-0.5x.png"
+                                    alt="taraznir logo"
+                                    width="160"
+                                    height="60"
+                                />
                             </a>
                         </div>
                         <div className="right-box">
-                            <nav className="main-menu"></nav>
+                            <nav className="main-menu">  </nav>
                             <div className="mobile-nav-toggler">
                                 <span className="icon flaticon-menu" />
                             </div>
@@ -226,10 +245,14 @@ const Header = () => {
                 <nav className="menu-box">
                     <div className="nav-logo">
                         <a href="index.html">
-                            <img src="/images/mobile-logo.png" alt="" title="" />
+                            <Image
+                                src="/images/logos/taraznir-logo-0.5x.png"
+                                alt="taraznir logo"
+                                width="160"
+                                height="60"
+                            />
                         </a>
                     </div>
-                    {/* Search */}
                     <div className="search-box">
                         <form method="post" action="contact.html">
                             <div className="form-group">
@@ -245,7 +268,10 @@ const Header = () => {
                             </div>
                         </form>
                     </div>
-                    <div className="menu-outer"></div>
+                        <div className="menu-outer" style={{height:'100%'}}>
+                            <Scrollbar style={{ width:"100%", height:'70%'}}>
+                            </Scrollbar>
+                        </div>
                 </nav>
             </div>
         </header>

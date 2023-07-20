@@ -4,7 +4,6 @@ import Sidebar from "@/layouts/Sidebar";
 import Footer from "@/layouts/Footer";
 import PageTitle from "@/layouts/PageTitle";
 import Pagination from "@/layouts/Pagination";
-import ClientPart from "@/partials/home/ClientPart";
 import CounterPart from "@/partials/home/CounterPart";
 
 
