@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Pages;
 
 use App\Models\Blog;
 use App\Models\Category;
+use App\Models\Option;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -47,11 +48,17 @@ class BlogPage extends Component
             return Blog::active()->with(['comments' ,'meta'])->take(3)->sort()->get();
         });
 
+        $seo = redisHandler( 'blog_page_seo' ,function (){
+            return Option::where('key' ,'blog_page_seo')->first();
+        });
+
+
         return view('pages.blog-page' ,[
             'categories' => $this->categories ,
             'category'   => $this->category ,
             'blogs'      => $blogs ,
-            'recent'     => $recent
+            'recent'     => $recent,
+            'seo'        => $seo,
         ]);
     }
 }

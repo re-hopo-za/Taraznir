@@ -1,10 +1,16 @@
 @section('title', ' تارازنیر | تماس با ما')
 
+@php
+    $meta = $seo?->meta->pluck('value','key')->toArray();
+@endphp
+
 @section('seo')
     @php
         echo socialsTagGenerator( 'page' ,(object)[
             'title'       => 'تماس با ما ',
-            'url'         => url()->current()
+            'url'         => url()->current(),
+            'keywords'    => indexChecker( $meta ,'keywords'),
+            'description' => indexChecker( $meta ,'description')
         ])
     @endphp
 @endsection

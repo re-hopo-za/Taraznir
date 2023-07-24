@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Pages;
 
 use App\Models\Catalog;
 //use App\Models\Category;
+use App\Models\Option;
 use Livewire\Component;
 
 class CatalogPage extends Component
@@ -42,10 +43,15 @@ class CatalogPage extends Component
 
     public function render()
     {
+        $seo = redisHandler( 'catalog_page_seo' ,function (){
+            return Option::where('key' ,'catalog_page_seo')->first();
+        });
+
         return view('pages.catalog-page' ,[
 //            'categories' => $this->categories ,
 //            'category'   => $this->category ,
             'catalogs'   => $this->catalogs ,
+            'seo'        => $seo
         ]);
     }
 

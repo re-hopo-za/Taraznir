@@ -1,10 +1,16 @@
 @section('title', ' تارازنیر | خانه')
 
+@php
+    $meta = $seo?->meta->pluck('value','key')->toArray();
+@endphp
+
 @section('seo')
     @php
         echo socialsTagGenerator( 'page' ,(object)[
             'title'       => 'خانه ',
-            'url'         => url()->current()
+            'url'         => url()->current(),
+            'keywords'    => indexChecker( $meta ,'keywords'),
+            'description' => indexChecker( $meta ,'description')
         ])
     @endphp
 @endsection

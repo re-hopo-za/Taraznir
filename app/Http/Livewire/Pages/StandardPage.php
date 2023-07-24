@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Pages;
 
 use App\Models\Category;
+use App\Models\Option;
 use App\Models\Standard;
 use Livewire\Component;
 
@@ -35,10 +36,15 @@ class StandardPage extends Component
 
     public function render()
     {
+        $seo = redisHandler( 'standard_page_seo' ,function (){
+            return Option::where('key' ,'standard_page_seo')->first();
+        });
+
         return view('pages.standard-page'  ,[
 //            'categories' => $this->categories ,
 //            'category'   => $this->category ,
             'standards'  => $this->standards ,
+            'seo'        => $seo,
         ]);
     }
 }

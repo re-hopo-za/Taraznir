@@ -27,8 +27,8 @@ mix
 
 mix
     .scripts( [
-            'resources/library/js/owl.carousel.min.js',
-            'resources/library/js/owl.carousel2.thumbs.js',
+            // 'resources/library/js/owl.carousel.min.js',
+            // 'resources/library/js/owl.carousel2.thumbs.js',
             'resources/library/rev-slider/js/jquery.themepunch.tools.min.js',
             'resources/library/rev-slider/js/jquery.themepunch.revolution.min.js',
             'resources/library/js/rev-slider-initials.js',
@@ -41,8 +41,8 @@ mix
             'resources/library/rev-slider/js/extensions/revolution.extension.parallax.min.js',
             'resources/library/rev-slider/js/extensions/revolution.extension.slideanims.min.js',
             'resources/library/rev-slider/js/extensions/revolution.extension.video.min.js',
-            'resources/library/js/jquery-easing.js',
-            'resources/js/home.js',
+            // 'resources/library/js/jquery-easing.js',
+            // 'resources/js/home.js',
         ]
         ,'public/js/home.js'
     );

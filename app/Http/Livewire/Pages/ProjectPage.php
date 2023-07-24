@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Pages;
 
 use App\Models\Category;
+use App\Models\Option;
 use App\Models\Project;
 use Livewire\Component;
 
@@ -40,10 +41,15 @@ class ProjectPage extends Component
 
     public function render()
     {
+        $seo = redisHandler( 'project_page_seo' ,function (){
+            return Option::where('key' ,'project_page_seo')->first();
+        });
+
         return view('pages.project-page' ,[
             'categories' => $this->categories ,
             'category'   => $this->category ,
             'projects'   => $this->projects ,
+            'seo'        => $seo ,
         ]);
     }
 }

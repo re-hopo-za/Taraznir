@@ -1,13 +1,20 @@
 @section('title', ' تارازنیر | کاتالوگ‌ها')
 
+@php
+    $meta = $seo?->meta->pluck('value','key')->toArray();
+@endphp
+
 @section('seo')
     @php
         echo socialsTagGenerator( 'page' ,(object)[
             'title'       => 'کاتالوگ‌ها ',
-            'url'         => url()->current()
-          ])
+            'url'         => url()->current(),
+            'keywords'    => indexChecker( $meta ,'keywords'),
+            'description' => indexChecker( $meta ,'description')
+        ])
     @endphp
 @endsection
+
 
 @section('breadcrumbs')
     @include('layouts.breadcrumbs' ,['routes' => ['Resource' => '' ] ,'pageName' => 'Resource' ])

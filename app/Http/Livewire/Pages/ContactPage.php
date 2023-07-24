@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Pages;
 
 use App\Models\FormEntry;
+use App\Models\Option;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
@@ -48,6 +49,12 @@ class ContactPage extends Component
 
     public function render()
     {
-        return view('pages.contact-page');
+        $seo = redisHandler( 'contact_page_seo' ,function (){
+            return Option::where('key' ,'contact_page_seo')->first();
+        });
+
+        return view('pages.contact-page' ,[
+            'seo' => $seo
+        ]);
     }
 }

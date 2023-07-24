@@ -13,8 +13,14 @@ class ExhibitionPage extends Component
         $exhibition = redisHandler( 'exhibition_item' ,function (){
             return Option::where('key' ,'exhibition_item')->get();
         });
+
+        $seo = redisHandler( 'exhibition_page_seo' ,function (){
+            return Option::where('key' ,'exhibition_page_seo')->first();
+        });
+
         return view('pages.exhibition-page',[
-            'images' => $exhibition
+            'images' => $exhibition,
+            'seo'    => $seo
         ]);
     }
 }

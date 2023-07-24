@@ -41,6 +41,10 @@ class HomePage extends Component
             return Option::where('key' ,'testimonials_item')->get();
         });
 
+        $seo = redisHandler( 'home_page_seo' ,function (){
+            return Option::where('key' ,'home_page_seo')->first();
+        });
+
 
         return view('pages.home-page',[
             'sliders'      => $sliders ,
@@ -49,6 +53,7 @@ class HomePage extends Component
             'products'     => $products ,
             'brands'       => $brands ,
             'testimonials' => $testimonial ,
+            'seo'          => $seo ,
         ]);
     }
 }

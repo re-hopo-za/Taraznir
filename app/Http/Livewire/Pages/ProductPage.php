@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Pages;
 
 use App\Models\Category;
+use App\Models\Option;
 use App\Models\Product;
 use Livewire\Component;
 
@@ -40,10 +41,15 @@ class ProductPage extends Component
 
     public function render()
     {
+        $seo = redisHandler( 'product_page_seo' ,function (){
+            return Option::where('key' ,'product_page_seo')->first();
+        });
+
         return view('pages.product-page' ,[
             'categories' => $this->categories ,
             'category'   => $this->category ,
-            'products'   => $this->products
+            'products'   => $this->products,
+            'seo'        => $seo,
         ]);
     }
 }
