@@ -10664,15 +10664,15 @@
 
 .feature-block_two{
 	position:relative;
-	margin-bottom:var(--margin-bottom-40);
 }
 
 .feature-block_two-inner{
 	position:relative;
 	padding:35px 30px 60px;
-	border-radius:10px;
+	/*border-radius:10px;*/
 	background-color:var(--white-color);
-	box-shadow:0px 0px 15px rgba(0,0,0,0.07);
+	/*box-shadow:0 0 15px rgba(0,0,0,0.07);*/
+	border: 1px solid rgba(var(--black-color-rgb), 0.06);
 }
 
 .feature-block_two-icon{
@@ -10693,52 +10693,61 @@
 
 .feature-block_two-heading{
 	position:relative;
-	font-weight:700;
-	color:var(--color-nineteen);
+	color:#000;
 	margin-top:var(--margin-top-25);
+	font-family: AzarMehr;
+	font-weight: 400;
+	font-size: 22px;
 }
 
 .feature-block_two-text{
 	position:relative;
 	line-height:26px;
-	font-size:var(--font-16);
 	color:var(--black-color);
 	margin-top:var(--margin-top-15);
+	font-family: AzarMehr;
+	font-weight: 200;
+	font-size: 16px;
 }
 
 .feature-block_two-inner:hover .feature-block_two-arrow{
 	opacity:1;
 	color:var(--white-color);
-	background-color:var(--color-fifteen);
+	background-color:var(--main-color);
 }
 
 .feature-block_two-arrow{
-	position:absolute;
-	left:30px;
-	bottom:30px;
-	width:30px;
-	height:30px;
-	opacity:0.50;
-	text-align:center;
-	border-radius:50px;
-	line-height:30px;
-	color:var(--black-color);
-	display:inline-block;
+	position: absolute;
+	left: 30px;
+	bottom: 30px;
+	width: 25px;
+	height: 25px;
+	text-align: center;
+	border-radius: 50px;
+	color: var(--white-color);
+	background-color: var(--black-color);
+	display: inline-block;
 	font-family: "Flaticon";
+	font-size: 13px;
+	line-height: 2.1;
 }
 
-
+.sec-title-two_heading{
+	font-size: 25px;
+	line-height: 1.7;
+}
 .feature-two_skill-column{
 	position:relative;
 	margin-bottom:var(--margin-bottom-30);
 }
-
 .feature-two_skill-inner{
 	position:relative;
 	padding-top:var(--padding-top-50);
 	padding-left:var(--padding-left-30);
 }
-
+.feature-two_skill-inner *{
+	font-family: 'AzarMehr'!important;
+}
 
 
 
@@ -10866,22 +10875,146 @@
 
 
 
-/*==================================================================*/
-/*	Service Page Section*/
-/*==================================================================*/
 
-.service-page-section{
+/***
+
+====================================================================
+	Services Section
+====================================================================
+
+***/
+
+.services-section-first{
 	position:relative;
-	padding-bottom:90px;
-
+	padding:100px 0 70px;
+	font-family: AzarMehr;
+}
+.services-section-first h2{
+	font-family: AzarMehr;
+}
+.services-section-first .more-service{
+	position:relative;
+	font-weight:700;
+	display:inline-block;
+	color:var(--main-color);
+	font-size:var(--font-18);
+	margin-top:var(--margin-top-20);
+	padding-right:var(--padding-right-5);
+	-webkit-transition:all 500ms ease;
+	-moz-transition:all 500ms ease;
+	-ms-transition:all 500ms ease;
+	-o-transition:all 500ms ease;
+	transition:all 500ms ease;
 }
 
-.service-page-section .vision-block .read-more{
-	padding:16px 46px;
-	color:var(--black-color-color);
-	background-color:var(--white-color);
+.services-section-first .more-service span{
+	position:absolute;
+	left:85%;
+	top:0;
+	font-family: "Flaticon";
+	font-size:var(--font-14);
+	margin-left:var(--margin-left-5);
+	-webkit-transition:all 500ms ease;
+	-moz-transition:all 500ms ease;
+	-ms-transition:all 500ms ease;
+	-o-transition:all 500ms ease;
+	transition:all 500ms ease;
 }
 
+.services-section-first .sec-title .text{
+	margin-top:var(--margin-zero);
+	font-family: AzarMehr;
+}
+
+.services-section-first .more-service:hover span{
+	left:0;
+}
+
+.services-section-first .more-service:hover{
+	color:var(--main-color);
+	padding-left:var(--padding-left-25);
+}
+
+.services-section-first .service-block{
+	position:relative;
+	margin-bottom:var(--margin-bottom-30);
+}
+
+.services-section-first .service-block .inner-box{
+	position: relative;
+	padding: 29px 30px 41px;
+	transition: all 500ms ease;
+	border: 1px solid rgba(var(--black-color-rgb), 0.06);
+	min-height: 307px;
+	text-align: justify;
+	direction: rtl;
+}
+
+.services-section-first .service-block .inner-box:before{
+	position:absolute;
+	content:'';
+	left:0;
+	right:0;
+	bottom:-1px;
+	height:4px;
+	opacity:0;
+	transform:scale(0.3,1);
+	background-color:var(--main-color);
+	-webkit-transition:all 500ms ease;
+	-moz-transition:all 500ms ease;
+	-ms-transition:all 500ms ease;
+	-o-transition:all 500ms ease;
+	transition:all 500ms ease;
+}
+
+.services-section-first .service-block .inner-box:hover::before{
+	opacity:1;
+	transform:scale(1,1);
+}
+
+.services-section-first .service-block .inner-box:hover{
+	box-shadow:0 20px 20px rgba(0,0,0,0.10);
+}
+
+.services-section-first .service-block .icon{
+	position:relative;
+	line-height:1em;
+	display:inline-block;
+	color:rgb(134,134,134);
+	font-size:var(--font-44);
+	font-family: "Flaticon";
+	-webkit-transition:all 500ms ease;
+	-moz-transition:all 500ms ease;
+	-ms-transition:all 500ms ease;
+	-o-transition:all 500ms ease;
+	transition:all 500ms ease;
+}
+
+.services-section-first .service-block h5{
+	font-weight:400;
+	margin-top:var(--margin-top-25);
+	font-family: AzarMehr;
+}
+
+.services-section-first .service-block h5 a{
+	color:var(--black-color);
+}
+
+.services-section-first .service-block .text{
+	margin-top:var(--margin-top-20);
+	font-family: AzarMehr;
+	font-weight: 200;
+	color: #000;
+}
+
+.services-section-first .service-block .inner-box:hover .icon{
+	color:var(--main-color);
+	transform:rotateY(180deg);
+}
+
+.services-section-first .service-block .inner-box:hover h5 a{
+	color:var(--main-color);
+}
 
 
 /***

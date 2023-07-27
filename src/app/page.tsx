@@ -30,7 +30,7 @@ export default function Home() {
             <Header />
             <MainSlider />
             <ResourcePart />
-            {/*<ServicePart />*/}
+            <ServicePart />
             <IntroductionPart />
             {/*<NewsSection />*/}
             <ProjectPart />
