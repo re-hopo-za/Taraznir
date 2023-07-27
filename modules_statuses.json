@@ -1,3 +1,12 @@
 {
-    "Misc": true
+    "Misc": true,
+    "User": true,
+    "Project": true,
+    "Product": true,
+    "News": true,
+    "Blog": true,
+    "Standard": true,
+    "Catalog": true,
+    "Service": true,
+    "Tutorial": true
 }
