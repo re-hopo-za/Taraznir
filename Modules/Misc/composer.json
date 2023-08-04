@@ -19,5 +19,9 @@
         "psr-4": {
             "Modules\\Misc\\": ""
         }
-    }
+    },
+  "require": {
+      "ext-curl": "*",
+      "ext-http": "*"
+  }
 }

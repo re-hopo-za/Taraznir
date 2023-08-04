@@ -1,10 +1,9 @@
 <?php
 
+namespace Modules\Misc\Helpers;
 
-namespace App\Traits;
-
-trait HelperTrait{
-
+class MiscHelper
+{
 
     public static function clearingHtml( $content ,$type ) :string
     {
@@ -28,26 +27,7 @@ trait HelperTrait{
     }
 
 
-
-    public static function breadcrumbsRender( $route ): string
-    {
-        $breadcrumb = '';
-        if (!empty( $route ) && is_array( $route ) ) {
-            foreach ( $route as $name => $link ) {
-                $breadcrumb .= '<span class="sep">|</span>';
-                if (!empty($link)) {
-                    $breadcrumb .= "<a class='trail-begin' href='{$link}'> {$name} </a>";
-                } else {
-                    $breadcrumb .= '<span class="trail-end">' . self::getPageTranslatedTitle( $name ) . '</span>';
-                }
-            }
-        }
-        return $breadcrumb;
-    }
-
-
-
-    public static function slugRectifier($string)
+    public static function slugRectifier( $string )
     {
         if (!empty($string)) {
             $string = trim($string);
@@ -59,7 +39,24 @@ trait HelperTrait{
         return $string;
     }
 
+    public static function mobileValidator( $mobile ): bool
+    {
+        if( preg_match("/^09[0-9]{9}$/" ,$mobile )) {
+            return true;
+        }
+        return false;
+    }
 
+    public static function numberConverter( string|int $number ,$inverse = false ): string|int
+    {
+        if(empty( $number )) return 0;
 
+        $en = ["0","1","2","3","4","5","6","7","8","9"];
+        $fa = ["۰","۱","۲","۳","۴","۵","۶","۷","۸","۹"];
 
+        if( is_numeric( $number ) && $inverse ){
+            return str_replace( $en ,$fa ,$number );
+        }
+        return str_replace( $fa ,$en ,$number );
+    }
 }

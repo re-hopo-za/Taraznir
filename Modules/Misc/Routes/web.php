@@ -11,6 +11,6 @@
 |
 */
 
-Route::prefix('misc')->group(function() {
-    Route::get('/', 'MiscController@index');
-});
+
+
+
