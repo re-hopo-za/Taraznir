@@ -1,6 +1,7 @@
 <?php
 
-use Illuminate\Http\Request;
+
+use Modules\Project\Http\Controllers\ProjectController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,9 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/project', function (Request $request) {
-    return $request->user();
-});
+
+Route::get('projects',
+    [ProjectController::class ,'index']);
+
+Route::get('projects/{id}',
+    [ProjectController::class ,'show']);

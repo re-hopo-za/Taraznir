@@ -16,25 +16,44 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::group(['prefix' => 'auth' ,'as' => 'auth.' ,'middleware' => 'throttle:1,60'] ,function(){
+Route::group(['prefix' => 'auth' ,'as' => 'auth.' ,'middleware' => 'throttle:10,60'] ,function(){
 
-    Route::post('/send-sign-up-code' ,[AuthController::class ,'sendSignUpCode'])
-        ->name('send_sign_up_code');
+    Route::post('/sign-up-by-sms' ,[AuthController::class ,'signUpBySMS'])
+        ->name('sign_up_with_sms');
 
-    Route::post('/send-sign-in-code' ,[AuthController::class ,'sendSignInCode'])
-        ->name('send_sign_in_code');
-
-    Route::post('/verify/sign-up' ,[VerificationController::class ,'verifySignUp'])
-        ->name('verify.sign_up');
-
-    Route::post('/verify/sign-in-by-code' ,[VerificationController::class ,'verifySignInByCode'])
-        ->name('verify.sign_in_by_code');
+    Route::post('/verify/sign-up-by-sms' ,[VerificationController::class ,'verifySignUpBySMS'])
+        ->name('verify.sign_up_with_sms');
 
 
-    Route::post('/verify/sign-in-by-mobile-and-password' ,[VerificationController::class ,'verifySignInByPassword'])
+
+    Route::post('/sign-up-by-email' ,[AuthController::class ,'signUpByEmail'])
+        ->name('sign_up_with_email');
+
+    Route::post('/verify/sign-up-by-email' ,[VerificationController::class ,'verifySignUp'])
+        ->name('verify.sign_up_with_email');
+
+
+
+    Route::post('/sign-in-by-sms' ,[AuthController::class ,'signInBySMS'])
+        ->name('sign_in_with_sms');
+
+    Route::post('/verify/sign-in-by-sms' ,[VerificationController::class ,'verifySignInByCode'])
+        ->name('verify.sign_in_with_sms');
+
+
+
+    Route::post('/sign-in-by-email' ,[AuthController::class ,'signInByEmail'])
+        ->name('sign_in_with_email');
+
+    Route::post('/verify/sign-in-by-email' ,[VerificationController::class ,'verifySignInByCode'])
+        ->name('verify.sign_in_with_email');
+
+
+
+    Route::post('/verify/sign-in-by-mobile-and-password' ,[VerificationController::class ,'verifySignInByMobileAndPassword'])
         ->name('verify.sign_in_by_mobile_and_password');
 
-    Route::post('/verify/sign-in-by-email-and-password' ,[VerificationController::class ,'verifySignInByPassword'])
+    Route::post('/verify/sign-in-by-email-and-password' ,[VerificationController::class ,'verifySignInByEmailAndPassword'])
         ->name('verify.sign_in_by_email_and_password');
 
 

@@ -13,14 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('sms', function (Blueprint $table) {
+        Schema::create('blogs', function (Blueprint $table) {
             $table->id();
-            $table->tinyText('mobile');
-            $table->integer('code');
-            $table->enum('type' ,['sign-up' ,'sign-in' ,'ads' ,'text']);
-            $table->tinyInteger('sent_count' )->default(0);
-            $table->tinyInteger('try_count' )->default(0);
-            $table->timestamp('verified' )->nullable();
+
             $table->timestamps();
         });
     }
@@ -32,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sms');
+        Schema::dropIfExists('blogs');
     }
 };
