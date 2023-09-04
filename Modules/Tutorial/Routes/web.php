@@ -11,6 +11,3 @@
 |
 */
 
-Route::prefix('tutorial')->group(function() {
-    Route::get('/', 'TutorialController@index');
-});

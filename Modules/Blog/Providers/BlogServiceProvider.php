@@ -2,9 +2,8 @@
 
 namespace Modules\Blog\Providers;
 
-use Illuminate\Database\Eloquent\Factory;
 use Illuminate\Support\ServiceProvider;
-use Modules\Misc\Providers\AuthServiceProvider;
+use Illuminate\Database\Eloquent\Factory;
 
 class BlogServiceProvider extends ServiceProvider
 {

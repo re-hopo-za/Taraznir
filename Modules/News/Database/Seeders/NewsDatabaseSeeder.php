@@ -4,6 +4,7 @@ namespace Modules\News\Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
+use Modules\News\Models\News;
 
 class NewsDatabaseSeeder extends Seeder
 {
@@ -16,6 +17,6 @@ class NewsDatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-        // $this->call("OthersTableSeeder");
+        News::factory(100 )->create();
     }
 }

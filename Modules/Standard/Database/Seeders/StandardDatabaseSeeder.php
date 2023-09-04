@@ -4,6 +4,7 @@ namespace Modules\Standard\Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
+use Modules\Standard\Models\Standard;
 
 class StandardDatabaseSeeder extends Seeder
 {
@@ -16,6 +17,6 @@ class StandardDatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-        // $this->call("OthersTableSeeder");
+        Standard::factory(100 )->create();
     }
 }

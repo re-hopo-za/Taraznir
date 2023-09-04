@@ -4,6 +4,7 @@ namespace Modules\Service\Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
+use Modules\Service\Models\Service;
 
 class ServiceDatabaseSeeder extends Seeder
 {
@@ -16,6 +17,6 @@ class ServiceDatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-        // $this->call("OthersTableSeeder");
+        Service::factory(100 )->create();
     }
 }

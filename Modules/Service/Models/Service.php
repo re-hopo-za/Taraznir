@@ -2,17 +2,29 @@
 
 namespace Modules\Service\Models;
 
+use App\Trait\CommonModelMethodsTrait;
+use App\Trait\CommonScopesTrait;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Modules\Service\Database\factories\ServiceFactory;
 
 class Service extends Model
 {
-    use HasFactory;
+    use CommonScopesTrait ,CommonModelMethodsTrait;
 
-    protected $fillable = [];
-    
-    protected static function newFactory()
+    protected $fillable = [
+        'title',
+        'slug',
+        'summary',
+        'content',
+        'cover',
+        'thumbnail',
+        'status',
+        'chosen',
+    ];
+
+    protected static function newFactory(): ServiceFactory
     {
-        return \Modules\Service\Database\factories\ServiceFactory::new();
+        return ServiceFactory::new();
+
     }
 }

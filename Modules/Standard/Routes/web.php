@@ -11,6 +11,3 @@
 |
 */
 
-Route::prefix('standard')->group(function() {
-    Route::get('/', 'StandardController@index');
-});

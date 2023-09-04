@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Modules\Blog\Http\Controllers\BlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,8 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/blog', function (Request $request) {
-    return $request->user();
-});
+Route::get('blog',
+    [BlogController::class ,'index']);
+
+Route::get('blog/{id}',
+    [BlogController::class ,'show']);

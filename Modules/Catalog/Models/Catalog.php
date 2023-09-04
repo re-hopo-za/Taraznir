@@ -2,17 +2,29 @@
 
 namespace Modules\Catalog\Models;
 
+use App\Trait\CommonModelMethodsTrait;
+use App\Trait\CommonScopesTrait;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Modules\Catalog\Database\factories\CatalogFactory;
 
 class Catalog extends Model
 {
-    use HasFactory;
+    use CommonScopesTrait ,CommonModelMethodsTrait;
 
-    protected $fillable = [];
-    
-    protected static function newFactory()
+    protected $fillable = [
+        'title',
+        'slug',
+        'summary',
+        'content',
+        'cover',
+        'thumbnail',
+        'status',
+        'chosen',
+    ];
+
+    protected static function newFactory(): CatalogFactory
     {
-        return \Modules\Catalog\Database\factories\CatalogFactory::new();
+        return CatalogFactory::new();
     }
+
 }

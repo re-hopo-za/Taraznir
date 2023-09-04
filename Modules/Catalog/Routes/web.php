@@ -11,6 +11,4 @@
 |
 */
 
-Route::prefix('catalog')->group(function() {
-    Route::get('/', 'CatalogController@index');
-});
+

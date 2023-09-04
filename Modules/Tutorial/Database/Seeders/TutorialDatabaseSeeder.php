@@ -4,6 +4,7 @@ namespace Modules\Tutorial\Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
+use Modules\Tutorial\Models\Tutorial;
 
 class TutorialDatabaseSeeder extends Seeder
 {
@@ -16,6 +17,6 @@ class TutorialDatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-        // $this->call("OthersTableSeeder");
+        Tutorial::factory(100 )->create();
     }
 }

@@ -2,17 +2,29 @@
 
 namespace Modules\Project\Models;
 
+use App\Trait\CommonModelMethodsTrait;
+use App\Trait\CommonScopesTrait;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Modules\Project\Database\factories\ProjectFactory;
 
 class Project extends Model
 {
-    use HasFactory;
+    use CommonScopesTrait ,CommonModelMethodsTrait;
 
-    protected $fillable = [];
-    
-    protected static function newFactory()
+    protected $fillable = [
+        'title',
+        'slug',
+        'summary',
+        'content',
+        'cover',
+        'thumbnail',
+        'status',
+        'chosen',
+    ];
+
+    protected static function newFactory(): ProjectFactory
     {
-        return \Modules\Project\Database\factories\ProjectFactory::new();
+        return ProjectFactory::new();
     }
+
 }

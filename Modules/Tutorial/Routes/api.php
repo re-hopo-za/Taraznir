@@ -1,6 +1,8 @@
 <?php
 
-use Illuminate\Http\Request;
+
+
+use Modules\Tutorial\Http\Controllers\TutorialController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,8 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/tutorial', function (Request $request) {
-    return $request->user();
-});
+Route::get('tutorial',
+    [TutorialController::class ,'index']);
+
+Route::get('tutorial/{id}',
+    [TutorialController::class ,'show']);

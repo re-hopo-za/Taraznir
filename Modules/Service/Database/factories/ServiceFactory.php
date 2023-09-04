@@ -1,17 +1,18 @@
 <?php
 
-namespace Modules\Project\Database\factories;
+namespace Modules\Service\Database\factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Modules\Project\Models\Project;
-class ProjectFactory extends Factory
+use Modules\Service\Models\Service;
+
+class ServiceFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Project::class;
+    protected $model = Service::class;
 
     /**
      * Define the model's default state.

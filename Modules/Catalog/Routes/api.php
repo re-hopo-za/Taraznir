@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Modules\Catalog\Http\Controllers\CatalogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,8 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/catalog', function (Request $request) {
-    return $request->user();
-});
+Route::get('catalog',
+    [CatalogController::class ,'index']);
+
+Route::get('catalog/{id}',
+    [CatalogController::class ,'show']);

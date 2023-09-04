@@ -15,8 +15,16 @@ return new class extends Migration
     {
         Schema::create('catalogs', function (Blueprint $table) {
             $table->id();
-
+            $table->string('title')->nullable();
+            $table->string('slug')->nullable();
+            $table->mediumText('summary')->nullable();
+            $table->text('cover')->nullable();
+            $table->text('thumbnail')->nullable();
+            $table->enum('status', ['publish', 'draft'])->default('publish');
+            $table->integer('chosen')->nullable()->default(0);
             $table->timestamps();
+            $table->softDeletes();
+            $table->fullText(['title' ,'summary']);
         });
     }
 

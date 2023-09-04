@@ -1,17 +1,18 @@
 <?php
 
-namespace Modules\Project\Database\factories;
+namespace Modules\Standard\Database\factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Modules\Project\Models\Project;
-class ProjectFactory extends Factory
+use Modules\Standard\Models\Standard;
+
+class StandardFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Project::class;
+    protected $model = Standard::class;
 
     /**
      * Define the model's default state.

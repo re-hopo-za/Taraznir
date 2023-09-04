@@ -2,6 +2,7 @@
 
 namespace Modules\Product\Http\Resource;
 
+use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class ProductResource extends JsonResource
@@ -9,11 +10,21 @@ class ProductResource extends JsonResource
     /**
      * Transform the resource into an array.
      *
-     * @param  \Illuminate\Http\Request
+     * @param Request $request
      * @return array
      */
-    public function toArray($request)
+    public function toArray( Request $request ): array
     {
-        return parent::toArray($request);
+        return isset($this->id) ?
+            [
+                'title'    => $this->title,
+                'slug'     => $this->slug,
+                'summary'  => $this->summary,
+                'content'  => $this->content,
+                'cover'    => $this->cover,
+                'status'   => $this->status,
+                'chosen'   => $this->chosen
+            ]:
+            [];
     }
 }

@@ -2,17 +2,29 @@
 
 namespace Modules\Standard\Models;
 
+use App\Trait\CommonModelMethodsTrait;
+use App\Trait\CommonScopesTrait;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Modules\Standard\Database\factories\StandardFactory;
 
 class Standard extends Model
 {
-    use HasFactory;
+    use CommonScopesTrait ,CommonModelMethodsTrait;
 
-    protected $fillable = [];
-    
-    protected static function newFactory()
+    protected $fillable = [
+        'title',
+        'slug',
+        'summary',
+        'content',
+        'cover',
+        'thumbnail',
+        'status',
+        'chosen',
+    ];
+
+    protected static function newFactory(): StandardFactory
     {
-        return \Modules\Standard\Database\factories\StandardFactory::new();
+        return StandardFactory::new();
     }
+
 }

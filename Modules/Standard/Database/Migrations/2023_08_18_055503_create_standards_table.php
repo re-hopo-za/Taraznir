@@ -13,19 +13,18 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('news', function (Blueprint $table) {
+        Schema::create('standards', function (Blueprint $table) {
             $table->id();
-            $table->string('title')->nullable();
-            $table->string('slug')->nullable();
-            $table->mediumText('summary')->nullable();
-            $table->longText('content')->nullable();
+            $table->string('title')->nullable()->fulltext();
+            $table->string('slug')->nullable()->fulltext();
+            $table->mediumText('summary')->nullable()->fulltext();
+            $table->longText('content')->nullable()->fulltext();
             $table->text('cover')->nullable();
             $table->text('thumbnail')->nullable();
             $table->enum('status', ['publish', 'draft'])->default('publish');
             $table->integer('chosen')->nullable()->default(0);
             $table->timestamps();
             $table->softDeletes();
-            $table->fullText(['title' ,'summary' ,'content']);
         });
     }
 
@@ -36,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('news');
+        Schema::dropIfExists('standards');
     }
 };
