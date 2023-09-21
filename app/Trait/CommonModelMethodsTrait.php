@@ -2,12 +2,15 @@
 
 namespace App\Trait;
 
+
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
+use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Laravel\Scout\Searchable;
 use Modules\Misc\Helpers\MiscHelper;
+use Modules\Misc\Models\Category;
 use Spatie\Image\Exceptions\InvalidManipulation;
 use Spatie\Image\Manipulations;
 use Spatie\MediaLibrary\InteractsWithMedia;
@@ -25,10 +28,39 @@ trait CommonModelMethodsTrait{
         );
     }
 
+    protected function getJalaliCreatedAtAttribute(): int|string
+    {
+        return MiscHelper::numberConverter(
+            MiscHelper::jalaliToGregorianAndConversely( $this->created_at ,format:'Y-m-d H:i')
+        ,true );
+    }
+
+
+    protected function getImagesAttribute(): array
+    {
+        $media = $this->getMedia('*')->first();
+        if($media){
+            return [
+                'thumbnail' => $media->getUrl('thumbnail'),
+                'cover'     => $media->getUrl('cover'),
+                'single'    => $media->getUrl('single'),
+            ];
+        }
+        return [];
+    }
+
+
     public function meta(): MorphMany
     {
         return $this->morphMany('Modules\Misc\Models\Meta' ,'metaable');
     }
+
+
+    public function category(): MorphToMany
+    {
+        return $this->morphToMany(Category::class ,'categorizable' );
+    }
+
 
     /**
      * @throws InvalidManipulation
@@ -36,25 +68,20 @@ trait CommonModelMethodsTrait{
     public function registerMediaConversions( Media $media = null): void
     {
         $this
-            ->addMediaConversion('preview');
+            ->addMediaConversion('thumbnail')
+            ->fit(Manipulations::FIT_CROP, 140, 105);
 
         $this
             ->addMediaConversion('cover')
-            ->fit(Manipulations::FIT_CROP, 850, 550);
+            ->fit(Manipulations::FIT_CROP, 420, 315);
 
-        $this->addMediaConversion('recent')
-            ->fit(Manipulations::FIT_CROP, 75, 50);
+        $this
+            ->addMediaConversion('single')
+            ->fit(Manipulations::FIT_CROP, 1260, 945);
     }
 
 
-    public function images( $conversion = 'cover' ): string
-    {
-        $images = $this->getMedia( );
-        if ( isset( $images[0] ) && !empty( $images[0]->getUrl( $conversion ) ) ){
-            return $images[0]->getUrl( $conversion );
-        }
-        return asset( 'images/placeholders.png' );
-    }
+
 
 
     public function toSearchableArray(): array

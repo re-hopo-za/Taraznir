@@ -1,6 +1,7 @@
 <?php
 
-use Illuminate\Http\Request;
+
+use Modules\Misc\Http\Controllers\MiscController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,9 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/misc', function (Request $request) {
-    return $request->user();
-});
+
+
+Route::get('option/{key}',
+    [MiscController::class ,'index']);
+
+

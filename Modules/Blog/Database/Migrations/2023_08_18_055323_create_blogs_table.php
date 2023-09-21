@@ -19,8 +19,6 @@ return new class extends Migration
             $table->string('slug')->nullable();
             $table->mediumText('summary')->nullable();
             $table->longText('content')->nullable();
-            $table->text('cover')->nullable();
-            $table->text('thumbnail')->nullable();
             $table->enum('status', ['publish', 'draft'])->default('publish');
             $table->integer('chosen')->nullable()->default(0);
             $table->timestamps();

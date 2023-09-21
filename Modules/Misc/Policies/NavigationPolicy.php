@@ -3,8 +3,7 @@
 namespace Modules\Misc\Policies;
 
 use Illuminate\Auth\Access\HandlesAuthorization;
-use Illuminate\Auth\Access\Response;
-use Modules\User\Models\User;
+use App\Models\User;
 use RyanChandler\FilamentNavigation\Models\Navigation;
 
 class NavigationPolicy

@@ -86,11 +86,8 @@ class OptionResource extends Resource
     {
         return $table
             ->columns([
-                SpatieMediaLibraryImageColumn::make('attachments')
-                    ->collection('attachments')
-                    ->width(50)
-                    ->height('auto')
-                    ->label('Cover') ,
+                SpatieMediaLibraryImageColumn::make('cover')
+                    ->label('تصویر') ,
 
                 Tables\Columns\TextColumn::make('title')
                     ->label('Title') ,

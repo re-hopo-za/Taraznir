@@ -3,7 +3,6 @@
 namespace Modules\News\Filament\Resources\NewsResource\Pages;
 
 use Modules\News\Filament\Resources\NewsResource;
-use Filament\Pages\Actions;
 use Filament\Resources\Pages\CreateRecord;
 
 class CreateNews extends CreateRecord

@@ -14,7 +14,6 @@ class Kavenegar
 
     public static function sendSMSByTemplate( $mobile ,$token1 ,$token2 ,$token3 ,$template ): bool
     {
-        return true;
         if ( is_numeric( $mobile ) ){
             $params = [
                 "receptor" => $mobile ,

@@ -2,9 +2,9 @@
 
 namespace Modules\News\Filament\Resources\NewsResource\Pages;
 
-use Modules\News\Filament\Resources\NewsResource;
 use Filament\Pages\Actions;
 use Filament\Resources\Pages\ListRecords;
+use Modules\News\Filament\Resources\NewsResource;
 
 class ListNews extends ListRecords
 {

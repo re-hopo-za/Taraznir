@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Builder;
 trait CommonScopesTrait{
 
 
+
     public static function scopeOrderByScope( Builder $query ,string|null $orderBy ,string|null $direction ): Builder
     {
         $orderBy   = $orderBy   ?: 'id';

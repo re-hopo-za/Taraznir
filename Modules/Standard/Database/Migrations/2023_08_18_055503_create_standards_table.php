@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('standards', function (Blueprint $table) {
             $table->id();
-            $table->string('title')->nullable()->fulltext();
-            $table->string('slug')->nullable()->fulltext();
-            $table->mediumText('summary')->nullable()->fulltext();
-            $table->longText('content')->nullable()->fulltext();
+            $table->string('title')->nullable();
+            $table->string('slug')->nullable();
+            $table->string('tag' ,255)->nullable();
+            $table->longText('content')->nullable();
             $table->text('cover')->nullable();
             $table->text('thumbnail')->nullable();
             $table->enum('status', ['publish', 'draft'])->default('publish');

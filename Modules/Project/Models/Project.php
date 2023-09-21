@@ -6,10 +6,13 @@ use App\Trait\CommonModelMethodsTrait;
 use App\Trait\CommonScopesTrait;
 use Illuminate\Database\Eloquent\Model;
 use Modules\Project\Database\factories\ProjectFactory;
+use Spatie\MediaLibrary\HasMedia;
 
-class Project extends Model
+class Project extends Model implements HasMedia
 {
     use CommonScopesTrait ,CommonModelMethodsTrait;
+
+    protected $appends = ['jalali_created_at' ,'images'];
 
     protected $fillable = [
         'title',

@@ -15,8 +15,8 @@ use Modules\Project\Http\Controllers\ProjectController;
 */
 
 
-Route::get('projects',
+Route::get('project',
     [ProjectController::class ,'index']);
 
-Route::get('projects/{id}',
+Route::get('project/{id}',
     [ProjectController::class ,'show']);

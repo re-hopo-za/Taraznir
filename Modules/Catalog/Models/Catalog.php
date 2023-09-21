@@ -11,6 +11,8 @@ class Catalog extends Model
 {
     use CommonScopesTrait ,CommonModelMethodsTrait;
 
+    protected $appends = ['jalali_created_at' ,'images'];
+
     protected $fillable = [
         'title',
         'slug',
