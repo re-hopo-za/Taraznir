@@ -1,9 +1,12 @@
+import {ThemeType} from "^/ThemeType";
+import {menuCreator} from "&/Helpers";
+import Image from "next/image";
 
 
-const Footer = () => {
+const Footer = ({options}:{options:ThemeType}) => {
 
     return(
-        <footer className="main-footer style-two">
+        <footer className="main-footer style-two" dir="rtl">
             <div className="auto-container">
                 <div className="widgets-section">
                     <div className="row clearfix">
@@ -12,63 +15,42 @@ const Footer = () => {
                                 <div className="footer-column col-lg-7 col-md-6 col-sm-12">
                                     <div className="footer-widget links-widget">
                                         <div className="logo">
-                                            <a href="index.html">
-                                                <img src="/images/logo.png" alt="" title="" />
+                                            <a href="/">
+                                                <Image src="/images/logos/taraznir-logo-0.25x.png" alt="taraznir logo" width={158} height={41}/>
                                             </a>
                                         </div>
                                         <div className="text">
-                                            A new way to make the payments easy,reliable <br /> and 100%
-                                            secure. claritatem itamconse quat <br /> Exerci tation
-                                            ullamcorper.
+                                            ما بیش از 15 سال تجربه داریم
+                                            <br/>
+                                            که می توانیم در 24 ساعت شبانه روز به شما
+                                            <br/>
+                                            کمک کنیم.
                                         </div>
-                                        <ul className="social-box">
-                                            <li>
-                                                <a
-                                                    href="https://www.facebook.com/"
-                                                    className="fa fa-facebook-f"
+                                    </div>
+                                    <br/>
+                                    <br/>
+
+                                    <div className="subscribe-box">
+                                        <form method="post" action="/form/subscribe">
+                                            <div className="form-group">
+                                                <input
+                                                    type="email"
+                                                    name="search-field"
+                                                    defaultValue=""
+                                                    placeholder="ایمیل خود را وارد کنید"
                                                 />
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="https://www.twitter.com/"
-                                                    className="fa fa-twitter"
+                                                <button
+                                                    type="submit"
+                                                    className="theme-btn submit-btn flaticon-send"
                                                 />
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="https://dribbble.com/"
-                                                    className="fa fa-dribbble"
-                                                />
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="https://www.linkedin.com/"
-                                                    className="fa fa-linkedin"
-                                                />
-                                            </li>
-                                        </ul>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
                                 <div className="footer-column col-lg-5 col-md-6 col-sm-12">
                                     <div className="footer-widget links-widget">
-                                        <h5>Usefull Links</h5>
-                                        <ul className="page-list">
-                                            <li>
-                                                <a href="#">Contact us</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">How it Works</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Create</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Explore</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Terms &amp; Services</a>
-                                            </li>
-                                        </ul>
+                                        <h6>خدمات اصلی</h6>
+                                        {menuCreator(options ,'first_footer_menu' ,'page-list')}
                                     </div>
                                 </div>
                             </div>
@@ -77,49 +59,40 @@ const Footer = () => {
                             <div className="row clearfix">
                                 <div className="footer-column col-lg-6 col-md-6 col-sm-12">
                                     <div className="footer-widget links-widget">
-                                        <h5>Quick Links</h5>
-                                        <ul className="page-list">
-                                            <li>
-                                                <a href="#">Your Account</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Returns &amp; Exchanges</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Return Center</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Purchase Hisotry</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">App Download</a>
-                                            </li>
-                                        </ul>
+                                        <h6>صفحات اصلی</h6>
+                                        {menuCreator(options ,'second_footer_menu' ,'page-list')}
                                     </div>
                                 </div>
                                 <div className="footer-column col-lg-6 col-md-6 col-sm-12">
-                                    <div className="footer-widget newslatter-widget">
-                                        <h5>Subscribe Newslatter</h5>
-                                        <div className="text">
-                                            Exerci tation ullamcorper suscipit lobortis <br /> nisl
-                                            aliquip ex ea commodo
-                                        </div>
-                                        <div className="subscribe-box">
-                                            <form method="post" action="contact.html">
-                                                <div className="form-group">
-                                                    <input
-                                                        type="email"
-                                                        name="search-field"
-                                                        defaultValue=""
-                                                        placeholder="Enter Mail"
-                                                    />
-                                                    <button
-                                                        type="submit"
-                                                        className="theme-btn submit-btn flaticon-send"
-                                                    />
+                                    <div className="footer-widget call-us-information">
+                                        <h6>اطلاعات تماس</h6>
+                                        <ul>
+                                            <li>
+                                                <div className="inner">
+                                                    <span className="fa fa-map-marker" />
+                                                    <span className="call-text">
+                                                        تهران خیابان فلسطین جنوبی, مابین لبافی نژاد و جمهوری پلاک 106 طبقه
+                                                        سوم-واحد 9
+                                                    </span>
                                                 </div>
-                                            </form>
-                                        </div>
+                                            </li>
+                                            <li>
+                                                <div className="inner">
+                                                    <span className="fa fa-phone" />
+                                                    <div>
+                                                        <p>09120190256</p>
+                                                        <p> 021-66467148 </p>
+                                                        <p> 021-66467362</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div className="inner">
+                                                    <span style={{fontSize:15}} className="fa fa-envelope" />
+                                                    <span className="call-text">info@taraznir.com</span>
+                                                </div>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -128,18 +101,44 @@ const Footer = () => {
                 </div>
                 <div className="footer-bottom">
                     <div className="d-flex justify-content-between align-items-center flex-wrap">
-                        <div className="copyright">
-                            <span>© 2022</span> Powered by Theme. All Rights Reserved.
+                        <div className="copyright">©
+                             تمام حقوق برای <span> Taraznir</span> محفوظ است
                         </div>
+                        <ul className="social-box">
+                            <li>
+                                <a
+                                    href="https://www.facebook.com/"
+                                    className="fa fa-facebook-f"
+                                />
+                            </li>
+                            <li>
+                                <a
+                                    href="https://www.twitter.com/"
+                                    className="fa fa-twitter"
+                                />
+                            </li>
+                            <li>
+                                <a
+                                    href="https://dribbble.com/"
+                                    className="fa fa-dribbble"
+                                />
+                            </li>
+                            <li>
+                                <a
+                                    href="https://www.linkedin.com/"
+                                    className="fa fa-linkedin"
+                                />
+                            </li>
+                        </ul>
                         <ul className="footer-bottom-nav">
                             <li>
-                                <a href="#">Terms and conditions</a>
+                                <a href="#">شرایط و ضوابط</a>
                             </li>
                             <li>
-                                <a href="#">Privacy policy</a>
+                                <a href="#">سیاست حفظ حریم خصوصی</a>
                             </li>
                             <li>
-                                <a href="#">Login / Signup</a>
+                                <a href="#">ورود / ثبت‌نام</a>
                             </li>
                         </ul>
                     </div>

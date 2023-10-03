@@ -2,9 +2,11 @@
 
 import MiniSlider from "@/partials/home/MiniSlider";
 import {useState} from "react";
+import {PostsGroupedType} from "^/PostsGroupedType";
 
 
-export default function ProjectPart(){
+
+export default function ProjectPart({items}:{items:PostsGroupedType}){
 
     const [activeItem ,setActiveItem] = useState(0);
 
@@ -12,165 +14,64 @@ export default function ProjectPart(){
         return activeItem === index ? `${classList} ${activeClass}` : classList
     }
 
+
     return(
         <section className="services-section">
             <div className="auto-container">
-
-                <div className="sec-title">
+                <div className="sec-title" style={{direction:'rtl' ,marginBottom:60}}>
                     <h4>
-                        <span>essential </span> services
+                        <b>پروژه‌های</b> <span>منتخب </span>
                     </h4>
                 </div>
                 <div className="services-info-tabs">
                     <div className="services-tabs tabs-box">
                         <ul className="tab-btns tab-buttons clearfix">
-                            <li
-                                data-tab="#prod-furniture1"
-                                className={activeChecker(0 , 'tab-btn', 'active-btn')}
-                                onClick={()=>setActiveItem(0)}
-                            >
-                                Furniture Collection
-                            </li>
-                            <li
-                                data-tab="#prod-room1"
-                                className={activeChecker(1 , 'tab-btn', 'active-btn')}
-                                onClick={()=>setActiveItem(1)}
-                            >
-                                Living Room Collection
-                            </li>
-                            <li
-                                data-tab="#prod-interior1"
-                                className={activeChecker(2 , 'tab-btn', 'active-btn')}
-                                onClick={()=>setActiveItem(2)}
-                            >
-                                Interior Desiging
-                            </li>
+                            {
+                                items && items.grouped.map( (cat : any ,k : number) =>
+                                    <li key={k}
+                                        data-tab={`#project-cat-${k}`}
+                                        className={activeChecker( k , 'tab-btn', 'active-btn')}
+                                        onClick={()=>setActiveItem( k )}
+                                    >
+                                        {cat.title}
+                                    </li>
+                                )
+                            }
                         </ul>
                         <div className="tabs-content">
-                            <div className={activeChecker(0 , 'tab', 'active-tab')} id="prod-furniture1">
-                                <div className="row clearfix">
-                                    <div className="service-block active col-lg-6 col-md-6 col-sm-12">
-                                        <div className="inner-box">
-                                            <div className="image">
-                                                <a href="shop-detail.html">
-                                                    <img src="/images/resource/service-1.png" alt="" />
-                                                </a>
-                                            </div>
-                                            <div className="lower-content">
-                                                <h5>
-                                                    <a href="shop-detail.html">Business Card Design -1</a>
-                                                </h5>
-                                                <div className="text">
-                                                    We build and activate brands through cultural <br /> str
-                                                    vision, and the power of emotion <br /> across every
-                                                </div>
-                                            </div>
+                            {
+                                items.grouped && items.grouped.map( (cat : any ,k : number) =>
+                                    <div key={k} className={activeChecker(k ,'tab', 'active-tab')} id={`project-cat-${k}`}>
+                                        <div className="row clearfix">
+                                            {
+                                                cat.project && cat.project.map( (project : any ,kp : number) => kp < 2 &&
+                                                    <div key={kp} className="service-block active col-lg-6 col-md-6 col-sm-12">
+                                                        <div className="inner-box">
+                                                            <div className="image">
+                                                                <a href={`/project/${project.slug}`}>
+                                                                    <img src={project.images.cover} width={420} height={315} alt={project.title} />
+                                                                </a>
+                                                            </div>
+                                                            <div className="lower-content">
+                                                                <h5>
+                                                                    <a href={`/project/${project.slug}`}>{project.title}</a>
+                                                                </h5>
+                                                                <div className="text">
+                                                                    {project.summary}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                )
+                                            }
                                         </div>
                                     </div>
-                                    <div className="service-block col-lg-6 col-md-6 col-sm-12">
-                                        <div className="inner-box">
-                                            <div className="image">
-                                                <a href="shop-detail.html">
-                                                    <img src="/images/resource/service-2.png" alt="" />
-                                                </a>
-                                            </div>
-                                            <div className="lower-content">
-                                                <h5>
-                                                    <a href="shop-detail.html">Banner Desgin</a>
-                                                </h5>
-                                                <div className="text">
-                                                    We build and activate brands through cultural <br /> str
-                                                    vision, and the power of emotion <br /> across every
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className={activeChecker(1 , 'tab', 'active-tab')} id="prod-room1">
-                                <div className="row clearfix">
-                                    <div className="service-block col-lg-6 col-md-6 col-sm-12">
-                                        <div className="inner-box">
-                                            <div className="image">
-                                                <a href="shop-detail.html">
-                                                    <img src="/images/resource/service-1.png" alt="" />
-                                                </a>
-                                            </div>
-                                            <div className="lower-content">
-                                                <h5>
-                                                    <a href="shop-detail.html">Business Card Design -2</a>
-                                                </h5>
-                                                <div className="text">
-                                                    We build and activate brands through cultural <br /> str
-                                                    vision, and the power of emotion <br /> across every
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="service-block active col-lg-6 col-md-6 col-sm-12">
-                                        <div className="inner-box">
-                                            <div className="image">
-                                                <a href="shop-detail.html">
-                                                    <img src="/images/resource/service-2.png" alt="" />
-                                                </a>
-                                            </div>
-                                            <div className="lower-content">
-                                                <h5>
-                                                    <a href="shop-detail.html">Banner Desgin</a>
-                                                </h5>
-                                                <div className="text">
-                                                    We build and activate brands through cultural <br /> str
-                                                    vision, and the power of emotion <br /> across every
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className={activeChecker(2 , 'tab', 'active-tab')} id="prod-interior1">
-                                <div className="row clearfix">
-                                    <div className="service-block active col-lg-6 col-md-6 col-sm-12">
-                                        <div className="inner-box">
-                                            <div className="image">
-                                                <a href="shop-detail.html">
-                                                    <img src="/images/resource/service-1.png" alt="" />
-                                                </a>
-                                            </div>
-                                            <div className="lower-content">
-                                                <h5>
-                                                    <a href="shop-detail.html">Business Card Design -3</a>
-                                                </h5>
-                                                <div className="text">
-                                                    We build and activate brands through cultural <br /> str
-                                                    vision, and the power of emotion <br /> across every
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="service-block col-lg-6 col-md-6 col-sm-12">
-                                        <div className="inner-box">
-                                            <div className="image">
-                                                <a href="shop-detail.html">
-                                                    <img src="/images/resource/service-2.png" alt="" />
-                                                </a>
-                                            </div>
-                                            <div className="lower-content">
-                                                <h5>
-                                                    <a href="shop-detail.html">Banner Desgin</a>
-                                                </h5>
-                                                <div className="text">
-                                                    We build and activate brands through cultural <br /> str
-                                                    vision, and the power of emotion <br /> across every
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                                )
+                            }
                         </div>
                     </div>
                 </div>
-                <MiniSlider />
+                <MiniSlider items={items.items} route={'project'}/>
             </div>
         </section>
 

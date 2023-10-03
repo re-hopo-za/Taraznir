@@ -1,0 +1,86 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 1 (0x1)
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: CN=devcert
+        Validity
+            Not Before: Sep 19 19:16:48 2023 GMT
+            Not After : Dec 22 19:16:48 2025 GMT
+        Subject: CN=taraznir.next
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (2048 bit)
+                Modulus:
+                    00:9c:17:72:a0:d8:3f:60:ce:fb:bb:0f:61:61:58:
+                    ec:ce:3d:68:35:70:34:ea:1a:29:02:59:fd:1d:01:
+                    66:3a:1d:01:05:34:f6:67:7b:33:a1:37:3f:50:1f:
+                    4f:08:be:d2:c7:bd:51:08:0c:a9:4f:45:ae:d9:2e:
+                    1f:3d:24:01:a0:de:48:3a:09:fb:c5:39:3f:20:36:
+                    72:71:e8:81:12:41:c0:48:f2:06:44:81:84:ea:36:
+                    95:f2:1f:90:3e:e2:b0:a2:af:23:25:b8:17:ef:13:
+                    e2:3f:d1:af:b7:e9:3a:c0:b0:da:a8:32:6f:28:99:
+                    3e:c9:c7:7f:a6:c6:3d:39:8e:4c:0e:72:d5:4c:10:
+                    72:62:4c:69:64:b3:cf:0a:22:c5:09:28:01:db:a1:
+                    fb:88:1f:48:22:b1:6e:7c:e6:1d:df:ff:ad:28:7a:
+                    28:7b:6a:b8:b2:5e:2f:0b:de:77:56:81:97:3c:ae:
+                    d6:30:aa:54:b6:be:01:8b:35:c3:19:f3:06:4e:9d:
+                    26:ad:9b:c9:17:84:9e:47:2e:5f:89:51:e9:2e:6c:
+                    98:c8:00:42:49:49:df:5b:56:7b:c4:c6:64:22:a0:
+                    cc:17:f3:89:71:49:63:75:4f:73:00:b1:7d:5e:a6:
+                    7f:6f:84:f7:52:5a:3f:e4:20:83:b1:ac:bc:3d:31:
+                    3c:47
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Basic Constraints: critical
+                CA:FALSE
+            X509v3 Subject Key Identifier: 
+                C5:37:E7:CC:27:AB:F3:57:1C:F4:E4:BD:F4:71:FF:7F:44:1B:47:6D
+            X509v3 Authority Key Identifier: 
+                keyid:12:51:46:0E:57:E2:3F:9D:1E:FA:AB:C2:9B:83:59:D7:FA:5B:14:7A
+                DirName:/CN=devcert
+                serial:26:53:C2:60:84:81:6A:C9:E0:6B:12:CD:36:4A:D7:9C:B1:79:1E:6C
+            X509v3 Key Usage: critical
+                Digital Signature, Key Encipherment
+            X509v3 Extended Key Usage: 
+                TLS Web Server Authentication
+            X509v3 Subject Alternative Name: 
+                DNS:taraznir.next, DNS:*.taraznir.next
+    Signature Algorithm: sha256WithRSAEncryption
+    Signature Value:
+        45:3d:5c:b5:66:3c:57:80:bc:63:da:9c:de:55:d1:ec:e3:d5:
+        e2:b4:57:6f:ff:6c:6e:1a:5c:6d:f3:08:b6:7e:0d:0b:23:fa:
+        fa:38:55:2b:e1:11:be:91:8b:a9:9e:4a:63:a6:98:ce:90:46:
+        d5:04:4a:0d:50:d7:de:13:0f:85:6c:97:10:7c:8b:51:2a:e3:
+        9e:81:00:52:bf:14:a0:f4:93:0b:02:68:bb:61:66:aa:83:ee:
+        af:58:0c:2b:c3:95:cc:5a:fe:cd:41:81:bf:7f:0c:65:6f:b7:
+        31:af:6f:4a:1f:07:6c:a2:c1:a1:98:99:11:64:7f:12:eb:55:
+        d2:da:16:77:37:9e:0e:b4:f1:47:ff:ff:15:1a:b2:0d:95:d3:
+        0a:ef:0b:3a:19:6b:6e:17:b1:60:72:05:e1:c1:29:f2:96:28:
+        a5:7d:b0:3d:95:0a:00:9d:ce:c0:4e:ef:54:67:79:69:6c:c5:
+        5e:0b:0f:2a:bc:77:11:37:7f:7b:8f:d9:4b:b5:e4:5a:57:c5:
+        dc:18:2c:cf:21:5f:f1:dd:a4:63:7d:66:f7:db:9a:03:24:5d:
+        14:c2:91:1d:45:0b:ca:3b:8b:a4:da:b0:bf:41:4e:e4:02:1e:
+        2b:4c:36:4c:cd:13:7c:21:6e:ea:80:a7:b6:5f:87:96:f1:2a:
+        90:08:02:ea
+-----BEGIN CERTIFICATE-----
+MIIDdTCCAl2gAwIBAgIBATANBgkqhkiG9w0BAQsFADASMRAwDgYDVQQDDAdkZXZj
+ZXJ0MB4XDTIzMDkxOTE5MTY0OFoXDTI1MTIyMjE5MTY0OFowGDEWMBQGA1UEAwwN
+dGFyYXpuaXIubmV4dDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAJwX
+cqDYP2DO+7sPYWFY7M49aDVwNOoaKQJZ/R0BZjodAQU09md7M6E3P1AfTwi+0se9
+UQgMqU9FrtkuHz0kAaDeSDoJ+8U5PyA2cnHogRJBwEjyBkSBhOo2lfIfkD7isKKv
+IyW4F+8T4j/Rr7fpOsCw2qgybyiZPsnHf6bGPTmOTA5y1UwQcmJMaWSzzwoixQko
+Aduh+4gfSCKxbnzmHd//rSh6KHtquLJeLwved1aBlzyu1jCqVLa+AYs1wxnzBk6d
+Jq2byReEnkcuX4lR6S5smMgAQklJ31tWe8TGZCKgzBfziXFJY3VPcwCxfV6mf2+E
+91JaP+Qgg7GsvD0xPEcCAwEAAaOBzzCBzDAMBgNVHRMBAf8EAjAAMB0GA1UdDgQW
+BBTFN+fMJ6vzVxz05L30cf9/RBtHbTBNBgNVHSMERjBEgBQSUUYOV+I/nR76q8Kb
+g1nX+lsUeqEWpBQwEjEQMA4GA1UEAwwHZGV2Y2VydIIUJlPCYISBasngaxLNNkrX
+nLF5HmwwDgYDVR0PAQH/BAQDAgWgMBMGA1UdJQQMMAoGCCsGAQUFBwMBMCkGA1Ud
+EQQiMCCCDXRhcmF6bmlyLm5leHSCDyoudGFyYXpuaXIubmV4dDANBgkqhkiG9w0B
+AQsFAAOCAQEART1ctWY8V4C8Y9qc3lXR7OPV4rRXb/9sbhpcbfMItn4NCyP6+jhV
+K+ERvpGLqZ5KY6aYzpBG1QRKDVDX3hMPhWyXEHyLUSrjnoEAUr8UoPSTCwJou2Fm
+qoPur1gMK8OVzFr+zUGBv38MZW+3Ma9vSh8HbKLBoZiZEWR/EutV0toWdzeeDrTx
+R///FRqyDZXTCu8LOhlrbhexYHIF4cEp8pYopX2wPZUKAJ3OwE7vVGd5aWzFXgsP
+Krx3ETd/e4/ZS7XkWlfF3BgszyFf8d2kY31m99uaAyRdFMKRHUULyjuLpNqwv0FO
+5AIeK0w2TM0TfCFu6oCntl+HlvEqkAgC6g==
+-----END CERTIFICATE-----

@@ -5,9 +5,12 @@ import {setNavStatus} from "$/themeSlice";
 import { useAppDispatch } from "$/hooks";
 import Scrollbar from 'react-scrollbars-custom';
 import Image from 'next/image'
+import {menuCreator} from "&/Helpers";
+import {ThemeType} from "^/ThemeType";
 
 
-const Header = () => {
+
+const Header = ({options}:{options:ThemeType}) => {
     const dispatch = useAppDispatch();
 
     const navHandler = () => {
@@ -16,14 +19,12 @@ const Header = () => {
     }
 
 
-
-
     return(
         <header className="main-header header-style-two">
             <Script src="static/app.js" strategy={"afterInteractive"} />
             <div className="header-lower">
-                <div className="auto-container">
-                    <div className="inner-container d-flex justify-content-between align-items-center">
+                <div className="main-slider-two">
+                    <div className="inner-container d-flex justify-content-between align-items-center" style={{gap:10}}>
                         <div className="logo-box d-flex align-items-center">
                             <div className="nav-toggle-btn a-nav-toggle navSidebar-button" onClick={navHandler}>
                                 <span className="hamburger">
@@ -33,7 +34,7 @@ const Header = () => {
                                 </span>
                             </div>
                             <div className="logo">
-                                <a href="index.html">
+                                <a href="/">
                                     <Image
                                         src="/images/logos/taraznir-logo-0.5x.png"
                                         alt="taraznir logo"
@@ -44,46 +45,76 @@ const Header = () => {
                             </div>
                         </div>
                         <div className="middle-box">
-                            <div className="upper-box d-flex justify-content-between align-items-center flex-wrap">
-                                <ul className="info-list">
-                                    <li>
+                            <div className="upper-box">
+                                <div className="info-list">
+                                    <div className="d-flex justify-content-between align-items-center flex-wrap">
+                                        <div className="left-top-middle">
+                                            <a className="user-box flaticon-user-3" href="/profile" />
+                                            <div className="like-box">
+                                                <a className="user-box flaticon-heart" href="/profile/fave" />
+                                                <span className="total-like">0</span>
+                                            </div>
+                                            <div className="cart-box-two">
+                                                <a className="flaticon-shopping-bag" href="/product" />
+                                                <span className="total-like">0</span>
+                                            </div>
+                                        </div>
+                                        <ul>
+                                            <li>
+                                            <span className="icon">
+                                              <img src="/images/icons/location.png" alt="" />
+                                            </span>
+                                                Store Location
+                                            </li>
+                                            <li>
+                                            <span className="icon">
+                                              <img src="/images/icons/bus.png" alt="" />
+                                            </span>
+                                                Track Your Order
+                                            </li>
+                                            <li>
                                         <span className="icon">
-                                          <img src="/images/icons/location.png" alt="" />
-                                        </span>
-                                            Store Location
-                                    </li>
-                                    <li>
-                                        <span className="icon">
-                                          <img src="/images/icons/bus.png" alt="" />
-                                        </span>
-                                        Track Your Order
-                                    </li>
-                                    <li>
-                                        <span className="icon">
-                                          <img src="/images/icons/telephone.png" alt="" />
-                                        </span>
-                                        Call Us For Enquiry
-                                    </li>
-                                </ul>
-                                <div className="upper-right">
-                                    <div className="upper-column info-box">
-                                        <div className="icon-box flaticon-gift-box" />
-                                        <strong>Free Shipping</strong>
-                                        Free shipping $100
-                                    </div>
-                                    <div className="upper-column info-box">
-                                        <div className="icon-box flaticon-headphones" />
-                                        <strong>24/7 Support</strong>
-                                        Free shipping $100
-                                    </div>
-                                    <div className="upper-column info-box">
-                                        <div className="icon-box flaticon-padlock-1" />
-                                        <strong>payment Secure</strong>
-                                        Free shipping $100
+                                            <img src="/images/icons/telephone.png" alt="" />
+                                            </span>
+                                                Call Us For Enquiry
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
+
                             </div>
                             <div className="nav-outer d-flex justify-content-between align-items-center flex-wrap">
+                                <div className="options-box d-flex align-items-center">
+                                    <div className="search-box-two">
+                                        <form method="post" action="contact.html">
+                                            <div className="form-group">
+                                                <input
+                                                    type="search"
+                                                    name="search-field"
+                                                    defaultValue=""
+                                                    placeholder="Search"
+                                                />
+                                                <button type="submit">
+                                                    <span className="icon flaticon-search" />
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                    <div className="mobile-nav-toggler">
+                                        <a className="user-box flaticon-user-3" href="/profile" />
+                                        <div className="like-box">
+                                            <a className="user-box flaticon-heart" href="/profile/fave" />
+                                            <span className="total-like">0</span>
+                                        </div>
+                                        <div className="cart-box-two">
+                                            <a className="flaticon-shopping-bag" href="/product" />
+                                            <span className="total-like">0</span>
+                                        </div>
+
+                                        <span className="icon flaticon-menu" />
+                                    </div>
+                                </div>
                                 <nav className="main-menu show navbar-expand-md">
                                     <div className="navbar-header">
                                         <button
@@ -104,112 +135,15 @@ const Header = () => {
                                         className="navbar-collapse collapse clearfix"
                                         id="navbarSupportedContent"
                                     >
-                                        <ul className="navigation clearfix" dir="rtl">
-                                            <li className="dropdown">
-                                                <a href="#">Home</a>
-                                                <ul>
-                                                    <li>
-                                                        <a href="index.html">Homepage One</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="index-2.html">Homepage Two</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="index-3.html">Homepage Three</a>
-                                                    </li>
-                                                    <li className="dropdown">
-                                                        <a href="#">Header Styles</a>
-                                                        <ul>
-                                                            <li>
-                                                                <a href="index.html">Header Style One</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="index-2.html">Header Style Two</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="index-3.html">Header Style Three</a>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li className="dropdown">
-                                                <a href="#">Shop</a>
-                                                <ul>
-                                                    <li>
-                                                        <a href="shop.html">Our Products</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="shop-detail.html">Product Single</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="cart.html">Shoping Cart</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="checkout.html">CheckOut</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="register.html">Register</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <a href="about.html">About</a>
-                                            </li>
-                                            <li className="dropdown">
-                                                <a href="#">Blog</a>
-                                                <ul>
-                                                    <li>
-                                                        <a href="blog.html">Our Blog</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="blog-detail.html">Blog Single</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="not-found.html">Not Found</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <a href="contact.html">Contact us</a>
-                                            </li>
-                                        </ul>
+                                        {menuCreator(options ,'header_menu' ,'navigation clearfix')}
                                     </div>
                                 </nav>
-                                <div className="options-box d-flex align-items-center">
-                                    <div className="search-box-two">
-                                        <form method="post" action="contact.html">
-                                            <div className="form-group">
-                                                <input
-                                                    type="search"
-                                                    name="search-field"
-                                                    defaultValue=""
-                                                    placeholder="Search"
-                                                />
-                                                <button type="submit">
-                                                    <span className="icon flaticon-search" />
-                                                </button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <a className="user-box flaticon-user-3" href="contact.html" />
-                                    <div className="like-box">
-                                        <a className="user-box flaticon-heart" href="contact.html" />
-                                        <span className="total-like">0</span>
-                                    </div>
-                                    <div className="cart-box-two">
-                                        <a className="flaticon-shopping-bag" href="shop.html" />
-                                        <span className="total-like">0</span>
-                                    </div>
-                                    <div className="mobile-nav-toggler">
-                                        <span className="icon flaticon-menu" />
-                                    </div>
-                                </div>
                             </div>
                         </div>
-                        <div className="button-box text-center">
+                        <div className="auth-button-box text-center right-header">
                             <a href="shop.html" className="theme-btn btn-style-one">
-                                Login / Sign Up <span className="icon flaticon-right-arrow" />
+                                <span className="icon flaticon-right-arrow" />
+                                ورود \ ثبت‌ نام
                             </a>
                         </div>
                     </div>
@@ -278,6 +212,9 @@ const Header = () => {
 
     )
 }
+
+
+
 
 
 export default Header;

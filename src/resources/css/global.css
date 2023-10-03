@@ -989,13 +989,12 @@ img{
 	font-weight:500;
 	overflow: hidden;
 	text-align:center;
-	padding: 18px 32px;
+    padding: 15px 13px;
 	display:inline-block;
 	color: var(--white-color);
 	font-size: var(--font-15);
 	text-transform: capitalize;
-	background-color:var(--main-color);
-	font-family: var(--font-family-Jost);
+	font-family: var(--font-family-Azarmehr);
 	background-color: var(--black-color);
 }
 
@@ -1016,7 +1015,7 @@ img{
 	transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
 	-webkit-transition: all 0.3s ease;
-	margin-left:var(--margin-left-15);
+	margin-right:var(--margin-left-15);
 }
 
 /* Btn Style Two */
@@ -1075,21 +1074,26 @@ img{
 ***/
 
 .sec-title{
-	position:relative;
-	margin-bottom:var(--margin-bottom-30);
+  position:relative;
+  margin-bottom:var(--margin-bottom-30);
 }
 
 .sec-title h4{
-	font-weight:300;
-	display:inline-block;
-	color:var(--black-color);
-	text-transform:capitalize;
-	padding-right:var(--padding-left-20);
-	font-family: var(--font-family-Outfit);
+  font-weight:300;
+  display:inline-block;
+  color:var(--black-color);
+  text-transform:capitalize;
+  padding-right:var(--padding-left-20);
+  font-family:Azarmehr
 }
 
+.sec-title h4 b{
+  font-weight:600;
+}
 .sec-title h4 span{
-	font-weight:600;
+  font-weight:200;
+  padding-right:5px;
+  font-size:22px;
 }
 
 .sec-title h4:before{

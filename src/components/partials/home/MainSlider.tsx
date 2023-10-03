@@ -2,7 +2,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Swiper as SwiperInterface } from 'swiper';
 
-import { Autoplay, Keyboard, Pagination, Scrollbar, Zoom } from 'swiper';
+import { Autoplay, Keyboard, Pagination, Scrollbar, Zoom } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/autoplay';
 import 'swiper/css/keyboard';

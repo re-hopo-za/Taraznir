@@ -4,94 +4,37 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
 import 'swiper/css/autoplay';
-import {Autoplay ,FreeMode ,} from "swiper";
+import {Navigation, Pagination, Scrollbar, A11y} from "swiper/modules";
 
 
 
-export default function MiniSlider(){
+export default function MiniSlider({items ,route}:{items:any ,route:string}){
     return(
         <div className="sponsors-box">
             <Swiper
-                dir="ltr"
                 autoplay={{
                     reverseDirection:true,
                     delay:2000,
                     pauseOnMouseEnter:true
                 }}
-                speed={1000}
-                loop={true}
-                freeMode={true}
-                loopedSlides={140}
+                modules={[Navigation, Pagination, Scrollbar, A11y]}
+                spaceBetween={50}
                 slidesPerView={6}
-                slidesPerGroup={1}
-                spaceBetween={30}
-                modules={[Autoplay,FreeMode]}
+                navigation={false}
+                pagination={false}
+                scrollbar={false}
             >
-
-                <SwiperSlide className="slide-item">
-                    <figure className="image-box">
-                        <a href="#">
-                            <img src="/images/clients/1.png" alt="" />
-                        </a>
-                    </figure>
-                </SwiperSlide>
-                <SwiperSlide className="slide-item">
-                    <figure className="image-box">
-                        <a href="#">
-                            <img src="/images/clients/1.png" alt="" />
-                        </a>
-                    </figure>
-                </SwiperSlide>
-                <SwiperSlide className="slide-item">
-                    <figure className="image-box">
-                        <a href="#">
-                            <img src="/images/clients/1.png" alt="" />
-                        </a>
-                    </figure>
-                </SwiperSlide>
-                <SwiperSlide className="slide-item">
-                    <figure className="image-box">
-                        <a href="#">
-                            <img src="/images/clients/1.png" alt="" />
-                        </a>
-                    </figure>
-                </SwiperSlide>
-                <SwiperSlide className="slide-item">
-                    <figure className="image-box">
-                        <a href="#">
-                            <img src="/images/clients/1.png" alt="" />
-                        </a>
-                    </figure>
-                </SwiperSlide>
-                <SwiperSlide className="slide-item">
-                    <figure className="image-box">
-                        <a href="#">
-                            <img src="/images/clients/1.png" alt="" />
-                        </a>
-                    </figure>
-                </SwiperSlide>
-                <SwiperSlide className="slide-item">
-                    <figure className="image-box">
-                        <a href="#">
-                            <img src="/images/clients/1.png" alt="" />
-                        </a>
-                    </figure>
-                </SwiperSlide>
-                <SwiperSlide className="slide-item">
-                    <figure className="image-box">
-                        <a href="#">
-                            <img src="/images/clients/1.png" alt="" />
-                        </a>
-                    </figure>
-                </SwiperSlide>
-                <SwiperSlide className="slide-item">
-                    <figure className="image-box">
-                        <a href="#">
-                            <img src="/images/clients/1.png" alt="" />
-                        </a>
-                    </figure>
-                </SwiperSlide>
-
+                {
+                    items && items.map((item :any ,k :number ) =>
+                        <SwiperSlide key={k} className="slide-item" style={{width: 140, height: 105}}>
+                            <figure className="image-box">
+                                <a href={`/${route}/${item.slug}`}>
+                                    <img src={item.images?.thumbnail} alt={item.title} width={140} height={105}/>
+                                </a>
+                            </figure>
+                        </SwiperSlide>
+                    )
+                }
             </Swiper>
         </div>
     )
