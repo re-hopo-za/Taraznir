@@ -1,6 +1,7 @@
 import {ThemeType} from "^/ThemeType";
-import {menuCreator} from "&/Helpers";
+import {filterMetaByKy, findMetaValueByKey, isJsonString, menuCreator, searchMetaByKeyword} from "&/Helpers";
 import Image from "next/image";
+import {MetaType} from "^/MetaType";
 
 
 const Footer = ({options}:{options:ThemeType}) => {
@@ -20,11 +21,7 @@ const Footer = ({options}:{options:ThemeType}) => {
                                             </a>
                                         </div>
                                         <div className="text">
-                                            ما بیش از 15 سال تجربه داریم
-                                            <br/>
-                                            که می توانیم در 24 ساعت شبانه روز به شما
-                                            <br/>
-                                            کمک کنیم.
+                                            {options.theme_settings.value}
                                         </div>
                                     </div>
                                     <br/>
@@ -71,8 +68,7 @@ const Footer = ({options}:{options:ThemeType}) => {
                                                 <div className="inner">
                                                     <span className="fa fa-map-marker" />
                                                     <span className="call-text">
-                                                        تهران خیابان فلسطین جنوبی, مابین لبافی نژاد و جمهوری پلاک 106 طبقه
-                                                        سوم-واحد 9
+                                                        {findMetaValueByKey(options.theme_settings.meta ,'footer_address')}
                                                     </span>
                                                 </div>
                                             </li>
@@ -80,16 +76,16 @@ const Footer = ({options}:{options:ThemeType}) => {
                                                 <div className="inner">
                                                     <span className="fa fa-phone" />
                                                     <div>
-                                                        <p>09120190256</p>
-                                                        <p> 021-66467148 </p>
-                                                        <p> 021-66467362</p>
+                                                        {filterMetaByKy(options.theme_settings.meta ,'footer_address').map( (phone:MetaType ,key:number) =>
+                                                            <p key={key}> {phone.value} </p>
+                                                        )}
                                                     </div>
                                                 </div>
                                             </li>
                                             <li>
                                                 <div className="inner">
                                                     <span style={{fontSize:15}} className="fa fa-envelope" />
-                                                    <span className="call-text">info@taraznir.com</span>
+                                                    <span className="call-text">{findMetaValueByKey(options.theme_settings.meta ,'info@taraznir.com')}</span>
                                                 </div>
                                             </li>
                                         </ul>
@@ -105,30 +101,14 @@ const Footer = ({options}:{options:ThemeType}) => {
                              تمام حقوق برای <span> Taraznir</span> محفوظ است
                         </div>
                         <ul className="social-box">
-                            <li>
-                                <a
-                                    href="https://www.facebook.com/"
-                                    className="fa fa-facebook-f"
-                                />
-                            </li>
-                            <li>
-                                <a
-                                    href="https://www.twitter.com/"
-                                    className="fa fa-twitter"
-                                />
-                            </li>
-                            <li>
-                                <a
-                                    href="https://dribbble.com/"
-                                    className="fa fa-dribbble"
-                                />
-                            </li>
-                            <li>
-                                <a
-                                    href="https://www.linkedin.com/"
-                                    className="fa fa-linkedin"
-                                />
-                            </li>
+                            {searchMetaByKeyword(options.theme_settings.meta ,'social_').map( (social:MetaType ,key:number) =>
+                                isJsonString(social.value) && <li key={key}>
+                                    <a
+                                        href={ JSON.parse(social.value).value}
+                                        className={`fa ${JSON.parse(social.value).icon}`}
+                                    />
+                                </li>
+                            )}
                         </ul>
                         <ul className="footer-bottom-nav">
                             <li>

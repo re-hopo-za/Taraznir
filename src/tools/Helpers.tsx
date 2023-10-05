@@ -1,5 +1,8 @@
 import {RequestCache} from "^/MiscType";
 import {ThemeType} from "^/ThemeType";
+import {OptionType} from "^/OptionType";
+import {MetaType} from "^/MetaType";
+import {keys} from "lodash-es";
 
 export const cacheStatus :RequestCache  = "force-cache"
 
@@ -81,7 +84,7 @@ export const menuCreator = (options:ThemeType ,key:string ,containerClass :strin
     return(
         <ul className={containerClass} dir="rtl">
             {menuKeys.map((item:string ,key:number) =>
-                <li key={key} className={`${checkCurrentPage('/' ,items[item] && items[item]['data']?.['url'])} ${!Array.isArray(items[item]['children']) ? `dropdown` :``}` }>
+                <li key={key} className={`${!Array.isArray(items[item]['children']) ? `dropdown` :``} ${checkCurrentPage('/' ,items[item] && items[item]['data']?.['url'])}` }>
                     {items[item].data && <a href={items[item]['data']?.['url']} target={items[item]['data']?.['target']} >{items[item]['label'] }</a>}
                     { !Array.isArray(items[item]['children']) &&
                         <ul>
@@ -119,7 +122,24 @@ export const menuCreator = (options:ThemeType ,key:string ,containerClass :strin
     )
 }
 
+export const findMetaValueByKey = ( metas:MetaType[] ,key:string ) => {
+    return (metas.find( (meta:MetaType) => meta.key === key))?.value
+}
 
+export const filterMetaByKy = ( metas:MetaType[] ,key:string ) => {
+    return metas.filter( (meta:MetaType) => meta.key === key)
+}
 
+export const searchMetaByKeyword = ( metas:MetaType[] ,keyword:string ) => {
+    return metas.filter( (meta:MetaType) => meta.key.indexOf(keyword) >= 0 )
+}
 
+export const isJsonString = (str:string) =>  {
+    try {
+        JSON.parse(str);
+    } catch (e) {
+        return false;
+    }
+    return true;
+}
 

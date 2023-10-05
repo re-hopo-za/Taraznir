@@ -5,8 +5,9 @@ import {setNavStatus} from "$/themeSlice";
 import { useAppDispatch } from "$/hooks";
 import Scrollbar from 'react-scrollbars-custom';
 import Image from 'next/image'
-import {menuCreator} from "&/Helpers";
+import { findMetaValueByKey, menuCreator} from "&/Helpers";
 import {ThemeType} from "^/ThemeType";
+
 
 
 
@@ -23,7 +24,7 @@ const Header = ({options}:{options:ThemeType}) => {
         <header className="main-header header-style-two">
             <Script src="static/app.js" strategy={"afterInteractive"} />
             <div className="header-lower">
-                <div className="main-slider-two">
+                <div className="header-wrapper">
                     <div className="inner-container d-flex justify-content-between align-items-center" style={{gap:10}}>
                         <div className="logo-box d-flex align-items-center">
                             <div className="nav-toggle-btn a-nav-toggle navSidebar-button" onClick={navHandler}>
@@ -61,22 +62,22 @@ const Header = ({options}:{options:ThemeType}) => {
                                         </div>
                                         <ul>
                                             <li>
-                                            <span className="icon">
-                                              <img src="/images/icons/location.png" alt="" />
-                                            </span>
-                                                Store Location
+                                                <span className="icon">
+                                                    <span className="flaticon-time"></span>
+                                                </span>
+                                                {(findMetaValueByKey(options.theme_settings.meta ,'work_time'))}
                                             </li>
                                             <li>
-                                            <span className="icon">
-                                              <img src="/images/icons/bus.png" alt="" />
-                                            </span>
-                                                Track Your Order
+                                                <span className="icon">
+                                                    <span className="flaticon-location"></span>
+                                                </span>
+                                                {(findMetaValueByKey(options.theme_settings.meta ,'header_address'))}
                                             </li>
                                             <li>
-                                        <span className="icon">
-                                            <img src="/images/icons/telephone.png" alt="" />
-                                            </span>
-                                                Call Us For Enquiry
+                                                <span className="icon">
+                                                    <span className="flaticon-phone-call"></span>
+                                                </span>
+                                                {(findMetaValueByKey(options.theme_settings.meta ,'header_phone_number'))}
                                             </li>
                                         </ul>
                                     </div>
@@ -92,7 +93,7 @@ const Header = ({options}:{options:ThemeType}) => {
                                                     type="search"
                                                     name="search-field"
                                                     defaultValue=""
-                                                    placeholder="Search"
+                                                    placeholder="جستجو"
                                                 />
                                                 <button type="submit">
                                                     <span className="icon flaticon-search" />
@@ -141,7 +142,7 @@ const Header = ({options}:{options:ThemeType}) => {
                             </div>
                         </div>
                         <div className="auth-button-box text-center right-header">
-                            <a href="shop.html" className="theme-btn btn-style-one">
+                            <a href="/registration" className="theme-btn btn-style-one">
                                 <span className="icon flaticon-right-arrow" />
                                 ورود \ ثبت‌ نام
                             </a>
@@ -153,7 +154,7 @@ const Header = ({options}:{options:ThemeType}) => {
                 <div className="auto-container">
                     <div className="d-flex justify-content-between align-items-center">
                         <div className="logo">
-                            <a href="index.html">
+                            <a href="/">
                                 <Image
                                     src="/images/logos/taraznir-logo-0.5x.png"
                                     alt="taraznir logo"
@@ -178,7 +179,7 @@ const Header = ({options}:{options:ThemeType}) => {
                 </div>
                 <nav className="menu-box">
                     <div className="nav-logo">
-                        <a href="index.html">
+                        <a href="/">
                             <Image
                                 src="/images/logos/taraznir-logo-0.5x.png"
                                 alt="taraznir logo"
@@ -188,7 +189,7 @@ const Header = ({options}:{options:ThemeType}) => {
                         </a>
                     </div>
                     <div className="search-box">
-                        <form method="post" action="contact.html">
+                        <form method="post" action="/profile">
                             <div className="form-group">
                                 <input
                                     type="search"

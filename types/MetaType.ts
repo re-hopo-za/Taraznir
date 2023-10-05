@@ -1,5 +1,5 @@
 export type MetaType = {
     id    : number
-    key   : number
+    key   : string
     value : string
 }
