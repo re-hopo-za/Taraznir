@@ -17,10 +17,10 @@ type MenuType = {
     items: MenuItemType[],
 }
 
-
 export type ThemeType = {
     header_menu: MenuType
     first_footer_menu: MenuType
     second_footer_menu: MenuType
+    third_footer_menu: MenuType
     theme_settings: OptionType
 }

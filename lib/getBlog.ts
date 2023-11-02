@@ -1,18 +1,10 @@
 import {API_PATH ,cacheStatus} from "&/Helpers";
 import {PostsType} from "^/PostsType";
 import {PostType} from "^/PostType";
-
-type BlogsParamType = {
-    keyword    ?: string,
-    limit      ?: string,
-    orderBy    ?: string,
-    direction  ?: string,
-    notIn      ?: string,
-    byCategory ?: string
-}
+import {PostsParametersType} from "^/PostsParametersType";
 
 
-export async function getBlogs( params:BlogsParamType ):Promise<PostsType> {
+export async function getBlogs(params:PostsParametersType ):Promise<PostsType> {
     return fetch( `${API_PATH}/blog?` + new URLSearchParams(params) ,{cache:cacheStatus } )
         .then( response => response.json())
         .then( result => result)

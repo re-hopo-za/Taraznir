@@ -40,7 +40,7 @@ export function MainSlider () {
                     className="swiper-button-prev-- "
                     // @ts-ignore
                     onClick={()=>swiperInstance.slidePrev(500)}
-                    style={{background:prevPale ? 'black' :'#ffc30c'}}
+                    style={{background:prevPale ? 'black' :'#ffc30c' ,cursor:nextPale ? 'pointer' :'initial'}}
                 >
                     <div className="flaticon-right-arrow"></div>
                 </div>
@@ -48,7 +48,7 @@ export function MainSlider () {
                     className="arrow-icon swiper-button-next--"
                     // @ts-ignore
                     onClick={()=>swiperInstance.slideNext(500)}
-                    style={{background:nextPale ? 'black' :'#ffc30c'}}
+                    style={{background:nextPale ? 'black' :'#ffc30c' ,cursor:nextPale ? 'pointer' :'initial'}}
                 >
                     <div className="flaticon-left-arrow"></div>
                 </div>

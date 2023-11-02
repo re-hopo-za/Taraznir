@@ -5,7 +5,12 @@ import { Providers } from "$/providers";
 
 
 import ScrollToTop from "@/layouts/ScrollToTop";
-import React from "react";
+import React, {use} from "react";
+import {ThemeType} from "^/ThemeType";
+import {getTheme} from "#/getTheme";
+import Header from "@/layouts/Header";
+import Footer from "@/layouts/Footer";
+import Sidebar from "@/layouts/Sidebar";
 
 export const metadata = {
     title: 'Taraznir',
@@ -18,6 +23,9 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+
+    const themeOptions:ThemeType = use(getTheme('_theme' ));
+    console.log(themeOptions)
     return (
         <html lang="en">
             <head>
@@ -28,10 +36,15 @@ export default function RootLayout({
                 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet"/>
             </head>
             <body>
-                <Providers>
-                {children}
-                </Providers>
-                <ScrollToTop />
+                <div className="page-wrapper">
+                    <Providers>
+                        <Header options={themeOptions}/>
+                        {children}
+                        <ScrollToTop />
+                        <Footer options={themeOptions}/>
+                        <Sidebar/>
+                    </Providers>
+                </div>
             </body>
         </html>
     )

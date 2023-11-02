@@ -13,7 +13,7 @@ export type PostType = {
     status            : string
     chosen            : number
     jalali_created_at : string
-    images            : ImagesType[]
+    images            : ImagesType
     category          : CategoryType[]
     meta              : MetaType[]
 }

@@ -1,16 +1,10 @@
 import {API_PATH, cacheStatus} from "&/Helpers";
 import {PostsType} from "^/PostsType";
 import {PostType} from "^/PostType";
-
-type StandardsParamType = {
-    keyword   ?: string,
-    limit     ?: string,
-    orderBy   ?: string,
-    direction ?: string,
-}
+import {PostsParametersType} from "^/PostsParametersType";
 
 
-export async function getStandards( params:StandardsParamType ):Promise<PostsType> {
+export async function getStandards(params:PostsParametersType ):Promise<PostsType> {
     return fetch( `${API_PATH}/standard?` + new URLSearchParams(params) ,{cache:cacheStatus } )
         .then( response => response.json())
         .then( result => result)

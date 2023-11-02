@@ -74,8 +74,8 @@ export const checkCurrentPage = ( currentPage:string ,page:string ) => {
 
 
 export const menuCreator = (options:ThemeType ,key:string ,containerClass :string ) =>{
-    console.log(options)
-    if( typeof options[key] === 'undefined' || !options[key].items)
+
+    if( typeof options[key] === 'undefined' || !options[key]?.items  )
         return <></>
 
     const items:object[]    = options[key].items
@@ -126,7 +126,7 @@ export const findMetaValueByKey = ( metas:MetaType[] ,key:string ) => {
     return (metas.find( (meta:MetaType) => meta.key === key))?.value
 }
 
-export const filterMetaByKy = ( metas:MetaType[] ,key:string ) => {
+export const filterMetaByKey = ( metas:MetaType[] ,key:string ) => {
     return metas.filter( (meta:MetaType) => meta.key === key)
 }
 
@@ -143,3 +143,7 @@ export const isJsonString = (str:string) =>  {
     return true;
 }
 
+
+export const truncateText = ( source:string ,size:number):string => {
+    return source.length > size ? source.slice(0 ,size - 1) + "…" : source;
+}
