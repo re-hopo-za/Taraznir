@@ -1,0 +1,13 @@
+{
+    "name": "Gallery",
+    "alias": "gallery",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Gallery\\app\\Providers\\GalleryServiceProvider"
+    ],
+    "files": [
+        "app/Helper/helper.php"
+    ]
+}

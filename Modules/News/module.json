@@ -1,0 +1,13 @@
+{
+    "name": "News",
+    "alias": "news",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\News\\app\\Providers\\NewsServiceProvider"
+    ],
+    "files": [
+        "app/Helper/helper.php"
+    ]
+}

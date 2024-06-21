@@ -1,0 +1,13 @@
+{
+    "name": "Blog",
+    "alias": "blog",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Blog\\app\\Providers\\BlogServiceProvider"
+    ],
+    "files": [
+        "app/Helper/helper.php"
+    ]
+}

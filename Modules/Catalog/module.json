@@ -1,0 +1,13 @@
+{
+    "name": "Catalog",
+    "alias": "catalog",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Catalog\\app\\Providers\\CatalogServiceProvider"
+    ],
+    "files": [
+        "app/Helper/helper.php"
+    ]
+}

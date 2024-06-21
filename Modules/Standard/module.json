@@ -1,0 +1,13 @@
+{
+    "name": "Standard",
+    "alias": "standard",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Standard\\app\\Providers\\StandardServiceProvider"
+    ],
+    "files": [
+        "app/Helper/helper.php"
+    ]
+}

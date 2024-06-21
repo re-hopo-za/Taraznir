@@ -1,0 +1,16 @@
+{
+    "Blog": true,
+    "Catalog": true,
+    "Ecommerce": true,
+    "Gallery": true,
+    "News": true,
+    "Project": true,
+    "Service": true,
+    "Standard": true,
+    "Theme": true,
+    "Tutorial": true,
+    "User": true,
+    "AdminPanel": true,
+    "Misc": true,
+    "Core": true
+}
