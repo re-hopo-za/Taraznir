@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('tutorials', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('author_id')->nullable();
-            $table->string('title')();
-            $table->string('slug')();
+            $table->string('title');
+            $table->string('slug');
             $table->mediumText('summary')->nullable();
             $table->enum('status', ['publish', 'draft'])->default('publish');
             $table->integer('chosen')->nullable()->default(0);

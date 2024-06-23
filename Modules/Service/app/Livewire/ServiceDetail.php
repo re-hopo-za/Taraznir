@@ -11,17 +11,17 @@ use Modules\Service\app\Models\Service;
 class ServiceDetail extends Component
 {
     public ?object $item;
-    public function mount( $slug )
+    public function mount($slug)
     {
-        $en_slug    = Str::slug( $slug );
-        $this->item = (object) redis_handler( 'services:'.$en_slug ,function () use($slug){
+        $en_slug    = Str::slug($slug);
+        $this->item = redis_handler('services:'.$en_slug ,function () use($slug){
             return Service::with(['category' ,'meta' ,'media'])
                     ->where( 'slug' ,$slug )
                     ->activeScope()
                     ->first();
         });
 
-        if( !$this->item )
+        if(!$this->item)
             return abort(404);
 
     }

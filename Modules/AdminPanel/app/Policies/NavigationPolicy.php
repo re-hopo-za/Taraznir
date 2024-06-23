@@ -4,7 +4,7 @@ namespace Modules\AdminPanel\app\Policies;
 
 use Illuminate\Auth\Access\HandlesAuthorization;
 use Modules\User\app\Models\User;
-use RyanChandler\FilamentNavigation\app\Models\Navigation;
+use RyanChandler\FilamentNavigation\Models\Navigation;
 
 class NavigationPolicy
 {

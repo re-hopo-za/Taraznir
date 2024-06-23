@@ -12,10 +12,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Modules\Core\app\Models\Category;
 use Modules\Core\app\Models\Comment;
 use Modules\User\app\Models\User;
-use Spatie\Image\Exceptions\InvalidManipulation;
-use Spatie\Image\Manipulations;
 use Spatie\MediaLibrary\InteractsWithMedia;
-use Spatie\MediaLibrary\MediaCollections\app\Models\Media;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Spatie\Permission\Traits\HasRoles;
 
 
@@ -63,21 +61,24 @@ trait CommonModelMethodsTrait {
     }
 
     /**
-     * @throws InvalidManipulation
      */
-    public function registerMediaConversions( Media $media = null): void
+    public function registerMediaConversions(Media $media = null): void
     {
-        $this
-            ->addMediaConversion('thumbnail')
-            ->fit(Manipulations::FIT_CROP, 140, 105);
+        $this->addMediaConversion('thumbnail')
+            ->width(140)
+            ->height(105)
+            ->nonQueued();
 
-        $this
-            ->addMediaConversion('cover')
-            ->fit(Manipulations::FIT_CROP, 420, 315);
+        $this->addMediaConversion('cover')
+            ->width(420)
+            ->height(315)
+            ->nonQueued();
 
-        $this
-            ->addMediaConversion('single')
-            ->fit(Manipulations::FIT_CROP, 1260, 945);
+        $this->addMediaConversion('single')
+            ->width(1260)
+            ->height(945)
+            ->nonQueued();
+
     }
 
 

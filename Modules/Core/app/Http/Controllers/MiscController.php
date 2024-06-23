@@ -5,15 +5,13 @@ namespace Modules\Core\app\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Modules\Core\app\Models\Option;
-use RyanChandler\FilamentNavigation\app\Models\Navigation;
-use RyanChandler\FilamentNavigation\Facades\FilamentNavigation;
+use RyanChandler\FilamentNavigation\FilamentNavigation;
 
 class MiscController extends Controller
 {
 
     public function index( Request $request)
     {
-
         if( $request->key ){
             if( $request->key == '_theme' )
                 return response([

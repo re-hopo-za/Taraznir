@@ -1,0 +1,104 @@
+/***
+
+==================================================================
+	Browse Section
+==================================================================
+
+***/
+
+.browse-section{
+    position:relative;
+    padding:0 0 60px;
+}
+
+.browse-section .filters{
+    position:relative;
+    text-align:center;
+    margin-bottom:var(--margin-bottom-35);
+}
+
+.browse-section .filters li{
+    position: relative;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 10px 26px;
+    border-radius: 4px;
+    margin: 0 10px 15px;
+    display: inline-block;
+    color: rgb(85 86 95);
+    font-size: var(--font-14);
+    text-transform: capitalize;
+    background-color: #f8f9fc;
+    -webkit-transition: all 500ms ease;
+    -moz-transition: all 500ms ease;
+    -ms-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    transition: all 500ms ease;
+    font-family: var(--font-family-Azarmehr);
+    border: 1px solid rgba(var(--black-color-rgb), 0.06);
+}
+
+.browse-section .filters li.active,
+.browse-section .filters li:hover{
+    color:var(--white-color);
+    border-color:var(--black-color);
+    background-color:var(--black-color);
+}
+
+.drop-block.mix{
+    display:none;
+}
+
+
+.service-detail-page .social-box{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+    border: 1px solid #E0DDE5;
+    border-top: none;
+}
+
+.pswp__custom-caption {
+    background: rgba(0, 0, 0, 0.75);
+    font-size: 16px;
+    color: #fff;
+    width: calc(100% - 32px);
+    max-width: 400px;
+    padding: 10px 8px;
+    border-radius: 4px;
+    position: absolute;
+    left: 50%;
+    bottom: 16px;
+    transform: translateX(-50%);
+    text-align: center;
+}
+.pswp__custom-caption a {
+    color: #fff;
+    text-decoration: underline;
+}
+.hidden-caption-content {
+    display: none;
+}
+.gallery-page .gallery-item h3{
+    padding-bottom: 7px;
+}
+.gallery-page .gallery-item img{
+    width:110px;
+    height:90px;
+    object-fit:cover;
+    margin-top:3px;
+}
+.gallery-page .gallery-item{
+    border:1px solid #eee;
+    padding:20px ;
+    font-family:var(--font-family-Azarmehr);
+    margin-top:20px;
+}
+.gallery-page .gallery-item:first-of-type{
+    margin-top:0
+}
+.gallery-page .gallery-item .summary{
+    padding-bottom:30px;
+}
+

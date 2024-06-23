@@ -4,8 +4,6 @@ namespace Modules\Theme\app\Livewire\Widgets;
 
 use Illuminate\View\View;
 use Livewire\Component;
-use Modules\Theme\Http\Controllers\ThemeController;
-
 class SearchWidget extends Component
 {
     public ?string $model   = '';
@@ -41,7 +39,7 @@ class SearchWidget extends Component
     public function render(): View
     {
         return view('theme::widgets.search-widget',[
-            'placeholder' => ThemeController::$models[$this->model] ?? ''
+            'placeholder' => models_name($this->model) ?? ''
         ]);
     }
 }

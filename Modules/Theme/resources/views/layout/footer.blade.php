@@ -8,7 +8,7 @@
                             <div class="footer-widget links-widget">
                                 <div class="logo">
                                     <a href="/">
-                                        <img src="/images/logos/taraznir-logo-0.25x.png" alt="taraznir logo" width={158} height={41}/>
+                                        <img src="/images/logos/taraznir-logo-0.25x.png" alt="taraznir logo" width="158" height="41"/>
                                     </a>
                                 </div>
                                 <div class="text">

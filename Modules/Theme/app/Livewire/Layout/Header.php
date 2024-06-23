@@ -5,7 +5,7 @@ namespace Modules\Theme\app\Livewire\Layout;
 use Illuminate\View\View;
 use Livewire\Component;
 use Modules\Core\app\Models\Option;
-use RyanChandler\FilamentNavigation\app\Models\Navigation;
+use RyanChandler\FilamentNavigation\Models\Navigation;
 
 class Header extends Component
 {

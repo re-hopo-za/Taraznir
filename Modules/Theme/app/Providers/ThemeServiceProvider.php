@@ -92,6 +92,7 @@ class ThemeServiceProvider extends ServiceProvider
         Blade::componentNamespace($componentNamespace, $this->moduleNameLower);
     }
 
+
     /**
      * Get the services provided by the provider.
      */

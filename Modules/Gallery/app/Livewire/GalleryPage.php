@@ -13,7 +13,7 @@ class GalleryPage extends Component
 
     public function mount()
     {
-        $this->items = redis_handler( "galleries" ,function (){
+        $this->items = redis_handler('galleries' ,function (){
             return Gallery::with(['media'])->get();
         });
     }

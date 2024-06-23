@@ -4,7 +4,6 @@ namespace Modules\Theme\app\Livewire\Widgets;
 
 use Illuminate\View\View;
 use Livewire\Component;
-use Modules\Theme\Http\Controllers\ThemeController;
 
 class PostsWidget extends Component
 {
@@ -25,11 +24,11 @@ class PostsWidget extends Component
             strtolower($this->model)."recent",
             $this->object,
             ['category' ,'meta' ,'media'],
-            config('theme.recent_limit' ,10)
+            config('core.recent_limit' ,10)
         );
 
         return view('theme::widgets.posts-widget',[
-            'title' => ThemeController::$models[$this->model."s"] ?? ""
+            'title' => models_name($this->model.'s') ?? null
         ]);
     }
 }

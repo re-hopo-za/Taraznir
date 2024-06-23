@@ -4,7 +4,7 @@
 
     <body>
         <div class="page-wrapper">
-            @livewire('theme::layout.header')
+            <livewire:theme::layout.header />
             @livewire('theme::layout.sidebar')
 
             {{ $slot }}

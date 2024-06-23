@@ -12,7 +12,7 @@ class HomePage extends Component
     #[Layout('theme::layout.app')]
     public function render(): View
     {
-        return view('misc::pages/home-page',[
+        return view('misc::pages.home-page',[
             'seo' => main_pages_seo()
         ]);
     }

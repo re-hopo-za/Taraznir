@@ -6,7 +6,7 @@ use Illuminate\View\View;
 use Livewire\Component;
 use Modules\Core\app\Models\Option;
 use Modules\Tutorial\app\Models\Tutorial;
-use RyanChandler\FilamentNavigation\app\Models\Navigation;
+use RyanChandler\FilamentNavigation\Models\Navigation;
 
 class Footer extends Component
 {

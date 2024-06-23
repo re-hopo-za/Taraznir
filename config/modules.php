@@ -34,7 +34,7 @@ return [
             'views/index' => 'resources/views/index.blade.php',
             'views/master' => 'resources/views/layouts/master.blade.php',
             'scaffold/config' => 'config/config.php',
-//            'composer' => 'composer.json',
+            'composer' => 'composer.json',
             'assets/js/app' => 'resources/assets/js/app.js',
             'assets/sass/app' => 'resources/assets/sass/app.scss',
 //            'vite' => 'vite.config.js',
@@ -114,6 +114,7 @@ return [
             'filter' => ['path' => 'app/Http/Middleware', 'generate' => false],
             'request' => ['path' => 'app/Http/Requests', 'generate' => false],
             'provider' => ['path' => 'app/Providers', 'generate' => true],
+            'livewire' => ['path' => 'app/Livewire', 'generate' => true],
             'assets' => ['path' => 'resources/assets', 'generate' => false],
             'lang' => ['path' => 'resources/lang', 'generate' => false],
             'views' => ['path' => 'resources/views', 'generate' => true],
@@ -142,10 +143,10 @@ return [
     | application. You can add your own commands to merge section.
     |
     */
-//    'commands' => ConsoleServiceProvider::defaultCommands()
-//        ->merge([
-//            // New commands go here
-//        ])->toArray(),
+    'commands' => ConsoleServiceProvider::defaultCommands()
+        ->merge([
+            // New commands go here
+        ])->toArray(),
 
     /*
     |--------------------------------------------------------------------------

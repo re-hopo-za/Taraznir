@@ -15,7 +15,7 @@
                     <div class="logo">
                         <a href="/">
                             <img
-                                src="{{config('theme.logo.0,5x')}}"
+                                src="{{config('core.logo.0,5x')}}"
                                 alt="taraznir logo"
                                 width="160"
                                 height="60"
@@ -167,7 +167,7 @@
             <div class="d-flex justify-content-between align-items-center">
                 <div class="logo">
                     <a href="{{route('/')}}" title="{{config('app.name')}}">
-                        <img src="{{config('theme.logo.0,25x')}}" alt="{{config('app.name')}}" title="{{config('app.name')}}">
+                        <img src="{{config('core.logo.0,25x')}}" alt="{{config('app.name')}}" title="{{config('app.name')}}">
                     </a>
                 </div>
 
@@ -187,9 +187,9 @@
         <div class="close-btn"><span class="icon flaticon-multiply"></span></div>
         <nav class="menu-box">
             <div class="nav-logo"><a href="/">
-                    <img src="/images/mobile-logo.png" alt="" title=""></a>
+                <img src="/images/mobile-logo.png" alt="" title=""></a>
             </div>
-            <!-- Search -->
+
             <div class="search-box">
                 <form method="post" action="contact.html">
                     <div class="form-group">
