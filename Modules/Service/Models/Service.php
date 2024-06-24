@@ -6,8 +6,9 @@ use App\Trait\CommonModelMethodsTrait;
 use App\Trait\CommonScopesTrait;
 use Illuminate\Database\Eloquent\Model;
 use Modules\Service\Database\factories\ServiceFactory;
+use Spatie\MediaLibrary\HasMedia;
 
-class Service extends Model
+class Service extends Model implements HasMedia
 {
     use CommonScopesTrait ,CommonModelMethodsTrait;
 

@@ -69,15 +69,12 @@ trait CommonApiTrait{
         );
     }
 
-    /**
-     * Show the specified resource.
-     * @param int $id
-     * @return Response
-     */
-    public function show( int $id ): response
+
+
+    public function show( string $slug ): response
     {
         return response(
-            self::$model::where( 'id' ,$id )->activeScope()->first() ?? []
+            self::$model::where( 'slug' ,$slug )->activeScope()->first() ?? []
         );
     }
 

@@ -17,5 +17,5 @@ use Modules\Service\Http\Controllers\ServiceController;
 Route::get('service',
     [ServiceController::class ,'index']);
 
-Route::get('service/{id}',
+Route::get('service/{slug}',
     [ServiceController::class ,'show']);

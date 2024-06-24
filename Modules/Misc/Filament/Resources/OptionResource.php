@@ -54,8 +54,7 @@ class OptionResource extends Resource
                         ->label('Save As HTML'),
                     TinyEditor::make('value')
                         ->label('Content'),
-                    SpatieMediaLibraryFileUpload::make('attachments')
-                        ->collection('attachments')
+                    SpatieMediaLibraryFileUpload::make('cover')
                         ->enableReordering()
                         ->multiple()
                         ->placeholder('Upload Attachment')

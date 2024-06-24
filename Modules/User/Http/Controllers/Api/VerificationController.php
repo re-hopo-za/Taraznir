@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Hash;
 use Modules\Misc\Helpers\MiscHelper;
 use Modules\Misc\Http\Controllers\SMSController;
 use Modules\User\Http\Requests\VerifyRegistrationCodeRequest;
-use App\Models\User;
+use Modules\User\Models\User;
 
 class VerificationController extends Controller
 {

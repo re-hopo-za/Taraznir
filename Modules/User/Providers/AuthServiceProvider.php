@@ -3,7 +3,7 @@
 namespace Modules\User\Providers;
 
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
-use App\Models\User;
+use Modules\User\Models\User;
 use Modules\User\Policies\UserPolicy;
 
 class AuthServiceProvider  extends ServiceProvider

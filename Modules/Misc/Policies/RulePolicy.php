@@ -3,7 +3,7 @@
 namespace Modules\Misc\Policies;
 
 use Illuminate\Auth\Access\HandlesAuthorization;
-use App\Models\User;
+use Modules\User\Models\User;
 use Spatie\Permission\Models\Role as Roles;
 
 class RulePolicy
