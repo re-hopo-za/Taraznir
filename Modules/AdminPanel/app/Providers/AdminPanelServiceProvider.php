@@ -4,6 +4,7 @@ namespace Modules\AdminPanel\app\Providers;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use Lunar\Admin\Support\Facades\LunarPanel;
 
 class AdminPanelServiceProvider extends ServiceProvider
 {
