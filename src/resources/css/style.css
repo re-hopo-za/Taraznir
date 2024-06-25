@@ -6452,7 +6452,7 @@
 
 .prod-tabs .tabs-content .tab .title{
 	position:relative;
-	color:var(--text-color);
+	color:var(--black-color);
 	font-size:var(--font-20);
 	font-weight:400;
 	margin-top:var(--margin-top-10);
@@ -6479,7 +6479,7 @@
 }
 
 .shop-comment-form .rating-box .text{
-	color:var(--main-color-two);
+	color:var(--main-color);
 	margin-bottom:var(--margin-bottom-10);
 }
 
