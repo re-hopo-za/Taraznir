@@ -9,6 +9,7 @@ use Filament\Http\Middleware\DispatchServingFilamentEvent;
 use Filament\Pages;
 use Filament\Panel;
 use Filament\PanelProvider;
+use Filament\Support\Colors\Color;
 use Filament\Widgets;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
@@ -18,40 +19,22 @@ use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Modules\AdminPanel\app\Filament\ResourcesList;
-use RyanChandler\FilamentNavigation\FilamentNavigation;
 
 class AdminPanelProvider extends PanelProvider
 {
-
     public function panel(Panel $panel): Panel
     {
         return $panel
-            ->default()
             ->id('admin')
-            ->path('admin')
             ->login()
+            ->path('admin')
             ->colors([
-                'primary' => [
-                    50 => '238, 242, 255',
-                    100 => '224, 231, 255',
-                    200 => '199, 210, 254',
-                    300 => '165, 180, 252',
-                    400 => '129, 140, 248',
-                    500 => '99, 102, 241',
-                    600 => '79, 70, 229',
-                    700 => '67, 56, 202',
-                    800 => '55, 48, 163',
-                    900 => '49, 46, 129',
-                    950 => '30, 27, 75',
-                ],
+                'primary' => Color::Amber,
             ])
-            ->font('AzarMehr')
-            ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
-            ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
                 Pages\Dashboard::class,
             ])
-            ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
+            ->discoverWidgets(in: app_path('Filament/Admin/Widgets'), for: 'App\\Filament\\Admin\\Widgets')
             ->widgets([
                 Widgets\AccountWidget::class,
                 Widgets\FilamentInfoWidget::class,
@@ -73,9 +56,8 @@ class AdminPanelProvider extends PanelProvider
 
             ->plugins([
                 new ResourcesList(),
-                FilamentNavigation::make(),
-                FilamentShieldPlugin::make()
+//                FilamentNavigation::make(),
+//                FilamentShieldPlugin::make()
             ]);
     }
-
 }
