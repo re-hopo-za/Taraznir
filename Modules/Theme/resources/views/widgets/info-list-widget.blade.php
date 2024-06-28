@@ -4,8 +4,8 @@
     </h3>
     <ul class="portfolio-single__widget">
         @foreach($this->items as $key => $val )
-            <li>
-                <strong>{{$key}}:</strong><br>
+            <li class="d-flex justify-content-between align-items-center">
+                <strong>{{$key}}:</strong>
                 {{$val}}
             </li>
         @endforeach

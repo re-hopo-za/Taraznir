@@ -19,5 +19,8 @@ use Modules\Blog\app\Livewire\BlogPage;
 Route::get('blog' , BlogPage::class)
     ->name('blog');
 
+Route::get('blog/category/{slug}' , BlogPage::class)
+    ->name('blog-category');
+
 Route::get('blog/{slug}' , BlogDetail::class)
     ->name('blog-detail');

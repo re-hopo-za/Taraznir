@@ -2,11 +2,15 @@
     {!! seo_tags_generator( $seo ,'catalog' ,' تارازنیر | کاتالوگ') !!}
 @endsection
 
-<div class="page-wrapper" style="margin-bottom: 100px;">
+<x-theme::root :sidebar="false" :breads="[
+    'title'  => catalog_trans('Catalogs'),
+    'breads' => [
+        ['title' => catalog_trans('Catalogs')],
+    ],
+]">
 
     <div class="sidebar-page-container">
         <div class="auto-container">
-
             <section class="browse-section">
                 <div class="auto-container">
                     <div class="mixitup-gallery">
@@ -52,4 +56,4 @@
             </section>
         </div>
     </div>
-</div>
+</x-theme::root>

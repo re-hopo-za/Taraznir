@@ -18,5 +18,8 @@ use Modules\Tutorial\app\Livewire\TutorialPage;
 Route::get('/tutorial' ,TutorialPage::class)
     ->name('tutorial');
 
+Route::get('tutorial/category/{slug}' , TutorialPage::class)
+    ->name('tutorial-category');
+
 Route::get('/tutorial/{slug}' ,TutorialDetail::class)
     ->name('tutorial-detail');

@@ -1,6 +1,6 @@
 <?php
 return[
-    'Detail product' => 'جزئیات محصول',
+    'Product detail' => 'جزئیات محصول',
     'Home' => 'صفحه اصلی',
     'Products' => 'محصولات',
     'Price' => 'قیمت',

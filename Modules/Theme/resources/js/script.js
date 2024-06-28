@@ -366,7 +366,7 @@
             rtl:true,
             //autoHeight: true,
             // smartSpeed: 500,
-            // autoplay: 6000,
+            autoplay: 5000,
             navText: [ '<span class="flaticon-left-arrow"></span>', '<span class="flaticon-right-arrow"></span>' ],
             responsive:{
                 0:{

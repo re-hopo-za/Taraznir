@@ -3,7 +3,7 @@
         @if($items)
             @foreach($items as $item)
                 <div class="slide">
-                    <div class="image-layer" style="background-image: url({{$item->images['single'] ?? ''}})"></div>
+                    <div class="image-layer" style="background-image: url({{$item->images['origin'] ?? ''}})"></div>
                     <div class="auto-container" style="margin:initial">
                         <div class="content-box">
                             <div class="box-inner">

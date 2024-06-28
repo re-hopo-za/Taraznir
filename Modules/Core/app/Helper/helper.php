@@ -210,7 +210,7 @@ function return_value_is_true($data, $index, $value, $default = '')
 
 function check_current_page($page): string
 {
-    if ($page == '/' . lcfirst(request()->route()->getName()) || $page == request()->route()->getName())
+    if (str_contains(request()->route()->getName() ,$page))
         return 'current';
 
     return '';
@@ -338,5 +338,16 @@ function models_name($model): ?string
         'Blog'  => 'مقاله',
         'Blogs' => 'مقاله‌های',
     ][$model] ?? null;
+}
+
+
+function get_media_option($option): ?string
+{
+    if($option){
+        $media  = $option->getMedia('option')->first();
+        if($media)
+            return $media->getFullUrl();
+    }
+    return $option->value ?? '';
 }
 

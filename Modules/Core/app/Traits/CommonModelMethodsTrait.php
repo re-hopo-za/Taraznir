@@ -60,8 +60,7 @@ trait CommonModelMethodsTrait {
         return $this->belongsTo(User::class ,'author_id' ,'id');
     }
 
-    /**
-     */
+
     public function registerMediaConversions(Media $media = null): void
     {
         $this->addMediaConversion('thumbnail')
@@ -79,6 +78,8 @@ trait CommonModelMethodsTrait {
             ->height(945)
             ->nonQueued();
 
+        $this->addMediaConversion('origin')
+            ->nonQueued();
     }
 
 
@@ -90,6 +91,7 @@ trait CommonModelMethodsTrait {
                 'thumbnail' => $media->getUrl('thumbnail'),
                 'cover'     => $media->getUrl('cover'),
                 'single'    => $media->getUrl('single'),
+                'origin'    => $media->getUrl('origin'),
             ];
         }
         return [];

@@ -93,6 +93,8 @@ class ProductPage extends Component
     public function render(): View
     {
         $this->getProducts();
-        return view('ecommerce::product/product-page');
+        return view('ecommerce::product/product-page',[
+            'seo' => main_pages_seo()
+        ]);
     }
 }

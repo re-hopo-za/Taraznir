@@ -1,10 +1,14 @@
 @section('seo')
-    {!! seo_tags_generator( $seo ,'about' ,' تارازنیر | تماس با ما') !!}
+    {!! seo_tags_generator( $seo ,'contact' ,' تارازنیر | تماس با ما') !!}
 @endsection
 
 
-<div>
-    <x-theme::breadcrumbs :main="'تماس با ما'"  />
+<x-theme::root :sidebar="false" :breads="[
+    'title'  => global_trans('Contact us'),
+    'breads' => [
+        ['title' => global_trans('Contact us')],
+    ],
+]">
 
     <div class="contact-page-section">
         <div class="auto-container">
@@ -69,6 +73,6 @@
             </div>
         </div>
     </div>
+</x-theme::root>
 
-</div>
 

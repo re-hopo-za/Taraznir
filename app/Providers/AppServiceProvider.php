@@ -5,8 +5,8 @@ namespace App\Providers;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
 
-use Lunar\Admin\Filament\Resources\ActivityResource;
 use Lunar\Admin\Support\Facades\LunarPanel;
+use RyanChandler\FilamentNavigation\FilamentNavigation;
 
 
 class AppServiceProvider extends ServiceProvider
@@ -17,9 +17,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        LunarPanel::register()->extensions([
-            ActivityResource::class => ActivityResource::class,
-        ]);
+        LunarPanel::register()
+            ->getPanel()
+            ->plugin(FilamentNavigation::make())
+            ->font(
+                'AzarMehr',
+                url: asset('css/fonts.min.css'),
+            );
     }
 
     /**

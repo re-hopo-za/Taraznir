@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use Modules\Core\app\Traits\CommonModelMethodsTrait;
 use Modules\Core\app\Traits\CommonScopesTrait;
 use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Spatie\Permission\Traits\HasRoles;
 
 class Option extends Model implements HasMedia
@@ -35,7 +36,7 @@ class Option extends Model implements HasMedia
     public function toSearchableArray(): array
     {
         return [
-            'title' => strip_tags( $this->value ),
+            'title' => strip_tags($this->value),
         ];
     }
 

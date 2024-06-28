@@ -1,8 +1,8 @@
 <div class="sidebar-widget-two download-widget">
     <div class="sidebar-title-two" dir="rtl">
-        <h5>
+        <h6 class="text-white">
             {{$this->title}}
-        </h5>
+        </h6>
     </div>
 
     <ul class="download-file">

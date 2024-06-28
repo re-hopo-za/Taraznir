@@ -16,4 +16,5 @@ class EditTutorial extends EditRecord
             Actions\DeleteAction::make(),
         ];
     }
+
 }

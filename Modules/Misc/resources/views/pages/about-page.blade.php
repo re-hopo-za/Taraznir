@@ -3,8 +3,12 @@
 @endsection
 
 
-<div>
-    <x-theme::breadcrumbs :main="'درباره ما'"  />
+<x-theme::root :sidebar="false" :breads="[
+    'title'  => global_trans('About us'),
+    'breads' => [
+        ['title' => global_trans('About us')],
+    ],
+]">
 
     <div class="about-page-section">
 
@@ -97,5 +101,4 @@
             </div>
         </section>
     </div>
-
-</div>
+</x-theme::root>

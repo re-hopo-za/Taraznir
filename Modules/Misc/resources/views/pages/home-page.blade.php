@@ -1,9 +1,9 @@
 @section('seo')
-    {!! seo_tags_generator( $seo ,'about' ,' تارازنیر | خانه') !!}
+    {!! seo_tags_generator( $seo ,'home' ,' تارازنیر | خانه') !!}
 @endsection
 
 
-<div>
+<x-theme::root :sidebar="false">
     <livewire:theme::components.main-slider />
     <livewire:theme::components.introduce-section />
     <livewire:service::service-section />
@@ -12,4 +12,4 @@
     <livewire:standard::standard-section />
     <livewire:ecommerce::product.product-section />
     <livewire:theme::components.clients-section />
-</div>
+</x-theme::root>

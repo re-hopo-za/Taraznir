@@ -21,7 +21,6 @@ mix
         __dirname + '/Modules/Theme/Resources/css/footer.css',
         __dirname + '/Modules/Theme/Resources/css/icofont.css',
         __dirname + '/Modules/Theme/Resources/css/font-awesome.css',
-        __dirname + '/Modules/Theme/Resources/css/fonts.css',
         __dirname + '/Modules/Theme/Resources/css/flaticon.css',
         __dirname + '/Modules/Theme/Resources/css/animate.css',
         __dirname + '/Modules/Theme/Resources/css/owl.css',
@@ -35,6 +34,10 @@ mix
         __dirname + '/Modules/Theme/Resources/css/slick.css',
         __dirname + '/Modules/Theme/Resources/css/slick-theme.css',
     ], 'public/css/styles.min.css')
+
+    .styles([
+        __dirname + '/Modules/Theme/Resources/css/fonts.css',
+    ], 'public/css/fonts.min.css')
 
     .scripts([
         __dirname + '/Modules/Theme/Resources/js/jquery.js',

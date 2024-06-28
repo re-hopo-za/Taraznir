@@ -11,37 +11,24 @@ trait CommonLivewireComponentTrait
 {
     use WithPagination;
     protected string $paginationTheme = 'bootstrap';
-    public int $limit       = 10;
-    public string $order_by = 'ASC';
-    public ?string $search  = '';
-    public ?int $category   = 0;
-    protected $items;
-
-    public function renderQuery(): void
-    {
-        if(!$this->search && !$this->category)
-            $this->items =
-                redis_handler( $this->model."s" ,function (){
-                    return
-                        $this->object::with($this->with)
-                            ->activeScope()
-                            ->orderBy('created_at' ,$this->order_by)
-                            ->paginate($this->limit);
-                });
-    }
+    public int $limit                 = 10;
+    public string $order_by           = 'ASC';
+    public ?string $search            = null;
+    public ?int $category             = 0;
+    protected mixed $items;
 
 
     public function categories()
     {
        return
-           redis_handler( "$this->model:categories" ,function (){
+           redis_handler("$this->model:categories" ,function (){
                 return Category::with($this->model)->where('model' ,$this->model)->get();
             });
     }
 
 
     #[NoReturn]
-    public function setQuery(): void
+    public function query(): void
     {
         $query = $this->object::with('category');
 
@@ -69,7 +56,7 @@ trait CommonLivewireComponentTrait
     public function setSearching($keyword): void
     {
         $this->search = $keyword;
-        $this->setQuery();
+        $this->query();
     }
 
 
@@ -77,7 +64,7 @@ trait CommonLivewireComponentTrait
     public function setCategory($categoryID): void
     {
         $this->category = $categoryID;
-        $this->setQuery();
+        $this->query();
     }
 
 }

@@ -45,6 +45,8 @@ class TutorialResource extends Resource
                         self::formMetaKeyOptions([
                             'rate' => 'امتیاز',
                             'lang' => 'زبان',
+                            'level' => 'سطح',
+                            'students' => ' تعداد شرکت‌ کننده',
                         ]),
                     ])->columnSpan(9),
                     Grid::make()->schema([

@@ -1,0 +1,56 @@
+<?php
+
+return array_merge([
+    'User' => 'کاربر',
+    'Users' => 'کاربران',
+
+    'New user' => 'کاربر جدید',
+    'Save user' => 'ذخیره',
+    'Delete user' => 'حذف',
+    'Update user' => 'ویرایش کاربر',
+    'User Information' => 'اطلاعات کاربری',
+    'Organization Information' => 'اطلاعات سازمانی',
+    'Call Information' => 'اطلاعات تماس',
+    'Further information' => 'اطلاعات تکمیلی',
+    'User status' => 'وضعیت کاربر',
+    'Avatar ,logo only *png, *jpg and *jpeg image files are accepted' => 'تصویر کاربر در فرمت‌های  jpeg , jpg , png',
+
+    'ID' => 'شناسه',
+    'Avatar' => 'تصویر',
+    'First name' => 'نام',
+    'Last name' => 'نام خانوادگی',
+    'Admin' => 'مدیر',
+    'Active' => 'فعال',
+    'Actions' => 'عملیات',
+    'Status' => 'وضعیت',
+    'Personal code' => 'کد سازمانی',
+    'National code'=> 'کد ملی',
+    'Phone number'=> 'شماره تلفن',
+    'Mobile number'=> 'شماره موبایل',
+    'Address' => 'آدرس',
+    'Username' => 'نام‌کاربری',
+    'Email' => 'ایمیل',
+    'Position' => 'سمت سازمانی',
+    'Department' => 'واحد سازمانی',
+    'Role' => 'نقش کاربری',
+    'Password' => 'رمزعبور',
+
+    'Zones' => 'مناطق',
+    'Access list to zone' => 'دسترسی مناطق',
+    'Access list to building' => 'دسترسی ساختمان‌ها',
+    'Access list to facility' => 'دسترسی تاسیسات',
+    'All zones'      => 'همه مناطق',
+    'All buildings'  => 'همه ساختمان‌ها',
+    'All facilities' => 'همه تاسیسات',
+
+    'User updated successfully'   =>  'بروزرسانی کاربر با موفقیت انجام شد.',
+    'User created successfully'   =>  'کاربر با موفقیت ایجاد شد.',
+    'User deleted successfully'   =>  'کاربر با موفقیت حذف شد.',
+    'Occur error when updating'   =>  'خطا هنگام به‌روز رسانی کاربر.',
+    'Are you want to delete user' =>  'کاربر فعلی حذف شود؟',
+    'Occur error when deleting'   =>  'خطا هنگام حذف کاربر.',
+    'None found'                  =>  'هیچکدام از کاربران یافت نشدند.',
+    'User not found'              =>  'کاربر یافت نشد.',
+
+
+] ,Lang::get('core::global'));

@@ -9,7 +9,7 @@ use Filament\Http\Middleware\DispatchServingFilamentEvent;
 use Filament\Pages;
 use Filament\Panel;
 use Filament\PanelProvider;
-use Filament\Support\Colors\Color;
+use Filament\SpatieLaravelTranslatablePlugin;
 use Filament\Widgets;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
@@ -18,7 +18,11 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use Modules\AdminPanel\app\Filament\Resources\NavigationResource;
 use Modules\AdminPanel\app\Filament\ResourcesList;
+use RyanChandler\FilamentNavigation\FilamentNavigation;
+use SolutionForest\FilamentTree\FilamentTreeServiceProvider;
+use TomatoPHP\FilamentMenus\FilamentMenusPlugin;
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -26,11 +30,28 @@ class AdminPanelProvider extends PanelProvider
     {
         return $panel
             ->id('admin')
+            ->spa()
             ->login()
             ->path('admin')
             ->colors([
-                'primary' => Color::Amber,
+                'primary' => [
+                    50 => '238, 242, 255',
+                    100 => '224, 231, 255',
+                    200 => '199, 210, 254',
+                    300 => '165, 180, 252',
+                    400 => '129, 140, 248',
+                    500 => '99, 102, 241',
+                    600 => '79, 70, 229',
+                    700 => '67, 56, 202',
+                    800 => '55, 48, 163',
+                    900 => '49, 46, 129',
+                    950 => '30, 27, 75',
+                ],
             ])
+            ->font(
+                'AzarMehr',
+                url: asset('css/fonts.min.css'),
+            )
             ->pages([
                 Pages\Dashboard::class,
             ])
@@ -53,11 +74,11 @@ class AdminPanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
             ])
-
             ->plugins([
-                new ResourcesList(),
-//                FilamentNavigation::make(),
-//                FilamentShieldPlugin::make()
+                ResourcesList::make(),
+                FilamentShieldPlugin::make(),
+                FilamentNavigation::make()
             ]);
+
     }
 }

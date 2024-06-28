@@ -95,7 +95,7 @@
                                             <li
                                                 class="{{!empty($item['children']) ? 'dropdown' :''}}
                                                 {{return_value_is_true($item ,'children' ,'menu-item-has-children')}}
-                                                {{check_current_page($item['data']['url'])}} {{$menu_name}}"
+                                                {{check_current_page($item['data']['url'])}}"
                                             >
                                                 @if(!empty(index_checker($item ,'data' )))
                                                     <a

@@ -1,11 +1,13 @@
 <?php
 return [
-    'detail'           => 'مشخصات کاتالوگ',
-    'author'           => 'نویسنده',
-    'keywords'         => 'کلمات کلیدی',
-    'description'      => 'توضیحات',
-    'title'            => 'عنوان',
-    'subject'          => 'موضوع',
-    'summary'          => 'خلاصه توضیحات',
-    'attachment_files' => 'فایل‌های ضمیمه',
+    'Catalog'          => 'کاتالوگ',
+    'Catalogs'         => 'کاتالوگ‌ها',
+    'Catalog detail'   => 'جزئیات کاتالوگ',
+    'Author'           => 'نویسنده',
+    'Keywords'         => 'کلمات کلیدی',
+    'Description'      => 'توضیحات',
+    'Title'            => 'عنوان',
+    'Subject'          => 'موضوع',
+    'Summary'          => 'خلاصه',
+    'Attachment files' => 'فایل‌های ضمیمه',
 ];

@@ -3,8 +3,12 @@
 @endsection
 
 
-<div>
-    <x-theme::breadcrumbs :main="'صفحه جستجو'"  />
+<x-theme::root :sidebar="false" :breads="[
+    'title'  => global_trans('Search'),
+    'breads' => [
+        ['title' => global_trans('Search')],
+    ],
+]">
 
     <div class="contact-page-section">
         <div class="auto-container">
@@ -13,6 +17,5 @@
 
         </div>
     </div>
-
-</div>
+</x-theme::root>
 

@@ -23,6 +23,7 @@ class Tutorial extends Model implements HasMedia
         'summary',
         'status',
         'chosen',
+        'author_id',
     ];
 
 

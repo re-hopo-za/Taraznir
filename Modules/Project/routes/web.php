@@ -20,6 +20,8 @@ use Modules\Project\app\Livewire\ProjectPage;
 Route::get('/project' , ProjectPage::class)
     ->name('project');
 
+Route::get('project/category/{slug}' , ProjectPage::class)
+    ->name('project-category');
 
 Route::get('project/{slug}' , ProjectDetail::class)
     ->name('project-detail');

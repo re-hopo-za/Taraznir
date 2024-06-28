@@ -16,6 +16,8 @@ class MainSlider extends Component
                         $query->where('slug' ,'main-slider');
                     })->get();
         });
+
+
         return view('theme::components.main-slider',[
             'items' => $items
         ]);

@@ -2284,10 +2284,11 @@
 
 .main-slider-two .image-layer{
     position:absolute;
-    left:0px;
-    top:0px;
-    right:0px;
-    bottom:0px;
+    left:0;
+    top:0;
+    right:0;
+    bottom:0;
+    border-radius: 12px;
     background-size:cover;
 }
 
@@ -2546,6 +2547,8 @@
     -webkit-backdrop-filter: blur(9px) saturate(200%);
     background-color: rgba(255, 255, 255, 0.62);
     border: 1px solid rgba(209, 213, 219, 0.3);
+    border-bottom-left-radius: 12px;
+    overflow: hidden;
 }
 
 .main-slider-two .social-box a{
@@ -5482,11 +5485,6 @@
 ====================================================================
 
 ***/
-
-.sidebar-page-container{
-	position:relative;
-	padding:100px 0 60px;
-}
 
 .sidebar-page-container .content-side,
 .sidebar-page-container .sidebar-side{
@@ -11521,6 +11519,8 @@ footer .post-widget .post .thumb:before{
 .partner-section.style-two .title-column .learn-more{
 	color:var(--white-color);
 	border-color:var(--white-color);
+    font-family: AzarMehr;
+    margin-top: 5px;
 }
 
 .partner-section.style-two .title-column h4 span,
@@ -13074,7 +13074,7 @@ footer .post-widget .post .thumb:before{
     font-size: 22px;
     font-weight: 600;
     border-bottom: 1px solid #E0DDE5;
-    padding: 29px 30px;
+    padding: 20px 30px;
     text-align: center;
     margin: 0 -30px;
 }
