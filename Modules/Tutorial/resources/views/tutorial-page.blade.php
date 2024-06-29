@@ -148,7 +148,7 @@
                                             </h4>
                                             <ul class="rbt-meta">
                                                 <li><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" x="0" y="0" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve"><g><path d="M448.8 0H111.4C76.552 0 48.2 28.352 48.2 63.2v385.601C48.2 483.649 76.552 512 111.399 512h337.4c8.285 0 15-6.716 15-15V15c.001-8.284-6.713-15-14.999-15zM78.201 63.2c0-18.306 14.895-33.2 33.199-33.2h322.4v355.601H111.4a62.815 62.815 0 0 0-33.199 9.453V63.2zm33.2 418.8c-18.307 0-33.2-14.893-33.2-33.199 0-18.307 14.893-33.2 33.199-33.2h322.4V482H111.401z" fill="#000000" opacity="1" data-original="#000000"></path><path d="M352.401 96.399H159.6c-8.283 0-15 6.716-15 15s6.717 15 15 15h192.801c8.285 0 15-6.716 15-15s-6.716-15-15-15z" fill="#6b7385" opacity="1" data-original="#6b7385"></path></g></svg>
-                                                    {{$item->courses->count()}} درس </li>
+                                                    {{$item->courses?->count()}} درس </li>
                                             </ul>
                                             <p class="rbt-card-text">
                                                 {{$item->summary}}
