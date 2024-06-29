@@ -54,7 +54,7 @@
                             <div class="video-content">
                                 @php
                                     $video_url    = null;
-                                    $first_course = $item->courses->first();
+                                    $first_course = $item->courses?->first();
                                     if($first_course->media->first())
                                         $video_url = $first_course->media->first()->getFullUrl();
                                     else
@@ -258,7 +258,7 @@
                                                         تعداد درس
                                                     </span>
                                                         <span class="rbt-feature-value rbt-badge-5">
-                                                      {{$item->tutorialCourses->count()}} درس
+                                                      {{$item->tutorialCourses?->count()}} درس
                                                     </span>
                                                     </li>
                                                     <li>
