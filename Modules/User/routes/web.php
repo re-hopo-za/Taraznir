@@ -13,12 +13,9 @@
 
 
 use Illuminate\Support\Facades\Route;
-use Modules\User\app\Livewire\Authentication\SignInPage;
-use Modules\User\app\Livewire\Authentication\SignUpPage;
+use Modules\User\app\Livewire\Authentication\AuthenticationPage;
 
 
-Route::get('sign-up', SignUpPage::class)
-    ->name('sign-up');
+Route::get('authentication', AuthenticationPage::class)
+    ->name('authentication');
 
-Route::get('sign-in', SignInPage::class)
-    ->name('sign-in');

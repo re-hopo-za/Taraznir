@@ -1,90 +1,76 @@
 
-<div>
-    <section class="page-title">
-        <div class="auto-container">
-            <h2>Login Page</h2>
-            <ul class="bread-crumb clearfix">
-                <li><a href="index.html">Home</a></li>
-                <li>Pages</li>
-                <li>Register</li>
-            </ul>
-        </div>
-    </section>
 
-    <div class="register-section">
+
+<x-theme::root :breads="[
+    'title'  => auth_trans('Authentication'),
+    'breads' => [
+        ['title' => auth_trans('Authentication')],
+    ],
+]">
+
+
+    <div class="register-section mb-5">
         <div class="auto-container">
             <div class="inner-container">
-                <div class="row clearfix">
+                <div class="row justify-content-evenly my-5">
 
-                    <div class="column col-lg-6 col-md-12 col-sm-12">
+                    <div class="column col-lg-4 col-md-5 col-sm-12" style="border: 1px solid #eee; padding:3rem;">
                         <div class="styled-form">
-                            <h4>Sign Up</h4>
-                            <form method="post" action="index.html">
+                            <h4>{{auth_trans('Sign up')}}</h4>
+                            <form>
                                 <div class="form-group">
-                                    <label>Your Name</label>
-                                    <input type="text" name="username" value="" placeholder="Enter your name*" required>
+                                    <label>{{auth_trans('Name')}}</label>
+                                    <input type="text" name="username" placeholder="{{auth_trans('Enter your username')}}" required>
                                 </div>
                                 <div class="form-group">
-                                    <label>Email address</label>
-                                    <input type="email" name="emaill" value="" placeholder="Enter Email Adress" required>
+                                    <label>{{auth_trans('Email')}}</label>
+                                    <input type="email" name="emaill" placeholder="{{auth_trans('Enter your email')}}" required>
                                 </div>
                                 <div class="form-group">
-                                    <label>New Password</label>
-                                    <input type="password" name="password" value="" placeholder="Create password" required>
+                                    <label>{{auth_trans('Password')}}</label>
+                                    <input type="password" name="password"  placeholder="{{auth_trans('Password')}}" required>
                                 </div>
-                                <div class="form-group">
-                                    <div class="check-box">
-                                        <input type="checkbox" name="remember-password" id="type-1">
-                                        <label for="type-1">I agree to al <a href="#">Terms</a> & <a href="#">Condition</a> and Feeds</label>
-                                    </div>
-                                </div>
-                                <x-theme::inputs.captcha
-                                    label="user::auth.Captcha"
-                                    :captchaImg="$this->captchaImg"
-                                />
                                 <x-theme::inputs.confirm
                                     id="accept_terms"
-                                >
-                                    <a href="javascript:void(0)" class="ms-1 link-primary">
-                                        @lang('user::auth.Terms')
-                                    </a>
-                                    @lang('user::auth.I accept')
-                                </x-theme::inputs.confirm>
-                                <div class="form-group">
-                                    <button type="button" class="theme-btn btn-style-one">
-                                        Sign Up
+                                    :label="auth_trans('Terms')"
+                                />
+                                <x-theme::inputs.captcha
+                                    label="{{auth_trans('Captcha')}}"
+                                    :captchaImg="$this->captchaImg"
+                                />
+                                <div class="form-group text-center" style="position: relative; top: 15px;">
+                                    <button type="button" class="theme-btn btn-style-one" style="min-width: 200px;">
+                                        {{auth_trans('Sign up')}}
                                     </button>
                                 </div>
                             </form>
                         </div>
                     </div>
 
-                    <div class="column col-lg-6 col-md-12 col-sm-12">
+                    <div class="column col-lg-4 col-md-5 col-sm-12" style="border: 1px solid #eee; padding: 30px;">
                         <div class="styled-form">
-                            <h4>Login here</h4>
-                            <form method="post" action="index.html">
+                            <h4>{{auth_trans('Sign in')}}</h4>
+                            <form>
                                 <div class="form-group">
-                                    <label>Email address</label>
-                                    <input type="email" name="emaill" value="" placeholder="Enter Email Adress" required>
+                                    <label>{{auth_trans('Email')}}</label>
+                                    <input type="email" name="emaill" placeholder="{{auth_trans('Enter your email')}}" required>
                                 </div>
+                                <div class="form-group">
+                                    <label>{{auth_trans('Password')}}</label>
+                                    <input type="password" name="password"  placeholder="{{auth_trans('Password')}}" required>
+                                </div>
+                                <x-theme::inputs.confirm
+                                    id="remember"
+                                    :label="auth_trans('Remember me')"
+                                />
 
-                                <div class="form-group">
-                                    <label>New Password</label>
-                                    <input type="password" name="password" value="" placeholder="Create password" required>
-                                </div>
-                                <div class="form-group">
-                                    <div class="check-box">
-                                        <input type="checkbox" name="remember-password" id="type-2">
-                                        <label for="type-2">Remember Me?</label>
-                                    </div>
-                                </div>
                                 <x-theme::inputs.captcha
-                                    label="user::auth.Captcha"
+                                    label="{{auth_trans('Captcha')}}"
                                     :captchaImg="$this->captchaImg"
                                 />
-                                <div class="form-group">
-                                    <button type="button" class="theme-btn btn-style-one">
-                                        Login here
+                                <div class="form-group text-center" style="position: relative; top: 15px;">
+                                    <button type="button" class="theme-btn btn-style-one" style="min-width: 200px;">
+                                        {{auth_trans('Sign in')}}
                                     </button>
                                 </div>
                             </form>
@@ -94,7 +80,8 @@
             </div>
         </div>
     </div>
-</div>
+</x-theme::root>
+
 
 
 

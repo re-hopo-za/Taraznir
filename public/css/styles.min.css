@@ -14251,12 +14251,9 @@ footer .post-widget .post .thumb:before{
 ***/
 
 .register-section{
-	position: relative;
-	top: -261px;
     font-family: var(--font-family-Azarmehr);
 	text-align: right;
 	direction: rtl;
-	margin-bottom: -100px;
 }
 
 .register-section .row{
@@ -14295,7 +14292,7 @@ footer .post-widget .post .thumb:before{
 
 .styled-form .form-group{
 	position:relative;
-	margin-bottom:var(--margin-bottom-30);
+	margin-bottom:1rem;
 }
 
 .styled-form .form-group label{
@@ -14324,9 +14321,8 @@ footer .post-widget .post .thumb:before{
 	display: block;
 	width: 100%;
 	line-height: 22px;
-	padding: 4px 10px 0;
-	padding-left: 25px;
-	background: #ffffff;
+    padding: 4px 25px 10px;
+    background: #ffffff;
 	font-size: 16px;
 	font-weight: 400;
 	color: #4e4f51;
@@ -14384,7 +14380,7 @@ footer .post-widget .post .thumb:before{
 	background:rgb(232,240,254);
 	line-height:30px;
 	padding:8px 30px;
-	height:56px;
+	height:50px;
 	border-radius:50px;
 	font-size:var(--font-15);
 	border:2px solid #f4f4f4;
@@ -15668,7 +15664,7 @@ img{
 	font-weight:500;
 	overflow: hidden;
 	text-align:center;
-    padding: 15px 13px;
+    padding: 12px 13px;
 	display:inline-block;
 	color: var(--white-color);
 	font-size: var(--font-15);
@@ -15868,6 +15864,16 @@ img{
 
 .ui-menu-item:hover{
 	background-color:var(--main-color);
+}
+
+
+.form-group > i {
+    display: inline-block;
+    position: absolute;
+    right: 25px;
+    top: 19px;
+    font-size: 16px;
+    color: #93a5be;
 }
 
 /***

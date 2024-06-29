@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'Authentication' => 'احراز هویت',
     'Name' => 'نام',
     'Family name' => 'نام خانوادگی',
     'Username' => 'نام کاربری',
@@ -16,7 +17,9 @@ return [
     'Sign in with username and password' => 'ورود با نام کاربری و گذرواژه',
     'Not a Member yet?' => 'ثبت‌نام نکرده‌‌اید؟',
     'Remember me' => 'مرا به خاطر بسپار',
-    'Account not active' => 'حسابب کاربری فعال نیست',
+    'Account not active' => 'حساب کاربری فعال نیست',
+    'Enter your email' => 'ایمیل خود را وارد کنید.',
+    'Enter your username' => 'نام کاربری خود را وارد کنید.',
 
     'Sign up' => 'ثبت نام',
     'Sign up with username and password' => 'ثبت‌نام با نام کاربری و گذرواژه',

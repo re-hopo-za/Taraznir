@@ -14,7 +14,7 @@ use Modules\User\app\Models\User;
 
 
 
-class SignUpPage extends Component
+class AuthenticationPage extends Component
 {
     use AlertTrait;
 

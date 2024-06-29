@@ -982,7 +982,7 @@ img{
 	font-weight:500;
 	overflow: hidden;
 	text-align:center;
-    padding: 15px 13px;
+    padding: 12px 13px;
 	display:inline-block;
 	color: var(--white-color);
 	font-size: var(--font-15);
@@ -1182,4 +1182,14 @@ img{
 
 .ui-menu-item:hover{
 	background-color:var(--main-color);
+}
+
+
+.form-group > i {
+    display: inline-block;
+    position: absolute;
+    right: 25px;
+    top: 19px;
+    font-size: 16px;
+    color: #93a5be;
 }

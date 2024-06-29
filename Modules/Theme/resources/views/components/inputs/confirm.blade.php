@@ -1,13 +1,13 @@
 @props([
-    'id' => null
+    'id'    => null,
+    'label' => null
+
 ])
 
-<div class="fv-row mb-8">
-    <label class="form-check form-check-inline">
-        <input wire:model="{{$id}}" class="form-check-input" type="checkbox"/>
-        <span class="form-check-label fw-semibold text-gray-700 fs-base ms-1">
-            {{$slot}}
-        </span>
-    </label>
+<div class="form-group">
+    <div class="check-box">
+        <input wire:model="{{$id}}" type="checkbox" name="{{$id}}" id="{{$id}}">
+        <label for="{{$id}}">{{$label}}</label>
+    </div>
     <x-theme::error key="{{$id}}" />
 </div>
