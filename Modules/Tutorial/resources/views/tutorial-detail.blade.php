@@ -53,12 +53,12 @@
                         <div class=" video-popup-wrapper text-center popup-video mb--15">
                             <div class="video-content">
                                 @php
-                                    $video_url    = null;
-                                    $first_course = $item->courses?->first();
-                                    if($first_course->media->first())
-                                        $video_url = $first_course->media->first()->getFullUrl();
-                                    else
-                                        $video_url = $first_course->link
+                                    $video_url = null;
+                                    if($first_course = $item->courses?->first())
+                                        if( $first_course->media->first())
+                                            $video_url = $first_course->media->first()->getFullUrl();
+                                        else
+                                            $video_url = $first_course->link;
                                 @endphp
                                 <video
                                     controls
