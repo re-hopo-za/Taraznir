@@ -152,7 +152,7 @@
                     </div>
                 </div>
                 <div class="auth-button-box text-center right-header">
-                    <a href="{{route('authentication')}}" class="theme-btn btn-style-one" dir="rtl">
+                    <a href="{{route('sign-up')}}" class="theme-btn btn-style-one" dir="rtl">
                         <span class="icon flaticon-left-arrow"></span>
                         ورود \ ثبت‌ نام
                     </a>

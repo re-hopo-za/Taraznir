@@ -1,0 +1,21 @@
+{
+    "name": "re_ho/authentication",
+    "description": "Regestration Package",
+    "type": "library",
+    "require": {
+        "giggsey/libphonenumber-for-php": "^8.13"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "ReHo\\Authentication\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "reza hossein pour",
+            "email": "re.hopo.za@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}

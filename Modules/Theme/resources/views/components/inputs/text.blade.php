@@ -1,6 +1,6 @@
 @props([
     'label'       => null,
-    'wireType'    => null,
+    'wireType'    => 'wire:model',
     'id'          => null,
     'placeholder' => null,
     'value'       => null,
@@ -88,7 +88,7 @@
         </div>
     </div>
 @else
-    <div class="{{$holderClass}}">
+    <div class="form-group {{$holderClass}}">
         <label
             @class([
                 'form-label',

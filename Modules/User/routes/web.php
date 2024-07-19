@@ -12,10 +12,3 @@
 */
 
 
-use Illuminate\Support\Facades\Route;
-use Modules\User\app\Livewire\Authentication\AuthenticationPage;
-
-
-Route::get('authentication', AuthenticationPage::class)
-    ->name('authentication');
-

@@ -3,6 +3,7 @@
 namespace Modules\User\app\Models;
 
 use BezhanSalleh\FilamentShield\Traits\HasPanelShield;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -14,7 +15,7 @@ use Spatie\Permission\Models\Role;
 use Spatie\Permission\Traits\HasRoles;
 
 
-class User extends Authenticatable implements HasMedia
+class User extends Authenticatable implements HasMedia , MustVerifyEmail
 {
     use HasFactory ,Notifiable ,HasRoles ,HasPanelShield ,InteractsWithMedia ,LunarUser;
 

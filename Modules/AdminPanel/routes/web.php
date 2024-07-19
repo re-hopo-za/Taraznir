@@ -13,7 +13,3 @@ use Modules\AdminPanel\app\Http\Controllers\AdminPanelController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::group([], function () {
-    Route::resource('adminpanel', AdminPanelController::class)->names('adminpanel');
-});
