@@ -48,26 +48,9 @@
                         </div>
                     </div>
                     <div class="nav-outer d-flex justify-content-between align-items-center flex-wrap">
-                        <div class="options-box d-flex align-items-center">
-                            <div class="search-box-two">
-                                <form method="post" action="contact.html">
-                                    <div class="form-group">
-                                        <input
-                                            type="search"
-                                            name="search-field"
-                                            placeholder="جستجو"
-                                        />
-                                        <button type="submit">
-                                            <span class="icon flaticon-search"></span>
-                                        </button>
-                                    </div>
-                                </form>
-                            </div>
+                        <livewire:theme::components.search />
 
-                            <div class="mobile-nav-toggler">
-                                <span class="icon flaticon-menu"></span>
-                            </div>
-                        </div>
+
                         <nav class="main-menu show navbar-expand-md">
                             <div class="navbar-header">
                                 <button
@@ -152,10 +135,17 @@
                     </div>
                 </div>
                 <div class="auth-button-box text-center right-header">
-                    <a href="{{route('sign-up')}}" class="theme-btn btn-style-one" dir="rtl">
-                        <span class="icon flaticon-left-arrow"></span>
-                        ورود \ ثبت‌ نام
-                    </a>
+                    @if(\Illuminate\Support\Facades\Auth::check())
+                        <a href="{{route('profile')}}" class="theme-btn btn-style-one" dir="rtl">
+                            <span class="icon flaticon-left-arrow"></span>
+                            حساب کاربری
+                        </a>
+                    @else
+                        <a href="{{route('sign-up')}}" class="theme-btn btn-style-one" dir="rtl">
+                            <span class="icon flaticon-left-arrow"></span>
+                            ورود \ ثبت‌ نام
+                        </a>
+                    @endif
                 </div>
             </div>
         </div>
@@ -190,14 +180,7 @@
                 <img src="/images/mobile-logo.png" alt="" title=""></a>
             </div>
 
-            <div class="search-box">
-                <form method="post" action="contact.html">
-                    <div class="form-group">
-                        <input type="search" name="search-field" value="" placeholder="SEARCH HERE" required>
-                        <button type="submit"><span class="icon flaticon-search-1"></span></button>
-                    </div>
-                </form>
-            </div>
+            <livewire:theme::components.search :mobile="true" />
             <div class="menu-outer"></div>
         </nav>
     </div>

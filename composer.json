@@ -38,8 +38,7 @@
             "App\\": "app/",
             "Modules\\": "Modules/",
             "Database\\Factories\\": "database/factories/",
-            "Database\\Seeders\\": "database/seeders/",
-            "ReHo\\Authentication\\" : "packages/re-hopo/authentication/src"
+            "Database\\Seeders\\": "database/seeders/"
         }
     },
     "autoload-dev": {

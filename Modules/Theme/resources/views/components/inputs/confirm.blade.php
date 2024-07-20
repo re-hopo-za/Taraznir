@@ -5,9 +5,9 @@
 ])
 
 <div class="form-group">
-    <div class="check-box">
+    <div class="d-flex align-items-center gap-3">
         <input wire:model="{{$id}}" type="checkbox" name="{{$id}}" id="{{$id}}">
-        <label for="{{$id}}">{{$label}}</label>
+        <label class="m-0" for="{{$id}}">{{$label}}</label>
     </div>
     <x-theme::error key="{{$id}}" />
 </div>

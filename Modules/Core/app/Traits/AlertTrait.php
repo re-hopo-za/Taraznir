@@ -16,17 +16,13 @@ trait AlertTrait
             'toast'            => true,
             'timerProgressBar' => true,
             'text'             => $text,
-            'showCancelButton' => true,
-            'cancelButtonText' => ' ',
-            'customClass' => [
-                'cancelButton' => 'alert-cancel-button ki-outline ki-cross',
-            ]
+            'showCancelButton' => false,
         ]);
         return null;
     }
 
 
-    public function topRightFlush($title = '' ,$type = 'error' ,$text = ''): void
+    public function topRightFlush($title = '' ,$type = 'error' ,$text = ''): null
     {
         $this->flash($type ,$title , [
             'position'         => 'top-end',
@@ -35,6 +31,7 @@ trait AlertTrait
             'timerProgressBar' => true,
             'text'             => $text,
         ]);
+        return null;
     }
 
 
