@@ -28,7 +28,10 @@
                     <div class="upper-box">
                         <div class="info-list">
                             <div class="d-flex justify-content-between align-items-center flex-wrap flex-row-reverse" >
-                                <ul>
+                                <ul class="d-flex justify-content-between align-items-center w-100">
+                                    <li>
+                                        {{get_meta_value_by_key($options ,'header_phone_number')}}
+                                    </li>
                                     <li>
                                         <span class="icon">
                                             <span class="flaticon-checked"></span>
@@ -37,12 +40,7 @@
                                             تاییدیه ارت اداره کار
                                         </a>
                                     </li>
-                                    <li>
-                                        <span class="icon">
-                                            <span class="flaticon-phone-call"></span>
-                                        </span>
-                                        {{get_meta_value_by_key($options ,'header_phone_number')}}
-                                    </li>
+
                                 </ul>
                             </div>
                         </div>
@@ -174,14 +172,16 @@
 
     <div class="mobile-menu">
         <div class="menu-backdrop"></div>
-        <div class="close-btn"><span class="icon flaticon-multiply"></span></div>
+        <div class="close-btn">
+            <span class="icon flaticon-multiply" style="color:#000"></span>
+        </div>
         <nav class="menu-box">
-            <div class="nav-logo"><a href="/">
-                <img src="/images/mobile-logo.png" alt="" title=""></a>
+            <div class="nav-logo" style="background: #eee;">
+                <a href="/">
+                    <img src="{{config('core.logo.0,5x')}}" alt="taraznir logo">
+                </a>
             </div>
-
-            <livewire:theme::components.search :mobile="true" />
-            <div class="menu-outer"></div>
+            <div class="menu-outer" style="direction: rtl; font-family: AzarMehr;"></div>
         </nav>
     </div>
 </header>

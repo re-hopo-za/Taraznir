@@ -10952,9 +10952,9 @@ footer .post-widget .post .thumb:before{
 	background-repeat:no-repeat;
 }
 
-.feature-two .feature-block_two:nth-child(2n + 0){
-	transform:translateY(40px);
-}
+/*.feature-two .feature-block_two:nth-child(2n + 0){*/
+/*	transform:translateY(40px);*/
+/*}*/
 
 .feature-block_two{
 	position:relative;
@@ -14679,6 +14679,90 @@ footer .post-widget .post .thumb:before{
 }
 .swal2-container h2{
     font-family: var(--font-family-Azarmehr);
+}
+
+
+
+
+/*Search*/
+
+
+.searched-result{
+    background-color:#fff;
+    width:400px;
+    padding:5px 20px;
+    box-shadow: 0 0 16px -4px #555;
+    position: absolute; top: 60px;
+    height: 600px;
+    border-radius: 10px;
+    overflow-y: auto;
+}
+.searched-result .sidebar-title{
+    text-align:center;
+    padding:5px;
+    margin:0;
+}
+.searched-result .post{
+    position: relative;
+    min-height: 60px;
+    margin-bottom: var(--margin-bottom-20);
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.searched-result .post:last-child{
+    margin-bottom: var(--margin-zero);
+}
+
+.searched-result .post .thumb{
+    width: 70px;
+    height:60px;
+    overflow: hidden;
+}
+
+.searched-result .post .thumb a{
+    display: block;
+}
+
+.searched-result .post .thumb img{
+    display: block;
+    width: 100%;
+    height:  100%;
+}
+
+.searched-result .post h6{
+    font-weight:600;
+    line-height:22px;
+    font-size: var(--font-14);
+    margin-top:var(--margin-top-5);
+    font-family:var(--font-family-Azarmehr);
+    margin-bottom: var(--margin-bottom-5);
+}
+
+.searched-result.post h6 a{
+    color:var(--color-fiftynine);
+    -webkit-transition: all 300ms ease;
+    -moz-transition: all 300ms ease;
+    -ms-transition: all 300ms ease;
+    -o-transition: all 300ms ease;
+    transition: all 300ms ease;
+}
+
+.searched-result .post h6 a:hover{
+    color:var(--main-color);
+}
+
+.searched-result .post .title{
+    position: relative;
+    display: block;
+    font-weight:500;
+    letter-spacing:1px;
+    font-size: var(--font-12);
+    text-transform:uppercase;
+    color:var(--color-sixtyone);
+    margin-bottom: var(--margin-zero);
+    font-family:var(--font-family-Azarmehr);
 }
 
 /* Bloxic Furniture Business HTML Template */

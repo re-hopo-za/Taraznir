@@ -5,15 +5,14 @@ namespace Modules\Theme\app\Livewire\Components;
 use Illuminate\View\View;
 use Livewire\Component;
 use Modules\Blog\app\Models\Blog;
-use Modules\Core\app\Models\Option;
 use Modules\Ecommerce\app\Models\Product;
 use Modules\Standard\app\Models\Standard;
 
 class Search extends Component
 {
     public ?string $keyword   = null;
-    public bool $properMobile = false;
-    public ?array $foundItems = [];
+    protected bool $properMobile = false;
+    protected ?array $foundItems = [];
 
     public array $modelsDetail = [
         Blog::class => [
@@ -39,17 +38,22 @@ class Search extends Component
 
     public function updatedKeyword(): void
     {
-        $models = [
-            Blog::class,
-            Standard::class,
-            Product::class,
-        ];
-        foreach ($models as $model) {
-            $this->foundItems[$model] =
-                $model::
+        if($this->keyword){
+            $models = [
+                Blog::class,
+                Standard::class,
+                Product::class,
+            ];
+            foreach ($models as $model) {
+                $this->foundItems[$model] =
+                    $model::
                     where('title', 'like', '%' . $this->keyword . '%')
-                    ->get();
+                        ->get();
+            }
+        }else{
+            $this->foundItems = [];
         }
+
     }
 
 

@@ -2,55 +2,81 @@
     <div class="xs-overlay xs-bg-black"></div>
     <div class="xs-sidebar-widget">
         <div class="sidebar-widget-container">
-{{--            <div class="widget-heading">--}}
-{{--                <a href="#" class="close-side-widget flaticon-multiply"></a>--}}
-{{--            </div>--}}
-{{--            <div class="sidebar-textwidget">--}}
+            <div class="widget-heading">
+                <a href="javascript:void(0)" class="close-side-widget flaticon-multiply"></a>
+            </div>
+            <div class="sidebar-textwidget">
 
-{{--                <div class="sidebar-info-contents">--}}
-{{--                    <div class="content-inner">--}}
-{{--                        <div class="logo">--}}
-{{--                            <a href="/">--}}
-{{--                                <img src="/images/logo.png" alt="" title="">--}}
-{{--                            </a>--}}
-{{--                        </div>--}}
-{{--                        <div class="content-box">--}}
+                <div class="sidebar-info-contents">
+                    <div class="content-inner" dir="rtl">
+                        <div class="logo" style="text-align: center;">
+                            <a href="/">
+                                <img src="{{config('core.logo.0,5x')}}" alt="taraznir logo" style="height: 50px">
+                            </a>
+                        </div>
+                        <div class="content-box">
+                            <h6>خدمات اصلی</h6>
+                            <ul class="page-list-two" style="font-family: AzarMehr">
+                                @if( !empty($menus->footer_first_menu->items) )
+                                    @foreach($menus->footer_first_menu->items as $item)
+                                        <li class="p-2">
+                                            @if( !empty(index_checker( $item ,'data' )) )
+                                                <a
+                                                    href="{{$item['data']['url'] }}"
+                                                    target="{{$item['data']['target'] }}"
+                                                >
+                                                    {{ $item['label']}}
+                                                </a>
+                                            @endif
+                                        </li>
+                                    @endforeach
+                                @endif
+                            </ul>
 
-{{--                            <h6>Services</h6>--}}
-{{--                            <ul class="sidebar-services-list">--}}
-{{--                                <li><a href="#">Laptops & Computers</a></li>--}}
-{{--                                <li><a href="#">Cameras & Photography</a></li>--}}
-{{--                                <li><a href="#">Smart Phones & Tablets</a></li>--}}
-{{--                                <li><a href="#">Video Games & Consoles</a></li>--}}
-{{--                                <li><a href="#">TV & Audio</a></li>--}}
-{{--                                <li><a href="#">LED Table</a></li>--}}
-{{--                            </ul>--}}
+                            <h6 class="mt-5">اطلاعات تماس</h6>
+                            <ul style="font-family: AzarMehr">
+                                <li>
+                                    <div class="inner">
+                                        <span class="fa fa-map-marker"></span>
+                                        <div class="call-text">
+                                            {{get_meta_value_by_key( $options ,'footer_address')}}
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="inner">
+                                        <span class="fa fa-phone"></span>
+                                        <div>
+                                            @foreach(get_meta_values_by_key( $options ,'footer_phone') as $phone)
+                                                <p class="m-0"> {{$phone}} </p>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="inner">
+                                        <span style="font-size: 15px" class="fa fa-envelope"></span>
+                                        <div class="call-text">
+                                             {{get_meta_value_by_key( $options ,'info_email')}}
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="inner">
+                                        <span class="fa fa-clock-o"></span>
+                                        <div class="call-text">
+                                            {{get_meta_value_by_key( $options ,'work_time')}}
+                                        </div>
+                                    </div>
+                                </li>
 
-{{--                            <h6>Contact info</h6>--}}
-{{--                            <ul class="list-style-one">--}}
-{{--                                <li>--}}
-{{--                                    <span class="icon flaticon-maps-and-flags"></span>--}}
-{{--                                    <strong>Our office</strong>--}}
-{{--                                    A-1, Envanto Headquarters, <br> Melbourne, Australia.--}}
-{{--                                </li>--}}
-{{--                                <li>--}}
-{{--                                    <span class="icon flaticon-call-1"></span>--}}
-{{--                                    <strong>Phone</strong>--}}
-{{--                                    <a href="tel:+00-999-999-9999">+(00) 999 999 9999</a><br>--}}
-{{--                                    <a href="tel:+000-000-0000">000 000 0000</a>--}}
-{{--                                </li>--}}
-{{--                                <li>--}}
-{{--                                    <span class="icon flaticon-mail"></span>--}}
-{{--                                    <strong>Email</strong>--}}
-{{--                                    <a href="mailto:contact@bloxic.com">contact@Bloxic.com</a>--}}
-{{--                                </li>--}}
-{{--                            </ul>--}}
-{{--                        </div>--}}
+                            </ul>
+                        </div>
 
-{{--                    </div>--}}
-{{--                </div>--}}
+                    </div>
+                </div>
 
-{{--            </div>--}}
+            </div>
         </div>
     </div>
 </div>

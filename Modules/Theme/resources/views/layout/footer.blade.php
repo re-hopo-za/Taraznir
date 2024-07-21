@@ -126,8 +126,6 @@
         <div class="footer-bottom">
             <div class="d-flex justify-content-between align-items-center flex-wrap">
 
-
-
                 <ul class="footer-bottom-nav">
                     @if( !empty( $menus->bottom_menu->items ) )
                         @foreach($menus->bottom_menu->items as $item)

@@ -2,18 +2,20 @@
     'dir' => 'right',
     'left_side_class' => false
 ])
-
+<div>
 
 @if(!$this->properMobile)
     <div class="options-box d-flex align-items-center">
         <div class="search-box-two">
-            <div method="post" action="contact.html">
+            <div>
                 <div class="form-group">
                     <input
-                        wire:model.live="keyword"
+                        wire:model.live.debounce.1000ms="keyword"
                         type="search"
                         name="search-field"
                         placeholder="جستجو"
+                        autocomplete="off"
+                        value="{{$this->keyword}}"
                     />
                     <button type="submit">
                         <span class="icon flaticon-search"></span>
@@ -26,11 +28,14 @@
             <span class="icon flaticon-menu"></span>
         </div>
 
-        <div class="searched-result" style="position: absolute; top: 50px;">
+        <div
+            class="searched-result post {{!$this->foundItems ? 'd-none' : ''}}"
+        >
             @foreach($this->foundItems as $model => $items)
+                @continue(!count($items))
                 <div class="model-item" dir="rtl">
                     <div class="sidebar-title">
-                        <h4>{{$this->modelsDetail[$model]['title'] ?? 'نتایج جستجو'}}</h4>
+                        <h6>{{$this->modelsDetail[$model]['title'] ?? 'نتایج جستجو'}}</h6>
                     </div>
                     @foreach($items as $item)
                         <div class="post">
@@ -41,7 +46,7 @@
                             </div>
                             <h6>
                                 <a href="{{$this->modelsDetail[$model]['slug'] ?? ''}}/{{$item->slug}}">
-                                    Don’t Underestimate The Software
+                                    {{$item->title}}
                                 </a>
                             </h6>
                         </div>
@@ -62,3 +67,5 @@
         </div>
     </div>
 @endif
+
+</div>

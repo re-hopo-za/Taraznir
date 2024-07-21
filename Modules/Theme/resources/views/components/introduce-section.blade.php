@@ -21,18 +21,17 @@
             <div class="feature-two_blocks-column col-lg-6 col-md-12 col-sm-12">
                 <div class="feature-two_blocks-inner">
                     <div class="row clearfix" dir="rtl">
-                        <div class="feature-block_two col-lg-6 col-md-6 col-sm-12" style="margin-bottom: 30px" dir="rtl">
+                        <div class="feature-block_two col-lg-6 col-md-6 col-sm-12" dir="rtl">
                             <div class="feature-block_two-inner">
                                 <div class="feature-block_two-icon">
-                                    <img src="images/icons/scientific.svg" alt="resource icon" />
+                                    <img src="images/icons/experience.svg" alt="tools icon" />
                                 </div>
                                 <h5 class="feature-block_two-heading">
-                                    منابع علمی روز
+                                    تجربه تخصصی
                                 </h5>
                                 <div class="feature-block_two-text">
-                                    بهره گیری از استانداردهای روز دنیا در ساخت،طراحی و اجرا.
+                                    استفاده از ابزار استاندارد و مدرن سرعت و کیفیت پروژه های ما را افزایش داده است.
                                 </div>
-                                <a class="feature-block_two-arrow flaticon-left-arrow-2" href="#" ></a>
                             </div>
                         </div>
                         <div class="feature-block_two col-lg-6 col-md-6 col-sm-12" dir="rtl">
@@ -46,10 +45,9 @@
                                 <div class="feature-block_two-text">
                                     استفاده از ابزار استاندارد و مدرن سرعت و کیفیت پروژه های ما را افزایش داده است.
                                 </div>
-                                <a class="feature-block_two-arrow flaticon-left-arrow-2" href="#"></a>
                             </div>
                         </div>
-                        <div class="feature-block_two col-lg-6 col-md-6 col-sm-12" dir="rtl">
+                        <div class="feature-block_two col-lg-6 col-md-6 col-sm-12"  style="margin-top:25px" dir="rtl">
                             <div class="feature-block_two-inner">
                                 <div class="feature-block_two-icon">
                                     <img src="images/icons/team.svg" alt="team icon" />
@@ -60,24 +58,22 @@
                                 <div class="feature-block_two-text">
                                     تیم کنترل پروژه با پایش و کنترل مراحل کار مطابق مبانی علمی روز کیفیت هر پروژه را رصد و تضمین میکند.
                                 </div>
-                                <a class="feature-block_two-arrow flaticon-left-arrow-2" href="#" ></a>
+                            </div>
+                        </div>
+                        <div class="feature-block_two col-lg-6 col-md-6 col-sm-12" style="margin-top:25px" dir="rtl">
+                            <div class="feature-block_two-inner">
+                                <div class="feature-block_two-icon">
+                                    <img src="images/icons/scientific.svg" alt="resource icon" />
+                                </div>
+                                <h5 class="feature-block_two-heading">
+                                    منابع علمی روز
+                                </h5>
+                                <div class="feature-block_two-text">
+                                    بهره گیری از استانداردهای روز دنیا در ساخت،طراحی و اجرا.
+                                </div>
                             </div>
                         </div>
 
-                        <div class="feature-block_two col-lg-6 col-md-6 col-sm-12" dir="rtl">
-                            <div class="feature-block_two-inner" style="margin-top:25px">
-                                <div class="feature-block_two-icon">
-                                    <img src="images/icons/experience.svg" alt="tools icon" />
-                                </div>
-                                <h5 class="feature-block_two-heading">
-                                    تجربه تخصصی
-                                </h5>
-                                <div class="feature-block_two-text">
-                                    استفاده از ابزار استاندارد و مدرن سرعت و کیفیت پروژه های ما را افزایش داده است.
-                                </div>
-                                <a class="feature-block_two-arrow flaticon-left-arrow-2" href="#"></a>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
