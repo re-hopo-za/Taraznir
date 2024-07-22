@@ -20,19 +20,10 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
-
                 </div>
+                @break(true)
             @endforeach
         @endif
     </div>
-
-
-    <div class="social-box">
-        <a href="#">Tw.</a>
-        <a href="#">Fa.</a>
-        <a href="#">In.</a>
-    </div>
-
 </section>

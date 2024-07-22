@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6766d6a5918e2d004862722110738f53",
+    "content-hash": "1b5bcd855d79d1f68e51877b309c53cc",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -4025,16 +4025,16 @@
         },
         {
             "name": "league/commonmark",
-            "version": "2.4.2",
+            "version": "2.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/commonmark.git",
-                "reference": "91c24291965bd6d7c46c46a12ba7492f83b1cadf"
+                "reference": "0026475f5c9a104410ae824cb5a4d63fa3bdb1df"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/91c24291965bd6d7c46c46a12ba7492f83b1cadf",
-                "reference": "91c24291965bd6d7c46c46a12ba7492f83b1cadf",
+                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/0026475f5c9a104410ae824cb5a4d63fa3bdb1df",
+                "reference": "0026475f5c9a104410ae824cb5a4d63fa3bdb1df",
                 "shasum": ""
             },
             "require": {
@@ -4047,8 +4047,8 @@
             },
             "require-dev": {
                 "cebe/markdown": "^1.0",
-                "commonmark/cmark": "0.30.3",
-                "commonmark/commonmark.js": "0.30.0",
+                "commonmark/cmark": "0.31.0",
+                "commonmark/commonmark.js": "0.31.0",
                 "composer/package-versions-deprecated": "^1.8",
                 "embed/embed": "^4.4",
                 "erusev/parsedown": "^1.0",
@@ -4070,7 +4070,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "2.5-dev"
+                    "dev-main": "2.6-dev"
                 }
             },
             "autoload": {
@@ -4127,7 +4127,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-02-02T11:59:32+00:00"
+            "time": "2024-07-22T18:18:14+00:00"
         },
         {
             "name": "league/config",
@@ -4864,16 +4864,16 @@
         },
         {
             "name": "lunarphp/core",
-            "version": "1.0.0-alpha.27",
+            "version": "1.0.0-alpha.33",
             "source": {
                 "type": "git",
                 "url": "https://github.com/lunarphp/core.git",
-                "reference": "8204dbaab5db1dcf1126090695dde962d150f7c9"
+                "reference": "985ccdbb5430a281a689d1a1cd2267bad3c46fa9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lunarphp/core/zipball/8204dbaab5db1dcf1126090695dde962d150f7c9",
-                "reference": "8204dbaab5db1dcf1126090695dde962d150f7c9",
+                "url": "https://api.github.com/repos/lunarphp/core/zipball/985ccdbb5430a281a689d1a1cd2267bad3c46fa9",
+                "reference": "985ccdbb5430a281a689d1a1cd2267bad3c46fa9",
                 "shasum": ""
             },
             "require": {
@@ -4932,7 +4932,7 @@
                 "store"
             ],
             "support": {
-                "source": "https://github.com/lunarphp/core/tree/1.0.0-alpha.27"
+                "source": "https://github.com/lunarphp/core/tree/1.0.0-alpha.33"
             },
             "funding": [
                 {
@@ -4940,20 +4940,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-06-18T11:53:38+00:00"
+            "time": "2024-07-17T12:52:55+00:00"
         },
         {
             "name": "lunarphp/lunar",
-            "version": "1.0.0-alpha.27",
+            "version": "1.0.0-alpha.33",
             "source": {
                 "type": "git",
                 "url": "https://github.com/lunarphp/admin.git",
-                "reference": "91bea9da1ddccbb14b1d5b328da732287276ff78"
+                "reference": "4822358b6465671814da676914bb2b716507362b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lunarphp/admin/zipball/91bea9da1ddccbb14b1d5b328da732287276ff78",
-                "reference": "91bea9da1ddccbb14b1d5b328da732287276ff78",
+                "url": "https://api.github.com/repos/lunarphp/admin/zipball/4822358b6465671814da676914bb2b716507362b",
+                "reference": "4822358b6465671814da676914bb2b716507362b",
                 "shasum": ""
             },
             "require": {
@@ -4992,7 +4992,7 @@
             ],
             "description": "Admin panel for LunarPHP",
             "support": {
-                "source": "https://github.com/lunarphp/admin/tree/1.0.0-alpha.27"
+                "source": "https://github.com/lunarphp/admin/tree/1.0.0-alpha.33"
             },
             "funding": [
                 {
@@ -5000,7 +5000,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-06-18T11:53:44+00:00"
+            "time": "2024-07-11T10:30:17+00:00"
         },
         {
             "name": "maennchen/zipstream-php",
@@ -5943,16 +5943,16 @@
         },
         {
             "name": "openspout/openspout",
-            "version": "v4.24.3",
+            "version": "v4.24.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openspout/openspout.git",
-                "reference": "27de0c4d4a5b97927ece3e4dcbb7b48cb12e8a34"
+                "reference": "e5f92c5c9e6cc44119918da66bb097a0ffc202b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openspout/openspout/zipball/27de0c4d4a5b97927ece3e4dcbb7b48cb12e8a34",
-                "reference": "27de0c4d4a5b97927ece3e4dcbb7b48cb12e8a34",
+                "url": "https://api.github.com/repos/openspout/openspout/zipball/e5f92c5c9e6cc44119918da66bb097a0ffc202b2",
+                "reference": "e5f92c5c9e6cc44119918da66bb097a0ffc202b2",
                 "shasum": ""
             },
             "require": {
@@ -6020,7 +6020,7 @@
             ],
             "support": {
                 "issues": "https://github.com/openspout/openspout/issues",
-                "source": "https://github.com/openspout/openspout/tree/v4.24.3"
+                "source": "https://github.com/openspout/openspout/tree/v4.24.4"
             },
             "funding": [
                 {
@@ -6032,7 +6032,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-07-12T12:32:17+00:00"
+            "time": "2024-07-22T09:30:54+00:00"
         },
         {
             "name": "phenx/php-font-lib",

@@ -2269,12 +2269,14 @@
     overflow:hidden;
     margin-left:var(--margin-left-60);
     margin-right:var(--margin-right-60);
+    max-height: 80vh;
+    border-radius: 12px;
 }
 
 .main-slider-two .slide{
     position:relative;
     overflow:hidden;
-    padding:189px 0 189px;
+    padding: 120px 40px;
     background-size:cover;
 }
 
