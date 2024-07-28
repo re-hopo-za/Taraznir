@@ -28,7 +28,7 @@
                     </div>
                 </div>
 
-                @if( $this->items && $this->items->isNotEmpty())
+                @if($this->items && $this->items->isNotEmpty())
                     @php( $to = $this->items->perPage() * $this->items->currentPage() +  $this->items->perPage())
                     @php( $from = $to - $this->items->perPage())
 
@@ -52,8 +52,8 @@
                     <div class="shop-item-two col-lg-4 col-md-6 col-sm-12">
                         <div class="inner-box">
                             <div class="image">
-                                <a href="product/{{$item->slug}}">
-                                    <img src="{{$item->images['single']??''}}" alt="{{$item->title}}" />
+                                <a href="{{$item->urls?->first()?->slug}}">
+                                    <img src="{{$item->getMedia('images')->first()->getFullUrl() ?? ''}}" alt="{{$item->title}}" />
                                 </a>
                                 <div class="options-box">
                                     <ul class="option-list">

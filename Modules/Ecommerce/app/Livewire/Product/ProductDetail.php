@@ -6,15 +6,15 @@ use Illuminate\Contracts\View\View;
 use Jorenvh\Share\Share;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
+use Lunar\Models\Product;
 use Modules\Core\app\Models\Option;
 use Modules\Core\app\Traits\CommonLivewireComponentTrait;
-use Modules\Ecommerce\app\Models\Product;
 
 class ProductDetail extends Component
 {
     use CommonLivewireComponentTrait;
 
-    public string $object   = Product::class;
+    public string $object    = Product::class;
     public string $model     = 'product';
     public mixed $share      = null;
     public mixed $item       = null;
@@ -23,15 +23,11 @@ class ProductDetail extends Component
 
     public function mount($slug): void
     {
-        $this->item = common_redis_first_query(
-            "product:$slug",
-            $this->object,
-            ['category' ,'meta' ,'media' ,'comments'],
-            ['slug' ,$slug]
-        );
-        abort_if(!$this->item ,404);
-        $this->categories = self::categories();
+        $this->item = Product::whereHas('urls', function ($q) use ($slug) {
+            $q->where('slug', $slug);
+        })->firstOrFail();
 
+        $this->categories = self::categories();
         $this->options = redis_handler('theme:options' ,function (){
             return
                 Option::where('key' ,'theme_options')

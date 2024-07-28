@@ -19,15 +19,15 @@
                                 <div class="carousel-outer">
                                     <div class="swiper-container content-carousel" style="overflow: hidden">
                                         <div class="swiper-wrapper product-container" id="product-container">
-                                            @foreach($this->item->media as $mdeia)
+                                            @foreach($this->item->getMedia('images') as $media)
                                                 <div class="swiper-slide">
                                                     <figure class="image">
                                                         <a href="javascript:void(0)"
-                                                           data-pswp-src="{{$mdeia->getFullUrl()}}"
+                                                           data-pswp-src="{{$media->getFullUrl()}}"
                                                            data-pswp-height="1666"
                                                            data-pswp-width="1666"
                                                         >
-                                                            <img src="{{$mdeia->getFullUrl()}}"
+                                                            <img src="{{$media->getFullUrl()}}"
                                                                  alt="{{$this->item->title}}">
                                                         </a>
                                                     </figure>
@@ -38,10 +38,10 @@
 
                                     <div class="swiper-container thumbs-carousel" style="height: 100%;">
                                         <div class="swiper-wrapper">
-                                            @foreach($this->item->media as $mdeia)
+                                            @foreach($this->item->getMedia('images') as $media)
                                                 <div class="swiper-slide">
                                                     <figure class="thumb">
-                                                        <img src="{{$mdeia->getFullUrl()}}"
+                                                        <img src="{{$media->getFullUrl()}}"
                                                              alt="{{$this->item->title}}">
                                                     </figure>
                                                 </div>
@@ -60,6 +60,8 @@
                                     <div class="rating">
                                         <i>({{$comments_count = $this->item->comments->count()}}) {{ecommerce_trans('Customer review')}}</i>
                                     </div>
+                                @else
+                                   @php  $comments_count = 'بدون نظر'  @endphp
                                 @endif
 
                                 <div class="price">
@@ -76,16 +78,18 @@
                                     @endif
                                 </div>
                                 <div class="text">
-                                    {{$this->item->summary}}
+                                    {{$this->item->translateAttribute('description')}}
                                 </div>
 
                                 <div class="categories">
                                 <span>
                                     {{ecommerce_trans('Categories')}}:
                                 </span>
-                                    @foreach($item->category as $category)
-                                        {{$category->title. ($loop->iteration > 1 ? ',' : '' )}}
-                                    @endforeach
+                                    @if($item->category)
+                                        @foreach($item->category as $category)
+                                            {{$category->title. ($loop->iteration > 1 ? ',' : '' )}}
+                                        @endforeach
+                                    @endif
                                 </div>
                                 <div class="categories">
                                  <span>
@@ -94,9 +98,10 @@
                                     {{get_meta_value_by_key($item ,'stock' ,'موجود')}}
                                 </div>
                                 <ul class="social-box mt-3">
-                                    <x-theme::share-post :links="$this->share"
-                                                         ulStyle="display:flex;align-items: center; gap: 5px;"
-                                                         :title="true"/>
+                                    <x-theme::share-post
+                                        :links="$this->share"
+                                        ulStyle="display:flex;align-items: center; gap: 5px;"
+                                        :title="true"/>
                                 </ul>
                             </div>
                         </div>

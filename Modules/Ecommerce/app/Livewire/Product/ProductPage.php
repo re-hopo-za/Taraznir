@@ -7,8 +7,8 @@ use JetBrains\PhpStorm\NoReturn;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 use Livewire\WithPagination;
+use Lunar\Models\Product;
 use Modules\Core\app\Models\Category;
-use Modules\Ecommerce\app\Models\Product;
 
 class ProductPage extends Component
 {
@@ -28,7 +28,7 @@ class ProductPage extends Component
             ->with('childrenCategories')
             ->get();
 
-        $this->items = Product::all();
+        $this->items = Product::with('media')->get();
     }
 
     #[NoReturn]
