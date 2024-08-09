@@ -7,6 +7,9 @@ use JetBrains\PhpStorm\NoReturn;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 use Livewire\WithPagination;
+use Lunar\Admin\Support\Forms\Components\TranslatedRichEditor;
+use Lunar\FieldTypes\Text;
+use Lunar\FieldTypes\TranslatedText;
 use Lunar\Models\Product;
 use Modules\Core\app\Models\Category;
 
@@ -30,6 +33,7 @@ class ProductPage extends Component
 
         $this->items = Product::with('media')->get();
     }
+
 
     #[NoReturn]
     public function setSearching($keyword): void

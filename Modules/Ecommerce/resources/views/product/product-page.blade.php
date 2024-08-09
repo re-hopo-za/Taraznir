@@ -35,7 +35,6 @@
                     <div class="left-box d-flex align-items-center">
                         <div class="results">
                             نمایش
-
                             {{$from}}-{{$this->items->lastPage() === $this->items->currentPage() ? $this->items->total() : $to}}
                             از
                             {{$this->items->total()}}
@@ -53,7 +52,7 @@
                         <div class="inner-box">
                             <div class="image">
                                 <a href="{{$item->urls?->first()?->slug}}">
-                                    <img src="{{$item->getMedia('images')->first()->getFullUrl() ?? ''}}" alt="{{$item->title}}" />
+                                    <img src="{{$item->getMedia('images')?->first()?->getFullUrl() ?? ''}}" alt="{{$item->title}}" />
                                 </a>
                                 <div class="options-box">
                                     <ul class="option-list">
