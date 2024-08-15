@@ -41,7 +41,6 @@
                             نتیجه
                         </div>
                     </div>
-
                 @endif
             </div>
         </div>
