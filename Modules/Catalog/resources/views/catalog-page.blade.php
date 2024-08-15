@@ -37,7 +37,7 @@
                                             <span class="number">
                                                 {{$loop->iteration}}
                                             </span>
-                                            <img src="{{$item->images['thumbnail'] ?? ''}}" alt="{{$item->title}}" width="105" height="80" />
+                                            <img src="{{$item->images['cover'] ?? ''}}" alt="{{$item->title}}" width="105" height="80" />
                                         </div>
                                         <div class="content">
                                             <h6>

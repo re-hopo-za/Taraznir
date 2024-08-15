@@ -8108,7 +8108,6 @@ footer .post-widget .post .thumb:before{
 
 .category-list-two li{
 	position:relative;
-	padding:10px 20px;
 	border-radius:0;
 	-webkit-transition: all 300ms ease;
 	-moz-transition: all 300ms ease;
@@ -8168,6 +8167,7 @@ footer .post-widget .post .thumb:before{
 	align-items: center;
 	font-size:var(--font-14);
 	color:var(--color-fiftynine);
+    padding: 10px 20px;
 	-webkit-transition: all 300ms ease;
 	-moz-transition: all 300ms ease;
 	-ms-transition: all 300ms ease;

@@ -7,7 +7,7 @@
     <div style="margin-bottom: 100px;">
         <div class="rbt-page-banner-wrapper mixitup-gallery" dir="rtl">
             <div class="rbt-banner-image"></div>
-            <div class="rbt-banner-content filter-list">
+            <div class="rbt-banner-content ">
                 <div class="rbt-banner-content-top">
                     <div class="container">
                         <div class="row">
@@ -25,7 +25,7 @@
                                 <div class=" title-wrapper">
                                     <h1 class="title mb--0">آموزش‌های تصویری</h1>
                                     <a href="#" class="rbt-badge-2">
-                                        50 آموزش
+                                        {{count($items)}} آموزش
                                     </a>
                                 </div>
                                 <p class="description">
@@ -57,30 +57,33 @@
                                             </li>
                                         </ul>
                                     </div>
-                                    <div class="rbt-short-item">
-                                        <span class="course-index">نمایش 1-9 از 19 نتیجه</span>
-                                    </div>
                                 </div>
                             </div>
                             <div class="col-lg-7 col-md-12">
                                 <div class="rbt-sorting-list d-flex flex-wrap align-items-end justify-content-start justify-content-lg-end">
                                     <div class="rbt-short-item">
-                                        <form action="#" class="rbt-search-style me-0">
-                                            <input type="text" placeholder="دوره خود را جستجو کنید..">
-                                            <button type="submit" class="rbt-search-btn rbt-round-btn">
+                                        <div class="rbt-search-style me-0">
+                                            <input wire:model="search" type="text"  placeholder="دوره خود را جستجو کنید..">
+                                            <button wire:click="setSearching" type="button" class="rbt-search-btn rbt-round-btn">
                                                 <i class="fa fa-search"></i>
                                             </button>
-                                        </form>
+                                        </div>
+
+                                        @if($this->search)
+                                            <div style=" position: absolute; min-width: 150px; margin-top: 5px; margin-right: 5px; color: indianred; cursor: pointer;">
+                                                <span class="fa fa-close" wire:click="clearSearching">
+                                                    <span class="px-3" style="font-family: AzarMehr;">حذف فیلتر جستجو</span>
+                                                </span>
+                                            </div>
+                                        @endif
                                     </div>
                                     <div class="rbt-short-item">
                                         <div class="filter-select">
                                             <span class="select-label d-block">ترتیب ‌بندی بر‌اساس</span>
                                             <div class="filter-select rbt-modern-select search-by-category">
-                                                <select data-size="7">
-                                                    <option>اخیر</option>
-                                                    <option>محبوب</option>
-                                                    <option>قدیمی‌تر</option>
-                                                    <option>بیشترین‌امتیاز</option>
+                                                <select wire:change="setOrder" wire:model="order_by">
+                                                    <option value="asc">اخیر</option>
+                                                    <option value="desc">قدیمی‌تر</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -115,7 +118,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="rbt-course-grid-column filter-list">
-                            @foreach($this->items as $item)
+                            @foreach($items as $item)
                                 @php
                                     $categories = $item->category->pluck('slug')->toArray()
                                 @endphp

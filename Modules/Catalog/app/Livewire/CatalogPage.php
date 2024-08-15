@@ -26,6 +26,7 @@ class CatalogPage extends Component
     #[Layout('theme::layout.app')]
     public function render(): View
     {
+        $this->dispatch('init-mixitup');
         return view('catalog::catalog-page',[
             'seo' => main_pages_seo()
         ]);

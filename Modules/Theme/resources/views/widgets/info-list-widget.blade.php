@@ -4,7 +4,7 @@
     </h3>
     <ul class="portfolio-single__widget">
         @foreach($this->items as $key => $val )
-            <li class="d-flex justify-content-between align-items-center {{$loop->last ? 'flex-column ' : ''}}">
+            <li class="d-flex justify-content-between align-items-center {{$loop->first || $loop->last ? 'flex-column ' : ''}}">
                 <strong>{{$key}}:</strong>
                 {{$val}}
             </li>

@@ -27,13 +27,12 @@ class BlogPage extends Component
         $this->categories = self::categories();
         if($slug)
             $this->category = Category::where('slug' ,$slug)->first()->id;
-
-        $this->query();
     }
 
     #[Layout('theme::layout.app')]
     public function render(): View
     {
+        $this->query();
         return view('blog::blog-page',[
             'seo' => main_pages_seo()
         ]);

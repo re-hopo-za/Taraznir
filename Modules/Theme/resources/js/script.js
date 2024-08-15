@@ -230,13 +230,6 @@
         });
     }
 
-    //Gallery Filters
-    if($('.filter-list').length){
-        $('.filter-list').mixItUp({});
-    }
-
-
-
 
     //Parallax Scene for Icons
     if($('.parallax-scene-1').length){
@@ -796,6 +789,14 @@
     }
 
     enableMasonry();
+
+    document.addEventListener('init-mixitup' ,function (){
+        setTimeout(function (){
+            if($('.filter-list').length)
+                var mixer = mixitup('.filter-list');
+        },1200)
+
+    })
 
 
 })(window.jQuery);

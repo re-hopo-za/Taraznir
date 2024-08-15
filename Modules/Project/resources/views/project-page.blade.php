@@ -14,16 +14,16 @@
 
                 <x-theme::page-filter />
 
-                @if( $this->items && $this->items->isNotEmpty())
-                    @php( $to = $this->items->perPage() * $this->items->currentPage() + $this->items->perPage())
-                    @php( $from = $to - $this->items->perPage())
+                @if( $items && $items->isNotEmpty())
+                    @php( $to = $items->perPage() * $items->currentPage() + $items->perPage())
+                    @php( $from = $to - $items->perPage())
 
                     <div class="left-box d-flex align-items-center">
                         <div class="results">
                             نمایش
-                            {{$from}}-{{$this->items->lastPage() === $this->items->currentPage() ? $this->items->total() : $to}}
+                            {{$from}}-{{$items->lastPage() === $items->currentPage() ? $items->total() : $to}}
                             از
-                            {{$this->items->total()}}
+                            {{$items->total()}}
                             نتیجه
                         </div>
                     </div>
@@ -32,8 +32,8 @@
             </div>
         </div>
         <div class="row clearfix">
-            @if( $this->items && $this->items->isNotEmpty())
-                @foreach($this->items as $item)
+            @if($items && $items->isNotEmpty())
+                @foreach($items as $item)
                     <div class="service-block col-lg-6 col-md-6 col-sm-12">
                         <div class="inner-box">
                             <div class="image">
@@ -54,11 +54,12 @@
                         </div>
                     </div>
                 @endforeach
+
+                {{$items->links(data: ['scrollTo' => false])}}
+            @else
+                <livewire:theme::layout.not-found :type="'post'" />
+            @endif
         </div>
-        {{$this->items->links(data: ['scrollTo' => false])}}
-        @else
-            <livewire:theme::layout.not-found :type="'post'" />
-        @endif
     </x-theme::sidebar>
 
     <x-theme::sidebar dir="left">

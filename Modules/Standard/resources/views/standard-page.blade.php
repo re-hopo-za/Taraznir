@@ -30,10 +30,10 @@
                         <div class="drop-block mix all {{ $categories ? implode(' ' ,$categories) : ''}} product-block-four col-lg-3 col-md-6 col-sm-6" dir="rtl">
                             <div class="inner-box d-flex justify-content-between align-items-center flex-wrap">
                                 <div class="image">
-                                            <span class="number">
-                                                {{$loop->iteration}}
-                                            </span>
-                                    <img src="{{$item->images['thumbnail'] ?? ''}}" alt="{{$item->title}}" width="105" height="80" />
+                                    <span class="number">
+                                        {{$loop->iteration}}
+                                    </span>
+                                    <img src="{{$item->images['cover'] ?? ''}}" alt="{{$item->title}}" width="105" height="80" />
                                 </div>
                                 <div class="content">
                                     <h6>

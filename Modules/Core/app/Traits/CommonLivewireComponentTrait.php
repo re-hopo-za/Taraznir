@@ -15,7 +15,7 @@ trait CommonLivewireComponentTrait
     public string $order_by           = 'ASC';
     public ?string $search            = null;
     public ?int $category             = 0;
-    protected mixed $items;
+    protected mixed $items            = [];
 
 
     public function categories()
@@ -31,7 +31,6 @@ trait CommonLivewireComponentTrait
     public function query(): void
     {
         $query = $this->object::with('category');
-
         if($this->search)
             $query
                 ->whereIn('id',
@@ -53,7 +52,7 @@ trait CommonLivewireComponentTrait
 
 
     #[NoReturn]
-    public function setSearching($keyword): void
+    public function setSearching($keyword = ''): void
     {
         $this->search = $keyword;
         $this->query();
@@ -66,5 +65,19 @@ trait CommonLivewireComponentTrait
         $this->category = $categoryID;
         $this->query();
     }
+
+    #[NoReturn]
+    public function setQuery(): void
+    {
+        $this->query();
+    }
+
+
+    #[NoReturn]
+    public function setOrder(): void
+    {
+        $this->query();
+    }
+
 
 }

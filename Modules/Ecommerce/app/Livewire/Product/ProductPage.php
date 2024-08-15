@@ -9,7 +9,6 @@ use Livewire\Component;
 use Livewire\WithPagination;
 use Lunar\Models\Collection;
 use Lunar\Models\Product;
-use Modules\Core\app\Models\Category;
 
 class ProductPage extends Component
 {

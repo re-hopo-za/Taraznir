@@ -3,6 +3,7 @@
 namespace Modules\Tutorial\app\Livewire;
 
 use Illuminate\View\View;
+use JetBrains\PhpStorm\NoReturn;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 use Modules\Core\app\Models\Category;
@@ -33,10 +34,27 @@ class TutorialPage extends Component
     }
 
 
+    #[NoReturn]
+    public function setSearching(): void
+    {
+        $this->query();
+    }
+
+
+    #[NoReturn]
+    public function clearSearching(): void
+    {
+        $this->search = null;
+        $this->query();
+    }
+
+
     #[Layout('theme::layout.app')]
     public function render(): View
     {
+        $this->dispatch('init-mixitup');
         return view('tutorial::tutorial-page',[
+            'items' => $this->items,
             'seo' => main_pages_seo()
         ]);
     }

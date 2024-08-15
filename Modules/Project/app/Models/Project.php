@@ -5,7 +5,7 @@ namespace Modules\Project\app\Models;
 use Illuminate\Database\Eloquent\Model;
 use Modules\Core\app\Traits\CommonModelMethodsTrait;
 use Modules\Core\app\Traits\CommonScopesTrait;
-use Modules\Project\app\Database\factories\ProjectFactory;
+use Modules\Project\database\factories\ProjectFactory;
 use Spatie\MediaLibrary\HasMedia;
 
 class Project extends Model implements HasMedia

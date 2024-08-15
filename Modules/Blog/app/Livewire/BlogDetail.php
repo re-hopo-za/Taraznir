@@ -64,7 +64,6 @@ class BlogDetail extends Component
             ->telegram()
             ->whatsapp()
             ->getRawLinks();
-
     }
 
 

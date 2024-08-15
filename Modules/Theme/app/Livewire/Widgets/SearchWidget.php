@@ -32,7 +32,7 @@ class SearchWidget extends Component
                 'keyword' => $this->keyword,
                 'model'   => $this->model,
             ]);
-        $this->dispatch('setSearching' ,$this->keyword );
+        $this->dispatch('setSearching' ,$this->keyword);
     }
 
 

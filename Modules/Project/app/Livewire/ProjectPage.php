@@ -23,19 +23,19 @@ class ProjectPage extends Component
 
     public function mount($slug = null): void
     {
-        $this->limit      = config($this->config ,10);
+        $this->limit      = 10;
         $this->categories = self::categories();
         if($slug)
             $this->category = Category::where('slug' ,$slug)->first()->id;
-
-        $this->query();
     }
 
 
     #[Layout('theme::layout.app')]
     public function render():View
     {
+        $this->query();
         return view('project::project-page',[
+            'items' => $this->items,
             'seo' => main_pages_seo()
         ]);
     }

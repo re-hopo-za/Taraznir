@@ -26,6 +26,7 @@ class StandardPage extends Component
     #[Layout('theme::layout.app')]
     public function render(): View
     {
+        $this->dispatch('init-mixitup');
         return view('standard::standard-page',[
             'seo' => main_pages_seo()
         ]);
