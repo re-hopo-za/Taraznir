@@ -14,66 +14,66 @@ const mix = require('laravel-mix');
 mix
 
     .styles([
-        __dirname + '/Modules/Theme/Resources/css/bootstrap.css',
-        __dirname + '/Modules/Theme/Resources/css/style.css',
-        __dirname + '/Modules/Theme/Resources/css/global.css',
-        __dirname + '/Modules/Theme/Resources/css/header.css',
-        __dirname + '/Modules/Theme/Resources/css/footer.css',
-        __dirname + '/Modules/Theme/Resources/css/icofont.css',
-        __dirname + '/Modules/Theme/Resources/css/font-awesome.css',
-        __dirname + '/Modules/Theme/Resources/css/flaticon.css',
-        __dirname + '/Modules/Theme/Resources/css/animate.css',
-        __dirname + '/Modules/Theme/Resources/css/owl.css',
-        __dirname + '/Modules/Theme/Resources/css/sidebar.css',
-        __dirname + '/Modules/Theme/Resources/css/preloader.css',
-        __dirname + '/Modules/Theme/Resources/css/custom-animate.css',
-        __dirname + '/Modules/Theme/Resources/css/responsive.css',
-        __dirname + '/Modules/Theme/Resources/css/photoswipe-dynamic-caption-plugin.css',
-        __dirname + '/Modules/Theme/Resources/css/photoswipe.css',
-        __dirname + '/Modules/Theme/Resources/css/swiper.min.css',
-        __dirname + '/Modules/Theme/Resources/css/slick.css',
-        __dirname + '/Modules/Theme/Resources/css/slick-theme.css',
+        __dirname + '/Modules/Theme/resources/css/bootstrap.css',
+        __dirname + '/Modules/Theme/resources/css/style.css',
+        __dirname + '/Modules/Theme/resources/css/global.css',
+        __dirname + '/Modules/Theme/resources/css/header.css',
+        __dirname + '/Modules/Theme/resources/css/footer.css',
+        __dirname + '/Modules/Theme/resources/css/icofont.css',
+        __dirname + '/Modules/Theme/resources/css/font-awesome.css',
+        __dirname + '/Modules/Theme/resources/css/flaticon.css',
+        __dirname + '/Modules/Theme/resources/css/animate.css',
+        __dirname + '/Modules/Theme/resources/css/owl.css',
+        __dirname + '/Modules/Theme/resources/css/sidebar.css',
+        __dirname + '/Modules/Theme/resources/css/preloader.css',
+        __dirname + '/Modules/Theme/resources/css/custom-animate.css',
+        __dirname + '/Modules/Theme/resources/css/responsive.css',
+        __dirname + '/Modules/Theme/resources/css/photoswipe-dynamic-caption-plugin.css',
+        __dirname + '/Modules/Theme/resources/css/photoswipe.css',
+        __dirname + '/Modules/Theme/resources/css/swiper.min.css',
+        __dirname + '/Modules/Theme/resources/css/slick.css',
+        __dirname + '/Modules/Theme/resources/css/slick-theme.css',
     ], 'public/css/styles.min.css')
 
     .styles([
-        __dirname + '/Modules/Theme/Resources/css/fonts.css',
+        __dirname + '/Modules/Theme/resources/css/fonts.css',
     ], 'public/css/fonts.min.css')
 
     .scripts([
-        __dirname + '/Modules/Theme/Resources/js/jquery.js',
-        __dirname + '/Modules/Theme/Resources/js/popper.min.js',
-        __dirname + '/Modules/Theme/Resources/js/bootstrap.min.js',
-        __dirname + '/Modules/Theme/Resources/js/owl.js',
-        __dirname + '/Modules/Theme/Resources/js/wow.js',
-        __dirname + '/Modules/Theme/Resources/js/swiper.min.js',
-        __dirname + '/Modules/Theme/Resources/js/mixitup.js',
-        __dirname + '/Modules/Theme/Resources/js/nav-tool.js',
-        __dirname + '/Modules/Theme/Resources/js/sweetalert.js',
-        __dirname + '/Modules/Theme/Resources/js/photoswipe.umd.min.js',
-        __dirname + '/Modules/Theme/Resources/js/photoswipe-lightbox.umd.min.js',
-        __dirname + '/Modules/Theme/Resources/js/photoswipe-dynamic-caption-plugin.umd.min.js',
-        __dirname + '/Modules/Theme/Resources/js/slick.js',
-        __dirname + '/Modules/Theme/Resources/js/script.js',
+        __dirname + '/Modules/Theme/resources/js/jquery.js',
+        __dirname + '/Modules/Theme/resources/js/popper.min.js',
+        __dirname + '/Modules/Theme/resources/js/bootstrap.min.js',
+        __dirname + '/Modules/Theme/resources/js/owl.js',
+        __dirname + '/Modules/Theme/resources/js/wow.js',
+        __dirname + '/Modules/Theme/resources/js/swiper.min.js',
+        __dirname + '/Modules/Theme/resources/js/mixitup.js',
+        __dirname + '/Modules/Theme/resources/js/nav-tool.js',
+        __dirname + '/Modules/Theme/resources/js/sweetalert.js',
+        __dirname + '/Modules/Theme/resources/js/photoswipe.umd.min.js',
+        __dirname + '/Modules/Theme/resources/js/photoswipe-lightbox.umd.min.js',
+        __dirname + '/Modules/Theme/resources/js/photoswipe-dynamic-caption-plugin.umd.min.js',
+        __dirname + '/Modules/Theme/resources/js/slick.js',
+        __dirname + '/Modules/Theme/resources/js/script.js',
     ], 'public/js/scripts.min.js')
 
 
     .styles([
-        __dirname + '/Modules/Standard/Resources/assets/standard.css',
-        __dirname + '/Modules/Gallery/Resources/assets/css/gallery.css',
+        __dirname + '/Modules/Standard/resources/assets/standard.css',
+        __dirname + '/Modules/Gallery/resources/assets/css/gallery.css',
     ], 'public/css/modules.min.css')
 
     .styles([
-        __dirname + '/Modules/Tutorial/Resources/assets/css/tutorial.css',
+        __dirname + '/Modules/Tutorial/resources/assets/css/tutorial.css',
     ], 'public/css/tutorial.min.css')
 
     .scripts([
-        __dirname + '/Modules/Standard/Resources/assets/standard.js',
-        __dirname + '/Modules/Gallery/Resources/assets/js/gallery.js',
-        __dirname + '/Modules/Ecommerce/Resources/assets/js/ecommerce.js',
+        __dirname + '/Modules/Standard/resources/assets/standard.js',
+        __dirname + '/Modules/Gallery/resources/assets/js/gallery.js',
+        __dirname + '/Modules/Ecommerce/resources/assets/js/ecommerce.js',
     ], 'public/js/modules.min.js')
 
     .scripts([
-        __dirname + '/Modules/Tutorial/Resources/assets/js/tutorial.js',
+        __dirname + '/Modules/Tutorial/resources/assets/js/tutorial.js',
     ], 'public/js/tutorial.min.js')
 
 if (mix.inProduction()) {

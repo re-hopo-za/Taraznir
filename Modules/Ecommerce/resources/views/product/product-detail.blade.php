@@ -6,7 +6,7 @@
     'title'  => ecommerce_trans('Product detail'),
     'breads' => [
         ['title' => ecommerce_trans('Products') ,'a' => '/product'],
-        ['title' => $item->title]
+        ['title' => product_name($item)]
     ],
 ]">
     <div class="product-detail-page">
@@ -28,7 +28,8 @@
                                                            data-pswp-width="1666"
                                                         >
                                                             <img src="{{$media->getFullUrl()}}"
-                                                                 alt="{{$this->item->title}}">
+                                                                 alt="{{product_name($item)}}"
+                                                            >
                                                         </a>
                                                     </figure>
                                                 </div>
@@ -42,7 +43,8 @@
                                                 <div class="swiper-slide">
                                                     <figure class="thumb">
                                                         <img src="{{$media->getFullUrl()}}"
-                                                             alt="{{$this->item->title}}">
+                                                             alt="{{product_name($item)}}"
+                                                        >
                                                     </figure>
                                                 </div>
                                             @endforeach
@@ -54,7 +56,7 @@
                         <div class="content-column col-lg-6 col-md-12 col-sm-12">
                             <div class="inner-column">
                                 <h3>
-                                    {{$this->item->title}}
+                                    {{product_name($item)}}
                                 </h3>
                                 @if($this->item->comments)
                                     <div class="rating">
@@ -65,20 +67,10 @@
                                 @endif
 
                                 <div class="price">
-                                    @if($regular_price = get_meta_value_by_key($item ,'regular_price'))
-                                        <span>
-                                        {{$regular_price}}
-                                    </span>
-                                    @endif
-                                    {{$price = get_meta_value_by_key($item ,'price' ,'تماس بگیرید')}}
-                                    @if($regular_price && is_numeric($price))
-                                        <i>
-                                            {{ (int)(($price / $regular_price) * 100)}}%
-                                        </i>
-                                    @endif
+                                    {{product_price($item)}}
                                 </div>
-                                <div class="text">
-                                    {{$this->item->translateAttribute('description')}}
+                                <div class="text content">
+                                    {!! $item->translateAttribute('description') !!}
                                 </div>
 
                                 <div class="categories">
@@ -101,7 +93,8 @@
                                     <x-theme::share-post
                                         :links="$this->share"
                                         ulStyle="display:flex;align-items: center; gap: 5px;"
-                                        :title="true"/>
+                                        :title="true"
+                                    />
                                 </ul>
                             </div>
                         </div>
@@ -112,10 +105,7 @@
                     <div class="product-info-tabs">
                         <div class="prod-tabs tabs-box">
                             <ul class="tab-btns tab-buttons clearfix">
-                                <li data-tab="#prod-details" class="tab-btn active-btn">
-                                    {{ecommerce_trans('Product detail')}}
-                                </li>
-                                <li data-tab="#prod-review" class="tab-btn">
+                                <li data-tab="#prod-review" class="tab-btn active-btn">
                                     {{ecommerce_trans('Comments')}}
                                     @if($comments_count)
                                         <b>({{$comments_count}})</b>
@@ -124,19 +114,19 @@
                             </ul>
 
                             <div class="tabs-content">
-                                <div class="tab active-tab" id="prod-details">
-                                    <div class="content">
-                                        {!! $item->content !!}
-                                    </div>
-                                </div>
-
-                                <div class="tab" id="prod-review">
+                                <div class="tab active-tab" id="prod-review">
                                     <div class="rbt-shadow-box review-wrapper mt--30" id="review">
                                         <div>
-                                            <livewire:theme::components.comment-list :title="false" type="Product"
-                                                                                     :id="$item->id"/>
-                                            <livewire:theme::forms.comment-form :model="Product::class" :id="$item->id"
-                                                                                :title="true"/>
+                                            <livewire:theme::components.comment-list
+                                                :title="false"
+                                                type="Product"
+                                                :id="$item->id"
+                                            />
+                                            <livewire:theme::forms.comment-form
+                                                :model="Product::class"
+                                                :id="$item->id"
+                                                :title="true"
+                                            />
                                         </div>
                                     </div>
                                 </div>

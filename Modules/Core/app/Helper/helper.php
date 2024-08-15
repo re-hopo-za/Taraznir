@@ -210,7 +210,7 @@ function return_value_is_true($data, $index, $value, $default = '')
 
 function check_current_page($page): string
 {
-    if (str_contains(request()->route()->getName() ,$page))
+    if (str_contains(request()->route()->getName() ,str_replace('/', '' ,$page)))
         return 'current';
 
     return '';

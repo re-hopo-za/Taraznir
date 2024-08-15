@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Laravel\Scout\Searchable;
 use Modules\Core\app\Models\Category;
 use Modules\Core\app\Models\Comment;
 use Modules\User\app\Models\User;
@@ -19,7 +20,7 @@ use Spatie\Permission\Traits\HasRoles;
 
 trait CommonModelMethodsTrait {
 
-    use HasFactory ,SoftDeletes ,HasRoles ,InteractsWithMedia;
+    use HasFactory ,SoftDeletes ,HasRoles ,InteractsWithMedia ,Searchable;
 
     protected function slug():Attribute
     {

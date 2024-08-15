@@ -2,16 +2,11 @@
     <div class="auto-container">
         <div class="sec-title clearfix">
             <div class="pull-right">
-                <h2 style="text-align:right">
-                    منتخب<br/>  خدمات مهندسی تارازنیر
-                </h2>
+                <h3 style="text-align:right">
+                    منتخب خدمات مهندسی تارازنیر
+                </h3>
             </div>
             <div class="pull-left" style="text-align:right">
-                <div class="text" dir="rtl">
-                    آیا شما علاقه مند هستید که بدانید چگونه می توانیم پروژه شما را انجام دهیم
-                    <br/>
-                    یک موفقیت؟ لطفا با ما تماس بگیرید.
-                </div>
                 <a class="more-service" href="/service" style="padding-right: 38px">
                     دیدن خدمات ما<span class="flaticon-left-arrow-1" ></span>
                 </a>

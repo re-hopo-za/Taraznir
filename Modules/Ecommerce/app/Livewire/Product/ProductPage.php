@@ -7,9 +7,7 @@ use JetBrains\PhpStorm\NoReturn;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 use Livewire\WithPagination;
-use Lunar\Admin\Support\Forms\Components\TranslatedRichEditor;
-use Lunar\FieldTypes\Text;
-use Lunar\FieldTypes\TranslatedText;
+use Lunar\Models\Collection;
 use Lunar\Models\Product;
 use Modules\Core\app\Models\Category;
 
@@ -27,8 +25,8 @@ class ProductPage extends Component
 
     public function mount(): void
     {
-        $this->categories = Category::where('model' ,'product')->whereNull('parent_id')
-            ->with('childrenCategories')
+        $this->categories = Collection::whereNull('parent_id')
+            ->with('children')
             ->get();
 
         $this->items = Product::with('media')->get();
@@ -65,20 +63,8 @@ class ProductPage extends Component
     public function getProducts(): void
     {
         if ($this->category_id){
-            $categories = Category::where('model' ,'product')
-                ->where('id' ,$this->category_id)
-                ->with('childrenCategories')
-                 ->get()
-                 ->toArray();
-
-            $flattened_array = [];
-            array_walk_recursive($categories, function($a ,$k) use (&$flattened_array) {
-                if( $k === 'id' )
-                    $flattened_array[] = $a;
-            });
-            $flattened_array = array_unique($flattened_array);
-            $query = Product::whereHas('category', function ($query) use ($flattened_array) {
-                $query->where('id' ,$flattened_array);
+            $query = Product::whereHas('collections' ,function($query){
+                $query->where('collection_id', $this->category_id);
             });
         }else{
             $query = Product::query();

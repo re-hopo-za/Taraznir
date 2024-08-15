@@ -3,7 +3,7 @@
 namespace Modules\Blog\app\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Modules\Blog\app\Database\factories\BlogFactory;
+use Modules\Blog\database\factories\BlogFactory;
 use Modules\Core\app\Traits\CommonModelMethodsTrait;
 use Modules\Core\app\Traits\CommonScopesTrait;
 use Spatie\MediaLibrary\HasMedia;

@@ -35,7 +35,7 @@ trait CommonLivewireComponentTrait
         if($this->search)
             $query
                 ->whereIn('id',
-                    $this->object::search($this->search)->get()->pluck('id')->toArray()
+                    $this->object::search($this->search)->get()?->pluck('id')?->toArray()
                 );
 
         if($this->category)

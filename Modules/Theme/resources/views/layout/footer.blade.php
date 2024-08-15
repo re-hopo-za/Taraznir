@@ -69,7 +69,7 @@
                                                     </a>
                                                 </div>
                                                 <h6>
-                                                    <a href="service/{{$tutorial->slug}}">{{$tutorial->title}}</a>
+                                                    <a href="tutorial/{{$tutorial->slug}}">{{$tutorial->title}}</a>
                                                 </h6>
                                             </div>
                                         @endforeach

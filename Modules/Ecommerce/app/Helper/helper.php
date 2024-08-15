@@ -1,17 +1,42 @@
 <?php
 
-use Lunar\Models\Url;
-
 function ecommerce_trans($keyword): string
 {
     return __("ecommerce::product.$keyword");
 }
 
 
-function fetch_url($slug, $type, $eagerLoad = []): ?Url
+function product_name($item): null|string
 {
-    return Url::whereElementType($type)
-        ->whereDefault(true)
-        ->whereSlug($slug)
-        ->with($eagerLoad)->first();
+    return $item->translateAttribute('name');
+}
+
+
+function product_slug($item): null|string
+{
+    return '/product/'. $item->urls?->first()?->slug;
+}
+
+
+function product_cover($item): null|string
+{
+    return $item->getMedia('images')?->first()?->getFullUrl();
+}
+
+
+function product_price($item): int|string
+{
+    if($price = (int) $item->prices->first()?->priceExTax()?->value)
+        return number_format($price)." تومان ";
+
+    return "تماس بگیرید";
+}
+
+
+function product_stock($item): null|string
+{
+    if($item->variants->first()?->stock)
+        return ecommerce_trans('Available');
+
+    return ecommerce_trans('Out of stock');
 }

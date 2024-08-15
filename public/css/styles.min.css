@@ -3149,9 +3149,9 @@
 	position:relative;
 	font-weight:400;
 	cursor:pointer;
-	margin-bottom:var(--margin-bottom-65);
+    margin-bottom: 3.5rem;
 	font-family:var(--font-family-Azarmehr);
-	font-size: 30px;
+	font-size: 2rem;
 }
 
 .services-section .services-tabs .tab-btns .tab-btn:hover,
@@ -4085,6 +4085,8 @@
 .shop-item-two .image{
 	position:relative;
 	padding: 1rem;
+    background-color: #fff;
+    border: 1px solid #eee;
 }
 
 .shop-item-two .inner-box:before{
@@ -4110,14 +4112,16 @@
 }
 
 .shop-item-two .image img{
-	position:relative;
-	width:100%;
-	display:block;
+    position: relative;
+    width: 100%;
+    display: block;
+    height: 200px;
+    object-fit: cover;
 }
 
 .shop-item-two .content{
 	position:relative;
-	padding:0 30px 25px;
+	padding:1rem;
 }
 
 .shop-item-two .lower-box{
@@ -4133,12 +4137,13 @@
 	text-transform: capitalize;
 	font-family: var(--font-family-Azarmehr);
 	direction: rtl;
-	padding: 0.5rem;
 }
 
 .shop-item-two h6 a{
-	position:relative;
-	color:var(--black-color);
+    position: relative;
+    color: var(--black-color);
+    min-height: 54px;
+    display: block;
 }
 
 .shop-item-two h6 a:hover{
@@ -11097,7 +11102,6 @@ footer .post-widget .post .thumb:before{
 
 .services-section-first{
 	position:relative;
-	padding:100px 0 70px;
     font-family: var(--font-family-Azarmehr);
 }
 .services-section-first h2{
@@ -12950,7 +12954,6 @@ footer .post-widget .post .thumb:before{
 
 .portfolio-detail-section{
 	position:relative;
-	padding:0 0 90px;
 }
 
 .portfolio-detail-section .image{
@@ -13147,7 +13150,6 @@ footer .post-widget .post .thumb:before{
 
 .service-detail-section{
 	position:relative;
-	padding:0 0 90px;
     margin-top: 380px;
 }
 
@@ -16757,7 +16759,7 @@ img{
 }
 
 .header-style-two .right-header{
-	min-width: 202px;
+	min-width: 150px;
 	display: flex;
 	justify-content: flex-end;
 }
@@ -37253,9 +37255,6 @@ ul {
 		display:none;
 	}
 
-	.shop-item-two .content{
-		padding:0px 20px 25px;
-	}
 
 	.about-section .content-column{
 		order:1;

@@ -4,7 +4,7 @@ namespace Modules\Ecommerce\app\Livewire\Product;
 
 use Illuminate\Contracts\View\View;
 use Livewire\Component;
-use Modules\Ecommerce\app\Models\Product;
+use Lunar\Models\Product;
 
 class ProductSection extends Component
 {
@@ -13,9 +13,7 @@ class ProductSection extends Component
     {
         $items =(object) redis_handler('blog:section' ,function (){
             return
-                Product::with(['category' ,'meta' ,'media'])
-                    ->activeScope()
-                    ->orderBy('chosen' ,'DESC')
+                Product::with(['media'])
                     ->limit(config('product.section_limit' ,8))
                     ->get();
         });

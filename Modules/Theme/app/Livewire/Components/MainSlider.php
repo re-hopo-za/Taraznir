@@ -17,7 +17,6 @@ class MainSlider extends Component
                     })->get();
         });
 
-
         return view('theme::components.main-slider',[
             'items' => $items
         ]);

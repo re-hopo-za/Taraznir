@@ -22,33 +22,27 @@
                     <div class="content p-3" style="border: 1px solid #eeee;">
                         <div class="inner-box">
                             <div class="image">
-                                <a href="/product/{{$item->slug}}">
-                                    <img src="{{$item->images['thumbnail'] ?? ''}}" width="140" height="108" alt="{{$item->title}}" />
+                                <a href="{{product_slug($item)}}">
+                                    <img src="{{product_cover($item)}}" width="140" height="108" alt="{{product_name($item)}}" />
                                 </a>
                                 <div class="cart-box text-center">
-                                    <a href="/product/{{$item->slug}}">
+                                    <a href="{{product_slug($item)}}">
                                         نمایش
                                     </a>
                                 </div>
                             </div>
                             <div class="lower-content">
                                 <h6>
-                                    <a href="/blog/{{$item->slug}}">
-                                        {{$item->title}}
+                                    <a href="{{product_slug($item)}}">
+                                        {{product_name($item)}}
                                     </a>
                                 </h6>
                                 <div class="d-flex justify-content-between align-items-center py-3" >
                                     <div class="price" >
-                                        @if($regular_price = get_meta_value_by_key($item ,'regular_price'))
-                                            <span>
-                                            {{$regular_price}}
-                                        </span>
-                                        @endif
-                                        {{$price = get_meta_value_by_key($item ,'price' ,'تماس بگیرید')}}
+                                        {{product_price($item)}}
                                     </div>
-
                                     <div class="quantity-box">
-                                        {{get_meta_value_by_key($item ,'stock' ,'موجود')}}
+                                        {{product_stock($item)}}
                                     </div>
                                 </div>
                             </div>

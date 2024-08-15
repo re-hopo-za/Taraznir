@@ -135,12 +135,10 @@
                 <div class="auth-button-box text-center right-header">
                     @if(\Illuminate\Support\Facades\Auth::check())
                         <a href="{{route('profile')}}" class="theme-btn btn-style-one" dir="rtl">
-                            <span class="icon flaticon-left-arrow"></span>
                             حساب کاربری
                         </a>
                     @else
                         <a href="{{route('sign-up')}}" class="theme-btn btn-style-one" dir="rtl">
-                            <span class="icon flaticon-left-arrow"></span>
                             ورود \ ثبت‌ نام
                         </a>
                     @endif

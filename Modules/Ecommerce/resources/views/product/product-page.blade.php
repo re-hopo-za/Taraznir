@@ -44,27 +44,27 @@
                 @endif
             </div>
         </div>
-        <div class="row clearfix">
+        <div class="row clearfix"  style="padding-bottom: 10rem;">
             @if($this->items)
                 @foreach($this->items as $item)
                     <div class="shop-item-two col-lg-4 col-md-6 col-sm-12">
                         <div class="inner-box">
                             <div class="image">
-                                <a href="{{$item->urls?->first()?->slug}}">
-                                    <img src="{{$item->getMedia('images')?->first()?->getFullUrl() ?? ''}}" alt="{{$item->title}}" />
+                                <a href="{{product_slug($item)}}">
+                                    <img src="{{product_cover($item)}}" alt="{{product_name($item)}}" />
                                 </a>
                                 <div class="options-box">
                                     <ul class="option-list">
                                         <li>
-                                            <a class="flaticon-resize" href="product/{{$item->slug}}"></a>
+                                            <a class="flaticon-resize" href="{{product_slug($item)}}"></a>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="content">
                                 <h6>
-                                    <a href="product/{{$item->slug}}">
-                                        {{$item->title}}
+                                    <a href="{{product_slug($item)}}">
+                                        {{product_name($item)}}
                                     </a>
                                 </h6>
                                 <div class="lower-box">
@@ -73,22 +73,16 @@
                                             {{ecommerce_trans('Price')}}:
                                         </span>
                                         <span>
-                                            {{get_meta_value_by_key($item ,'price' ,'تماس بگیرید')}}
+                                             {{product_price($item)}}
                                         </span>
                                     </div>
                                     <div class="d-flex justify-content-between align-items-center">
                                         <span style="color: #adadad;margin-bottom: 7px">
                                             {{ecommerce_trans('Stock')}}:
                                         </span>
-                                        @if($stock = get_meta_value_by_key($item ,'stock'))
-                                            <span style="color: #1ec708">
-                                                {{$stock}}
-                                            </span>
-                                        @else
-                                            <span style="color: #c70825">
-                                                {{ecommerce_trans('Out of stock')}}:
-                                            </span>
-                                        @endif
+                                        <span>
+                                            {{product_stock($item)}}
+                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -126,18 +120,19 @@
                                     <img src="{{$category->media->first()->getFullUrl()}}" alt="{{$category->title}}" style="width:3rem">
                                 </span>
                             @endif
-                            {{$category->title}}
+                            {{$category->translateAttribute('name')}}
                         </a>
-                        @if($category->childrenCategories->count())
+
+                        @if($category->children->count())
                             <ul>
-                                @foreach($category->childrenCategories as $first_child)
+                                @foreach($category->children as $first_child)
                                     <li class="dropdown" {{$this->category_id === $first_child->id ? 'active' : ''}}>
                                         <a wire:click="setCategory({{$first_child->id}})" href="javascript:void(0)">
                                             {{$first_child->title}}
                                         </a>
-                                        @if($first_child->childrenCategories->count())
+                                        @if($first_child->children->count())
                                             <ul>
-                                                @foreach($first_child->childrenCategories as $first_child_children)
+                                                @foreach($first_child->children as $first_child_children)
                                                     <li class="{{$this->category_id === $first_child_children->id ? 'active' : ''}}">
                                                         <a wire:click="setCategory({{$first_child_children->id}})" href="javascript:void(0)">
                                                             {{$first_child_children->title}}

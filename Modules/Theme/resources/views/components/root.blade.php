@@ -14,13 +14,15 @@
     @endif
 
     @if($sidebar)
-        <div class="auto-container">
+        <div class="auto-container" style="padding-bottom: 10rem;">
             <div class="row clearfix">
                 {{$slot}}
             </div>
         </div>
     @else
-        {{$slot}}
+        <div class="root-content" style="padding-bottom: 10rem;">
+            {{$slot}}
+        </div>
     @endif
 
     @livewire('theme::layout.footer')

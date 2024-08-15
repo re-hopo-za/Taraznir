@@ -792,7 +792,7 @@
 }
 
 .header-style-two .right-header{
-	min-width: 202px;
+	min-width: 150px;
 	display: flex;
 	justify-content: flex-end;
 }

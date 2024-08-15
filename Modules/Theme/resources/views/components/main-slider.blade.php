@@ -22,7 +22,6 @@
                         </div>
                     </div>
                 </div>
-                @break(true)
             @endforeach
         @endif
     </div>

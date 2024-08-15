@@ -17,7 +17,7 @@
                                 <div class="inner-box d-flex justify-content-between align-items-center flex-wrap">
                                     <div class="image">
                                         <span class="number">{{$loop->iteration}}</span>
-                                        <img src="{{$item->images['thumbnail'] ?? ''}}" alt="{{$item->title}}" width="105" height="80" />
+                                        <img src="{{$item->images['cover'] ?? ''}}" alt="{{$item->title}}" width="120" height="90" />
                                     </div>
                                     <div class="content">
                                         <h6>

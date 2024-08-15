@@ -5,6 +5,7 @@ return[
     'Products' => 'محصولات',
     'Price' => 'قیمت',
     'Out of stock' => 'ناموجود',
+    'Available' => 'موجود',
     'Customer review' => 'نظر ثبت شده',
     'Categories' => 'دسته بندی‌ها',
     'Stock' => 'موجودی',

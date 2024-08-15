@@ -25,7 +25,8 @@
         "mhmiton/laravel-modules-livewire": "^3.0",
         "nwidart/laravel-modules": "^11.0",
         "predis/predis": "^2.2",
-        "ryangjchandler/filament-navigation": "^1.0@beta"
+        "ryangjchandler/filament-navigation": "^1.0@beta",
+        "ext-redis": "*"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",

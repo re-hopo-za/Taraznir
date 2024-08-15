@@ -333,23 +333,6 @@
             },
         });
 
-
-        // var swiper = new Swiper(".mySwiper", {
-        //     spaceBetween: 10,
-        //     slidesPerView: 4,
-        //     freeMode: true,
-        //     watchSlidesProgress: true,
-        // });
-        // var swiper2 = new Swiper(".mySwiper2", {
-        //     spaceBetween: 10,
-        //     navigation: {
-        //         nextEl: ".swiper-button-next",
-        //         prevEl: ".swiper-button-prev",
-        //     },
-        //     thumbs: {
-        //         swiper: swiper,
-        //     },
-        // });
     }
 
 
@@ -364,9 +347,9 @@
             margin:0,
             nav:true,
             rtl:true,
-            //autoHeight: true,
-            // smartSpeed: 500,
-            autoplay: 5000,
+            autoHeight: true,
+            smartSpeed: 1000,
+            autoplay: 6000,
             navText: [ '<span class="flaticon-left-arrow"></span>', '<span class="flaticon-right-arrow"></span>' ],
             responsive:{
                 0:{
