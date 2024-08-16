@@ -5,6 +5,7 @@ namespace Modules\Core\app\Providers;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use Modules\Core\app\Console\GenerateSitemap;
 
 class CoreServiceProvider extends ServiceProvider
 {
@@ -38,7 +39,9 @@ class CoreServiceProvider extends ServiceProvider
      */
     protected function registerCommands(): void
     {
-        // $this->commands([]);
+         $this->commands([
+             GenerateSitemap::class
+         ]);
     }
 
     /**
