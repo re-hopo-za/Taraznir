@@ -51,7 +51,7 @@ class CoreServiceProvider extends ServiceProvider
     {
          $this->app->booted(function () {
              $schedule = $this->app->make(Schedule::class);
-             $schedule->command('sitemap:generate')->daily();
+             $schedule->command('sitemap:generate')->everyMinute();
          });
     }
 

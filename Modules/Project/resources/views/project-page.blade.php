@@ -14,16 +14,16 @@
 
                 <x-theme::page-filter />
 
-                @if( $items && $items->isNotEmpty())
-                    @php( $to = $items->perPage() * $items->currentPage() + $items->perPage())
-                    @php( $from = $to - $items->perPage())
+                @if( $this->items && $this->items->isNotEmpty())
+                    @php( $to = $this->items->perPage() * $this->items->currentPage() + $this->items->perPage())
+                    @php( $from = $to - $this->items->perPage())
 
                     <div class="left-box d-flex align-items-center">
                         <div class="results">
                             نمایش
-                            {{$from}}-{{$items->lastPage() === $items->currentPage() ? $items->total() : $to}}
+                            {{$from}}-{{$this->items->lastPage() === $this->items->currentPage() ? $this->items->total() : $to}}
                             از
-                            {{$items->total()}}
+                            {{$this->items->total()}}
                             نتیجه
                         </div>
                     </div>
@@ -32,8 +32,8 @@
             </div>
         </div>
         <div class="row clearfix">
-            @if($items && $items->isNotEmpty())
-                @foreach($items as $item)
+            @if($this->items && $this->items->isNotEmpty())
+                @foreach($this->items as $item)
                     <div class="service-block col-lg-6 col-md-6 col-sm-12">
                         <div class="inner-box">
                             <div class="image">
@@ -55,7 +55,7 @@
                     </div>
                 @endforeach
 
-                {{$items->links(data: ['scrollTo' => false])}}
+                {{$this->items->links(data: ['scrollTo' => false])}}
             @else
                 <livewire:theme::layout.not-found :type="'post'" />
             @endif
@@ -64,6 +64,6 @@
 
     <x-theme::sidebar dir="left">
         <livewire:theme::widgets.search-widget :model="'Project'" />
-        <livewire:theme::widgets.category-widget :model="'Project'" :items="$this->categories" />
+        <livewire:theme::widgets.category-widget :model="'Project'" :items="$this->categories" :categoryID="$this->category"/>
     </x-theme::sidebar>
 </x-theme::root>

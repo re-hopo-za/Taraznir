@@ -35,7 +35,6 @@ class ProjectPage extends Component
     {
         $this->query();
         return view('project::project-page',[
-            'items' => $this->items,
             'seo' => main_pages_seo()
         ]);
     }

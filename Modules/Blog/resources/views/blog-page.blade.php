@@ -63,9 +63,9 @@
 
                             <ul class="post-meta d-flex align-items-center flex-wrap clearfix" dir="ltr">
                                 <li>
-                                                <span class="author">
-                                                    <img src="images/resource/author-4.jpg" alt="{{$item->user?->name}}"/>
-                                                </span>
+                                    <span class="author">
+                                        <img src="images/resource/author-4.jpg" alt="{{$item->user?->name}}"/>
+                                    </span>
                                     {{$item->user?->name}}
                                 </li>
                                 <li>
@@ -90,7 +90,7 @@
 
     <x-theme::sidebar dir="left">
         <livewire:theme::widgets.search-widget model="Blog" />
-        <livewire:theme::widgets.category-widget model="Blog" :items="$this->categories" :categoryID="$this->category"  />
+        <livewire:theme::widgets.category-widget model="Blog" :items="$this->categories" :categoryID="$this->category"/>
         <livewire:theme::widgets.posts-widget model="Blog" :object="$this->object"/>
     </x-theme::sidebar>
 </x-theme::root>
