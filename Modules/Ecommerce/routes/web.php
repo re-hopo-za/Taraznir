@@ -18,5 +18,9 @@ use Modules\Ecommerce\app\Livewire\Product\ProductPage;
 
 Route::get('product', ProductPage::class)
     ->name('product');
+
 Route::get('product/{slug}', ProductDetail::class)
     ->name('product-detail');
+
+Route::get('product/category/{category}' ,ProductPage::class )
+    ->name('product-category');

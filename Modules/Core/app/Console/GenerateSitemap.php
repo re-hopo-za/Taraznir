@@ -14,6 +14,7 @@ use Modules\Service\app\Models\Service;
 use Modules\Standard\app\Models\Standard;
 use Modules\Tutorial\app\Models\Tutorial;
 use Spatie\Sitemap\Sitemap;
+use Spatie\Sitemap\SitemapGenerator;
 
 class GenerateSitemap extends Command
 {
@@ -33,35 +34,8 @@ class GenerateSitemap extends Command
 
     public function handle()
     {
-        // Manually create sitemap
-        $sitemap = Sitemap::create();
-
-        // Static pages
-        $sitemap->add('/');
-        $sitemap->add('/contact');
-        $sitemap->add('/about');
-        $sitemap->add('/about');
-
-        // Dynamic pages
-        $models = [
-            '/blog/'     => Blog::all(),
-            '/catalog/'  => Catalog::all(),
-            '/product/'  => Product::all(),
-            '/gallery/'  => Gallery::all(),
-            '/project/'  => Project::all(),
-            '/service/'  => Service::all(),
-            '/standard/' => Standard::all(),
-            '/tutorial/' => Tutorial::all(),
-        ];
-        foreach ($models as $endpoint => $model) {
-            foreach ($model as $item) {
-                if($endpoint == '/product/')
-                    $sitemap->add($endpoint.$item->urls?->first()?->slug);
-                else
-                    $sitemap->add($endpoint.$item->slug);
-            }
-        }
-
-        $sitemap->writeToFile(public_path('sitemap.xml'));
+        SitemapGenerator::create(env('APP_URL'))
+            ->getSitemap()
+            ->writeToDisk('public', 'sitemap.xml');
     }
 }

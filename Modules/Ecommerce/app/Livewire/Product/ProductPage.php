@@ -9,6 +9,7 @@ use Livewire\Component;
 use Livewire\WithPagination;
 use Lunar\Models\Collection;
 use Lunar\Models\Product;
+use Lunar\Models\Url;
 
 class ProductPage extends Component
 {
@@ -22,8 +23,17 @@ class ProductPage extends Component
     public ?int $limit = 12;
     public ?string $orderBy = 'ASC';
 
-    public function mount(): void
+    public function mount($category = null): void
     {
+        if($category){
+            $this->category_id = Url::where('element_type', Collection::class)
+                ->where('slug', $category)
+                ->first()
+                ?->element_id;
+            if(!$this->category_id)
+                abort(404);
+        }
+
         $this->categories = Collection::whereNull('parent_id')
             ->with('children')
             ->get();
