@@ -214,8 +214,7 @@
 
                                     <div class="rbt-shadow-box review-wrapper mt--30" id="review">
                                         <div>
-                                            <livewire:theme::components.comment-list :title="false" type="Tutorial" :id="$item->id"/>
-                                            <livewire:theme::forms.comment-form :model="Tutorial::class" :id="$item->id" :title="false"/>
+                                            <x-comments::index :model="$item" />
                                         </div>
                                     </div>
                                 </div>

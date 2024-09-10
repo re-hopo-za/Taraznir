@@ -2,43 +2,210 @@
 
 namespace Modules\Ecommerce\app\Models;
 
-use Illuminate\Database\Eloquent\Model;
-use Modules\Core\app\Traits\CommonModelMethodsTrait;
-use Modules\Core\app\Traits\CommonScopesTrait;
-use Spatie\MediaLibrary\HasMedia;
-use Spatie\Permission\Traits\HasRoles;
 
-class Product extends Model implements HasMedia
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Casts\Attribute;
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasManyThrough;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use LakM\Comments\Concerns\Commentable;
+use LakM\Comments\Contracts\CommentableContract;
+use Lunar\Base\BaseModel;
+use Lunar\Base\Casts\AsAttributeData;
+use Lunar\Base\Traits\HasChannels;
+use Lunar\Base\Traits\HasCustomerGroups;
+use Lunar\Base\Traits\HasMacros;
+use Lunar\Base\Traits\HasMedia;
+use Lunar\Base\Traits\HasTags;
+use Lunar\Base\Traits\HasTranslations;
+use Lunar\Base\Traits\HasUrls;
+use Lunar\Base\Traits\LogsActivity;
+use Lunar\Base\Traits\Searchable;
+use Lunar\Database\Factories\ProductFactory;
+use Lunar\Jobs\Products\Associations\Associate;
+use Lunar\Jobs\Products\Associations\Dissociate;
+use Lunar\Models\Brand;
+use Lunar\Models\CustomerGroup;
+use Lunar\Models\Price;
+use Lunar\Models\ProductAssociation;
+use Lunar\Models\ProductOption;
+use Lunar\Models\ProductVariant;
+use Spatie\MediaLibrary\HasMedia as SpatieHasMedia;
+
+/**
+ * @property int $id
+ * @property ?int $brand_id
+ * @property int $product_type_id
+ * @property string $status
+ * @property array $attribute_data
+ * @property ?\Illuminate\Support\Carbon $created_at
+ * @property ?\Illuminate\Support\Carbon $updated_at
+ * @property ?\Illuminate\Support\Carbon $deleted_at
+ */
+class Product extends BaseModel implements SpatieHasMedia, \Lunar\Models\Contracts\Product, CommentableContract
 {
-    use CommonScopesTrait ,CommonModelMethodsTrait ,HasRoles;
-
-    protected $appends = ['images'];
-
-    protected $fillable = [
-        'title',
-        'slug',
-        'summary',
-        'content',
-        'status',
-        'chosen',
-    ];
-
+    use HasChannels;
+    use HasCustomerGroups;
+    use HasFactory;
+    use HasMacros;
+    use HasMedia;
+    use HasTags;
+    use HasTranslations;
+    use HasUrls;
+    use LogsActivity;
+    use Searchable;
+    use SoftDeletes;
+    use Commentable;
 
     /**
-     * Get the name of the index associated with the model.
+     * Return a new factory instance for the model.
      */
-    public function searchableAs(): string
+    protected static function newFactory()
     {
-        return 'first';
+        return ProductFactory::new();
     }
 
+    /**
+     * Define which attributes should be
+     * fillable during mass assignment.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'attribute_data',
+        'product_type_id',
+        'status',
+        'brand_id',
+    ];
 
-    public function toSearchableArray(): array
+    /**
+     * Define which attributes should be cast.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'attribute_data' => AsAttributeData::class,
+    ];
+
+    /**
+     * Record's title
+     */
+    protected function recordTitle(): Attribute
+    {
+        return Attribute::make(
+            get: fn (mixed $value) => $this->translateAttribute('name'),
+        );
+    }
+
+    public function mappedAttributes(): Collection
+    {
+        return $this->productType->mappedAttributes;
+    }
+
+    public function productType(): BelongsTo
+    {
+        return $this->belongsTo(ProductType::modelClass());
+    }
+
+    public function images(): MorphMany
+    {
+        return $this->media()->where('collection_name', config('lunar.media.collection'));
+    }
+
+    public function variants(): HasMany
+    {
+        return $this->hasMany(ProductVariant::modelClass());
+    }
+
+    public function collections(): BelongsToMany
+    {
+        return $this->belongsToMany(
+            \Lunar\Models\Collection::modelClass(),
+            config('lunar.database.table_prefix').'collection_product'
+        )->withPivot(['position'])->withTimestamps();
+    }
+
+    public function associations(): HasMany
+    {
+        return $this->hasMany(ProductAssociation::modelClass(), 'product_parent_id');
+    }
+
+    public function inverseAssociations(): HasMany
+    {
+        return $this->hasMany(ProductAssociation::modelClass(), 'product_target_id');
+    }
+
+    public function associate(mixed $product, string $type): void
+    {
+        Associate::dispatch($this, $product, $type);
+    }
+
+    /**
+     * Dissociate a product to another with a type.
+     */
+    public function dissociate(mixed $product, ?string $type = null): void
+    {
+        Dissociate::dispatch($this, $product, $type);
+    }
+
+    public function customerGroups(): BelongsToMany
+    {
+        $prefix = config('lunar.database.table_prefix');
+
+        return $this->belongsToMany(
+            CustomerGroup::modelClass(),
+            "{$prefix}customer_group_product"
+        )->withPivot([
+            'purchasable',
+            'visible',
+            'enabled',
+            'starts_at',
+            'ends_at',
+        ])->withTimestamps();
+    }
+
+    public static function getExtraCustomerGroupPivotValues(CustomerGroup $customerGroup): array
     {
         return [
-            'title'      => $this->title,
-            'summary'    => $this->summary,
-            'content'    => strip_tags($this->content),
+            'purchasable' => $customerGroup->default,
         ];
+    }
+
+    /**
+     * Return the brand relationship.
+     */
+    public function brand(): BelongsTo
+    {
+        return $this->belongsTo(Brand::modelClass());
+    }
+
+    public function scopeStatus(Builder $query, string $status): Builder
+    {
+        return $query->whereStatus($status);
+    }
+
+    public function prices(): HasManyThrough
+    {
+        return $this->hasManyThrough(
+            Price::modelClass(),
+            ProductVariant::modelClass(),
+            'product_id',
+            'priceable_id'
+        )->wherePriceableType('product_variant');
+    }
+
+    public function productOptions(): BelongsToMany
+    {
+        $prefix = config('lunar.database.table_prefix');
+
+        return $this->belongsToMany(
+            ProductOption::modelClass(),
+            "{$prefix}product_product_option"
+        )->withPivot(['position'])->orderByPivot('position');
     }
 }

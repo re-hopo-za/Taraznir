@@ -139,7 +139,7 @@
                                                         {!! str_repeat('<i class="fa fa-star"></i>' ,(int)get_meta_value_by_key($item ,'rate')) !!}
                                                     </div>
                                                     <span class="rating-count">(
-                                                {{$item->comments->count() > 0 ? $item->comments->count() : 'بدون'}}
+                                                {{$item->comments?->count() > 0 ? $item->comments->count() : 'بدون'}}
                                                 نظر)</span>
                                                 </div>
                                                 <div class="rbt-bookmark-btn">

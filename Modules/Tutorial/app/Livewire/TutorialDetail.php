@@ -25,7 +25,7 @@ class TutorialDetail extends Component
         $this->item = common_redis_first_query(
             "tutorial:$slug",
             $this->object,
-            ['category' ,'meta' ,'media' ,'comments' ,'courses' ,'tutorialCourses'],
+            ['category' ,'meta' ,'media' ,'courses' ,'tutorialCourses'],
             ['slug' ,$slug]
         );
 

@@ -60,7 +60,6 @@
                 </div>
 
                 <x-comments::index :model="$item" />
-
             </div>
         </div>
     </x-theme::sidebar>
