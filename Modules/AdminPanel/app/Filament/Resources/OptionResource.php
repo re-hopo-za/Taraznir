@@ -27,7 +27,7 @@ class OptionResource extends Resource
 
     protected static ?string $label = ' گزینه‌ها  ';
     protected static ?string $navigationIcon = 'heroicon-o-cog';
-    protected static ?string $navigationGroup = 'پست ها';
+    protected static ?string $navigationGroup = 'تنظیمات';
     protected static ?int $navigationSort = 1;
 
     public static function getNavigationBadge(): ?string

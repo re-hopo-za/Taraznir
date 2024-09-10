@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use LakM\Comments\Concerns\Commenter;
+use LakM\Comments\Contracts\CommenterContract;
 use Lunar\Base\Traits\LunarUser;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
@@ -15,9 +17,9 @@ use Spatie\Permission\Models\Role;
 use Spatie\Permission\Traits\HasRoles;
 
 
-class User extends Authenticatable implements HasMedia , MustVerifyEmail
+class User extends Authenticatable implements HasMedia, MustVerifyEmail, CommenterContract
 {
-    use HasFactory ,Notifiable ,HasRoles ,HasPanelShield ,InteractsWithMedia ,LunarUser;
+    use HasFactory ,Notifiable ,HasRoles ,HasPanelShield ,InteractsWithMedia ,LunarUser ,Commenter;
 
     /**
      * The attributes that are mass assignable.

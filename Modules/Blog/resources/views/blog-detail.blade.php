@@ -59,8 +59,7 @@
                     <x-theme::more-posts :next="$this->next" :previous="$this->previous" />
                 </div>
 
-                <livewire:theme::components.comment-list :title="false" type="Blog" :id="$item->id" />
-                <livewire:theme::forms.comment-form :model="Blog::class" :id="$item->id" />
+                <x-comments::index :model="$item" />
 
             </div>
         </div>

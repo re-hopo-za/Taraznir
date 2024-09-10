@@ -126,7 +126,7 @@
                                     <div class="rbt-card variation-01 rbt-hover">
                                         <div class="rbt-card-img">
                                             <a href="javascript:void(0)">
-                                                <img src="{{$item->images['thumbnail'] ?? ''}}" alt="{{$item->title}}"/>
+                                                <img src="{{$item->images['single'] ?? ''}}" alt="{{$item->title}}"/>
                                                 <div class="rbt-badge-3 bg-white">
                                                     <span>رایکان</span>
                                                 </div>

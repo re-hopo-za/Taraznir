@@ -31,13 +31,6 @@ trait CommonModelMethodsTrait {
     }
 
 
-    public function comments(): MorphMany
-    {
-        return $this->morphMany(Comment::class ,'commentable')
-            ->whereRaw('parent_id = 0 OR parent_id IS NULL');
-    }
-
-
     public function meta(): MorphMany
     {
         return $this->morphMany('Modules\Core\app\Models\Meta','metaable');

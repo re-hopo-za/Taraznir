@@ -3,15 +3,17 @@
 namespace Modules\Blog\app\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use LakM\Comments\Concerns\Commentable;
+use LakM\Comments\Contracts\CommentableContract;
 use Modules\Blog\database\factories\BlogFactory;
 use Modules\Core\app\Traits\CommonModelMethodsTrait;
 use Modules\Core\app\Traits\CommonScopesTrait;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\Permission\Traits\HasRoles;
 
-class Blog extends Model implements HasMedia
+class Blog extends Model implements HasMedia, CommentableContract
 {
-    use CommonScopesTrait ,CommonModelMethodsTrait ,HasRoles;
+    use CommonScopesTrait ,CommonModelMethodsTrait ,HasRoles ,Commentable;
 
     protected $appends = ['images'];
 

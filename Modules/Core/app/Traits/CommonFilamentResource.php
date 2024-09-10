@@ -26,6 +26,7 @@ use Filament\Tables\Filters\TrashedFilter;
 use Guava\FilamentIconPicker\Forms\IconPicker;
 use Modules\Core\app\Models\Category;
 use Modules\User\app\Models\User;
+use Parallax\FilamentComments\Actions\CommentsAction;
 
 trait CommonFilamentResource
 {
@@ -362,7 +363,7 @@ trait CommonFilamentResource
             DeleteAction::make(),
             ForceDeleteAction::make(),
             RestoreAction::make(),
-            EditAction::make()
+            EditAction::make(),
         ];
     }
 
