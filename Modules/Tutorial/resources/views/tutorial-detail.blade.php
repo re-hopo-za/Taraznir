@@ -54,28 +54,28 @@
                             <div class="video-content">
                                 @php
                                     $video_url = null;
-                                    if($first_course = $item->courses?->first())
+                                    if($first_course = $item->tutorialCourses?->first())
                                         if( $first_course->media->first())
                                             $video_url = $first_course->media->first()->getFullUrl();
                                         else
                                             $video_url = $first_course->link;
                                 @endphp
+
                                 <video
                                     controls
                                     class="video-element"
                                     id="tutorial-video"
-
-                                    preload="auto"
-                                    style="width: 100%;object-fit: cover;"
+                                    style="width:80%;object-fit: cover;margin: 0 auto"
+                                    autoplay
+                                    loop
                                 >
                                     <source src="{{$video_url}}">
                                     <div class="position-to-top">
-                                    <span class="rbt-btn rounded-player-2 with-animation">
-                                        <span class="play-icon"></span>
-                                    </span>
+                                        <span class="rbt-btn rounded-player-2 with-animation">
+                                            <span class="play-icon"></span>
+                                        </span>
                                     </div>
                                 </video>
-
                             </div>
                         </div>
 
