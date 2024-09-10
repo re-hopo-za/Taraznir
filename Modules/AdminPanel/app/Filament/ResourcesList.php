@@ -6,11 +6,9 @@ namespace Modules\AdminPanel\app\Filament;
 use Filament\Contracts\Plugin;
 use Filament\Panel;
 use Modules\AdminPanel\app\Filament\Resources\CategoryResource;
-use Modules\AdminPanel\app\Filament\Resources\NavigationResource;
 use Modules\AdminPanel\app\Filament\Resources\OptionResource;
 use Modules\Blog\app\Filament\Resources\BlogResource;
 use Modules\Catalog\app\Filament\Resources\CatalogResource;
-use Modules\Ecommerce\app\Filament\Resources\ProductResource;
 use Modules\Gallery\app\Filament\Resources\GalleryResource;
 use Modules\News\app\Filament\Resources\NewsResource;
 use Modules\Project\app\Filament\Resources\ProjectResource;
@@ -52,8 +50,7 @@ class ResourcesList implements Plugin
                 CatalogResource::class,
                 StandardResource::class,
                 GalleryResource::class,
-                UserResource::class,
-                ProductResource::class
+                UserResource::class
             ])
             ->pages([
 //                Settings::class,
