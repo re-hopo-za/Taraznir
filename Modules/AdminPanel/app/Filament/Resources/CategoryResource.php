@@ -7,6 +7,7 @@ use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Filters\TrashedFilter;
 use Filament\Tables\Table;
 use Modules\Core\app\Models\Category;
 use Modules\Core\app\Traits\CommonFilamentResource;
@@ -74,7 +75,7 @@ class CategoryResource extends Resource
                 TextColumn::make('model')
             ])
             ->filters([
-                //
+                TrashedFilter::make(),
             ])
             ->actions(
                 self::actions()

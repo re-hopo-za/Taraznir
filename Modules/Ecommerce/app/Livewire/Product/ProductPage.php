@@ -30,6 +30,7 @@ class ProductPage extends Component
                 ->where('slug', $category)
                 ->first()
                 ?->element_id;
+
             if(!$this->category_id)
                 abort(404);
         }

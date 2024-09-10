@@ -64,8 +64,8 @@
                                     controls
                                     class="video-element"
                                     id="tutorial-video"
+
                                     preload="auto"
-                                    poster="{{$item->images['single'] ?? ''}}"
                                     style="width: 100%;object-fit: cover;"
                                 >
                                     <source src="{{$video_url}}">

@@ -89,8 +89,10 @@
                                                     @if(!empty($item['children']))
                                                         <ul>
                                                             @foreach($item['children'] as $child_1)
-                                                                <li>
-                                                                    @if(!empty(index_checker($child_1 ,'data' )))
+                                                                <li
+                                                                    class="{{!empty($child_1['children']) ? 'dropdown' :''}}"
+                                                                >
+                                                                    @if(!empty(index_checker($child_1 ,'data')))
                                                                         <a
                                                                             href="{{ $child_1['data']['url'] }}"
                                                                             target="{{ $child_1['data']['target'] }}"
@@ -100,9 +102,9 @@
 
                                                                         @if(!empty($child_1['children']))
                                                                             <ul>
-                                                                                @foreach(  $child_1['children'] as $child_2)
+                                                                                @foreach($child_1['children'] as $child_2)
                                                                                     <li>
-                                                                                        @if(!empty(index_checker($child_2 ,'data' )))
+                                                                                        @if(!empty(index_checker($child_2 ,'data')))
                                                                                             <a
                                                                                                 href="{{ $child_2['data']['url'] }}"
                                                                                                 target="{{ $child_2['data']['target'] }}"
