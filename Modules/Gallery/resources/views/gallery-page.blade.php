@@ -30,7 +30,7 @@
                             </div>
                             <div class="row ">
                                 <div class="col-sm-12 ">
-                                    <div class="pswp-gallery pswp-gallery--single-column gallery-container" id="gallery-container">
+                                    <div class="pswp-gallery pswp-gallery--single-column gallery-container d-flex flex-wrap" id="gallery-container">
                                         @foreach($item->getMedia('*') as $image)
                                             <a href="javascript:void(0)"
                                                data-pswp-src="{{$image->getUrl('origin')}}"
@@ -42,6 +42,7 @@
                                                     alt="{{$image->name}}"
                                                 />
                                             </a>
+
                                         @endforeach
                                     </div>
                                 </div>

@@ -101,40 +101,6 @@
                     </div>
                 </div>
 
-                <div class="lower-box" dir="rtl">
-                    <div class="product-info-tabs">
-                        <div class="prod-tabs tabs-box">
-                            <ul class="tab-btns tab-buttons clearfix">
-                                <li data-tab="#prod-review" class="tab-btn active-btn">
-                                    {{ecommerce_trans('Comments')}}
-                                    @if($comments_count)
-                                        <b>({{$comments_count}})</b>
-                                    @endif
-                                </li>
-                            </ul>
-
-                            <div class="tabs-content">
-                                <div class="tab active-tab" id="prod-review">
-                                    <div class="rbt-shadow-box review-wrapper mt--30" id="review">
-                                        <div>
-                                            <livewire:theme::components.comment-list
-                                                :title="false"
-                                                type="Product"
-                                                :id="$item->id"
-                                            />
-                                            <livewire:theme::forms.comment-form
-                                                :model="Product::class"
-                                                :id="$item->id"
-                                                :title="true"
-                                            />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </section>
     </div>

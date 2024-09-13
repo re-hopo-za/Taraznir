@@ -22,7 +22,6 @@
                                 <div class="icon flaticon-email-1"></div>
                                 <div class="content">
                                     <strong>آدرس ایمیل</strong>
-                                    <a href="mailto:info@taraznir.com">info@taraznir.com</a><br>
                                     <a href="mailto:ehsan@taraznir.com">ehsan@taraznir.com</a>
                                 </div>
                             </div>

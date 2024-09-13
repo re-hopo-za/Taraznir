@@ -311,3 +311,7 @@
     --tw-bg-opacity: 1;
     background-color: rgb(31 41 55/var(--tw-bg-opacity))
 }
+
+.fi-modal-window .fi-modal-content .grid>div:nth-child(3) input{
+    direction: ltr!important;
+}
