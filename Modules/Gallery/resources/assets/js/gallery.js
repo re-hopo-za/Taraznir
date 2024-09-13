@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const lightbox = new PhotoSwipeLightbox({
         gallery: '#gallery-container',
         children: 'a',
+        initialZoomLevel: 'fit',
+        scaleMode: 'fit',
         pswpModule: PhotoSwipe
     });
 

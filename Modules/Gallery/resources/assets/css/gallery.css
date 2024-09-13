@@ -41,3 +41,6 @@
     padding-bottom:30px;
 }
 
+img.pswp__img {
+    object-fit: contain!important;
+}
