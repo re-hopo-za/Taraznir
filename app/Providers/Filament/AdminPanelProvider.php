@@ -9,7 +9,6 @@ use Filament\Http\Middleware\DispatchServingFilamentEvent;
 use Filament\Pages;
 use Filament\Panel;
 use Filament\PanelProvider;
-use Filament\SpatieLaravelTranslatablePlugin;
 use Filament\Widgets;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
@@ -18,11 +17,8 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
-use Modules\AdminPanel\app\Filament\Resources\NavigationResource;
 use Modules\AdminPanel\app\Filament\ResourcesList;
 use RyanChandler\FilamentNavigation\FilamentNavigation;
-use SolutionForest\FilamentTree\FilamentTreeServiceProvider;
-use TomatoPHP\FilamentMenus\FilamentMenusPlugin;
 
 class AdminPanelProvider extends PanelProvider
 {

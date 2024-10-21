@@ -10,11 +10,15 @@ use Livewire\WithPagination;
 use Lunar\Models\Collection;
 use Lunar\Models\Product;
 use Lunar\Models\Url;
+use Livewire\Attributes\Url as LivewireUrlAttribute;
 
 class ProductPage extends Component
 {
     use WithPagination;
     protected string $paginationTheme = 'bootstrap';
+
+    #[LivewireUrlAttribute]
+    public $category_url = '';
 
     public ?object $categories = null;
     protected ?object $items = null;
@@ -26,7 +30,7 @@ class ProductPage extends Component
     public function mount($category = null): void
     {
         if($category){
-            $this->category_id = Url::where('element_type', Collection::class)
+            $this->category_id = Url::where('element_type', 'collection')
                 ->where('slug', $category)
                 ->first()
                 ?->element_id;
@@ -54,6 +58,8 @@ class ProductPage extends Component
     public function setCategory($categoryID): void
     {
         $this->category_id = $categoryID;
+        $category_slug     = Collection::find($this->category_id)?->urls?->first()?->slug;
+        $this->dispatch('url-change', url:$category_slug ? "/product/category/". Collection::find($this->category_id)->urls->first()->slug : '/product');
         $this->getProducts();
     }
 

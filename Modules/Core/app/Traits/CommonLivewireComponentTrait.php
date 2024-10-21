@@ -5,6 +5,7 @@ namespace Modules\Core\app\Traits;
 
 use JetBrains\PhpStorm\NoReturn;
 use Livewire\WithPagination;
+use Lunar\Models\Collection;
 use Modules\Core\app\Models\Category;
 
 trait CommonLivewireComponentTrait
@@ -63,6 +64,8 @@ trait CommonLivewireComponentTrait
     public function setCategory($categoryID): void
     {
         $this->category = $categoryID;
+        $category_slug  = Category::find($this->category)?->slug;
+        $this->dispatch('url-change', url:$category_slug ? "/$this->model/category/".Category::find($this->category)?->slug : "/$this->model");
         $this->query();
     }
 
