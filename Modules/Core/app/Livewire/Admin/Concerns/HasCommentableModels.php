@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 use LakM\Comments\Contracts\CommentableContract;
 use LakM\Comments\Helpers;
-use LakM\CommentsAdminPanel\Repository;
 
 trait HasCommentableModels
 {

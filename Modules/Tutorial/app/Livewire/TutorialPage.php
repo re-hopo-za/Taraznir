@@ -24,7 +24,7 @@ class TutorialPage extends Component
 
     public function mount($slug = null): void
     {
-        $this->limit      = config($this->config ,10);
+        $this->limit      = config($this->config ,100);
         $this->categories = self::categories();
 
         if($slug)
