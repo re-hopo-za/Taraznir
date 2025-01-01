@@ -30,7 +30,7 @@ class ProductPage extends Component
     public function mount($category = null): void
     {
         if($category){
-            $this->category_id = Url::where('element_type', 'collection')
+            $this->category_id = Url::where('element_type', Collection::class)
                 ->where('slug', $category)
                 ->first()
                 ?->element_id;
