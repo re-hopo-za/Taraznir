@@ -14,13 +14,10 @@ class Gallery extends Model implements HasMedia
 
     protected $appends = ['images'];
 
-
     protected $fillable = [
         'title',
         'summary',
         'date',
         'status',
     ];
-
-
 }

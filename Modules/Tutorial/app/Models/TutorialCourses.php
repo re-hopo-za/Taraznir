@@ -3,6 +3,8 @@
 namespace Modules\Tutorial\app\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Modules\Core\app\Traits\CommonModelMethodsTrait;
 use Modules\Core\app\Traits\CommonScopesTrait;
 use Spatie\MediaLibrary\HasMedia;
@@ -18,6 +20,11 @@ class TutorialCourses extends Model implements HasMedia
         'link',
         'time'
     ];
+
+    public function course(): HasOne
+    {
+        return $this->hasOne(Tutorial::class, 'id', 'tutorial_id');
+    }
 
 
 }
